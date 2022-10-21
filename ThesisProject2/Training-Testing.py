@@ -1,4 +1,8 @@
 from UNET import *
+import csv
+import numpy as np
+from torch.utils.data import Dataset, DataLoader
+
 
 import torchvision.transforms as transforms
 
@@ -11,18 +15,35 @@ learning_rate = 0.005
 transform = transforms.Compose([transforms.ToTensor(),
                                 transforms.Normalize((0.5, 0.5, 0.5), (0.5, 0.5, 0.5))])
 
-train_dataset = 0
-test_dataset = 0
-train_loader = 0
-test_loader = 0
+data_path = "/home/ge75tis/Downloads/AirQualityUCI/AirQualityUCI.csv"
+# We need a 2D-multivariate-timeseries data as input for this UNET, this is a 1D-multivariate-timeseries data
 
-model = UNet().to(device)
+
+class TestDataset(Dataset):
+    def __init__(self):
+        air_numpy = np.loadtxt(data_path, dtype=np.int32, delimiter=";", skiprows=1, usecols=(3, 4, 6, 7, 8, 9, 10, 11))
+        self.air_torch = torch.from_numpy(air_numpy)
+
+    def __getitem__(self, index):
+        return self.air_torch[index]
+
+    def __len__(self):
+        return self.air_torch.shape[0]
+
+
+train_dataset = TestDataset()
+train_loader = DataLoader(train_dataset, batch_size=10, shuffle=True)
+
+#test_loader = 0
+
+model = UNet(8, 8).to(device)
 
 loss_type = nn.L1Loss()
 # optimizer algorithm may be changed to see different results
 optimizer = torch.optim.SGD(model.parameters(), lr=learning_rate)
 
 n_total_steps = len(train_loader)
+
 
 for epoch in range(num_epochs):
     for i, (inputs) in enumerate(train_loader):
@@ -39,12 +60,4 @@ for epoch in range(num_epochs):
             print(f'Epoch [{epoch+1}/{num_epochs}], Step [{i+1}/{n_total_steps}], Loss: {loss.item():.4f}')
 
 print('Training finished!')
-
-with torch.no_grad():
-    for inputs in test_loader:
-        inputs = inputs.to(device)
-        outputs = model(inputs)
-
-    #   for i in range(batch_size):
-        #    print(inputs[i]-outputs[i])
 
