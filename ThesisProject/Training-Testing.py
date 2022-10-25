@@ -1,3 +1,7 @@
+import pandas as pd
+import torch.nn.init
+import torchvision.transforms
+
 from UNET import *
 import numpy as np
 from torch.utils.data import Dataset, DataLoader
@@ -5,36 +9,48 @@ from torchvision import transforms, utils
 import zarr
 import xarray as xr
 import wxee
+import datetime
+import pandas
 
 device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
 
-num_epochs = 5
-batch_size = 10
-learning_rate = 0.005
+num_epochs = 10
+batch_size = 5
+learning_rate = 0.05
 
-transform = transforms.Normalize((0.5, 0.5, 0.5), (0.5, 0.5, 0.5))
 
-dataset = zarr.create((8760, 7, 32, 64))
-dataset[:,0,:,:] = zarr.open("/home/ge75tis/Desktop/oezyurt/zarr dataset/2m_temperature_zarr/1982/t2m/")
-dataset[:,1,:,:] = zarr.open("/home/ge75tis/Desktop/oezyurt/zarr dataset/10m_u_component_of_wind_zarr/1982/u10/")
-dataset[:,2,:,:] = zarr.open("/home/ge75tis/Desktop/oezyurt/zarr dataset/10m_v_component_of_wind_zarr/1982/v10/")
-dataset[:,3,:,:] = zarr.open("/home/ge75tis/Desktop/oezyurt/zarr dataset/geopotential_500_zarr/1982/z/")
-dataset[:,4,:,:] = zarr.open("/home/ge75tis/Desktop/oezyurt/zarr dataset/temperature_850_zarr/1982/t/")
-dataset[:,5,:,:] = zarr.open("/home/ge75tis/Desktop/oezyurt/zarr dataset/total_cloud_cover_zarr/1982/tcc/")
-dataset[:,6,:,:] = zarr.open("/home/ge75tis/Desktop/oezyurt/zarr dataset/total_precipitation_zarr/1982/tp")
+### new = wxee.xarray.DataArrayAccessor(xrdataset).normalize()
+### test_array = new.to_numpy()
+### norm_dataset = torch.from_numpy(test_array)
+
+dataset = zarr.create((8784, 7, 32, 64))
+dataset[:,0,:,:] = zarr.open('/home/ge75tis/Desktop/oezyurt/zarr dataset/TRAIN_DATA/t2m/1980/t2m/')
+dataset[:,1,:,:] = zarr.open('/home/ge75tis/Desktop/oezyurt/zarr dataset/TRAIN_DATA/u10/1980/u10/')
+dataset[:,2,:,:] = zarr.open('/home/ge75tis/Desktop/oezyurt/zarr dataset/TRAIN_DATA/v10/1980/v10/')
+dataset[:,3,:,:] = zarr.open('/home/ge75tis/Desktop/oezyurt/zarr dataset/TRAIN_DATA/z/1980/z/')
+dataset[:,4,:,:] = zarr.open('/home/ge75tis/Desktop/oezyurt/zarr dataset/TRAIN_DATA/t/1980/t/')
+dataset[:,5,:,:] = zarr.open('/home/ge75tis/Desktop/oezyurt/zarr dataset/TRAIN_DATA/tcc/1980/tcc/')
+dataset[:,6,:,:] = zarr.open('/home/ge75tis/Desktop/oezyurt/zarr dataset/TRAIN_DATA/tp/1980/tp/')
+
+norm = transforms.Normalize((2.78382787e+02, -8.24015036e-02, 2.22236745e-01, 5.40970992e+04, 2.74478000e+02, 6.73734047e-01, 9.93376168e-05),
+                            ())
+
+# dti = pd.date_range("1980-01-01", periods=732 ,freq="12H")
+# print(dti)
+# xrdataset = xr.DataArray(dataset)
+# panda = xrdataset.to_pandas()
+# panda.resample('12H')
+
 
 xrdataset = xr.DataArray(dataset)
-new = wxee.xarray.DataArrayAccessor(xrdataset).normalize()
-# How do I set this normalized DataArray back into a tensor or some kind of dataset that works in training?
-
-
-# norm = transforms.Normalize((2.78151650e+02, -6.46198477e-02, 2.18526315e-01, 5.40422283e+04, 2.74193348e+02, 6.79718728e-01, 9.92141201e-05),
-#                             (2.12733154e+01, 5.52872994e+00, 4.74617300e+00, 3.37250806e+03, 1.55878069e+01, 3.59121453e-01, 3.47599315e-04))
+np_array = xrdataset.to_numpy()
+dataset = torch.from_numpy(np_array)
+norm_dataset = norm(dataset)
 
 
 class TestDataset(Dataset):
     def __init__(self):
-        self.dataset = actual_dataset
+        self.dataset = norm_dataset
 
     def __getitem__(self, param):
         return self.dataset[param]
@@ -42,11 +58,16 @@ class TestDataset(Dataset):
     def __len__(self):
         return len(dataset)
 
+def init_weights(m):
+    if isinstance(m, nn.Conv2d) or isinstance(m, nn.ConvTranspose2d):
+        torch.nn.init.xavier_uniform_(m.weight)
+        m.bias.data.fill_(0.01)
 
 train_dataset = TestDataset()
 train_loader = DataLoader(train_dataset, batch_size=10, shuffle=True)
 
 model = UNet(7,7).to(device)
+model.apply(init_weights)
 
 loss_type = nn.L1Loss()
 # optimizer algorithm may be changed to see different results
