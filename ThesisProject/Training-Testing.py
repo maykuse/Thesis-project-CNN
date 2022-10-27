@@ -14,68 +14,53 @@ import pandas
 
 device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
 
-num_epochs = 10
+num_epochs = 1
 batch_size = 5
-learning_rate = 0.05
+learning_rate = 0.2
+total_epochs = 0
 
+dataset = zarr.open('/home/ge75tis/Desktop/oezyurt/zarr dataset/RESAMPLED_TRAIN_DATA/resample.zarr/')
 
-### new = wxee.xarray.DataArrayAccessor(xrdataset).normalize()
-### test_array = new.to_numpy()
-### norm_dataset = torch.from_numpy(test_array)
-
-dataset = zarr.create((8784, 7, 32, 64))
-dataset[:,0,:,:] = zarr.open('/home/ge75tis/Desktop/oezyurt/zarr dataset/TRAIN_DATA/t2m/1980/t2m/')
-dataset[:,1,:,:] = zarr.open('/home/ge75tis/Desktop/oezyurt/zarr dataset/TRAIN_DATA/u10/1980/u10/')
-dataset[:,2,:,:] = zarr.open('/home/ge75tis/Desktop/oezyurt/zarr dataset/TRAIN_DATA/v10/1980/v10/')
-dataset[:,3,:,:] = zarr.open('/home/ge75tis/Desktop/oezyurt/zarr dataset/TRAIN_DATA/z/1980/z/')
-dataset[:,4,:,:] = zarr.open('/home/ge75tis/Desktop/oezyurt/zarr dataset/TRAIN_DATA/t/1980/t/')
-dataset[:,5,:,:] = zarr.open('/home/ge75tis/Desktop/oezyurt/zarr dataset/TRAIN_DATA/tcc/1980/tcc/')
-dataset[:,6,:,:] = zarr.open('/home/ge75tis/Desktop/oezyurt/zarr dataset/TRAIN_DATA/tp/1980/tp/')
-
-norm = transforms.Normalize((2.78382787e+02, -8.24015036e-02, 2.22236745e-01, 5.40970992e+04, 2.74478000e+02, 6.73734047e-01, 9.93376168e-05),
-                            ())
-
-# dti = pd.date_range("1980-01-01", periods=732 ,freq="12H")
-# print(dti)
-# xrdataset = xr.DataArray(dataset)
-# panda = xrdataset.to_pandas()
-# panda.resample('12H')
-
+norm = transforms.Normalize((2.78396666e+02, -9.47355324e-02, 2.26018299e-01, 5.40951497e+04, 2.74467023e+02, 6.74842584e-01, 1.00444445e-04),
+                            (2.12417626e+01, 5.55599043e+00, 4.77692863e+00, 3.35398112e+03, 1.55931385e+01, 3.62925103e-01, 3.68333206e-04))
 
 xrdataset = xr.DataArray(dataset)
 np_array = xrdataset.to_numpy()
-dataset = torch.from_numpy(np_array)
-norm_dataset = norm(dataset)
+torch_dataset = torch.from_numpy(np_array)
+norm_dataset = norm(torch_dataset)
 
 
 class TestDataset(Dataset):
     def __init__(self):
-        self.dataset = norm_dataset
+        self.norm_dataset = norm_dataset
 
     def __getitem__(self, param):
-        return self.dataset[param]
+        return self.norm_dataset[param]
 
     def __len__(self):
-        return len(dataset)
+        return len(norm_dataset)
 
-def init_weights(m):
-    if isinstance(m, nn.Conv2d) or isinstance(m, nn.ConvTranspose2d):
-        torch.nn.init.xavier_uniform_(m.weight)
-        m.bias.data.fill_(0.01)
+# def init_weights(m):
+#     if isinstance(m, nn.Conv2d) or isinstance(m, nn.ConvTranspose2d):
+#         torch.nn.init.xavier_uniform_(m.weight)
+#         m.bias.data.fill_(0.01)
 
 train_dataset = TestDataset()
-train_loader = DataLoader(train_dataset, batch_size=10, shuffle=True)
-
+train_loader = torch.utils.data.DataLoader(train_dataset, batch_size=5, shuffle=True)
 model = UNet(7,7).to(device)
-model.apply(init_weights)
+# model.apply(init_weights)
 
-loss_type = nn.L1Loss()
 # optimizer algorithm may be changed to see different results
+loss_type = nn.L1Loss()
 optimizer = torch.optim.SGD(model.parameters(), lr=learning_rate)
 
+# used saved model states to resume training:
+state = torch.load('/home/ge75tis/Desktop/oezyurt/model/saved_model')
+model.load_state_dict(state['state_dict'])
+optimizer.load_state_dict(state['optimizer'])
+total_epochs = state['epoch']
+
 n_total_steps = len(train_loader)
-
-
 for epoch in range(num_epochs):
     for i, (inputs) in enumerate(train_loader):
         inputs = inputs.to(device, dtype=torch.float)
@@ -92,3 +77,11 @@ for epoch in range(num_epochs):
 
 print('Training finished!')
 
+state = {
+    'epoch': total_epochs + num_epochs,
+    'state_dict': model.state_dict(),
+    'optimizer': optimizer.state_dict()
+}
+
+torch.save(state, '/home/ge75tis/Desktop/oezyurt/model/saved_model')
+print(total_epochs)
