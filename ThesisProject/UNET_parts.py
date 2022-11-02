@@ -32,18 +32,25 @@ class Down(nn.Module):
         return x
 
 
-class Bridge(nn.Module):
-    # what should the kernel size be such that the output of this layer is 1x512
-    def __init__(self, in_channels, out_channels):  # parameter input length?
-        super(Bridge, self).__init__()
-        self.conv1d = nn.Conv2d(in_channels, 7, kernel_size=3, padding=1)
-        self.pool = nn.MaxPool2d(2)
-        self.Relu = nn.ReLU()
+class BridgeDown(nn.Module):
+    def __init__(self, in_channels, out_channels):
+        super(BridgeDown, self).__init__()
+        self.linear = nn.Linear(in_channels, out_channels)
 
     def forward(self, x):
-        x = self.conv1d(x)
-        x = self.Relu(x)
-        x = self.pool(x)
+        x = torch.flatten(x, start_dim=1)
+        x = self.linear(x)
+        return x
+
+
+class BridgeUp(nn.Module):
+    def __init__(self, in_channels, out_channels):
+        super(BridgeUp, self).__init__()
+        self.linear = nn.Linear(in_channels, out_channels)
+
+    def forward(self, x):
+        x = self.linear(x)
+        x = torch.reshape(x, (x.size(dim=0), 256, 4, 8))
         return x
 
 
