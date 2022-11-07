@@ -5,30 +5,35 @@ import torch.nn as nn
 class First(nn.Module):
     def __init__(self, in_channels, out_channels):
         super(First, self).__init__()
-        self.conv = nn.Conv2d(in_channels, out_channels, kernel_size=3, padding=1)
-        self.pool = nn.MaxPool2d(2)
+        # self.conv = nn.Conv2d(in_channels, out_channels, kernel_size=3, padding=1)
+        # self.pool = nn.AvgPool2d(2)
+        self.conv = nn.Conv2d(in_channels, out_channels, kernel_size=2, stride=2)
         self.Relu = nn.ReLU()
-        self.dropout = nn.Dropout(0.5)
+        self.dropout = nn.Dropout2d(0.5)
+        # How do we exclude the constants from the dropout procedure?
+        # Do we only apply dropout to the first 7 parameters?
 
     def forward(self, x):
         x = self.dropout(x)
         x = self.conv(x)
         x = self.Relu(x)
-        x = self.pool(x)
+        # x = self.pool(x)
         return x
 
 
+# Average Pooling or downscale by stride
 class Down(nn.Module):
     def __init__(self, in_channels, out_channels):
         super(Down, self).__init__()
-        self.conv = nn.Conv2d(in_channels, out_channels, kernel_size=3, padding=1)
-        self.pool = nn.MaxPool2d(2)
+        # self.conv = nn.Conv2d(in_channels, out_channels, kernel_size=3, padding=1)
+        # self.pool = nn.AvgPool2d(2)
+        self.conv = nn.Conv2d(in_channels, out_channels, kernel_size=2, stride=2)
         self.Relu = nn.ReLU()
 
     def forward(self, x):
         x = self.conv(x)
         x = self.Relu(x)
-        x = self.pool(x)
+        # x = self.pool(x)
         return x
 
 
@@ -82,5 +87,4 @@ class Last(nn.Module):
         x = self.up(x)
         x = self.Relu(x)
         x = self.conv(x)
-        x = self.Tan(x)
         return x

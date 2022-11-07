@@ -8,8 +8,11 @@ import zarr
 import xarray as xr
 import mlflow
 
-
 device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
+
+# 7 models each of which consists of 6 inputs and 1 output will be designed.
+# Individual parameter prediction based on all other parameters will be observed.
+
 
 num_epochs = 60
 batch_size = 10
@@ -19,8 +22,6 @@ total_epochs = 0
 train_set = zarr.open('/home/ge75tis/Desktop/oezyurt/zarr dataset/resampled/resampled_24_train/')
 validation_set = zarr.open('/home/ge75tis/Desktop/oezyurt/zarr dataset/resampled/resampled_24_val/')
 test_set = zarr.open('/home/ge75tis/Desktop/oezyurt/zarr dataset/resampled/resampled_24_test/')
-
-
 # order of the parameters are: t2m, u10, v10, z, t, tcc, tp, lsm, orog, slt
 
 
@@ -46,7 +47,21 @@ xr_test = xr.DataArray(test_set)
 np_test = xr_test.to_numpy()
 torch_test = torch.from_numpy(np_test)
 norm_test = norm(torch_test)
-# # You should also think about saving the normalized data as zarr file for more efficient data loading
+
+indices_t2m = torch.tensor([1,2,3,4,5,6])
+t2m_out = torch.tensor([0])
+indices_u10 = torch.tensor([1,2,3,4,5,6])
+u10_out = torch.tensor([1])
+indices_v10 = torch.tensor([1,2,3,4,5,6])
+v10_out = torch.tensor([2])
+indices_z = torch.tensor([1,2,3,4,5,6])
+z_out = torch.tensor([3])
+indices_t = torch.tensor([1,2,3,4,5,6])
+t_out = torch.tensor([4])
+indices_tcc = torch.tensor([1,2,3,4,5,6])
+tcc_out = torch.tensor([5])
+indices_tp = torch.tensor([1,2,3,4,5,6])
+tp_out = torch.tensor([6])
 
 
 class TrainDataset(Dataset):
@@ -73,11 +88,11 @@ class TestDataset(Dataset):
     def __len__(self):
         return len(norm_test)
 
+
 def init_weights(m):
     if isinstance(m, nn.Conv2d) or isinstance(m, nn.ConvTranspose2d):
         torch.nn.init.xavier_uniform_(m.weight)
         # m.bias.data.fill_(0.01)
-
 
 train_dataset = TrainDataset()
 train_loader = torch.utils.data.DataLoader(train_dataset, batch_size=batch_size, shuffle=True)
@@ -88,29 +103,23 @@ val_loader = torch.utils.data.DataLoader(val_dataset)
 test_dataset = TestDataset()
 test_loader = torch.utils.data.DataLoader(test_dataset)
 
-model = UNet(10, 7).to(device)
+model = UNet(6,1).to(device)
 model.apply(init_weights)
 
-# Try L2 Loss, add script for interactive argument selection, all parameters lr, batchsize..
 loss_type = nn.L1Loss()
 optimizer = torch.optim.Adam(model.parameters(), lr=learning_rate)
-# scheduler = torch.optim.lr_scheduler.ExponentialLR(optimizer, gamma=0.9)
 
-# # use saved model states to resume training:
-# # state = torch.load('/home/ge75tis/Desktop/oezyurt/model/no_dropout_model_lr5_40_epochs')
-# # model.load_state_dict(state['state_dict'])
-# # optimizer.load_state_dict(state['optimizer'])
-# # total_epochs = state['epoch']
-#
-#
+# The model architecture is always 6 inputs predicting the 1 remaining output
+# changing the indices will change the input/output combinations of the model
 for epoch in range(num_epochs):
     train_loss = 0
     model.train()
     for i, (inputs) in enumerate(train_loader):
-        inputs = inputs.to(device, dtype=torch.float32)
+        input = inputs.index_select(dim=1, index=indices_t2m).to(device, dtype=torch.float32)
+        target = inputs.index_select(dim=1, index=t2m_out).to(device, dtype=torch.float32)
 
-        outputs = model(inputs)
-        loss = loss_type(outputs, inputs[:, :7])
+        outputs = model(input)
+        loss = loss_type(outputs, target)
 
         optimizer.zero_grad()
         loss.backward()
@@ -123,42 +132,14 @@ for epoch in range(num_epochs):
     val_loss = 0
     model.eval()
     for i, (vals) in enumerate(val_loader):
-        vals = vals.to(device, dtype=torch.float32)
-        target = model(vals)
-        loss1 = loss_type(target, vals[:, :7])
+        val = vals.index_select(dim=1, index=indices_t2m).to(device, dtype=torch.float32)
+        target = vals.index_select(dim=1, index=t2m_out).to(device, dtype=torch.float32)
+
+        output = model(val)
+        loss1 = loss_type(output, target)
+
         val_loss += loss1.item()
 
     print(f'Epoch [{epoch + 1}/{num_epochs}], Average Validation loss: {val_loss/len(val_loader):.6f}')
-    # model outputs more structured: mlflow
-    # Validation Loss should be calculated at the end of each epoch and the mean taken thereafter
-    # Validation and test with no torch grad`
 
 print('Training finished!')
-
-print('Testing:')
-test_loss = 0
-model.eval()
-for i, (test) in enumerate(test_loader):
-    test = test.to(device, dtype=torch.float32)
-    target = model(test)
-    loss1 = loss_type(target, test[:, :7])
-    test_loss += loss1.item()
-
-print(f'Average Test Loss: {test_loss/len(test_loader):.6f}')
-
-# state = {
-#     'epoch': total_epochs + num_epochs,
-#     'state_dict': model.state_dict(),
-#     'optimizer': optimizer.state_dict()
-# }
-#
-# torch.save(state, '/home/ge75tis/Desktop/oezyurt/model/dropout_model_lr5_10_epochs')
-# print(total_epochs)
-
-# With Learning rate 0.0005 seems to overfit at  epochs
-# Avg. Training Loss: 0.055 at 60 epoch, Minimum Validation Loss: 0.023
-
-# Loss per parameter then comparing with Climatology method of monthly standard deviations.
-# 3 periods, yearly, monthly, weekly
-# Scale of the data should be the same
-# Think about seasons and different periods

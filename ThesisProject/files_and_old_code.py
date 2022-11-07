@@ -43,9 +43,14 @@ import xarray as xr
 # tcc = zarr.open('/home/ge75tis/Desktop/oezyurt/zarr dataset/VALIDATION_DATA/tcc/2009/tcc/')
 # tp = zarr.open('/home/ge75tis/Desktop/oezyurt/zarr dataset/VALIDATION_DATA/tp/2009/tp/')
 
-
-# dataset = zarr.create((17520, 10, 32, 64))
+# tcc = zarr.open('/home/ge75tis/Desktop/oezyurt/zarr dataset/one_folder/validation_data_one_folder/tcc/2009/tcc/')
+# p = zarr.open('/home/ge75tis/Desktop/oezyurt/zarr dataset/one_folder/validation_data_one_folder/tcc/2010/tcc/')
 #
+# tcc.append(p)
+# print(len(tcc))
+
+# dataset = zarr.create((17520, 7, 32, 64))
+# #
 # dataset[:,0,:,:] = zarr.open('/home/ge75tis/Desktop/oezyurt/zarr dataset/one_folder/validation_data_one_folder/t2m/2009/t2m/')
 # dataset[:,1,:,:] = zarr.open('/home/ge75tis/Desktop/oezyurt/zarr dataset/one_folder/validation_data_one_folder/u10/2009/u10/')
 # dataset[:,2,:,:] = zarr.open('/home/ge75tis/Desktop/oezyurt/zarr dataset/one_folder/validation_data_one_folder/v10/2009/v10/')
@@ -53,15 +58,15 @@ import xarray as xr
 # dataset[:,4,:,:] = zarr.open('/home/ge75tis/Desktop/oezyurt/zarr dataset/one_folder/validation_data_one_folder/t/2009/t/')
 # dataset[:,5,:,:] = zarr.open('/home/ge75tis/Desktop/oezyurt/zarr dataset/one_folder/validation_data_one_folder/tcc/2009/tcc/')
 # dataset[:,6,:,:] = zarr.open('/home/ge75tis/Desktop/oezyurt/zarr dataset/one_folder/validation_data_one_folder/tp/2009/tp/')
-# dataset[:,7,:,:] = zarr.open('/home/ge75tis/Desktop/oezyurt/zarr dataset/one_folder/validation_data_one_folder/const_lsm/')
-# dataset[:,8,:,:] = zarr.open('/home/ge75tis/Desktop/oezyurt/zarr dataset/one_folder/validation_data_one_folder/const_orog/')
-# dataset[:,9,:,:] = zarr.open('/home/ge75tis/Desktop/oezyurt/zarr dataset/one_folder/validation_data_one_folder/const_slt/')
+# # dataset[:,7,:,:] = zarr.open('/home/ge75tis/Desktop/oezyurt/zarr dataset/one_folder/validation_data_one_folder/const_lsm/')
+# # dataset[:,8,:,:] = zarr.open('/home/ge75tis/Desktop/oezyurt/zarr dataset/one_folder/validation_data_one_folder/const_orog/')
+# # dataset[:,9,:,:] = zarr.open('/home/ge75tis/Desktop/oezyurt/zarr dataset/one_folder/validation_data_one_folder/const_slt/')
 #
 # print(dataset[17519])
 # print(dataset[0])
 #
-# zarr.save('/home/ge75tis/Desktop/oezyurt/zarr dataset/concat/const_concat_val/', dataset)
-
+# zarr.save('/home/ge75tis/Desktop/oezyurt/zarr dataset/concat/concatenated_val/', dataset)
+#
 
 
 
@@ -98,11 +103,11 @@ import xarray as xr
 # tp = zarr.open('/home/ge75tis/Desktop/oezyurt/zarr dataset/TEST_DATA/tp/2011/tp/')
 
 # dataset = zarr.create((70128, 7, 32, 64))
-#
+
 # dataset = zarr.open('/home/ge75tis/Desktop/oezyurt/zarr dataset/concat/const_concat_val/')
 # print(dataset.shape)
 #
 # resampled_test = dataset[::24]
 # print(resampled_test.shape)
 # zarr.save('/home/ge75tis/Desktop/oezyurt/zarr dataset/resampled/resampled_24_val', resampled_test)
-
+#
