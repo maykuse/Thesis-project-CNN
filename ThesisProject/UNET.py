@@ -18,7 +18,7 @@ class UNet(nn.Module):
         self.last = Last(64, out_channels)
 
     def forward(self, x):
-        x1 = self.down1(x) # 64
+        x1 = self.down1(x)  # 64
         # x1 = self.first(x)  # 64
         x2 = self.down2(x1)  # 128
         x3 = self.down3(x2)  # 256

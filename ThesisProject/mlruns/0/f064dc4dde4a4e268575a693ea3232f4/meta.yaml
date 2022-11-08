@@ -1,0 +1,15 @@
+artifact_uri: file:///home/ge75tis/Desktop/Thesis-project-CNN/ThesisProject/mlruns/0/f064dc4dde4a4e268575a693ea3232f4/artifacts
+end_time: 1667916512625
+entry_point_name: ''
+experiment_id: '0'
+lifecycle_stage: active
+run_id: f064dc4dde4a4e268575a693ea3232f4
+run_name: intrigued-fawn-846
+run_uuid: f064dc4dde4a4e268575a693ea3232f4
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1667916510370
+status: 4
+tags: []
+user_id: ge75tis

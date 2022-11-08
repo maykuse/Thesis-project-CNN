@@ -1,0 +1,15 @@
+artifact_uri: file:///home/ge75tis/Desktop/Thesis-project-CNN/ThesisProject/mlruns/0/c570a1a2bc304ff18c80f26ff849363e/artifacts
+end_time: 1667916568014
+entry_point_name: ''
+experiment_id: '0'
+lifecycle_stage: active
+run_id: c570a1a2bc304ff18c80f26ff849363e
+run_name: welcoming-bat-310
+run_uuid: c570a1a2bc304ff18c80f26ff849363e
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1667916565739
+status: 4
+tags: []
+user_id: ge75tis

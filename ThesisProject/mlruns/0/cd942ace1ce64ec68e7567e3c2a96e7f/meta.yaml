@@ -1,0 +1,15 @@
+artifact_uri: file:///home/ge75tis/Desktop/Thesis-project-CNN/ThesisProject/mlruns/0/cd942ace1ce64ec68e7567e3c2a96e7f/artifacts
+end_time: 1667905428942
+entry_point_name: ''
+experiment_id: '0'
+lifecycle_stage: active
+run_id: cd942ace1ce64ec68e7567e3c2a96e7f
+run_name: classy-ray-810
+run_uuid: cd942ace1ce64ec68e7567e3c2a96e7f
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1667905388196
+status: 3
+tags: []
+user_id: ge75tis

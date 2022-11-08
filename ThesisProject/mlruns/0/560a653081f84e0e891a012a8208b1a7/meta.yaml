@@ -1,0 +1,15 @@
+artifact_uri: file:///home/ge75tis/Desktop/Thesis-project-CNN/ThesisProject/mlruns/0/560a653081f84e0e891a012a8208b1a7/artifacts
+end_time: 1667916481630
+entry_point_name: ''
+experiment_id: '0'
+lifecycle_stage: active
+run_id: 560a653081f84e0e891a012a8208b1a7
+run_name: suave-elk-928
+run_uuid: 560a653081f84e0e891a012a8208b1a7
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1667916479575
+status: 4
+tags: []
+user_id: ge75tis

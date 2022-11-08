@@ -1,0 +1,15 @@
+artifact_uri: file:///home/ge75tis/Desktop/Thesis-project-CNN/ThesisProject/mlruns/0/ec4f65601fd74a8381f487f573372c85/artifacts
+end_time: 1667916658803
+entry_point_name: ''
+experiment_id: '0'
+lifecycle_stage: active
+run_id: ec4f65601fd74a8381f487f573372c85
+run_name: valuable-boar-177
+run_uuid: ec4f65601fd74a8381f487f573372c85
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1667916656544
+status: 4
+tags: []
+user_id: ge75tis

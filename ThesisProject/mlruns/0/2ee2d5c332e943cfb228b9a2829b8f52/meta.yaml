@@ -1,0 +1,16 @@
+artifact_uri: file:///home/ge75tis/Desktop/Thesis-project-CNN/ThesisProject/mlruns/0/2ee2d5c332e943cfb228b9a2829b8f52/artifacts
+deleted_time: 1667907269970
+end_time: 1667907236039
+entry_point_name: ''
+experiment_id: '0'
+lifecycle_stage: deleted
+run_id: 2ee2d5c332e943cfb228b9a2829b8f52
+run_name: victorious-panda-861
+run_uuid: 2ee2d5c332e943cfb228b9a2829b8f52
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1667907111467
+status: 4
+tags: []
+user_id: ge75tis

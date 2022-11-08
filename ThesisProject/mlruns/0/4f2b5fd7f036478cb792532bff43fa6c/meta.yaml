@@ -1,0 +1,16 @@
+artifact_uri: file:///home/ge75tis/Desktop/Thesis-project-CNN/ThesisProject/mlruns/0/4f2b5fd7f036478cb792532bff43fa6c/artifacts
+deleted_time: 1667905767534
+end_time: 1667904956659
+entry_point_name: ''
+experiment_id: '0'
+lifecycle_stage: deleted
+run_id: 4f2b5fd7f036478cb792532bff43fa6c
+run_name: melodic-shrew-31
+run_uuid: 4f2b5fd7f036478cb792532bff43fa6c
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1667904914738
+status: 4
+tags: []
+user_id: ge75tis

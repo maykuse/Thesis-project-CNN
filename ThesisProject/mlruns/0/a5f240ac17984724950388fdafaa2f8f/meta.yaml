@@ -1,0 +1,16 @@
+artifact_uri: file:///home/ge75tis/Desktop/Thesis-project-CNN/ThesisProject/mlruns/0/a5f240ac17984724950388fdafaa2f8f/artifacts
+deleted_time: 1667905767547
+end_time: 1667904111696
+entry_point_name: ''
+experiment_id: '0'
+lifecycle_stage: deleted
+run_id: a5f240ac17984724950388fdafaa2f8f
+run_name: stylish-squid-259
+run_uuid: a5f240ac17984724950388fdafaa2f8f
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1667904026602
+status: 4
+tags: []
+user_id: ge75tis

@@ -1,0 +1,15 @@
+artifact_uri: file:///home/ge75tis/Desktop/Thesis-project-CNN/ThesisProject/mlruns/0/de8e4ee1060c46ac8a71d28ffa24cf6f/artifacts
+end_time: 1667916731682
+entry_point_name: ''
+experiment_id: '0'
+lifecycle_stage: active
+run_id: de8e4ee1060c46ac8a71d28ffa24cf6f
+run_name: redolent-bug-434
+run_uuid: de8e4ee1060c46ac8a71d28ffa24cf6f
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1667916729439
+status: 4
+tags: []
+user_id: ge75tis

@@ -1,0 +1,15 @@
+artifact_uri: file:///home/ge75tis/Desktop/Thesis-project-CNN/ThesisProject/mlruns/0/23a703c413ec404784cba07421665f50/artifacts
+end_time: 1667908659612
+entry_point_name: ''
+experiment_id: '0'
+lifecycle_stage: active
+run_id: 23a703c413ec404784cba07421665f50
+run_name: debonair-hare-467
+run_uuid: 23a703c413ec404784cba07421665f50
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1667908550502
+status: 3
+tags: []
+user_id: ge75tis
