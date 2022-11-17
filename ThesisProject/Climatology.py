@@ -1,7 +1,9 @@
+import numpy
 import numpy as np
 import xarray as xr
 import zarr
 import matplotlib.pyplot as plt
+import torch
 # import seaborn as sns
 # from src.score import *
 
@@ -38,6 +40,14 @@ def create_weekly_climatology_forecast(ds_train, valid_time):
     for tt in valid_time:
         fc_list.append(weekly_averages.sel(week=tt.week))
     return xr.concat(fc_list, dim=valid_time)
+
+weekly_predictions = xr.open_mfdataset('/home/ge75tis/Desktop/oezyurt/climatology/2nd_weekly_pred.nc')
+data_week = weekly_predictions.to_array()
+np_week = data_week.to_numpy()
+np_week_swap = numpy.swapaxes(np_week, axis1=0, axis2=1)
+np_resampled = np_week_swap[::24]
+print(np_resampled.shape)
+
 
 
 # weekly_climatology = create_weekly_climatology_forecast(train_data, valid_data.time)

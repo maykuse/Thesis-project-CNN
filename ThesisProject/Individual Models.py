@@ -48,19 +48,21 @@ np_test = xr_test.to_numpy()
 torch_test = torch.from_numpy(np_test)
 norm_test = norm(torch_test)
 
+
+# IF ALL PARAMETERS ARE IN INPUT, INPUT INDEX SELECTION NOT REQUIRED
 indices_t2m = torch.tensor([1,2,3,4,5,6])
 t2m_out = torch.tensor([0])
-indices_u10 = torch.tensor([1,2,3,4,5,6])
+indices_u10 = torch.tensor([0,1,2,3,4,5,6])
 u10_out = torch.tensor([1])
-indices_v10 = torch.tensor([1,2,3,4,5,6])
+indices_v10 = torch.tensor([0,1,3,4,5,6])
 v10_out = torch.tensor([2])
-indices_z = torch.tensor([1,2,3,4,5,6])
+indices_z = torch.tensor([0,1,2,4,5,6])
 z_out = torch.tensor([3])
-indices_t = torch.tensor([1,2,3,4,5,6])
+indices_t = torch.tensor([0,1,2,3,5,6])
 t_out = torch.tensor([4])
-indices_tcc = torch.tensor([1,2,3,4,5,6])
+indices_tcc = torch.tensor([0,1,2,3,4,6])
 tcc_out = torch.tensor([5])
-indices_tp = torch.tensor([1,2,3,4,5,6])
+indices_tp = torch.tensor([0,1,2,3,4,5])
 tp_out = torch.tensor([6])
 
 
@@ -103,43 +105,82 @@ val_loader = torch.utils.data.DataLoader(val_dataset)
 test_dataset = TestDataset()
 test_loader = torch.utils.data.DataLoader(test_dataset)
 
-model = UNet(6,1).to(device)
+model = UNet(7,1).to(device)
 model.apply(init_weights)
 
 loss_type = nn.L1Loss()
 optimizer = torch.optim.Adam(model.parameters(), lr=learning_rate)
 
+# state = torch.load('/home/ge75tis/Desktop/oezyurt/model/6_1_UNET/one_output_lr0005_epoch10')
+# model.load_state_dict(state['state_dict'])
+# optimizer.load_state_dict(state['optimizer'])
+# total_epochs = state['epoch']
+
 # The model architecture is always 6 inputs predicting the 1 remaining output
 # changing the indices will change the input/output combinations of the model
-for epoch in range(num_epochs):
-    train_loss = 0
-    model.train()
-    for i, (inputs) in enumerate(train_loader):
-        input = inputs.index_select(dim=1, index=indices_t2m).to(device, dtype=torch.float32)
-        target = inputs.index_select(dim=1, index=t2m_out).to(device, dtype=torch.float32)
 
-        outputs = model(input)
-        loss = loss_type(outputs, target)
+
+def train(epoch):
+    model.train()
+    train_loss = 0
+    for i, (inputs) in enumerate(train_loader):
+        input = inputs.index_select(dim=1, index=indices_u10).to(device, dtype=torch.float32)
+        target = inputs.index_select(dim=1, index=u10_out).to(device, dtype=torch.float32)
+
+        output = model(input)
+        loss = loss_type(output, target)
 
         optimizer.zero_grad()
         loss.backward()
         optimizer.step()
-        train_loss += loss.item()
+        train_loss += loss.item() * len(inputs)
 
-    print(f'Epoch [{epoch + 1}/{num_epochs}], Average Training Loss: {train_loss/len(train_loader):.6f}')
-    #    scheduler.step()
+    avg_train_loss = train_loss/len(train_dataset)
+    print(f'Epoch: {total_epochs}, Average Training Loss: {avg_train_loss:.6f}')
+    log_scalar("u10_individual_train_loss", avg_train_loss)
 
+
+def val():
     val_loss = 0
     model.eval()
     for i, (vals) in enumerate(val_loader):
-        val = vals.index_select(dim=1, index=indices_t2m).to(device, dtype=torch.float32)
-        target = vals.index_select(dim=1, index=t2m_out).to(device, dtype=torch.float32)
+        val = vals.index_select(dim=1, index=indices_u10).to(device, dtype=torch.float32)
+        target = vals.index_select(dim=1, index=u10_out).to(device, dtype=torch.float32)
 
         output = model(val)
         loss1 = loss_type(output, target)
 
         val_loss += loss1.item()
 
-    print(f'Epoch [{epoch + 1}/{num_epochs}], Average Validation loss: {val_loss/len(val_loader):.6f}')
+    avg_val_loss = val_loss/len(val_dataset)
+    print(f'Average Validation Loss: {avg_val_loss:.6f}')
+    log_scalar("u10_individual_val_loss", avg_val_loss)
 
-print('Training finished!')
+
+def test():
+    test_loss = 0
+    model.eval()
+    for i, (tests) in enumerate(test_loader):
+        test = tests.index_select(dim=1, index=indices_u10).to(device, dtype=torch.float32)
+        target = target.index_select(dim=1, index=u10_out).to(device, dtype=torch.float32)
+
+        output = model(test)
+        loss_t = loss_type(output, target)
+        test_loss += loss_t.item()
+
+    avg_test_loss = test_loss/len(test_dataset)
+    print(f'Average Test Loss at the End: {avg_test_loss:.6f}')
+
+    log_scalar("v10 _individual_test_loss", avg_test_loss)
+
+
+def log_scalar(name, value):
+    mlflow.log_metric(name, value)
+
+
+for epoch in range(num_epochs):
+    train(epoch)
+    val()
+    total_epochs += 1
+
+test()

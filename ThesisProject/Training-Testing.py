@@ -1,4 +1,6 @@
 import argparse
+import os.path
+
 import torch.nn.init
 import torchvision.transforms
 from UNET import *
@@ -9,6 +11,7 @@ import zarr
 import xarray as xr
 import mlflow
 import pickle
+import matplotlib.pyplot as plt
 
 parser = argparse.ArgumentParser(description="Meteorological Parameter Prediction Model")
 parser.add_argument(
@@ -20,11 +23,11 @@ parser.add_argument(
 parser.add_argument(
     "--test-batch-size",
     type=int,
-    default=2922,
+    default=100,
     metavar="N",
-    help="input batch size for training (default:2922)")
+    help="input batch size for training (default:100)")
 parser.add_argument(
-    "--epochs", type=int, default=10, metavar="N", help="number of epochs to train (default:10)"
+    "--epochs", type=int, default=60, metavar="N", help="number of epochs to train (default:10)"
 )
 parser.add_argument(
     "--lr", type=float, default=0.0005, metavar="LR", help="learning rate (default: 0.0005)"
@@ -36,6 +39,23 @@ parser.add_argument(
     metavar="N",
     help="how many batches to wait before logging training status",
 )
+
+parser.add_argument(
+    "--dropout",
+    type=bool,
+    default=False,
+    metavar="Bool",
+    help="Set to true to apply feature dropout to input"
+)
+
+parser.add_argument(
+    "--test",
+    type=bool,
+    default=False,
+metavar="Bool",
+    help="Set to true just to see test results on already trained model"
+)
+
 args = parser.parse_args()
 
 device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
@@ -45,8 +65,6 @@ total_epochs = 0
 train_set = zarr.open('/home/ge75tis/Desktop/oezyurt/zarr dataset/resampled/resampled_24_train/')
 validation_set = zarr.open('/home/ge75tis/Desktop/oezyurt/zarr dataset/resampled/resampled_24_val/')
 test_set = zarr.open('/home/ge75tis/Desktop/oezyurt/zarr dataset/resampled/resampled_24_test/')
-
-
 # order of the parameters are: t2m, u10, v10, z, t, tcc, tp, lsm, orog, slt
 
 
@@ -56,6 +74,11 @@ norm = transforms.Normalize((2.78415200e+02, -1.00402647e-01,  2.20140679e-01,  
                             (2.11294838e+01, 5.57168569e+00, 4.77363485e+00, 3.35202722e+03,
                             1.55503555e+01, 3.62274453e-01, 3.57928990e-04, 4.59003773e-01,
                             8.59872249e+02, 1.16888408e+00))
+
+norm_clm = transforms.Normalize((2.78415200e+02, -1.00402647e-01,  2.20140679e-01,  5.40906312e+04,
+                                2.74440506e+02,  6.76697789e-01,  9.80986749e-05),
+                                (2.11294838e+01, 5.57168569e+00, 4.77363485e+00, 3.35202722e+03,
+                                1.55503555e+01, 3.62274453e-01, 3.57928990e-04))
 
 
 xr_train = xr.DataArray(train_set)
@@ -72,6 +95,16 @@ xr_test = xr.DataArray(test_set)
 np_test = xr_test.to_numpy()
 torch_test = torch.from_numpy(np_test)
 norm_test = norm(torch_test)
+
+weekly_predictions = xr.open_mfdataset('/home/ge75tis/Desktop/oezyurt/climatology/2nd_weekly_pred.nc')
+data_week = weekly_predictions.to_array()
+np_week = data_week.to_numpy()
+np_week_swap = np.swapaxes(np_week, axis1=0, axis2=1)
+clm_resampled = np_week_swap[::24]
+torch_clm = torch.from_numpy(clm_resampled)
+norm_clm = norm_clm(torch_clm)
+
+
 # # You should also think about saving the normalized data as zarr file for more efficient data loading
 
 
@@ -99,10 +132,17 @@ class TestDataset(Dataset):
     def __len__(self):
         return len(norm_test)
 
+class ClmDataset(Dataset):
+    def __init__(self):
+        self.norm_clm = norm_clm
+    def __getitem__(self, item):
+        return self.norm_clm[item]
+    def __len__(self):
+        return len(norm_clm)
 
-# def init_weights(m):
-#     if isinstance(m, nn.Conv2d) or isinstance(m, nn.ConvTranspose2d):
-#         torch.nn.init.xavier_uniform_(m.weight)
+def init_weights(m):
+    if isinstance(m, nn.Conv2d) or isinstance(m, nn.ConvTranspose2d):
+        torch.nn.init.xavier_uniform_(m.weight)
 #         # m.bias.data.fill_(0.01)
 
 
@@ -115,23 +155,50 @@ val_loader = torch.utils.data.DataLoader(val_dataset)
 test_dataset = TestDataset()
 test_loader = torch.utils.data.DataLoader(test_dataset, batch_size=args.test_batch_size)
 
-model = UNet(10, 7).to(device)
-# model.apply(init_weights)
+clm_dataset = ClmDataset()
+clm_loader = torch.utils.data.DataLoader(clm_dataset)
 
-# Try L2 Loss, add script for interactive argument selection, all parameters lr, batchsize..
+if(args.dropout == True):
+    model = UNet_Dropout(10, 7).to(device)
+    model.apply(init_weights)
+else:
+    model = UNet(10, 7).to(device)
+    # model.apply(init_weights)
+
+
+# Try L2 Loss
 loss_type = nn.L1Loss()
 optimizer = torch.optim.Adam(model.parameters(), lr=args.lr)
 # scheduler = torch.optim.lr_scheduler.ExponentialLR(optimizer, gamma=0.9)
 
 # # use saved model states to resume training:
-state = torch.load('/home/ge75tis/Desktop/oezyurt/model/no_dropout_model_lr5_60_epochs')
-model.load_state_dict(state['state_dict'])
-optimizer.load_state_dict(state['optimizer'])
-total_epochs = state['epoch']
+# state = torch.load('/home/ge75tis/Desktop/oezyurt/model/10_7_UNET/no_dropout_model_lr5_60_epochs')
+# model.load_state_dict(state['state_dict'])
+# optimizer.load_state_dict(state['optimizer'])
+# total_epochs = state['epoch']
+
+y_loss = {}
+y_loss['train'] = []
+y_loss['val'] = []
+y_loss['weekly_clm'] = []
+x_epoch = []
+
+fig = plt.figure(figsize=(36, 12))
+ax0 = fig.add_subplot(121, title="loss")
+
+def draw_curve(current_epoch):
+    x_epoch.append(current_epoch)
+    ax0.plot(x_epoch, y_loss['train'], 'ro-', label='train', markevery=5)
+    ax0.plot(x_epoch, y_loss['val'], 'bo-', label='val', markevery=5)
+    if current_epoch == 0:
+        ax0.legend()
+    fig.savefig('/home/ge75tis/Desktop/loss_new.jpg', dpi=100)
+
 
 
 def train(epoch):
     model.train()
+    train_loss = 0
     for i, (inputs) in enumerate(train_loader):
         inputs = inputs.to(device, dtype=torch.float32)
 
@@ -140,23 +207,36 @@ def train(epoch):
         loss = loss_type(outputs, inputs[:, :7])
         loss.backward()
         optimizer.step()
+        train_loss += loss.item() * len(inputs)
 
-    print(f'Epoch: {total_epochs + epoch}, Average Training Loss: {loss.data.item():.6f}')
+    avg_train_loss = train_loss/len(train_dataset)
+    print(f'Epoch: {total_epochs}, Average Training Loss: {avg_train_loss:.6f}')
+    y_loss['train'].append(avg_train_loss)
 
-    log_scalar("train_loss", loss.data.item())
+    log_scalar("train_loss", avg_train_loss)
 
 
 def val():
     val_loss = 0
+    clm_loss = 0
     model.eval()
-    for i, (vals) in enumerate(val_loader):
+    for (vals, clms) in zip(val_loader, clm_loader):
         vals = vals.to(device, dtype=torch.float32)
+        clms = clms.to(device, dtype=torch.float32)
+
         pred = model(vals)
-        val_loss = loss_type(pred, vals[:, :7])
+        loss_v = loss_type(pred, vals[:, :7])
+        loss_c = loss_type(clms, vals[:, :7])
+        val_loss += loss_v.item()
+        clm_loss += loss_c.item()
 
-    print(f'Average Validation Loss: {val_loss.data.item():.6f}')
+    avg_val_loss = val_loss/len(val_dataset)
+    print(f'Average Validation Loss: {avg_val_loss:.6f}')
+    y_loss['val'].append(avg_val_loss)
 
-    log_scalar("val_loss", val_loss)
+    # draw_curve(total_epochs)
+    log_scalar("val_loss", avg_val_loss)
+
 
 def test():
     test_loss = 0
@@ -164,39 +244,46 @@ def test():
     for i, (test) in enumerate(test_loader):
         test = test.to(device, dtype=torch.float32)
         pred = model(test)
-        test_loss = loss_type(pred, test[:, :7])
+        loss_t = loss_type(pred, test[:, :7])
+        test_loss += loss_t.item() * len(test)
 
-    print(f'Average Test Loss at the End: {test_loss.data.item():.6f}')
+    avg_test_loss = test_loss/len(test_dataset)
+    print(f'Average Test Loss at the End: {avg_test_loss:.6f}')
 
-    log_scalar("test_loss", test_loss)
+    log_scalar("test_loss", avg_test_loss)
 
 
 def test_per_parameter():
     model.eval()
+    t2m_loss = 0
+    u10_loss = 0
+    v10_loss = 0
+    z_loss = 0
+    t_loss = 0
+    tcc_loss = 0
+    tp_loss = 0
     for i, (test) in enumerate(test_loader):
         test = test.to(device, dtype=torch.float32)
         pred = model(test)
-        t2m_loss = loss_type(pred.select(dim=1, index=0), test.select(dim=1, index=0))
-        u10_loss = loss_type(pred.select(dim=1, index=1), test.select(dim=1, index=1))
-        v10_loss = loss_type(pred.select(dim=1, index=2), test.select(dim=1, index=2))
-        z_loss = loss_type(pred.select(dim=1, index=3), test.select(dim=1, index=3))
-        t_loss = loss_type(pred.select(dim=1, index=4), test.select(dim=1, index=4))
-        tcc_loss = loss_type(pred.select(dim=1, index=5), test.select(dim=1, index=5))
-        tp_loss = loss_type(pred.select(dim=1, index=6), test.select(dim=1, index=6))
+        t2m_loss += loss_type(pred.select(dim=1, index=0), test.select(dim=1, index=0)) * len(test)
+        u10_loss += loss_type(pred.select(dim=1, index=1), test.select(dim=1, index=1)) * len(test)
+        v10_loss += loss_type(pred.select(dim=1, index=2), test.select(dim=1, index=2)) * len(test)
+        z_loss += loss_type(pred.select(dim=1, index=3), test.select(dim=1, index=3)) * len(test)
+        t_loss += loss_type(pred.select(dim=1, index=4), test.select(dim=1, index=4)) * len(test)
+        tcc_loss += loss_type(pred.select(dim=1, index=5), test.select(dim=1, index=5)) * len(test)
+        tp_loss += loss_type(pred.select(dim=1, index=6), test.select(dim=1, index=6)) * len(test)
 
-    print(f'Test Loss for T2M: {t2m_loss.data.item():.6f}')
-    print(f'Test Loss for U10: {u10_loss.data.item():.6f}')
-    print(f'Test Loss for V10: {v10_loss.data.item():.6f}')
-    print(f'Test Loss for Z: {z_loss.data.item():.6f}')
-    print(f'Test Loss for T: {t_loss.data.item():.6f}')
-    print(f'Test Loss for TCC: {tcc_loss.data.item():.6f}')
-    print(f'Test Loss for TP: {tp_loss.data.item():.6f}')
+    print(f'Test Loss for T2M: {t2m_loss/len(test_dataset):.6f}')
+    print(f'Test Loss for U10: {u10_loss/len(test_dataset):.6f}')
+    print(f'Test Loss for V10: {v10_loss/len(test_dataset):.6f}')
+    print(f'Test Loss for Z: {z_loss/len(test_dataset):.6f}')
+    print(f'Test Loss for T: {t_loss/len(test_dataset):.6f}')
+    print(f'Test Loss for TCC: {tcc_loss/len(test_dataset):.6f}')
+    print(f'Test Loss for TP: {tp_loss/len(test_dataset):.6f}')
 
 
 def log_scalar(name, value):
     mlflow.log_metric(name, value)
-
-
 
 
 # Training, Testing, Validation:
@@ -204,12 +291,18 @@ with mlflow.start_run() as run:
     for key, value in vars(args).items():
         mlflow.log_param(key, value)
 
-    # for epoch in range(args.epochs):
-    #     train(epoch)
-    #     val()
+    if(args.test == False):
+        for epoch in range(args.epochs):
+            train(epoch)
+            val()
+            total_epochs += 1
 
+    val()
     test()
     test_per_parameter()
+
+
+
 
 # state = {
 #     'epoch': total_epochs + args.epochs,
@@ -217,11 +310,11 @@ with mlflow.start_run() as run:
 #     'optimizer': optimizer.state_dict()
 # }
 #
-# torch.save(state, '/home/ge75tis/Desktop/oezyurt/model/no_dropout_model_lr5_60_epochs')
+# torch.save(state, '/home/ge75tis/Desktop/oezyurt/model/10_7_UNET/no_dropout_model_lr5_60_epochs')
 # print(total_epochs)
 
 
-# With Learning rate 0.0005 seems to overfit at  epochs
+# With Learning rate 0.0005 seems to overfit at 45-60 epochs
 # Avg. Training Loss: 0.055 at 60 epoch, Minimum Validation Loss: 0.023
 
 # Loss per parameter then comparing with Climatology method of monthly standard deviations.
