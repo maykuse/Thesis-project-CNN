@@ -51,10 +51,19 @@ parser.add_argument(
 parser.add_argument(
     "--test",
     type=bool,
-    default=False,
-metavar="Bool",
+    default=True,
+    metavar="Bool",
     help="Set to true just to see test results on already trained model"
 )
+
+parser.add_argument(
+    "--many-to-one",
+    type=bool,
+    default=False,
+    metavar="Bool",
+    help="Set to True to create many to one models"
+)
+
 
 args = parser.parse_args()
 
@@ -80,6 +89,21 @@ norm_clm = transforms.Normalize((2.78415200e+02, -1.00402647e-01,  2.20140679e-0
                                 (2.11294838e+01, 5.57168569e+00, 4.77363485e+00, 3.35202722e+03,
                                 1.55503555e+01, 3.62274453e-01, 3.57928990e-04))
 
+indices_t2m = torch.tensor([1,2,3,4,5,6])
+t2m_out = torch.tensor([0])
+indices_u10 = torch.tensor([0,1,2,3,4,5,6])
+u10_out = torch.tensor([1])
+indices_v10 = torch.tensor([0,1,3,4,5,6])
+v10_out = torch.tensor([2])
+indices_z = torch.tensor([0,1,2,4,5,6])
+z_out = torch.tensor([3])
+indices_t = torch.tensor([0,1,2,3,5,6])
+t_out = torch.tensor([4])
+indices_tcc = torch.tensor([0,1,2,3,4,6])
+tcc_out = torch.tensor([5])
+indices_tp = torch.tensor([0,1,2,3,4,5])
+tp_out = torch.tensor([6])
+
 
 xr_train = xr.DataArray(train_set)
 np_train = xr_train.to_numpy()
@@ -95,15 +119,6 @@ xr_test = xr.DataArray(test_set)
 np_test = xr_test.to_numpy()
 torch_test = torch.from_numpy(np_test)
 norm_test = norm(torch_test)
-
-weekly_predictions = xr.open_mfdataset('/home/ge75tis/Desktop/oezyurt/climatology/2nd_weekly_pred.nc')
-data_week = weekly_predictions.to_array()
-np_week = data_week.to_numpy()
-np_week_swap = np.swapaxes(np_week, axis1=0, axis2=1)
-clm_resampled = np_week_swap[::24]
-torch_clm = torch.from_numpy(clm_resampled)
-norm_clm = norm_clm(torch_clm)
-
 
 # # You should also think about saving the normalized data as zarr file for more efficient data loading
 
@@ -132,13 +147,6 @@ class TestDataset(Dataset):
     def __len__(self):
         return len(norm_test)
 
-class ClmDataset(Dataset):
-    def __init__(self):
-        self.norm_clm = norm_clm
-    def __getitem__(self, item):
-        return self.norm_clm[item]
-    def __len__(self):
-        return len(norm_clm)
 
 def init_weights(m):
     if isinstance(m, nn.Conv2d) or isinstance(m, nn.ConvTranspose2d):
@@ -170,12 +178,13 @@ else:
 loss_type = nn.L1Loss()
 optimizer = torch.optim.Adam(model.parameters(), lr=args.lr)
 # scheduler = torch.optim.lr_scheduler.ExponentialLR(optimizer, gamma=0.9)
+# call once a platue is reached
 
 # # use saved model states to resume training:
-# state = torch.load('/home/ge75tis/Desktop/oezyurt/model/10_7_UNET/no_dropout_model_lr5_60_epochs')
-# model.load_state_dict(state['state_dict'])
-# optimizer.load_state_dict(state['optimizer'])
-# total_epochs = state['epoch']
+state = torch.load('/home/ge75tis/Desktop/oezyurt/model/10_7_UNET/no_dropout_model_lr5_60_epochs')
+model.load_state_dict(state['state_dict'])
+optimizer.load_state_dict(state['optimizer'])
+total_epochs = state['epoch']
 
 y_loss = {}
 y_loss['train'] = []
@@ -200,11 +209,15 @@ def train(epoch):
     model.train()
     train_loss = 0
     for i, (inputs) in enumerate(train_loader):
-        inputs = inputs.to(device, dtype=torch.float32)
+        # if(args.many_to_one == True):
+        #     input = inputs.index_select(dim=1, index=indices_u10).to(device, dtype=torch.float32)
+        #     target = inputs.index_select(dim=1, index=u10_out).to(device, dtype=torch.float32)
+        # else:
 
+        input = inputs.to(device, dtype=torch.float32)
         optimizer.zero_grad()
-        outputs = model(inputs)
-        loss = loss_type(outputs, inputs[:, :7])
+        outputs = model(input)
+        loss = loss_type(outputs, input[:, :7])
         loss.backward()
         optimizer.step()
         train_loss += loss.item() * len(inputs)
@@ -226,9 +239,9 @@ def val():
 
         pred = model(vals)
         loss_v = loss_type(pred, vals[:, :7])
-        loss_c = loss_type(clms, vals[:, :7])
+        # loss_c = loss_type(clms, vals[:, :7])
         val_loss += loss_v.item()
-        clm_loss += loss_c.item()
+        # clm_loss += loss_c.item()
 
     avg_val_loss = val_loss/len(val_dataset)
     print(f'Average Validation Loss: {avg_val_loss:.6f}')
@@ -300,6 +313,10 @@ with mlflow.start_run() as run:
     val()
     test()
     test_per_parameter()
+
+
+
+
 
 
 

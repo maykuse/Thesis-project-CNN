@@ -10,10 +10,6 @@ import mlflow
 
 device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
 
-# 7 models each of which consists of 6 inputs and 1 output will be designed.
-# Individual parameter prediction based on all other parameters will be observed.
-
-
 num_epochs = 60
 batch_size = 10
 learning_rate = 0.0005
@@ -49,21 +45,7 @@ torch_test = torch.from_numpy(np_test)
 norm_test = norm(torch_test)
 
 
-# IF ALL PARAMETERS ARE IN INPUT, INPUT INDEX SELECTION NOT REQUIRED
-indices_t2m = torch.tensor([1,2,3,4,5,6])
-t2m_out = torch.tensor([0])
-indices_u10 = torch.tensor([0,1,2,3,4,5,6])
-u10_out = torch.tensor([1])
-indices_v10 = torch.tensor([0,1,3,4,5,6])
-v10_out = torch.tensor([2])
-indices_z = torch.tensor([0,1,2,4,5,6])
-z_out = torch.tensor([3])
-indices_t = torch.tensor([0,1,2,3,5,6])
-t_out = torch.tensor([4])
-indices_tcc = torch.tensor([0,1,2,3,4,6])
-tcc_out = torch.tensor([5])
-indices_tp = torch.tensor([0,1,2,3,4,5])
-tp_out = torch.tensor([6])
+
 
 
 class TrainDataset(Dataset):

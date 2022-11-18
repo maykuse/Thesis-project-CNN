@@ -61,10 +61,10 @@ model = UNet(10, 7).to(device)
 loss_type = nn.L1Loss()
 optimizer = torch.optim.Adam(model.parameters(), lr=learning_rate)
 
-state = torch.load('/home/ge75tis/Desktop/oezyurt/model/no_dropout_model_lr5_40_epochs')
-model.load_state_dict(state['state_dict'])
-optimizer.load_state_dict(state['optimizer'])
-total_epochs = state['epoch']
+# state = torch.load('/home/ge75tis/Desktop/oezyurt/model/no_dropout_model_lr5_40_epochs')
+# model.load_state_dict(state['state_dict'])
+# optimizer.load_state_dict(state['optimizer'])
+# total_epochs = state['epoch']
 
 selection_loss = 0
 model.eval()
