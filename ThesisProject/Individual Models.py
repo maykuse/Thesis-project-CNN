@@ -20,6 +20,20 @@ validation_set = zarr.open('/home/ge75tis/Desktop/oezyurt/zarr dataset/resampled
 test_set = zarr.open('/home/ge75tis/Desktop/oezyurt/zarr dataset/resampled/resampled_24_test/')
 # order of the parameters are: t2m, u10, v10, z, t, tcc, tp, lsm, orog, slt
 
+indices_t2m = torch.tensor([1,2,3,4,5,6])
+t2m_out = torch.tensor([0])
+indices_u10 = torch.tensor([0,2,3,4,5,6])
+u10_out = torch.tensor([1])
+indices_v10 = torch.tensor([0,1,3,4,5,6])
+v10_out = torch.tensor([2])
+indices_z = torch.tensor([0,1,2,4,5,6])
+z_out = torch.tensor([3])
+indices_t = torch.tensor([0,1,2,3,5,6])
+t_out = torch.tensor([4])
+indices_tcc = torch.tensor([0,1,2,3,4,6])
+tcc_out = torch.tensor([5])
+indices_tp = torch.tensor([0,1,2,3,4,5])
+tp_out = torch.tensor([6])
 
 norm = transforms.Normalize((2.78415200e+02, -1.00402647e-01,  2.20140679e-01,  5.40906312e+04,
                                 2.74440506e+02,  6.76697789e-01,  9.80986749e-05,  3.37078289e-01,
@@ -43,9 +57,6 @@ xr_test = xr.DataArray(test_set)
 np_test = xr_test.to_numpy()
 torch_test = torch.from_numpy(np_test)
 norm_test = norm(torch_test)
-
-
-
 
 
 class TrainDataset(Dataset):
@@ -87,11 +98,12 @@ val_loader = torch.utils.data.DataLoader(val_dataset)
 test_dataset = TestDataset()
 test_loader = torch.utils.data.DataLoader(test_dataset)
 
-model = UNet(7,1).to(device)
+model = UNet(6,1).to(device)
 model.apply(init_weights)
 
 loss_type = nn.L1Loss()
 optimizer = torch.optim.Adam(model.parameters(), lr=learning_rate)
+scheduler = torch.optim.lr_scheduler.ExponentialLR(optimizer, gamma=0.5)
 
 # state = torch.load('/home/ge75tis/Desktop/oezyurt/model/6_1_UNET/one_output_lr0005_epoch10')
 # model.load_state_dict(state['state_dict'])
@@ -101,13 +113,28 @@ optimizer = torch.optim.Adam(model.parameters(), lr=learning_rate)
 # The model architecture is always 6 inputs predicting the 1 remaining output
 # changing the indices will change the input/output combinations of the model
 
+y_loss = {}
+y_loss['train'] = []
+y_loss['val'] = []
+x_epoch = []
+
+fig = plt.figure(figsize=(36, 12))
+ax0 = fig.add_subplot(121, title="loss")
+
+def draw_curve(current_epoch):
+    x_epoch.append(current_epoch)
+    ax0.plot(x_epoch, y_loss['train'], 'ro-', label='train', markevery=5)
+    ax0.plot(x_epoch, y_loss['val'], 'bo-', label='val', markevery=5)
+    if current_epoch == 0:
+        ax0.legend()
+    fig.savefig('/home/ge75tis/Desktop/t2m_loss_curve.jpg', dpi=100)
 
 def train(epoch):
     model.train()
     train_loss = 0
     for i, (inputs) in enumerate(train_loader):
-        input = inputs.index_select(dim=1, index=indices_u10).to(device, dtype=torch.float32)
-        target = inputs.index_select(dim=1, index=u10_out).to(device, dtype=torch.float32)
+        input = inputs.index_select(dim=1, index=indices_t2m).to(device, dtype=torch.float32)
+        target = inputs.index_select(dim=1, index=t2m_out_out).to(device, dtype=torch.float32)
 
         output = model(input)
         loss = loss_type(output, target)
@@ -117,34 +144,40 @@ def train(epoch):
         optimizer.step()
         train_loss += loss.item() * len(inputs)
 
+    if(epoch >= 35 and epoch % 5 == 0):
+        scheduler.step()
+
     avg_train_loss = train_loss/len(train_dataset)
     print(f'Epoch: {total_epochs}, Average Training Loss: {avg_train_loss:.6f}')
-    log_scalar("u10_individual_train_loss", avg_train_loss)
+    log_scalar("t2m_individual_train_loss", avg_train_loss)
+    y_loss['train'].append(avg_train_loss)
 
 
 def val():
     val_loss = 0
     model.eval()
     for i, (vals) in enumerate(val_loader):
-        val = vals.index_select(dim=1, index=indices_u10).to(device, dtype=torch.float32)
-        target = vals.index_select(dim=1, index=u10_out).to(device, dtype=torch.float32)
+        val = vals.index_select(dim=1, index=indices_t2m).to(device, dtype=torch.float32)
+        target = vals.index_select(dim=1, index=t2m_out).to(device, dtype=torch.float32)
 
         output = model(val)
-        loss1 = loss_type(output, target)
+        lossv = loss_type(output, target)
 
-        val_loss += loss1.item()
+        val_loss += lossv.item()
 
     avg_val_loss = val_loss/len(val_dataset)
     print(f'Average Validation Loss: {avg_val_loss:.6f}')
-    log_scalar("u10_individual_val_loss", avg_val_loss)
+    log_scalar("t2m_individual_val_loss", avg_val_loss)
+    y_loss['val'].append(avg_val_loss)
+    draw_curve(total_epochs)
 
 
 def test():
     test_loss = 0
     model.eval()
     for i, (tests) in enumerate(test_loader):
-        test = tests.index_select(dim=1, index=indices_u10).to(device, dtype=torch.float32)
-        target = target.index_select(dim=1, index=u10_out).to(device, dtype=torch.float32)
+        test = tests.index_select(dim=1, index=indices_t2m).to(device, dtype=torch.float32)
+        target = tests.index_select(dim=1, index=t2m_out).to(device, dtype=torch.float32)
 
         output = model(test)
         loss_t = loss_type(output, target)
@@ -153,7 +186,7 @@ def test():
     avg_test_loss = test_loss/len(test_dataset)
     print(f'Average Test Loss at the End: {avg_test_loss:.6f}')
 
-    log_scalar("v10 _individual_test_loss", avg_test_loss)
+    log_scalar("t2m_individual_test_loss", avg_test_loss)
 
 
 def log_scalar(name, value):

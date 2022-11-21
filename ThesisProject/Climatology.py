@@ -73,17 +73,22 @@ import matplotlib.pyplot as plt
 
 device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
 
-norm = transforms.Normalize((2.78415200e+02, -1.00402647e-01,  2.20140679e-01,  5.40906312e+04,
-                                2.74440506e+02,  6.76697789e-01,  9.80986749e-05,  3.37078289e-01,
-                                3.79497583e+02,  6.79204298e-01),
-                            (2.11294838e+01, 5.57168569e+00, 4.77363485e+00, 3.35202722e+03,
-                            1.55503555e+01, 3.62274453e-01, 3.57928990e-04, 4.59003773e-01,
+norm = transforms.Normalize((2.78382787e+02, -8.24015036e-02,  2.22236745e-01,
+                            5.40970992e+04, 2.74478000e+02,  6.73734047e-01,  9.93376168e-05,  3.37078289e-01,
+                            3.79497583e+02,  6.79204298e-01),
+                            (2.12668048e+01, 5.54037601e+00, 4.76958159e+00, 3.35185473e+03,
+                            1.56055035e+01, 3.62924674e-01, 3.67389046e-04, 4.59003773e-01,
                             8.59872249e+02, 1.16888408e+00))
 
-norm_clm = transforms.Normalize((2.78415200e+02, -1.00402647e-01,  2.20140679e-01,  5.40906312e+04,
-                                2.74440506e+02,  6.76697789e-01,  9.80986749e-05),
-                                (2.11294838e+01, 5.57168569e+00, 4.77363485e+00, 3.35202722e+03,
-                                1.55503555e+01, 3.62274453e-01, 3.57928990e-04))
+# norm_clm = transforms.Normalize((2.78415200e+02, -1.00402647e-01,  2.20140679e-01,  5.40906312e+04,
+#                                 2.74440506e+02,  6.76697789e-01,  9.80986749e-05),
+#                                 (2.11294838e+01, 5.57168569e+00, 4.77363485e+00, 3.35202722e+03,
+#                                 1.55503555e+01, 3.62274453e-01, 3.57928990e-04))
+
+norm_clm = transforms.Normalize((2.78382787e+02, -8.24015036e-02,  2.22236745e-01,
+                                            5.40970992e+04, 2.74478000e+02,  6.73734047e-01,  9.93376168e-05),
+                                            (2.12668048e+01, 5.54037601e+00, 4.76958159e+00, 3.35185473e+03,
+                                            1.56055035e+01, 3.62924674e-01, 3.67389046e-04))
 
 
 validation_set = zarr.open('/home/ge75tis/Desktop/oezyurt/zarr dataset/concat/const_concat_val/')
@@ -168,21 +173,42 @@ clm_month_loader = torch.utils.data.DataLoader(clm_month_dataset)
 clm_whole_dataset = CLMWHOLEDataset()
 clm_whole_loader = torch.utils.data.DataLoader(clm_whole_dataset)
 
-loss_type = nn.L1Loss()
+loss_type = nn.MSELoss()
 
-# reconstruction loss per interval and per parameter
-# THERE IS ONLY PER INTERVAL NOW, ADD PER PARAMETER
-# ALSO NOT WHOLE AVERAGE BUT SEASONAL PREDICTION IS TO BE COMPARED, 4 SEASONS
+clm_week_t2m = [0 for j in range(52)]
+clm_week_u10 = [0 for j in range(52)]
+clm_week_v10 = [0 for j in range(52)]
+clm_week_z = [0 for j in range(52)]
+clm_week_t = [0 for j in range(52)]
+clm_week_tcc = [0 for j in range(52)]
+clm_week_tp = [0 for j in range(52)]
+
+clm_month_t2m = [0 for k in range(12)]
+clm_month_u10 = [0 for k in range(12)]
+clm_month_v10 = [0 for k in range(12)]
+clm_month_z = [0 for k in range(12)]
+clm_month_t = [0 for k in range(12)]
+clm_month_tcc = [0 for k in range(12)]
+clm_month_tp = [0 for k in range(12)]
 
 clm_week_loss = [0 for j in range(52)]
 clm_month_loss = [0 for k in range(12)]
-clm_whole_loss = 0
+
 index = 0
 index_month = 0
 
 for i, (vals, clms) in enumerate(zip(val_loader, clm_month_loader)):
     vals = vals.to(device, dtype=torch.float32)
-    clms = clms.to(device, dtype=torch.float32)
+    pred = clms.to(device, dtype=torch.float32)
+    t2m_loss = 0
+    u10_loss = 0
+    v10_loss = 0
+    z_loss = 0
+    t_loss = 0
+    tcc_loss = 0
+    tp_loss = 0
+    whole_loss = 0
+
     # if(i % 168 == 0 and i != 0):
     #     index += 1
     #     if (index == 52):
@@ -197,30 +223,80 @@ for i, (vals, clms) in enumerate(zip(val_loader, clm_month_loader)):
         index = 0
         index_month = 0
 
-    loss_c = loss_type(clms, vals[:, :7])
-    # clm_week_loss[index] += loss_c.item()
+    # t2m_loss = torch.sqrt(loss_type(pred.select(dim=1, index=0), vals.select(dim=1, index=0)))
+    # u10_loss = torch.sqrt(loss_type(pred.select(dim=1, index=1), vals.select(dim=1, index=1)))
+    # v10_loss = torch.sqrt(loss_type(pred.select(dim=1, index=2), vals.select(dim=1, index=2)))
+    # z_loss = torch.sqrt(loss_type(pred.select(dim=1, index=3), vals.select(dim=1, index=3)))
+    # t_loss = torch.sqrt(loss_type(pred.select(dim=1, index=4), vals.select(dim=1, index=4)))
+    # tcc_loss = torch.sqrt(loss_type(pred.select(dim=1, index=5), vals.select(dim=1, index=5)))
+    # tp_loss = torch.sqrt(loss_type(pred.select(dim=1, index=6), vals.select(dim=1, index=6)))
+
+
+
+    # clm_week_t2m[index] += t2m_loss.item()
+    # clm_week_u10[index] += u10_loss.item()
+    # clm_week_v10[index] += v10_loss.item()
+    # clm_week_z[index] += z_loss.item()
+    # clm_week_t[index] += t_loss.item()
+    # clm_week_tcc[index] += tcc_loss.item()
+    # clm_week_tp[index] += tp_loss.item()
+
+
+    loss_c = loss_type(pred, vals[:, :7])
     clm_month_loss[index_month] += loss_c.item()
-    # clm_whole_loss += loss_c
+
 
 # for i in range(52):
 #     if(i == 51):
+#         # clm_week_t2m[i] = clm_week_t2m[i] / 384
+#         # clm_week_u10[i] = clm_week_u10[i] / 384
+#         # clm_week_v10[i] = clm_week_v10[i] / 384
+#         # clm_week_z[i] = clm_week_z[i] / 384
+#         # clm_week_t[i] = clm_week_t[i] / 384
+#         # clm_week_tcc[i] = clm_week_tcc[i] / 384
+#         # clm_week_tp[i] = clm_week_tp[i] / 384
 #         clm_week_loss[i] = clm_week_loss[i] / 384
 #     else:
+#         # clm_week_t2m[i] = clm_week_t2m[i] / 336
+#         # clm_week_u10[i] = clm_week_u10[i] / 336
+#         # clm_week_v10[i] = clm_week_v10[i] / 336
+#         # clm_week_z[i] = clm_week_z[i] / 336
+#         # clm_week_t[i] = clm_week_t[i] / 336
+#         # clm_week_tcc[i] = clm_week_tcc[i] / 336
+#         # clm_week_tp[i] = clm_week_tp[i] / 336
 #         clm_week_loss[i] = clm_week_loss[i] / 336
 
 for i in range(12):
     clm_month_loss[i] = clm_month_loss[i] / 1460
+#     clm_month_t2m[i] = clm_month_t2m[i] / 1460
+#     clm_month_u10[i] = clm_month_u10[i] / 1460
+#     clm_month_v10[i] = clm_month_v10[i] / 1460
+#     clm_month_z[i] = clm_month_z[i] / 1460
+#     clm_month_t[i] = clm_month_t[i] / 1460
+#     clm_month_tcc[i] = clm_month_tcc[i] / 1460
+#     clm_month_tp[i] = clm_month_tp[i] / 1460
 
 
-# print(clm_week_loss)
+
+
 # print(sum(clm_week_loss)/len(clm_week_loss))
 # print(clm_month_loss)
 # print(sum(clm_month_loss)/len(clm_month_loss))
 #
-# fig = plt.figure()
-# plt.plot(clm_month_loss)
-# fig.suptitle('climatology prediction loss by month')
-# plt.xlabel('non calendar month (every 30 days)')
-# plt.ylabel('Average loss')
-# plt.show()
-# fig.savefig("/home/ge75tis/Desktop/monthly_climatology_loss")
+
+fig = plt.figure()
+# plt.plot(clm_week_t2m, label = "t2m")
+# plt.plot(clm_week_u10, label = "u10")
+# plt.plot(clm_week_v10, label = "v10")
+# plt.plot(clm_week_z, label = "z")
+# plt.plot(clm_week_t, label = "t")
+# plt.plot(clm_week_tcc, label = "tcc")
+# plt.plot(clm_week_tp, label = "tp")
+# plt.legend(loc='center right')
+
+plt.plot(clm_month_loss)
+fig.suptitle('climatology prediction MSE loss by month')
+plt.xlabel('non calendar month (every 30 days)')
+plt.ylabel('Average loss')
+plt.show()
+fig.savefig("/home/ge75tis/Desktop/monthly_climatology_MSE_loss_whole")
