@@ -7,18 +7,27 @@ from torchvision import transforms, utils
 import zarr
 import xarray as xr
 import mlflow
+import matplotlib.pyplot as plt
 
 device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
 
-num_epochs = 60
+num_epochs = 20
 batch_size = 10
-learning_rate = 0.0005
+learning_rate = 0.001
 total_epochs = 0
 
 train_set = zarr.open('/home/ge75tis/Desktop/oezyurt/zarr dataset/resampled/resampled_24_train/')
 validation_set = zarr.open('/home/ge75tis/Desktop/oezyurt/zarr dataset/resampled/resampled_24_val/')
 test_set = zarr.open('/home/ge75tis/Desktop/oezyurt/zarr dataset/resampled/resampled_24_test/')
 # order of the parameters are: t2m, u10, v10, z, t, tcc, tp, lsm, orog, slt
+
+avg_t2m = 0
+avg_u10 = 0
+avg_v10 = 0
+avg_z = 0
+avg_t = 0
+avg_tcc = 0
+avg_tp = 0
 
 indices_t2m = torch.tensor([1,2,3,4,5,6])
 t2m_out = torch.tensor([0])
@@ -103,7 +112,7 @@ model.apply(init_weights)
 
 loss_type = nn.L1Loss()
 optimizer = torch.optim.Adam(model.parameters(), lr=learning_rate)
-scheduler = torch.optim.lr_scheduler.ExponentialLR(optimizer, gamma=0.5)
+scheduler = torch.optim.lr_scheduler.ExponentialLR(optimizer, gamma=0.25)
 
 # state = torch.load('/home/ge75tis/Desktop/oezyurt/model/6_1_UNET/one_output_lr0005_epoch10')
 # model.load_state_dict(state['state_dict'])
@@ -133,23 +142,22 @@ def train(epoch):
     model.train()
     train_loss = 0
     for i, (inputs) in enumerate(train_loader):
-        input = inputs.index_select(dim=1, index=indices_t2m).to(device, dtype=torch.float32)
-        target = inputs.index_select(dim=1, index=t2m_out_out).to(device, dtype=torch.float32)
-
-        output = model(input)
-        loss = loss_type(output, target)
+        input = inputs.index_select(dim=1, index=indices_tp).to(device, dtype=torch.float32)
+        target = inputs.index_select(dim=1, index=tp_out).to(device, dtype=torch.float32)
 
         optimizer.zero_grad()
+        output = model(input)
+        loss = loss_type(output, target)
         loss.backward()
         optimizer.step()
         train_loss += loss.item() * len(inputs)
 
-    if(epoch >= 35 and epoch % 5 == 0):
+    if(epoch >= 5 and epoch % 2 == 0):
         scheduler.step()
 
     avg_train_loss = train_loss/len(train_dataset)
     print(f'Epoch: {total_epochs}, Average Training Loss: {avg_train_loss:.6f}')
-    log_scalar("t2m_individual_train_loss", avg_train_loss)
+    log_scalar("tp_individual_train_loss", avg_train_loss)
     y_loss['train'].append(avg_train_loss)
 
 
@@ -157,27 +165,26 @@ def val():
     val_loss = 0
     model.eval()
     for i, (vals) in enumerate(val_loader):
-        val = vals.index_select(dim=1, index=indices_t2m).to(device, dtype=torch.float32)
-        target = vals.index_select(dim=1, index=t2m_out).to(device, dtype=torch.float32)
+        val = vals.index_select(dim=1, index=indices_tp).to(device, dtype=torch.float32)
+        target = vals.index_select(dim=1, index=tp_out).to(device, dtype=torch.float32)
 
         output = model(val)
         lossv = loss_type(output, target)
-
         val_loss += lossv.item()
 
     avg_val_loss = val_loss/len(val_dataset)
     print(f'Average Validation Loss: {avg_val_loss:.6f}')
-    log_scalar("t2m_individual_val_loss", avg_val_loss)
+    log_scalar("tp_individual_val_loss", avg_val_loss)
     y_loss['val'].append(avg_val_loss)
-    draw_curve(total_epochs)
+    # draw_curve(total_epochs)
 
 
 def test():
     test_loss = 0
     model.eval()
     for i, (tests) in enumerate(test_loader):
-        test = tests.index_select(dim=1, index=indices_t2m).to(device, dtype=torch.float32)
-        target = tests.index_select(dim=1, index=t2m_out).to(device, dtype=torch.float32)
+        test = tests.index_select(dim=1, index=indices_tp).to(device, dtype=torch.float32)
+        target = tests.index_select(dim=1, index=tp_out).to(device, dtype=torch.float32)
 
         output = model(test)
         loss_t = loss_type(output, target)
@@ -186,16 +193,54 @@ def test():
     avg_test_loss = test_loss/len(test_dataset)
     print(f'Average Test Loss at the End: {avg_test_loss:.6f}')
 
-    log_scalar("t2m_individual_test_loss", avg_test_loss)
-
+    log_scalar("tp_individual_test_loss", avg_test_loss)
 
 def log_scalar(name, value):
     mlflow.log_metric(name, value)
 
+# with mlflow.start_run() as run:
+#     mlflow.log_param('batch_size', batch_size)
+#     mlflow.log_param('lr', learning_rate)
+#     mlflow.log_param('total_epochs', num_epochs)
+#
+#     for epoch in range(num_epochs):
+#         train(epoch)
+#         val()
+#         total_epochs += 1
+#
+#     test()
+#
+#
+# state = {
+#     'epoch': num_epochs,
+#     'state_dict': model.state_dict(),
+#     'optimizer': optimizer.state_dict()
+# }
+#
+# torch.save(state, '/home/ge75tis/Desktop/oezyurt/model/6_1_UNET/tp_20_epochs')
+# print(total_epochs)
 
-for epoch in range(num_epochs):
-    train(epoch)
-    val()
-    total_epochs += 1
 
-test()
+labels = ['T2M', 'U10', 'V10', 'Z', 'T', 'TCC', 'TP']
+many_to_one_losses = [0.0627, 0.2416, 0.2759, 0.0543, 0.0822, 0.4916, 0.2332]
+clm_losses = [0.1213, 0.5502, 0.6464, 0.2046, 0.1926, 0.6943, 0.3574]
+
+x = np.arange(len(labels))
+width = 0.3
+
+fig3, ax = plt.subplots()
+rects1 = ax.bar(x - width/2, many_to_one_losses, width, label='many_to_one_model')
+rects2 = ax.bar(x + width/2, clm_losses, width, label='climatology')
+
+ax.set_ylabel('L1 Losses')
+ax.set_title('L1 Validation Losses per parameter')
+ax.set_xticks(x, labels)
+ax.legend()
+
+ax.bar_label(rects1, padding=3)
+ax.bar_label(rects2, padding=3)
+
+fig3.tight_layout()
+
+plt.show()
+fig3.savefig('/home/ge75tis/Desktop/many_to_one_clm_comparison')

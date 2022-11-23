@@ -5,6 +5,10 @@ from torch.utils.data import Dataset, DataLoader
 import zarr
 import xarray as xr
 
+
+
+
+
 # COPIED FROM TRAINING TESTING START
 ### new = wxee.xarray.DataArrayAccessor(xrdataset).normalize()
 ### test_array = new.to_numpy()
