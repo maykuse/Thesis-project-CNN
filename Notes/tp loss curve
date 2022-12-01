@@ -21,4 +21,4 @@ V10:  Validation Loss: 0.275862,	Test Loss: 0.277890
 Z:    Validation Loss: 0.054296,	Test Loss: 0.054547
 T:    Validation Loss: 0.082200,	Test Loss: 0.082060
 TCC:  Validation Loss: 0.491644,	Test Loss: 0.491097
-TP:   Validation Loss:
+TP:   Validation Loss: 0.233182,	Test Loss: 0.232691
