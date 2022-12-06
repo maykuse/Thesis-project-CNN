@@ -1,0 +1,15 @@
+artifact_uri: file:///home/ge75tis/Desktop/Thesis-project-CNN/ThesisProject/mlruns/0/211b8c09bfe94d908bfbbf6bd8fe638d/artifacts
+end_time: 1670152355874
+entry_point_name: ''
+experiment_id: '0'
+lifecycle_stage: active
+run_id: 211b8c09bfe94d908bfbbf6bd8fe638d
+run_name: angry-stoat-328
+run_uuid: 211b8c09bfe94d908bfbbf6bd8fe638d
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1670152353614
+status: 3
+tags: []
+user_id: ge75tis

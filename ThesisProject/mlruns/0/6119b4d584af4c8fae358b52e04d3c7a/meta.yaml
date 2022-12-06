@@ -1,0 +1,15 @@
+artifact_uri: file:///home/ge75tis/Desktop/Thesis-project-CNN/ThesisProject/mlruns/0/6119b4d584af4c8fae358b52e04d3c7a/artifacts
+end_time: 1669912207028
+entry_point_name: ''
+experiment_id: '0'
+lifecycle_stage: active
+run_id: 6119b4d584af4c8fae358b52e04d3c7a
+run_name: valuable-moose-187
+run_uuid: 6119b4d584af4c8fae358b52e04d3c7a
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1669912193584
+status: 4
+tags: []
+user_id: ge75tis

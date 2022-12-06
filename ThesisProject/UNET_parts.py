@@ -33,7 +33,7 @@ class GaussianDropout(nn.Module):
         """
         if self.train():
             # N(1, alpha)
-            epsilon = torch.randn(x.size()) * self.alpha + 1
+            epsilon = torch.randn(x.size()) * self.alpha # + 1 # to make the mean 1? but we want 0 mean
             #
             # epsilon = Variable(epsilon)
             if x.is_cuda:

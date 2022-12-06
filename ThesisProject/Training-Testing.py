@@ -43,7 +43,7 @@ parser.add_argument(
 parser.add_argument(
     "--dropout",
     type=bool,
-    default=False,
+    default=True,
     metavar="Bool",
     help="Set to true to apply feature dropout to input"
 )
@@ -217,7 +217,7 @@ def val():
     print(f'Average Validation Loss: {avg_val_loss:.6f}')
     y_loss['val'].append(avg_val_loss)
 
-    draw_curve(total_epochs)
+    # draw_curve(total_epochs)
     log_scalar("val_loss", avg_val_loss)
 
 
@@ -235,41 +235,22 @@ def test():
 
     log_scalar("test_loss", avg_test_loss)
 
+param_loss = [0 for i in range(7)]
+avg_param_loss = [0 for i in range(7)]
+labels = ["T2M", "U10", "V10", 'Z', 'T', "TCC", "TP"]
 
 def test_per_parameter():
     model.eval()
-    t2m_loss = 0
-    u10_loss = 0
-    v10_loss = 0
-    z_loss = 0
-    t_loss = 0
-    tcc_loss = 0
-    tp_loss = 0
     for i, (test) in enumerate(test_loader):
         test = test.to(device, dtype=torch.float32)
         pred = model(test)
-        t2m_loss += loss_type(pred.select(dim=1, index=0), test.select(dim=1, index=0)) * len(test)
-        u10_loss += loss_type(pred.select(dim=1, index=1), test.select(dim=1, index=1)) * len(test)
-        v10_loss += loss_type(pred.select(dim=1, index=2), test.select(dim=1, index=2)) * len(test)
-        z_loss += loss_type(pred.select(dim=1, index=3), test.select(dim=1, index=3)) * len(test)
-        t_loss += loss_type(pred.select(dim=1, index=4), test.select(dim=1, index=4)) * len(test)
-        tcc_loss += loss_type(pred.select(dim=1, index=5), test.select(dim=1, index=5)) * len(test)
-        tp_loss += loss_type(pred.select(dim=1, index=6), test.select(dim=1, index=6)) * len(test)
+        for j in range(7):
+            param_loss[j] += loss_type(pred.select(dim=1, index=j), test.select(dim=1, index=j)) * len(test)
 
-    avg_t2m = t2m_loss/len(test_dataset)
-    avg_u10 = u10_loss/len(test_dataset)
-    avg_v10 = v10_loss/len(test_dataset)
-    avg_z = z_loss/len(test_dataset)
-    avg_t = t_loss/len(test_dataset)
-    avg_tcc = tcc_loss/len(test_dataset)
-    avg_tp = tp_loss/len(test_dataset)
-    print(f'Test Loss for T2M: {avg_t2m:.6f}')
-    print(f'Test Loss for U10: {avg_u10:.6f}')
-    print(f'Test Loss for V10: {avg_v10:.6f}')
-    print(f'Test Loss for Z: {avg_z:.6f}')
-    print(f'Test Loss for T: {avg_t:.6f}')
-    print(f'Test Loss for TCC: {avg_tcc:.6f}')
-    print(f'Test Loss for TP: {avg_tp:.6f}')
+    for i in range(7):
+        avg_param_loss[i] = param_loss[i] / len(test_dataset)
+    for i in range(7):
+        print(f'Test Loss for {labels[i]}: {avg_param_loss[i]:.6f}')
 
 
 def log_scalar(name, value):
@@ -291,13 +272,11 @@ with mlflow.start_run() as run:
     test_per_parameter()
 
 
-
-
-state = {
-    'epoch': total_epochs + args.epochs,
-    'state_dict': model.state_dict(),
-    'optimizer': optimizer.state_dict()
-}
-
-torch.save(state, '/home/ge75tis/Desktop/oezyurt/model/10_7_UNET/nodrop_scheduler_60_epochs')
-print(total_epochs)
+# state = {
+#     'epoch': total_epochs + args.epochs,
+#     'state_dict': model.state_dict(),
+#     'optimizer': optimizer.state_dict()
+# }
+#
+# torch.save(state, '/home/ge75tis/Desktop/oezyurt/model/10_7_UNET/nodrop_scheduler_60_epochs')
+# print(total_epochs)

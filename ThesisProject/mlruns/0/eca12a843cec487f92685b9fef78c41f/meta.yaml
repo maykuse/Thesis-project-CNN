@@ -1,0 +1,15 @@
+artifact_uri: file:///home/ge75tis/Desktop/Thesis-project-CNN/ThesisProject/mlruns/0/eca12a843cec487f92685b9fef78c41f/artifacts
+end_time: 1669912395660
+entry_point_name: ''
+experiment_id: '0'
+lifecycle_stage: active
+run_id: eca12a843cec487f92685b9fef78c41f
+run_name: sneaky-conch-656
+run_uuid: eca12a843cec487f92685b9fef78c41f
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1669912382205
+status: 4
+tags: []
+user_id: ge75tis
