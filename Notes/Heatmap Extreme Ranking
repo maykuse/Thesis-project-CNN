@@ -1,0 +1,63 @@
+Parenthesis means examine more cautiously. (f.e smaller extremes show different behavior)
+
+T2M:
+CASE P_X ~ 0, P_OTHERS ~ 1: RANKED FROM LOWEST TO HIGHEST LOSS:
+(Z, T), V10, U10, TCC, TP ---> BUT WHEN LOOKING AT a smaller extreme T comes before Z
+
+CASE P_X ~ 1, P_OTHERS ~ 0: RANKED FROM HIGHEST TO LOWEST LOSS:
+T, V10, U10, Z, TCC, TP
+
+
+
+U10:
+CASE P_X ~ 0, P_OTHERS ~ 1:
+V10, Z, TP, T, TCC, T2M
+
+CASE P_X ~ 1, P_OTHERS ~ 0:
+V10, (TP, Z), T, TCC, T2M
+
+
+
+V10:
+CASE P_X ~ 0, P_OTHERS ~ 1:
+U10, (Z, TCC, TP), T, T2M
+
+CASE P_X ~ 1, P_OTHERS ~ 0:
+U10, TP, Z, TCC, T, T2M
+
+
+
+Z:
+CASE P_X ~ 0, P_OTHERS ~ 1:
+T, U10, V10, T2M, TP, TCC
+
+CASE P_X ~ 1, P_OTHERS ~ 0:
+T, U10, V10, T2M, (TCC, TP)
+
+
+
+T:
+CASE P_X ~ 0, P_OTHERS ~ 1:
+T2M, Z, V10, (TCC, U10, TP)
+
+CASE P_X ~ 1, P_OTHERS ~ 0:
+T2M, Z, V10, (U10, TCC, TP)
+
+
+
+TCC:
+CASE P_X ~ 0, P_OTHERS ~ 1:
+V10, (T, TP), U10, Z, T2M
+
+CASE P_X ~ 1, P_OTHERS ~ 0:
+(TP), V10, (U10), T, Z, T2M
+U10, TP, V10, T, Z, T2M
+
+
+
+TP:
+CASE P_X ~ 0, P_OTHERS ~ 1:
+V10, U10, TCC, Z, T, T2M
+
+CASE P_X ~ 1, P_OTHERS ~ 0:
+U10, V10, TCC, Z, T, T2M

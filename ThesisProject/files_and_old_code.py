@@ -4,9 +4,68 @@ import numpy as np
 from torch.utils.data import Dataset, DataLoader
 import zarr
 import xarray as xr
+import torch
 
 
-
+# for i in range(52):
+#      if(i == 51):
+#         t2m_week_loss[i] = t2m_week_loss[i] / 16
+#         u10_week_loss[i] = u10_week_loss[i] / 16
+#         v10_week_loss[i] = v10_week_loss[i] / 16
+#         z_week_loss[i] = z_week_loss[i] / 16
+#         t_week_loss[i] = t_week_loss[i] / 16
+#         tcc_week_loss[i] = tcc_week_loss[i] / 16
+#         tp_week_loss[i] = tp_week_loss[i] / 16
+#      else:
+#         t2m_week_loss[i] = t2m_week_loss[i] / 14
+#         u10_week_loss[i] = u10_week_loss[i] / 14
+#         v10_week_loss[i] = v10_week_loss[i] / 14
+#         z_week_loss[i] = z_week_loss[i] / 14
+#         t_week_loss[i] = t_week_loss[i] / 14
+#         tcc_week_loss[i] = tcc_week_loss[i] / 14
+#         tp_week_loss[i] = tp_week_loss[i] / 14
+#
+# for i in range(12):
+#     if(i == 0 or i == 2 or i == 4 or i == 6 or i == 7 or i == 9 or i == 11):
+#         clm_month_t2m[i] = clm_month_t2m[i] / 62
+#         clm_month_u10[i] = clm_month_u10[i] / 62
+#         clm_month_v10[i] = clm_month_v10[i] / 62
+#         clm_month_z[i] = clm_month_z[i] / 62
+#         clm_month_t[i] = clm_month_t[i] / 62
+#         clm_month_tcc[i] = clm_month_tcc[i] / 62
+#         clm_month_tp[i] = clm_month_tp[i] / 62
+#     elif(i == 3 or i == 5 or i == 8 or i == 10):
+#         clm_month_t2m[i] = clm_month_t2m[i] / 60
+#         clm_month_u10[i] = clm_month_u10[i] / 60
+#         clm_month_v10[i] = clm_month_v10[i] / 60
+#         clm_month_z[i] = clm_month_z[i] / 60
+#         clm_month_t[i] = clm_month_t[i] / 60
+#         clm_month_tcc[i] = clm_month_tcc[i] / 60
+#         clm_month_tp[i] = clm_month_tp[i] / 60
+#     elif(i == 1):
+#         clm_month_t2m[i] = clm_month_t2m[i] / 56
+#         clm_month_u10[i] = clm_month_u10[i] / 56
+#         clm_month_v10[i] = clm_month_v10[i] / 56
+#         clm_month_z[i] = clm_month_z[i] / 56
+#         clm_month_t[i] = clm_month_t[i] / 56
+#         clm_month_tcc[i] = clm_month_tcc[i] / 56
+#         clm_month_tp[i] = clm_month_tp[i] / 56
+#
+# fig = plt.figure()
+# plt.plot(clm_month_t2m, label="t2m")
+# plt.plot(clm_month_u10, label="u10")
+# plt.plot(clm_month_v10, label="v10")
+# plt.plot(clm_month_z, label="z")
+# plt.plot(clm_month_t, label="t")
+# plt.plot(clm_month_tcc, label="tcc")
+# plt.plot(clm_month_tp, label="tp")
+# plt.legend(loc='center right')
+#
+# fig.suptitle('many-to-one model prediction L1 loss by month per parameter')
+# plt.xlabel('calendar months')
+# plt.ylabel('Average loss')
+# plt.show()
+# fig.savefig("/home/ge75tis/Desktop/per_param_unet_loss_by_month_L1")
 
 
 # COPIED FROM TRAINING TESTING START
