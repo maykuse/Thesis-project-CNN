@@ -8,6 +8,7 @@ A) is the pattern qualitatively the same for all samplesor are there differences
 ---
 once more to split the dataset by months and compute the heatmaps for each month separately, and illustrate whether there are variations throughout the year.
 ---
+TCC, TP, V10
 
 B) Can one find out things about multi-parameter relations, like if A and B both are noisy, then the prediction becomes particularly bad.
 

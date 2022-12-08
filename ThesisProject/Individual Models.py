@@ -12,6 +12,7 @@ import mlflow
 import matplotlib.pyplot as plt
 import seaborn as sns
 from matplotlib.colors import LogNorm, Normalize
+import pandas as pd
 
 device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
 
@@ -115,7 +116,7 @@ val_loader = torch.utils.data.DataLoader(val_dataset)
 test_dataset = TestDataset()
 test_loader = torch.utils.data.DataLoader(test_dataset)
 
-train_saved = True
+train_saved = False
 all_individual_models = False
 
 train_model = UNet(6,1).to(device)
@@ -125,7 +126,7 @@ optimizer = torch.optim.Adam(train_model.parameters(), lr=learning_rate)
 scheduler = torch.optim.lr_scheduler.ExponentialLR(optimizer, gamma=0.5)
 
 if(train_saved):
-    train_state = torch.load('/home/ge75tis/Desktop/oezyurt/model/6_1_UNET/v10_gaussiandropout_35_epochs')
+    train_state = torch.load('/home/ge75tis/Desktop/oezyurt/model/6_1_UNET/t2m_gaussiandropout_35_epochs')
     train_model.load_state_dict(train_state['state_dict'])
     optimizer.load_state_dict(train_state['optimizer'])
     total_epochs = train_state['epoch']
@@ -190,56 +191,143 @@ val_loss = [0 for i in range(7)]
 test_loss = [0 for i in range(7)]
 avg_val_loss = [0 for i in range(7)]
 avg_test_loss = [0 for i in range(7)]
-avg_val_loss_gridded = [[[0 for i in range(7)] for j in range(7)] for k in range(6)]
+avg_val_loss_gridded_m = [[[[0 for l in range(12)] for i in range(2)] for j in range(2)] for k in range(6)]
+avg_val_loss_gridded = [[[0 for i in range(2)] for j in range(2)] for k in range(6)]
 
+month = False
+graph = False
+num_of_days_monthly = [31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31]
+inc_point = [31, 59, 90, 120, 151, 181, 212, 243, 273, 304, 334]
+index_month = 0
+
+all_labels = [["u10", "v10", 'z', 't', "tcc", "tp"], ["t2m", "v10", 'z', 't', "tcc", "tp"],["t2m", "u10", 'z', 't', "tcc", "tp"]
+              ,["t2m", "u10", "v10", 't', "tcc", "tp"], ["t2m", "u10", "v10", 'z', "tcc", "tp"], ["t2m", "u10", "v10", 'z', 't', "tp"], ["t2m", "u10", "v10", 'z', 't', "tcc"]]
 
 def val():
     counter = 0
     val_loss1 = 0
-    # for i in range(7):
-    #     model[i].eval()
+    if(all_individual_models):
+        for i in range(7):
+            model[i].eval()
 
-    grid = [0.00001, 0.001, 0.25, 0.5, 0.75, 0.999, 0.99999]
+    # grid_x = [0.00001, 0.1, 0.5, 0.999, 0.9999, 0.99995, 0.99999]
+    # grid = [0.00001, 0.9, 0.999, 0.9999, 0.99995, 0.99999, 0.999999]
+    # grid_x= [0.00001, 0.99999]
+    # grid = [0.00001, 0.999999]
 
-    for g in range(6):
-        for k in range(7):
-            for l in range(7):
-                for i, (vals) in enumerate(val_loader):
-                    valid = vals.index_select(dim=1, index=input_indices[2]).to(device, dtype=torch.float32)
-                    target = vals.index_select(dim=1, index=out_index[2]).to(device, dtype=torch.float32)
+    np.set_printoptions(suppress=True)
+    for k in range(7):
+        train_model = UNet(6, 1).to(device)
+        labels = ["t2m", "u10", "v10", 'z', 't', "tcc", "tp"]
+        train_state = torch.load('/home/ge75tis/Desktop/oezyurt/model/6_1_UNET/{par}_gaussiandropout_35_epochs'.format(par=labels[k]))
+        train_model.load_state_dict(train_state['state_dict'])
+        optimizer.load_state_dict(train_state['optimizer'])
+        total_epochs = train_state['epoch']
+        for l in range(6):
+            p_gradients = torch.tensor([0, 0, 0, 0, 0, 0]).to(device, dtype=torch.float32)
+            p = torch.tensor([0.01, 0.01, 0.01, 0.01, 0.01, 0.01], requires_grad=True).to(device, dtype=torch.float32)
+            p[l] = 0.99
 
-                    p = np.empty([len(valid), 6])
-                    if(g == 0):
-                        p[0] = [grid[k], grid[l], grid[l], grid[l], grid[l], grid[l]]
-                    if(g == 1):
-                        p[0] = [grid[l], grid[k], grid[l], grid[l], grid[l], grid[l]]
-                    if(g == 2):
-                        p[0] = [grid[l], grid[l], grid[k], grid[l], grid[l], grid[l]]
-                    if(g == 3):
-                        p[0] = [grid[l], grid[l], grid[l], grid[k], grid[l], grid[l]]
-                    if(g == 4):
-                        p[0] = [grid[l], grid[l], grid[l], grid[l], grid[k], grid[l]]
-                    if(g == 5):
-                        p[0] = [grid[l], grid[l], grid[l], grid[l], grid[l], grid[k]]
-                    tens_p = torch.tensor(p).to(device, dtype=torch.float32)
-                    noisy_input = gaussian_dropout(valid, tens_p)
+            for i, (vals) in enumerate(val_loader):
+                valid = vals.index_select(dim=1, index=input_indices[k]).to(device, dtype=torch.float32)
+                target = vals.index_select(dim=1, index=out_index[k]).to(device, dtype=torch.float32)
 
-                    output = train_model(noisy_input)
-                    loss = loss_type(output, target)
-                    val_loss1 += loss.item()
+                # tens_p = torch.tensor(p).to(device, dtype=torch.float32)
+                noisy_input = gaussian_dropout(valid, p)
+                output = train_model(noisy_input)
+                loss = loss_type(output, target)
 
-                print(f'Average Validation Losses: {val_loss1/len(val_dataset):.6f}')
-                avg_val_loss_gridded[g][k][l] = val_loss1/len(val_dataset)
-                val_loss1 = 0
+                optimizer.zero_grad()
+                loss.backward(inputs=p, retain_graph=True)
+                for j in range(6):
+                    p_gradients[j] += p.grad[j]
 
-        print(avg_val_loss_gridded[g])
-        fig = plt.figure(g, figsize=(10,10))
-        sns.heatmap(avg_val_loss_gridded[g], linewidths=.5, cmap="Greens", annot=True, square=True, xticklabels=grid, yticklabels=grid, norm=LogNorm(), fmt=".3f")
-        labels = ["t2m", "u10", 'z', 't', "tcc", "tp"]
-        plt.title('Avg Validation loss of V10 for different dropout rates of {par} and other parameters'.format(par=labels[g]))
-        plt.xlabel('other parameters dropout rate p')
-        plt.ylabel('{par} dropout rate p'.format(par=labels[g]))
-        fig.savefig('/home/ge75tis/Desktop/Thesis-project-CNN/Graphs/DROPOUT_ANALYSIS/Z_HEATMAP_7/v10_analysis_{label}_heatmap'.format(label=labels[g]))
+                val_loss1 += loss.item()
+
+            for i in range(6):
+                p_gradients[i] = p_gradients[i] / len(val_dataset)
+
+            results = np.array(p_gradients.cpu())
+
+            print(f' {labels[k]}: p_grads, {all_labels[k][l]} p ~ 1, others ~ 0: {results}')
+
+
+    # for g in range(6):
+    #     for k in range(2):
+    #         for l in range(2):
+    #             if(k == l):
+    #                 continue
+    #             for i, (vals) in enumerate(val_loader):
+    #                 valid = vals.index_select(dim=1, index=input_indices[6]).to(device, dtype=torch.float32)
+    #                 target = vals.index_select(dim=1, index=out_index[6]).to(device, dtype=torch.float32)
+    #
+    #                 p = np.empty([len(valid), 6])
+    #                 if(g == 0):
+    #                     p[0] = [grid_x[k], grid[l], grid[l], grid[l], grid[l], grid[l]]
+    #                 if(g == 1):
+    #                     p[0] = [grid[l], grid_x[k], grid[l], grid[l], grid[l], grid[l]]
+    #                 if(g == 2):
+    #                     p[0] = [grid[l], grid[l], grid_x[k], grid[l], grid[l], grid[l]]
+    #                 if(g == 3):
+    #                     p[0] = [grid[l], grid[l], grid[l], grid_x[k], grid[l], grid[l]]
+    #                 if(g == 4):
+    #                     p[0] = [grid[l], grid[l], grid[l], grid[l], grid_x[k], grid[l]]
+    #                 if(g == 5):
+    #                     p[0] = [grid[l], grid[l], grid[l], grid[l], grid[l], grid_x[k]]
+    #
+    #                 tens_p = torch.tensor(p).to(device, dtype=torch.float32)
+    #                 noisy_input = gaussian_dropout(valid, tens_p)
+    #                 output = train_model(noisy_input)
+    #                 loss = loss_type(output, target)
+    #                 val_loss1 += loss.item()
+    #
+    #
+    #                 if (month):
+    #                     if (counter in inc_point):
+    #                         index_month += 1
+    #                     if (counter == 365):
+    #                         counter = 0
+    #                         index_month = 0
+    #                     avg_val_loss_gridded_m[g][k][l][index_month] += loss.item()
+    #
+    #                 counter += 1
+    #
+    #             print(f'Average Validation Losses: {val_loss1/len(val_dataset):.6f}')
+    #             avg_val_loss_gridded[g][k][l] = val_loss1/len(val_dataset)
+    #             val_loss1 = 0
+    #
+    #
+    #             if(month):
+    #                 for i in range(12):
+    #                     if (i == 0 or i == 2 or i == 4 or i == 6 or i == 7 or i == 9 or i == 11):
+    #                         avg_val_loss_gridded_m[g][k][l][i] = avg_val_loss_gridded_m[g][k][l][i] / 62
+    #                     elif (i == 3 or i == 5 or i == 8 or i == 10):
+    #                         avg_val_loss_gridded_m[g][k][l][i] = avg_val_loss_gridded_m[g][k][l][i] / 60
+    #                     elif (i == 1):
+    #                         avg_val_loss_gridded_m[g][k][l][i] = avg_val_loss_gridded_m[g][k][l][i] / 56
+    #
+    #     print(avg_val_loss_gridded[g])
+    #
+    #     if(graph):
+    #         if(month):
+    #             x_axis = ["jan", "feb", "mar", "apr", "may", "jun", "jul", "aug", "sep", "oct", "nov", "dec"]
+    #             labels = ["t2m", "u10", "v10", 'z', 't', "tcc"]
+    #             fig = plt.figure()
+    #             for i in range(6):
+    #                 plt.plot(avg_val_loss_gridded[i][0][1], label=labels[i])
+    #             fig.suptitle('TP analysis, p_x ~ 0, p_other ~ 1 per month')
+    #             plt.legend()
+    #             plt.xlabel('months')
+    #             plt.ylabel('Average loss')
+    #             fig.savefig("/home/ge75tis/Desktop/TP_Dropout_per_month_p_x_0")
+    #         fig = plt.figure(g, figsize=(10,10))
+    #         sns.heatmap(avg_val_loss_gridded[g], linewidths=.5, cmap="Greens", annot=True, xticklabels=grid, yticklabels=grid, norm=LogNorm(), fmt=".3f")
+    #         labels = ["t2m", "u10", "v10", 'z', 't', "tcc"]
+    #         plt.title('Avg Validation loss of TP for different dropout rates of {par} and other parameters'.format(par=labels[g]))
+    #         plt.xlabel('other parameters dropout rate p')
+    #         plt.ylabel('{par} dropout rate p'.format(par=labels[g]))
+    #         fig.savefig('/home/ge75tis/Desktop/Thesis-project-CNN/Graphs/DROPOUT_ANALYSIS/tp_analysis_{label}_heatmap'.format(label=labels[g]))
+
 
     if(all_individual_models):
         for i, (vals) in enumerate(val_loader):
@@ -327,28 +415,26 @@ with mlflow.start_run() as run:
 
 
 
-
-# labels = ['T2M', 'U10', 'V10', 'Z', 'T', 'TCC', 'TP']
-# many_to_one_losses = [0.0618, 0.2434, 0.2759, 0.0543, 0.0822, 0.4916, 0.2332]
-# 5 to 1 model U10 Prediction without wind input is 0.2722, +12.6 % difference
-# 5 to 1 model V10 Prediction without wind input is 0.3014, +10.7 % difference
 # clm_losses = [0.1061, 0.5411, 0.6394, 0.2035, 0.1897, 0.6936, 0.3540]
-
-# labels = ['U10', 'V10']
+# labels = []
 # u10_losses = [0.2416, 0.2759]
 # v10_losses = [0.2722, 0.3014]
+
+# labels_0 = ['V10', 'U10', 'TCC', 'Z', 'T', 'T2M']
+# p_x_0 = [0.596, 0.649, 0.872, 1.013, 1.064, 1.101]
+# # labels_1 = ['T', 'Z', 'V10', 'U10', 'TCC', 'TP']
+# p_x_1 = [0.284, 0.288, 0.277, 0.270, 0.269, 0.267]
 #
-#
-# x = np.arange(len(labels))
+# x = np.arange(len(labels_0))
 # width = 0.3
 #
 # fig3, ax = plt.subplots()
-# rects1 = ax.bar(x - width/2, u10_losses, width, label='other component in input')
-# rects2 = ax.bar(x + width/2, v10_losses, width, label='no wind components in input')
+# rects1 = ax.bar(x - width/2, p_x_0, width, label='p_x ~ 0, p_other ~ 1')
+# rects2 = ax.bar(x + width/2, p_x_1, width, label='p_x ~ 1, p_other ~ 0')
 #
-# ax.set_ylabel('L1 Losses')
-# ax.set_title('Comparison of wind component losses')
-# ax.set_xticks(x, labels)
+# ax.set_ylabel('Avg validation losses')
+# ax.set_title('TP Dropout Analysis noise comparison')
+# ax.set_xticks(x, labels_0)
 #
 # ax.legend()
 #
@@ -357,8 +443,7 @@ with mlflow.start_run() as run:
 #
 # fig3.tight_layout()
 #
-# plt.show()
-# fig3.savefig('/home/ge75tis/Desktop/test')
+# fig3.savefig('/home/ge75tis/Desktop/TP_Dropout_Analysis')
 
 
 
