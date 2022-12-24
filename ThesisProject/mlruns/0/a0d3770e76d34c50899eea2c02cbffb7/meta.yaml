@@ -1,0 +1,15 @@
+artifact_uri: file:///home/ge75tis/Desktop/Thesis-project-CNN/ThesisProject/mlruns/0/a0d3770e76d34c50899eea2c02cbffb7/artifacts
+end_time: 1671887033169
+entry_point_name: ''
+experiment_id: '0'
+lifecycle_stage: active
+run_id: a0d3770e76d34c50899eea2c02cbffb7
+run_name: clumsy-hound-607
+run_uuid: a0d3770e76d34c50899eea2c02cbffb7
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1671887029194
+status: 4
+tags: []
+user_id: ge75tis

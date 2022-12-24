@@ -1,0 +1,15 @@
+artifact_uri: file:///home/ge75tis/Desktop/Thesis-project-CNN/ThesisProject/mlruns/0/d04cb1daa4554ebaa6f8b11334f31d8e/artifacts
+end_time: 1671887332060
+entry_point_name: ''
+experiment_id: '0'
+lifecycle_stage: active
+run_id: d04cb1daa4554ebaa6f8b11334f31d8e
+run_name: lyrical-hog-532
+run_uuid: d04cb1daa4554ebaa6f8b11334f31d8e
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1671887328047
+status: 4
+tags: []
+user_id: ge75tis
