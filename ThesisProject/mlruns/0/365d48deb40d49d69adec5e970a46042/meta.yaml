@@ -1,0 +1,15 @@
+artifact_uri: file:///home/ge75tis/Desktop/Thesis-project-CNN/ThesisProject/mlruns/0/365d48deb40d49d69adec5e970a46042/artifacts
+end_time: 1670348673602
+entry_point_name: ''
+experiment_id: '0'
+lifecycle_stage: active
+run_id: 365d48deb40d49d69adec5e970a46042
+run_name: suave-pig-187
+run_uuid: 365d48deb40d49d69adec5e970a46042
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1670348290159
+status: 3
+tags: []
+user_id: ge75tis

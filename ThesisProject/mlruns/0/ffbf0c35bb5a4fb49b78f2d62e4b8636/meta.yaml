@@ -1,0 +1,15 @@
+artifact_uri: file:///home/ge75tis/Desktop/Thesis-project-CNN/ThesisProject/mlruns/0/ffbf0c35bb5a4fb49b78f2d62e4b8636/artifacts
+end_time: 1670355126624
+entry_point_name: ''
+experiment_id: '0'
+lifecycle_stage: active
+run_id: ffbf0c35bb5a4fb49b78f2d62e4b8636
+run_name: gifted-slug-534
+run_uuid: ffbf0c35bb5a4fb49b78f2d62e4b8636
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1670355071254
+status: 3
+tags: []
+user_id: ge75tis

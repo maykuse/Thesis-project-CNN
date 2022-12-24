@@ -1,0 +1,15 @@
+artifact_uri: file:///home/ge75tis/Desktop/Thesis-project-CNN/ThesisProject/mlruns/0/8b2116938fc442b9bd10d367430c47f5/artifacts
+end_time: 1670355209879
+entry_point_name: ''
+experiment_id: '0'
+lifecycle_stage: active
+run_id: 8b2116938fc442b9bd10d367430c47f5
+run_name: kindly-cow-541
+run_uuid: 8b2116938fc442b9bd10d367430c47f5
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1670355154622
+status: 3
+tags: []
+user_id: ge75tis

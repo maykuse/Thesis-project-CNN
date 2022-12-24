@@ -1,0 +1,15 @@
+artifact_uri: file:///home/ge75tis/Desktop/Thesis-project-CNN/ThesisProject/mlruns/0/b22ba4adfb6545cdb913ff98c79b84f2/artifacts
+end_time: 1670361589940
+entry_point_name: ''
+experiment_id: '0'
+lifecycle_stage: active
+run_id: b22ba4adfb6545cdb913ff98c79b84f2
+run_name: resilient-stoat-630
+run_uuid: b22ba4adfb6545cdb913ff98c79b84f2
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1670361570275
+status: 4
+tags: []
+user_id: ge75tis

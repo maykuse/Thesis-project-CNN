@@ -1,0 +1,15 @@
+artifact_uri: file:///home/ge75tis/Desktop/Thesis-project-CNN/ThesisProject/mlruns/0/7265640e09c24ecea28ae28ea15c2acf/artifacts
+end_time: 1670522251391
+entry_point_name: ''
+experiment_id: '0'
+lifecycle_stage: active
+run_id: 7265640e09c24ecea28ae28ea15c2acf
+run_name: selective-shrew-835
+run_uuid: 7265640e09c24ecea28ae28ea15c2acf
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1670522234160
+status: 4
+tags: []
+user_id: ge75tis

@@ -1,0 +1,15 @@
+artifact_uri: file:///home/ge75tis/Desktop/Thesis-project-CNN/ThesisProject/mlruns/0/4db6757a386c4d32899bc514a9983643/artifacts
+end_time: 1670520229288
+entry_point_name: ''
+experiment_id: '0'
+lifecycle_stage: active
+run_id: 4db6757a386c4d32899bc514a9983643
+run_name: gentle-dog-436
+run_uuid: 4db6757a386c4d32899bc514a9983643
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1670520227345
+status: 4
+tags: []
+user_id: ge75tis

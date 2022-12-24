@@ -1,0 +1,15 @@
+artifact_uri: file:///home/ge75tis/Desktop/Thesis-project-CNN/ThesisProject/mlruns/0/8ed438f577644bb39e92fb337696d5e3/artifacts
+end_time: 1670336218570
+entry_point_name: ''
+experiment_id: '0'
+lifecycle_stage: active
+run_id: 8ed438f577644bb39e92fb337696d5e3
+run_name: lyrical-asp-11
+run_uuid: 8ed438f577644bb39e92fb337696d5e3
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1670335768732
+status: 4
+tags: []
+user_id: ge75tis

@@ -1,0 +1,15 @@
+artifact_uri: file:///home/ge75tis/Desktop/Thesis-project-CNN/ThesisProject/mlruns/0/c7dec62fe0444f15ab0613c5cf95f5bd/artifacts
+end_time: 1670334817127
+entry_point_name: ''
+experiment_id: '0'
+lifecycle_stage: active
+run_id: c7dec62fe0444f15ab0613c5cf95f5bd
+run_name: resilient-crab-722
+run_uuid: c7dec62fe0444f15ab0613c5cf95f5bd
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1670334795129
+status: 4
+tags: []
+user_id: ge75tis

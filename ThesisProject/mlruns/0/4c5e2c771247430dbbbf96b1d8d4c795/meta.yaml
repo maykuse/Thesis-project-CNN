@@ -1,0 +1,15 @@
+artifact_uri: file:///home/ge75tis/Desktop/Thesis-project-CNN/ThesisProject/mlruns/0/4c5e2c771247430dbbbf96b1d8d4c795/artifacts
+end_time: 1670349737752
+entry_point_name: ''
+experiment_id: '0'
+lifecycle_stage: active
+run_id: 4c5e2c771247430dbbbf96b1d8d4c795
+run_name: luxuriant-hare-546
+run_uuid: 4c5e2c771247430dbbbf96b1d8d4c795
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1670349622314
+status: 4
+tags: []
+user_id: ge75tis

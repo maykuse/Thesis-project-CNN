@@ -1,0 +1,15 @@
+artifact_uri: file:///home/ge75tis/Desktop/Thesis-project-CNN/ThesisProject/mlruns/0/5207f9aaac524f4db168fa8fcd837aa9/artifacts
+end_time: 1670347037252
+entry_point_name: ''
+experiment_id: '0'
+lifecycle_stage: active
+run_id: 5207f9aaac524f4db168fa8fcd837aa9
+run_name: rare-roo-983
+run_uuid: 5207f9aaac524f4db168fa8fcd837aa9
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1670346654319
+status: 3
+tags: []
+user_id: ge75tis

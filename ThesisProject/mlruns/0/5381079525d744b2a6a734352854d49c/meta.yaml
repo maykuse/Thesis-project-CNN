@@ -1,0 +1,15 @@
+artifact_uri: file:///home/ge75tis/Desktop/Thesis-project-CNN/ThesisProject/mlruns/0/5381079525d744b2a6a734352854d49c/artifacts
+end_time: 1670507940634
+entry_point_name: ''
+experiment_id: '0'
+lifecycle_stage: active
+run_id: 5381079525d744b2a6a734352854d49c
+run_name: salty-quail-944
+run_uuid: 5381079525d744b2a6a734352854d49c
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1670507843219
+status: 4
+tags: []
+user_id: ge75tis

@@ -1,0 +1,15 @@
+artifact_uri: file:///home/ge75tis/Desktop/Thesis-project-CNN/ThesisProject/mlruns/0/21b1afc128c6403ab733a75e03fb5ac8/artifacts
+end_time: 1670362891716
+entry_point_name: ''
+experiment_id: '0'
+lifecycle_stage: active
+run_id: 21b1afc128c6403ab733a75e03fb5ac8
+run_name: illustrious-doe-154
+run_uuid: 21b1afc128c6403ab733a75e03fb5ac8
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1670362891695
+status: 3
+tags: []
+user_id: ge75tis

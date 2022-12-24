@@ -1,0 +1,15 @@
+artifact_uri: file:///home/ge75tis/Desktop/Thesis-project-CNN/ThesisProject/mlruns/0/97fb1045d99e4f879d6367a9dd9fff4b/artifacts
+end_time: 1670354520837
+entry_point_name: ''
+experiment_id: '0'
+lifecycle_stage: active
+run_id: 97fb1045d99e4f879d6367a9dd9fff4b
+run_name: rare-asp-968
+run_uuid: 97fb1045d99e4f879d6367a9dd9fff4b
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1670354465656
+status: 3
+tags: []
+user_id: ge75tis

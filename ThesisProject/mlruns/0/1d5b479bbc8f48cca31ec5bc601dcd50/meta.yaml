@@ -1,0 +1,15 @@
+artifact_uri: file:///home/ge75tis/Desktop/Thesis-project-CNN/ThesisProject/mlruns/0/1d5b479bbc8f48cca31ec5bc601dcd50/artifacts
+end_time: 1671882863844
+entry_point_name: ''
+experiment_id: '0'
+lifecycle_stage: active
+run_id: 1d5b479bbc8f48cca31ec5bc601dcd50
+run_name: delightful-carp-12
+run_uuid: 1d5b479bbc8f48cca31ec5bc601dcd50
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1671882830691
+status: 4
+tags: []
+user_id: ge75tis

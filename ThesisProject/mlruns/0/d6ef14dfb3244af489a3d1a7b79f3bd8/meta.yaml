@@ -1,0 +1,15 @@
+artifact_uri: file:///home/ge75tis/Desktop/Thesis-project-CNN/ThesisProject/mlruns/0/d6ef14dfb3244af489a3d1a7b79f3bd8/artifacts
+end_time: 1670519704427
+entry_point_name: ''
+experiment_id: '0'
+lifecycle_stage: active
+run_id: d6ef14dfb3244af489a3d1a7b79f3bd8
+run_name: wise-rook-58
+run_uuid: d6ef14dfb3244af489a3d1a7b79f3bd8
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1670519698368
+status: 4
+tags: []
+user_id: ge75tis

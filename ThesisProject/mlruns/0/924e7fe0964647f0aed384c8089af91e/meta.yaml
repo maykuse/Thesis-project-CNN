@@ -1,0 +1,15 @@
+artifact_uri: file:///home/ge75tis/Desktop/Thesis-project-CNN/ThesisProject/mlruns/0/924e7fe0964647f0aed384c8089af91e/artifacts
+end_time: 1671881798174
+entry_point_name: ''
+experiment_id: '0'
+lifecycle_stage: active
+run_id: 924e7fe0964647f0aed384c8089af91e
+run_name: grandiose-shoat-214
+run_uuid: 924e7fe0964647f0aed384c8089af91e
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1671881793625
+status: 4
+tags: []
+user_id: ge75tis

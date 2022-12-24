@@ -1,0 +1,15 @@
+artifact_uri: file:///home/ge75tis/Desktop/Thesis-project-CNN/ThesisProject/mlruns/0/b3bad21fdd6c46a990180f60554bf59a/artifacts
+end_time: 1671882278812
+entry_point_name: ''
+experiment_id: '0'
+lifecycle_stage: active
+run_id: b3bad21fdd6c46a990180f60554bf59a
+run_name: rare-dove-187
+run_uuid: b3bad21fdd6c46a990180f60554bf59a
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1671882200982
+status: 4
+tags: []
+user_id: ge75tis

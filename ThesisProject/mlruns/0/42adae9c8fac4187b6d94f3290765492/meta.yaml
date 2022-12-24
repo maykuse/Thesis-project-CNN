@@ -1,0 +1,15 @@
+artifact_uri: file:///home/ge75tis/Desktop/Thesis-project-CNN/ThesisProject/mlruns/0/42adae9c8fac4187b6d94f3290765492/artifacts
+end_time: 1670355541556
+entry_point_name: ''
+experiment_id: '0'
+lifecycle_stage: active
+run_id: 42adae9c8fac4187b6d94f3290765492
+run_name: unequaled-mare-813
+run_uuid: 42adae9c8fac4187b6d94f3290765492
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1670355486344
+status: 3
+tags: []
+user_id: ge75tis

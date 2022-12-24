@@ -1,0 +1,15 @@
+artifact_uri: file:///home/ge75tis/Desktop/Thesis-project-CNN/ThesisProject/mlruns/0/e174c3fe3b2d486cadf31030032e3706/artifacts
+end_time: 1670354031769
+entry_point_name: ''
+experiment_id: '0'
+lifecycle_stage: active
+run_id: e174c3fe3b2d486cadf31030032e3706
+run_name: sincere-eel-723
+run_uuid: e174c3fe3b2d486cadf31030032e3706
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1670353976292
+status: 3
+tags: []
+user_id: ge75tis

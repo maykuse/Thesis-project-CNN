@@ -1,0 +1,15 @@
+artifact_uri: file:///home/ge75tis/Desktop/Thesis-project-CNN/ThesisProject/mlruns/0/f70337ea89f04b42a00747194dbac2b9/artifacts
+end_time: 1670506149603
+entry_point_name: ''
+experiment_id: '0'
+lifecycle_stage: active
+run_id: f70337ea89f04b42a00747194dbac2b9
+run_name: secretive-ape-273
+run_uuid: f70337ea89f04b42a00747194dbac2b9
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1670506119889
+status: 4
+tags: []
+user_id: ge75tis

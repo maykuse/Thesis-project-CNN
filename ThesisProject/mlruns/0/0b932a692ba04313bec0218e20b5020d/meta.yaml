@@ -1,0 +1,15 @@
+artifact_uri: file:///home/ge75tis/Desktop/Thesis-project-CNN/ThesisProject/mlruns/0/0b932a692ba04313bec0218e20b5020d/artifacts
+end_time: 1670335401938
+entry_point_name: ''
+experiment_id: '0'
+lifecycle_stage: active
+run_id: 0b932a692ba04313bec0218e20b5020d
+run_name: adventurous-dog-861
+run_uuid: 0b932a692ba04313bec0218e20b5020d
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1670334868994
+status: 4
+tags: []
+user_id: ge75tis

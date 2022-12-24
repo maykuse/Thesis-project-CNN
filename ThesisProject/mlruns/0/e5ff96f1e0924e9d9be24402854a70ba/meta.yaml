@@ -1,0 +1,15 @@
+artifact_uri: file:///home/ge75tis/Desktop/Thesis-project-CNN/ThesisProject/mlruns/0/e5ff96f1e0924e9d9be24402854a70ba/artifacts
+end_time: 1670523347398
+entry_point_name: ''
+experiment_id: '0'
+lifecycle_stage: active
+run_id: e5ff96f1e0924e9d9be24402854a70ba
+run_name: burly-robin-23
+run_uuid: e5ff96f1e0924e9d9be24402854a70ba
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1670523332896
+status: 4
+tags: []
+user_id: ge75tis

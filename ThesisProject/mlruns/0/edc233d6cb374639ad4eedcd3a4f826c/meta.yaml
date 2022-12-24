@@ -1,0 +1,15 @@
+artifact_uri: file:///home/ge75tis/Desktop/Thesis-project-CNN/ThesisProject/mlruns/0/edc233d6cb374639ad4eedcd3a4f826c/artifacts
+end_time: 1670513506461
+entry_point_name: ''
+experiment_id: '0'
+lifecycle_stage: active
+run_id: edc233d6cb374639ad4eedcd3a4f826c
+run_name: wistful-duck-11
+run_uuid: edc233d6cb374639ad4eedcd3a4f826c
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1670513411131
+status: 3
+tags: []
+user_id: ge75tis

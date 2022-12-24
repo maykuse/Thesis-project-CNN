@@ -1,0 +1,15 @@
+artifact_uri: file:///home/ge75tis/Desktop/Thesis-project-CNN/ThesisProject/mlruns/0/6f57d26416fd4d609c4f60b85e1f4aaa/artifacts
+end_time: 1670521080737
+entry_point_name: ''
+experiment_id: '0'
+lifecycle_stage: active
+run_id: 6f57d26416fd4d609c4f60b85e1f4aaa
+run_name: legendary-elk-875
+run_uuid: 6f57d26416fd4d609c4f60b85e1f4aaa
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1670521078788
+status: 4
+tags: []
+user_id: ge75tis

@@ -1,0 +1,15 @@
+artifact_uri: file:///home/ge75tis/Desktop/Thesis-project-CNN/ThesisProject/mlruns/0/805328d769854cc0a5e2154ff2bc89c8/artifacts
+end_time: 1670359826681
+entry_point_name: ''
+experiment_id: '0'
+lifecycle_stage: active
+run_id: 805328d769854cc0a5e2154ff2bc89c8
+run_name: legendary-shad-658
+run_uuid: 805328d769854cc0a5e2154ff2bc89c8
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1670359503339
+status: 3
+tags: []
+user_id: ge75tis

@@ -1,0 +1,15 @@
+artifact_uri: file:///home/ge75tis/Desktop/Thesis-project-CNN/ThesisProject/mlruns/0/202f3be7b14c42ee8b72446935506e6f/artifacts
+end_time: 1670336596556
+entry_point_name: ''
+experiment_id: '0'
+lifecycle_stage: active
+run_id: 202f3be7b14c42ee8b72446935506e6f
+run_name: intrigued-worm-224
+run_uuid: 202f3be7b14c42ee8b72446935506e6f
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1670336561584
+status: 4
+tags: []
+user_id: ge75tis

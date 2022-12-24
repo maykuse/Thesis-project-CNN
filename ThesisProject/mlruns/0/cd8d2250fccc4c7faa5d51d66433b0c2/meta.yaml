@@ -1,0 +1,15 @@
+artifact_uri: file:///home/ge75tis/Desktop/Thesis-project-CNN/ThesisProject/mlruns/0/cd8d2250fccc4c7faa5d51d66433b0c2/artifacts
+end_time: 1670589424381
+entry_point_name: ''
+experiment_id: '0'
+lifecycle_stage: active
+run_id: cd8d2250fccc4c7faa5d51d66433b0c2
+run_name: unleashed-cub-523
+run_uuid: cd8d2250fccc4c7faa5d51d66433b0c2
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1670589424356
+status: 3
+tags: []
+user_id: ge75tis

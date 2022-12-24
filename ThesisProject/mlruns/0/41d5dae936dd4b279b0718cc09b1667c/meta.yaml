@@ -1,0 +1,15 @@
+artifact_uri: file:///home/ge75tis/Desktop/Thesis-project-CNN/ThesisProject/mlruns/0/41d5dae936dd4b279b0718cc09b1667c/artifacts
+end_time: 1670344953014
+entry_point_name: ''
+experiment_id: '0'
+lifecycle_stage: active
+run_id: 41d5dae936dd4b279b0718cc09b1667c
+run_name: whimsical-wasp-698
+run_uuid: 41d5dae936dd4b279b0718cc09b1667c
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1670344511577
+status: 3
+tags: []
+user_id: ge75tis

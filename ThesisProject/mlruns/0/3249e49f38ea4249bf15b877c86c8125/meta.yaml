@@ -1,0 +1,15 @@
+artifact_uri: file:///home/ge75tis/Desktop/Thesis-project-CNN/ThesisProject/mlruns/0/3249e49f38ea4249bf15b877c86c8125/artifacts
+end_time: 1670514768561
+entry_point_name: ''
+experiment_id: '0'
+lifecycle_stage: active
+run_id: 3249e49f38ea4249bf15b877c86c8125
+run_name: sedate-shad-473
+run_uuid: 3249e49f38ea4249bf15b877c86c8125
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1670514766593
+status: 4
+tags: []
+user_id: ge75tis

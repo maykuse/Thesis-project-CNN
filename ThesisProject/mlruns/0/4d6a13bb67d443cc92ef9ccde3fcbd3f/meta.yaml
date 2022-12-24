@@ -1,0 +1,15 @@
+artifact_uri: file:///home/ge75tis/Desktop/Thesis-project-CNN/ThesisProject/mlruns/0/4d6a13bb67d443cc92ef9ccde3fcbd3f/artifacts
+end_time: 1670519788247
+entry_point_name: ''
+experiment_id: '0'
+lifecycle_stage: active
+run_id: 4d6a13bb67d443cc92ef9ccde3fcbd3f
+run_name: upset-bug-738
+run_uuid: 4d6a13bb67d443cc92ef9ccde3fcbd3f
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1670519785543
+status: 4
+tags: []
+user_id: ge75tis

@@ -1,0 +1,15 @@
+artifact_uri: file:///home/ge75tis/Desktop/Thesis-project-CNN/ThesisProject/mlruns/0/3430d562207343298ccdd158c3f696ec/artifacts
+end_time: 1670516081609
+entry_point_name: ''
+experiment_id: '0'
+lifecycle_stage: active
+run_id: 3430d562207343298ccdd158c3f696ec
+run_name: able-crow-182
+run_uuid: 3430d562207343298ccdd158c3f696ec
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1670516051452
+status: 3
+tags: []
+user_id: ge75tis

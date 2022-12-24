@@ -1,0 +1,15 @@
+artifact_uri: file:///home/ge75tis/Desktop/Thesis-project-CNN/ThesisProject/mlruns/0/a532646d74a049ce89331b26428c7210/artifacts
+end_time: 1670520064763
+entry_point_name: ''
+experiment_id: '0'
+lifecycle_stage: active
+run_id: a532646d74a049ce89331b26428c7210
+run_name: defiant-gnat-64
+run_uuid: a532646d74a049ce89331b26428c7210
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1670520063074
+status: 4
+tags: []
+user_id: ge75tis

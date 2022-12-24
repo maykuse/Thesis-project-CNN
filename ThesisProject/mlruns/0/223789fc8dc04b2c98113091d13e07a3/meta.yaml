@@ -1,0 +1,15 @@
+artifact_uri: file:///home/ge75tis/Desktop/Thesis-project-CNN/ThesisProject/mlruns/0/223789fc8dc04b2c98113091d13e07a3/artifacts
+end_time: 1670520962556
+entry_point_name: ''
+experiment_id: '0'
+lifecycle_stage: active
+run_id: 223789fc8dc04b2c98113091d13e07a3
+run_name: nervous-seal-207
+run_uuid: 223789fc8dc04b2c98113091d13e07a3
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1670520962479
+status: 4
+tags: []
+user_id: ge75tis

@@ -1,0 +1,15 @@
+artifact_uri: file:///home/ge75tis/Desktop/Thesis-project-CNN/ThesisProject/mlruns/0/de957f2ebcb84532a68fe630f48dd309/artifacts
+end_time: 1670516687151
+entry_point_name: ''
+experiment_id: '0'
+lifecycle_stage: active
+run_id: de957f2ebcb84532a68fe630f48dd309
+run_name: indecisive-bear-805
+run_uuid: de957f2ebcb84532a68fe630f48dd309
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1670516658948
+status: 3
+tags: []
+user_id: ge75tis

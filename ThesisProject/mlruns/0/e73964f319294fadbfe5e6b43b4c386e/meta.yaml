@@ -1,0 +1,15 @@
+artifact_uri: file:///home/ge75tis/Desktop/Thesis-project-CNN/ThesisProject/mlruns/0/e73964f319294fadbfe5e6b43b4c386e/artifacts
+end_time: 1670348221913
+entry_point_name: ''
+experiment_id: '0'
+lifecycle_stage: active
+run_id: e73964f319294fadbfe5e6b43b4c386e
+run_name: worried-dolphin-471
+run_uuid: e73964f319294fadbfe5e6b43b4c386e
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1670347838876
+status: 3
+tags: []
+user_id: ge75tis

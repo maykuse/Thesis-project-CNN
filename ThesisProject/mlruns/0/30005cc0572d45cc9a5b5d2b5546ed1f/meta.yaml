@@ -1,0 +1,15 @@
+artifact_uri: file:///home/ge75tis/Desktop/Thesis-project-CNN/ThesisProject/mlruns/0/30005cc0572d45cc9a5b5d2b5546ed1f/artifacts
+end_time: 1670519084577
+entry_point_name: ''
+experiment_id: '0'
+lifecycle_stage: active
+run_id: 30005cc0572d45cc9a5b5d2b5546ed1f
+run_name: omniscient-cod-618
+run_uuid: 30005cc0572d45cc9a5b5d2b5546ed1f
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1670519082882
+status: 4
+tags: []
+user_id: ge75tis

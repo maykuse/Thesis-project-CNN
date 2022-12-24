@@ -1,0 +1,15 @@
+artifact_uri: file:///home/ge75tis/Desktop/Thesis-project-CNN/ThesisProject/mlruns/0/401793ccc8c6441fb255b97b360faf5c/artifacts
+end_time: 1670511304892
+entry_point_name: ''
+experiment_id: '0'
+lifecycle_stage: active
+run_id: 401793ccc8c6441fb255b97b360faf5c
+run_name: respected-stork-950
+run_uuid: 401793ccc8c6441fb255b97b360faf5c
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1670511112166
+status: 4
+tags: []
+user_id: ge75tis

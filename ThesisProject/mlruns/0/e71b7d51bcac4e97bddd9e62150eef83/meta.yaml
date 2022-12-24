@@ -1,0 +1,15 @@
+artifact_uri: file:///home/ge75tis/Desktop/Thesis-project-CNN/ThesisProject/mlruns/0/e71b7d51bcac4e97bddd9e62150eef83/artifacts
+end_time: 1670516549818
+entry_point_name: ''
+experiment_id: '0'
+lifecycle_stage: active
+run_id: e71b7d51bcac4e97bddd9e62150eef83
+run_name: judicious-mouse-502
+run_uuid: e71b7d51bcac4e97bddd9e62150eef83
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1670516521790
+status: 3
+tags: []
+user_id: ge75tis

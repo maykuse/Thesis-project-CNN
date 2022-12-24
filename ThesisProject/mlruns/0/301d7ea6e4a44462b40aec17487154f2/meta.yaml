@@ -1,0 +1,15 @@
+artifact_uri: file:///home/ge75tis/Desktop/Thesis-project-CNN/ThesisProject/mlruns/0/301d7ea6e4a44462b40aec17487154f2/artifacts
+end_time: 1670589337822
+entry_point_name: ''
+experiment_id: '0'
+lifecycle_stage: active
+run_id: 301d7ea6e4a44462b40aec17487154f2
+run_name: chill-penguin-508
+run_uuid: 301d7ea6e4a44462b40aec17487154f2
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1670589337811
+status: 3
+tags: []
+user_id: ge75tis

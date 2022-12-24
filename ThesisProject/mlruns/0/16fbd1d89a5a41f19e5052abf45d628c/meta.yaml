@@ -1,0 +1,15 @@
+artifact_uri: file:///home/ge75tis/Desktop/Thesis-project-CNN/ThesisProject/mlruns/0/16fbd1d89a5a41f19e5052abf45d628c/artifacts
+end_time: 1670514730499
+entry_point_name: ''
+experiment_id: '0'
+lifecycle_stage: active
+run_id: 16fbd1d89a5a41f19e5052abf45d628c
+run_name: popular-zebra-565
+run_uuid: 16fbd1d89a5a41f19e5052abf45d628c
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1670514728673
+status: 4
+tags: []
+user_id: ge75tis

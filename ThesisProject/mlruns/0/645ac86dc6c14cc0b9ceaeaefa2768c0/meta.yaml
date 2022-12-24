@@ -1,0 +1,15 @@
+artifact_uri: file:///home/ge75tis/Desktop/Thesis-project-CNN/ThesisProject/mlruns/0/645ac86dc6c14cc0b9ceaeaefa2768c0/artifacts
+end_time: 1670513129023
+entry_point_name: ''
+experiment_id: '0'
+lifecycle_stage: active
+run_id: 645ac86dc6c14cc0b9ceaeaefa2768c0
+run_name: salty-zebra-683
+run_uuid: 645ac86dc6c14cc0b9ceaeaefa2768c0
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1670513129007
+status: 3
+tags: []
+user_id: ge75tis

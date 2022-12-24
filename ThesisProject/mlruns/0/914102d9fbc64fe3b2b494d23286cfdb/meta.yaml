@@ -1,0 +1,15 @@
+artifact_uri: file:///home/ge75tis/Desktop/Thesis-project-CNN/ThesisProject/mlruns/0/914102d9fbc64fe3b2b494d23286cfdb/artifacts
+end_time: 1671881184207
+entry_point_name: ''
+experiment_id: '0'
+lifecycle_stage: active
+run_id: 914102d9fbc64fe3b2b494d23286cfdb
+run_name: carefree-skink-294
+run_uuid: 914102d9fbc64fe3b2b494d23286cfdb
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1671881181110
+status: 4
+tags: []
+user_id: ge75tis

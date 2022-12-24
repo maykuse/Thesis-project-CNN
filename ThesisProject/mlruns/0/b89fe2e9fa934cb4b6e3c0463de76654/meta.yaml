@@ -1,0 +1,15 @@
+artifact_uri: file:///home/ge75tis/Desktop/Thesis-project-CNN/ThesisProject/mlruns/0/b89fe2e9fa934cb4b6e3c0463de76654/artifacts
+end_time: 1670512674752
+entry_point_name: ''
+experiment_id: '0'
+lifecycle_stage: active
+run_id: b89fe2e9fa934cb4b6e3c0463de76654
+run_name: bold-gnat-838
+run_uuid: b89fe2e9fa934cb4b6e3c0463de76654
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1670512674725
+status: 3
+tags: []
+user_id: ge75tis

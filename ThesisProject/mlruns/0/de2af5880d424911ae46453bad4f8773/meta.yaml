@@ -1,0 +1,15 @@
+artifact_uri: file:///home/ge75tis/Desktop/Thesis-project-CNN/ThesisProject/mlruns/0/de2af5880d424911ae46453bad4f8773/artifacts
+end_time: 1670522227443
+entry_point_name: ''
+experiment_id: '0'
+lifecycle_stage: active
+run_id: de2af5880d424911ae46453bad4f8773
+run_name: calm-squirrel-157
+run_uuid: de2af5880d424911ae46453bad4f8773
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1670522164581
+status: 4
+tags: []
+user_id: ge75tis

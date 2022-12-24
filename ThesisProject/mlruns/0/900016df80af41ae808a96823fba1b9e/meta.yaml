@@ -1,0 +1,15 @@
+artifact_uri: file:///home/ge75tis/Desktop/Thesis-project-CNN/ThesisProject/mlruns/0/900016df80af41ae808a96823fba1b9e/artifacts
+end_time: 1670346494545
+entry_point_name: ''
+experiment_id: '0'
+lifecycle_stage: active
+run_id: 900016df80af41ae808a96823fba1b9e
+run_name: melodic-ox-110
+run_uuid: 900016df80af41ae808a96823fba1b9e
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1670346110884
+status: 3
+tags: []
+user_id: ge75tis

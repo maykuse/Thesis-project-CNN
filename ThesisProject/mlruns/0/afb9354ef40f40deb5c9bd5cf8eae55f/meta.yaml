@@ -1,0 +1,15 @@
+artifact_uri: file:///home/ge75tis/Desktop/Thesis-project-CNN/ThesisProject/mlruns/0/afb9354ef40f40deb5c9bd5cf8eae55f/artifacts
+end_time: 1670362852136
+entry_point_name: ''
+experiment_id: '0'
+lifecycle_stage: active
+run_id: afb9354ef40f40deb5c9bd5cf8eae55f
+run_name: rumbling-grouse-481
+run_uuid: afb9354ef40f40deb5c9bd5cf8eae55f
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1670362852114
+status: 3
+tags: []
+user_id: ge75tis

@@ -1,0 +1,15 @@
+artifact_uri: file:///home/ge75tis/Desktop/Thesis-project-CNN/ThesisProject/mlruns/0/952cd549cd3b459b8024e7af29bfa0fa/artifacts
+end_time: 1670516633031
+entry_point_name: ''
+experiment_id: '0'
+lifecycle_stage: active
+run_id: 952cd549cd3b459b8024e7af29bfa0fa
+run_name: bright-perch-251
+run_uuid: 952cd549cd3b459b8024e7af29bfa0fa
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1670516604876
+status: 3
+tags: []
+user_id: ge75tis

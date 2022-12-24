@@ -1,0 +1,15 @@
+artifact_uri: file:///home/ge75tis/Desktop/Thesis-project-CNN/ThesisProject/mlruns/0/78b33ba75633492cb74cd9bc82bdeced/artifacts
+end_time: 1671882801491
+entry_point_name: ''
+experiment_id: '0'
+lifecycle_stage: active
+run_id: 78b33ba75633492cb74cd9bc82bdeced
+run_name: stately-colt-317
+run_uuid: 78b33ba75633492cb74cd9bc82bdeced
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1671882797532
+status: 4
+tags: []
+user_id: ge75tis

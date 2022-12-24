@@ -1,0 +1,15 @@
+artifact_uri: file:///home/ge75tis/Desktop/Thesis-project-CNN/ThesisProject/mlruns/0/0a4f48e134a5497791d3fb277343c840/artifacts
+end_time: 1670522071584
+entry_point_name: ''
+experiment_id: '0'
+lifecycle_stage: active
+run_id: 0a4f48e134a5497791d3fb277343c840
+run_name: likeable-penguin-105
+run_uuid: 0a4f48e134a5497791d3fb277343c840
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1670522043684
+status: 4
+tags: []
+user_id: ge75tis

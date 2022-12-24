@@ -1,0 +1,15 @@
+artifact_uri: file:///home/ge75tis/Desktop/Thesis-project-CNN/ThesisProject/mlruns/0/724fc152a37e4e088d6cdcf6022404ab/artifacts
+end_time: 1670512696569
+entry_point_name: ''
+experiment_id: '0'
+lifecycle_stage: active
+run_id: 724fc152a37e4e088d6cdcf6022404ab
+run_name: fun-bug-264
+run_uuid: 724fc152a37e4e088d6cdcf6022404ab
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1670512696549
+status: 3
+tags: []
+user_id: ge75tis

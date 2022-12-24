@@ -1,0 +1,15 @@
+artifact_uri: file:///home/ge75tis/Desktop/Thesis-project-CNN/ThesisProject/mlruns/0/e1ff610d913b49718b9280b9896d91b2/artifacts
+end_time: 1670337083233
+entry_point_name: ''
+experiment_id: '0'
+lifecycle_stage: active
+run_id: e1ff610d913b49718b9280b9896d91b2
+run_name: gentle-gull-429
+run_uuid: e1ff610d913b49718b9280b9896d91b2
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1670336607432
+status: 4
+tags: []
+user_id: ge75tis

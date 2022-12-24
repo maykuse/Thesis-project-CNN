@@ -1,0 +1,15 @@
+artifact_uri: file:///home/ge75tis/Desktop/Thesis-project-CNN/ThesisProject/mlruns/0/4ec611787f884c85a4a8863baba97520/artifacts
+end_time: 1670521351264
+entry_point_name: ''
+experiment_id: '0'
+lifecycle_stage: active
+run_id: 4ec611787f884c85a4a8863baba97520
+run_name: adorable-shark-301
+run_uuid: 4ec611787f884c85a4a8863baba97520
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1670521338815
+status: 4
+tags: []
+user_id: ge75tis

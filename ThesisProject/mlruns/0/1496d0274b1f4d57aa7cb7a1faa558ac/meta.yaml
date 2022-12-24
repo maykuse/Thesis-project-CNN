@@ -1,0 +1,15 @@
+artifact_uri: file:///home/ge75tis/Desktop/Thesis-project-CNN/ThesisProject/mlruns/0/1496d0274b1f4d57aa7cb7a1faa558ac/artifacts
+end_time: 1670361406569
+entry_point_name: ''
+experiment_id: '0'
+lifecycle_stage: active
+run_id: 1496d0274b1f4d57aa7cb7a1faa558ac
+run_name: intrigued-ox-748
+run_uuid: 1496d0274b1f4d57aa7cb7a1faa558ac
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1670361406548
+status: 3
+tags: []
+user_id: ge75tis

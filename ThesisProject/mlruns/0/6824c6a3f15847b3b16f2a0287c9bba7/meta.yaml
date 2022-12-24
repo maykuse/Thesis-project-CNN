@@ -1,0 +1,15 @@
+artifact_uri: file:///home/ge75tis/Desktop/Thesis-project-CNN/ThesisProject/mlruns/0/6824c6a3f15847b3b16f2a0287c9bba7/artifacts
+end_time: 1670515874169
+entry_point_name: ''
+experiment_id: '0'
+lifecycle_stage: active
+run_id: 6824c6a3f15847b3b16f2a0287c9bba7
+run_name: luminous-goat-227
+run_uuid: 6824c6a3f15847b3b16f2a0287c9bba7
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1670515844502
+status: 3
+tags: []
+user_id: ge75tis

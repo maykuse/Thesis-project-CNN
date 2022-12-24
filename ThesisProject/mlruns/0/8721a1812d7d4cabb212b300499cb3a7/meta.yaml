@@ -1,0 +1,15 @@
+artifact_uri: file:///home/ge75tis/Desktop/Thesis-project-CNN/ThesisProject/mlruns/0/8721a1812d7d4cabb212b300499cb3a7/artifacts
+end_time: 1670506324367
+entry_point_name: ''
+experiment_id: '0'
+lifecycle_stage: active
+run_id: 8721a1812d7d4cabb212b300499cb3a7
+run_name: charming-foal-560
+run_uuid: 8721a1812d7d4cabb212b300499cb3a7
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1670506309691
+status: 4
+tags: []
+user_id: ge75tis

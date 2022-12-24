@@ -1,0 +1,15 @@
+artifact_uri: file:///home/ge75tis/Desktop/Thesis-project-CNN/ThesisProject/mlruns/0/87217c367f644d2897671073a7c471bc/artifacts
+end_time: 1670338184448
+entry_point_name: ''
+experiment_id: '0'
+lifecycle_stage: active
+run_id: 87217c367f644d2897671073a7c471bc
+run_name: bedecked-calf-239
+run_uuid: 87217c367f644d2897671073a7c471bc
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1670337636646
+status: 3
+tags: []
+user_id: ge75tis

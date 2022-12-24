@@ -1,0 +1,15 @@
+artifact_uri: file:///home/ge75tis/Desktop/Thesis-project-CNN/ThesisProject/mlruns/0/88d6e92bea6043029fa9b15b08db837f/artifacts
+end_time: 1670505976485
+entry_point_name: ''
+experiment_id: '0'
+lifecycle_stage: active
+run_id: 88d6e92bea6043029fa9b15b08db837f
+run_name: tasteful-bat-426
+run_uuid: 88d6e92bea6043029fa9b15b08db837f
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1670505941476
+status: 4
+tags: []
+user_id: ge75tis

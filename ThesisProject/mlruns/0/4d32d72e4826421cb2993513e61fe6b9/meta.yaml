@@ -1,0 +1,15 @@
+artifact_uri: file:///home/ge75tis/Desktop/Thesis-project-CNN/ThesisProject/mlruns/0/4d32d72e4826421cb2993513e61fe6b9/artifacts
+end_time: 1670588969593
+entry_point_name: ''
+experiment_id: '0'
+lifecycle_stage: active
+run_id: 4d32d72e4826421cb2993513e61fe6b9
+run_name: suave-zebra-568
+run_uuid: 4d32d72e4826421cb2993513e61fe6b9
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1670588969581
+status: 3
+tags: []
+user_id: ge75tis
