@@ -1,0 +1,15 @@
+artifact_uri: file:///home/ge75tis/Desktop/Thesis-project-CNN/ThesisProject/mlruns/0/8a494d0981f2435fb8f56b8204466196/artifacts
+end_time: 1671999349426
+entry_point_name: ''
+experiment_id: '0'
+lifecycle_stage: active
+run_id: 8a494d0981f2435fb8f56b8204466196
+run_name: abrasive-shrimp-8
+run_uuid: 8a494d0981f2435fb8f56b8204466196
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1671999349403
+status: 3
+tags: []
+user_id: ge75tis
