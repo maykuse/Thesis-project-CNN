@@ -1,0 +1,15 @@
+artifact_uri: file:///home/ge75tis/Desktop/Thesis-project-CNN/ThesisProject/mlruns/0/1af63280223d456cac5e39b32c6943ed/artifacts
+end_time: 1671987987052
+entry_point_name: ''
+experiment_id: '0'
+lifecycle_stage: active
+run_id: 1af63280223d456cac5e39b32c6943ed
+run_name: debonair-stag-850
+run_uuid: 1af63280223d456cac5e39b32c6943ed
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1671987879435
+status: 3
+tags: []
+user_id: ge75tis

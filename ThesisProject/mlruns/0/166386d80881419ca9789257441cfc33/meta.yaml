@@ -1,0 +1,15 @@
+artifact_uri: file:///home/ge75tis/Desktop/Thesis-project-CNN/ThesisProject/mlruns/0/166386d80881419ca9789257441cfc33/artifacts
+end_time: null
+entry_point_name: ''
+experiment_id: '0'
+lifecycle_stage: active
+run_id: 166386d80881419ca9789257441cfc33
+run_name: silent-stork-186
+run_uuid: 166386d80881419ca9789257441cfc33
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1671988585140
+status: 1
+tags: []
+user_id: ge75tis
