@@ -1,0 +1,15 @@
+artifact_uri: file:///home/ge75tis/Desktop/Thesis-project-CNN/ThesisProject/mlruns/0/463934470f4941fe95557daaee2f0130/artifacts
+end_time: 1672000391117
+entry_point_name: ''
+experiment_id: '0'
+lifecycle_stage: active
+run_id: 463934470f4941fe95557daaee2f0130
+run_name: salty-stork-391
+run_uuid: 463934470f4941fe95557daaee2f0130
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1672000391107
+status: 3
+tags: []
+user_id: ge75tis

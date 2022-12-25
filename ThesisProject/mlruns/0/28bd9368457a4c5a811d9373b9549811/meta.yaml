@@ -1,0 +1,15 @@
+artifact_uri: file:///home/ge75tis/Desktop/Thesis-project-CNN/ThesisProject/mlruns/0/28bd9368457a4c5a811d9373b9549811/artifacts
+end_time: 1672000278268
+entry_point_name: ''
+experiment_id: '0'
+lifecycle_stage: active
+run_id: 28bd9368457a4c5a811d9373b9549811
+run_name: invincible-bee-580
+run_uuid: 28bd9368457a4c5a811d9373b9549811
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1672000278248
+status: 3
+tags: []
+user_id: ge75tis
