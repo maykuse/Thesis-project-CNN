@@ -1,0 +1,15 @@
+artifact_uri: file:///home/ge75tis/Desktop/Thesis-project-CNN/ThesisProject/mlruns/0/bdc6e8c9f19d46e0a6336efc0bed1fc5/artifacts
+end_time: 1672000946638
+entry_point_name: ''
+experiment_id: '0'
+lifecycle_stage: active
+run_id: bdc6e8c9f19d46e0a6336efc0bed1fc5
+run_name: adorable-quail-232
+run_uuid: bdc6e8c9f19d46e0a6336efc0bed1fc5
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1672000946625
+status: 3
+tags: []
+user_id: ge75tis
