@@ -1,0 +1,15 @@
+artifact_uri: file:///home/ge75tis/Desktop/Thesis-project-CNN/ThesisProject/mlruns/0/b8e9b46df51e4692b86d397d5124c50c/artifacts
+end_time: 1671998319666
+entry_point_name: ''
+experiment_id: '0'
+lifecycle_stage: active
+run_id: b8e9b46df51e4692b86d397d5124c50c
+run_name: fearless-bear-827
+run_uuid: b8e9b46df51e4692b86d397d5124c50c
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1671998319655
+status: 3
+tags: []
+user_id: ge75tis

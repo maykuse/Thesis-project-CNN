@@ -1,0 +1,15 @@
+artifact_uri: file:///home/ge75tis/Desktop/Thesis-project-CNN/ThesisProject/mlruns/0/27479a31a74b43f580abc358f50464a0/artifacts
+end_time: 1671998353551
+entry_point_name: ''
+experiment_id: '0'
+lifecycle_stage: active
+run_id: 27479a31a74b43f580abc358f50464a0
+run_name: gaudy-squirrel-426
+run_uuid: 27479a31a74b43f580abc358f50464a0
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1671998353539
+status: 3
+tags: []
+user_id: ge75tis

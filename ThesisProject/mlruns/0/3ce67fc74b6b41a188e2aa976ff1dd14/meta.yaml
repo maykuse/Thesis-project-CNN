@@ -1,0 +1,15 @@
+artifact_uri: file:///home/ge75tis/Desktop/Thesis-project-CNN/ThesisProject/mlruns/0/3ce67fc74b6b41a188e2aa976ff1dd14/artifacts
+end_time: 1671998689043
+entry_point_name: ''
+experiment_id: '0'
+lifecycle_stage: active
+run_id: 3ce67fc74b6b41a188e2aa976ff1dd14
+run_name: illustrious-newt-800
+run_uuid: 3ce67fc74b6b41a188e2aa976ff1dd14
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1671998689018
+status: 3
+tags: []
+user_id: ge75tis

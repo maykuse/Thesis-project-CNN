@@ -1,0 +1,15 @@
+artifact_uri: file:///home/ge75tis/Desktop/Thesis-project-CNN/ThesisProject/mlruns/0/5e974cd20b7c48f29c344ab4ccf317c3/artifacts
+end_time: 1671998190110
+entry_point_name: ''
+experiment_id: '0'
+lifecycle_stage: active
+run_id: 5e974cd20b7c48f29c344ab4ccf317c3
+run_name: bright-tern-44
+run_uuid: 5e974cd20b7c48f29c344ab4ccf317c3
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1671998190098
+status: 3
+tags: []
+user_id: ge75tis

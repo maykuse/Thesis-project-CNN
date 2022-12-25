@@ -1,0 +1,15 @@
+artifact_uri: file:///home/ge75tis/Desktop/Thesis-project-CNN/ThesisProject/mlruns/0/a8aada1d7bf948b5b16950d185794d46/artifacts
+end_time: 1671997329571
+entry_point_name: ''
+experiment_id: '0'
+lifecycle_stage: active
+run_id: a8aada1d7bf948b5b16950d185794d46
+run_name: flawless-hen-919
+run_uuid: a8aada1d7bf948b5b16950d185794d46
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1671997329544
+status: 3
+tags: []
+user_id: ge75tis

@@ -1,0 +1,15 @@
+artifact_uri: file:///home/ge75tis/Desktop/Thesis-project-CNN/ThesisProject/mlruns/0/fa8f3164d8c840b488b85732669ff8da/artifacts
+end_time: 1671998093838
+entry_point_name: ''
+experiment_id: '0'
+lifecycle_stage: active
+run_id: fa8f3164d8c840b488b85732669ff8da
+run_name: stylish-hen-556
+run_uuid: fa8f3164d8c840b488b85732669ff8da
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1671998093812
+status: 3
+tags: []
+user_id: ge75tis
