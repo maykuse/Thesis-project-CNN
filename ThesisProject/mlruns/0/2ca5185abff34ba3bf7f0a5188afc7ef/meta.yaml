@@ -1,0 +1,15 @@
+artifact_uri: file:///home/ge75tis/Desktop/Thesis-project-CNN/ThesisProject/mlruns/0/2ca5185abff34ba3bf7f0a5188afc7ef/artifacts
+end_time: 1672091594648
+entry_point_name: ''
+experiment_id: '0'
+lifecycle_stage: active
+run_id: 2ca5185abff34ba3bf7f0a5188afc7ef
+run_name: valuable-crane-303
+run_uuid: 2ca5185abff34ba3bf7f0a5188afc7ef
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1672091594635
+status: 3
+tags: []
+user_id: ge75tis
