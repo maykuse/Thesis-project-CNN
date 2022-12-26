@@ -1,0 +1,15 @@
+artifact_uri: file:///home/ge75tis/Desktop/Thesis-project-CNN/ThesisProject/mlruns/0/edad0f5485d84e218801224517ce300b/artifacts
+end_time: 1672088390422
+entry_point_name: ''
+experiment_id: '0'
+lifecycle_stage: active
+run_id: edad0f5485d84e218801224517ce300b
+run_name: handsome-zebra-208
+run_uuid: edad0f5485d84e218801224517ce300b
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1672088330986
+status: 3
+tags: []
+user_id: ge75tis
