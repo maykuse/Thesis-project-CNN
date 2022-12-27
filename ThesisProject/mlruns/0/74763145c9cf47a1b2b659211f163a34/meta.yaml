@@ -1,0 +1,15 @@
+artifact_uri: file:///home/ge75tis/Desktop/Thesis-project-CNN/ThesisProject/mlruns/0/74763145c9cf47a1b2b659211f163a34/artifacts
+end_time: null
+entry_point_name: ''
+experiment_id: '0'
+lifecycle_stage: active
+run_id: 74763145c9cf47a1b2b659211f163a34
+run_name: selective-rook-176
+run_uuid: 74763145c9cf47a1b2b659211f163a34
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1672141542308
+status: 1
+tags: []
+user_id: ge75tis
