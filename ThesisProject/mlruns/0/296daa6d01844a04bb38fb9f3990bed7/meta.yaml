@@ -1,0 +1,15 @@
+artifact_uri: file:///home/ge75tis/Desktop/Thesis-project-CNN/ThesisProject/mlruns/0/296daa6d01844a04bb38fb9f3990bed7/artifacts
+end_time: null
+entry_point_name: ''
+experiment_id: '0'
+lifecycle_stage: active
+run_id: 296daa6d01844a04bb38fb9f3990bed7
+run_name: loud-bug-261
+run_uuid: 296daa6d01844a04bb38fb9f3990bed7
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1672141102918
+status: 1
+tags: []
+user_id: ge75tis
