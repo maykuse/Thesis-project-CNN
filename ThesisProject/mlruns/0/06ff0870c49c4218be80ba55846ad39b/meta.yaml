@@ -1,0 +1,15 @@
+artifact_uri: file:///home/ge75tis/Desktop/Thesis-project-CNN/ThesisProject/mlruns/0/06ff0870c49c4218be80ba55846ad39b/artifacts
+end_time: null
+entry_point_name: ''
+experiment_id: '0'
+lifecycle_stage: active
+run_id: 06ff0870c49c4218be80ba55846ad39b
+run_name: bustling-snake-224
+run_uuid: 06ff0870c49c4218be80ba55846ad39b
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1672139483120
+status: 1
+tags: []
+user_id: ge75tis

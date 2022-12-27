@@ -1,0 +1,15 @@
+artifact_uri: file:///home/ge75tis/Desktop/Thesis-project-CNN/ThesisProject/mlruns/0/517b07f3939e490cae83ba7f5beedc26/artifacts
+end_time: null
+entry_point_name: ''
+experiment_id: '0'
+lifecycle_stage: active
+run_id: 517b07f3939e490cae83ba7f5beedc26
+run_name: suave-midge-378
+run_uuid: 517b07f3939e490cae83ba7f5beedc26
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1672139289511
+status: 1
+tags: []
+user_id: ge75tis

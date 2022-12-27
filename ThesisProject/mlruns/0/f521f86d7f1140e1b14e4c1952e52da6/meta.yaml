@@ -1,0 +1,15 @@
+artifact_uri: file:///home/ge75tis/Desktop/Thesis-project-CNN/ThesisProject/mlruns/0/f521f86d7f1140e1b14e4c1952e52da6/artifacts
+end_time: 1672097099065
+entry_point_name: ''
+experiment_id: '0'
+lifecycle_stage: active
+run_id: f521f86d7f1140e1b14e4c1952e52da6
+run_name: whimsical-dove-558
+run_uuid: f521f86d7f1140e1b14e4c1952e52da6
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1672097097223
+status: 4
+tags: []
+user_id: ge75tis

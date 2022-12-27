@@ -1,0 +1,15 @@
+artifact_uri: file:///home/ge75tis/Desktop/Thesis-project-CNN/ThesisProject/mlruns/0/7f0b2f247b684042a30fcd4122baa330/artifacts
+end_time: 1672094010213
+entry_point_name: ''
+experiment_id: '0'
+lifecycle_stage: active
+run_id: 7f0b2f247b684042a30fcd4122baa330
+run_name: enthused-skink-672
+run_uuid: 7f0b2f247b684042a30fcd4122baa330
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1672094008388
+status: 4
+tags: []
+user_id: ge75tis

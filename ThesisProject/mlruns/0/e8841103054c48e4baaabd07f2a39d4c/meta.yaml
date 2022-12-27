@@ -1,0 +1,15 @@
+artifact_uri: file:///home/ge75tis/Desktop/Thesis-project-CNN/ThesisProject/mlruns/0/e8841103054c48e4baaabd07f2a39d4c/artifacts
+end_time: 1672097122103
+entry_point_name: ''
+experiment_id: '0'
+lifecycle_stage: active
+run_id: e8841103054c48e4baaabd07f2a39d4c
+run_name: casual-whale-844
+run_uuid: e8841103054c48e4baaabd07f2a39d4c
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1672097120296
+status: 4
+tags: []
+user_id: ge75tis

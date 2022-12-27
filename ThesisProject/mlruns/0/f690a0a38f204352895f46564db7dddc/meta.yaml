@@ -1,0 +1,15 @@
+artifact_uri: file:///home/ge75tis/Desktop/Thesis-project-CNN/ThesisProject/mlruns/0/f690a0a38f204352895f46564db7dddc/artifacts
+end_time: null
+entry_point_name: ''
+experiment_id: '0'
+lifecycle_stage: active
+run_id: f690a0a38f204352895f46564db7dddc
+run_name: luminous-hawk-606
+run_uuid: f690a0a38f204352895f46564db7dddc
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1672138106375
+status: 1
+tags: []
+user_id: ge75tis

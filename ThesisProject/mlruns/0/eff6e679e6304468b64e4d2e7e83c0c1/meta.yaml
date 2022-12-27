@@ -1,0 +1,15 @@
+artifact_uri: file:///home/ge75tis/Desktop/Thesis-project-CNN/ThesisProject/mlruns/0/eff6e679e6304468b64e4d2e7e83c0c1/artifacts
+end_time: 1672096194512
+entry_point_name: ''
+experiment_id: '0'
+lifecycle_stage: active
+run_id: eff6e679e6304468b64e4d2e7e83c0c1
+run_name: receptive-shark-709
+run_uuid: eff6e679e6304468b64e4d2e7e83c0c1
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1672096192702
+status: 4
+tags: []
+user_id: ge75tis

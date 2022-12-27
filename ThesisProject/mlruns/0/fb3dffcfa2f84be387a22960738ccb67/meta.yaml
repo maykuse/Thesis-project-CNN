@@ -1,0 +1,15 @@
+artifact_uri: file:///home/ge75tis/Desktop/Thesis-project-CNN/ThesisProject/mlruns/0/fb3dffcfa2f84be387a22960738ccb67/artifacts
+end_time: 1672092651536
+entry_point_name: ''
+experiment_id: '0'
+lifecycle_stage: active
+run_id: fb3dffcfa2f84be387a22960738ccb67
+run_name: gifted-shrimp-3
+run_uuid: fb3dffcfa2f84be387a22960738ccb67
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1672092638440
+status: 4
+tags: []
+user_id: ge75tis

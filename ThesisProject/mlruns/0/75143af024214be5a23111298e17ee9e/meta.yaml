@@ -1,0 +1,15 @@
+artifact_uri: file:///home/ge75tis/Desktop/Thesis-project-CNN/ThesisProject/mlruns/0/75143af024214be5a23111298e17ee9e/artifacts
+end_time: 1672092632167
+entry_point_name: ''
+experiment_id: '0'
+lifecycle_stage: active
+run_id: 75143af024214be5a23111298e17ee9e
+run_name: rumbling-stork-790
+run_uuid: 75143af024214be5a23111298e17ee9e
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1672092611383
+status: 4
+tags: []
+user_id: ge75tis

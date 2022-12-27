@@ -1,0 +1,15 @@
+artifact_uri: file:///home/ge75tis/Desktop/Thesis-project-CNN/ThesisProject/mlruns/0/8b5dfb3d460d4dcfa19ce95bbb525c70/artifacts
+end_time: 1672096403927
+entry_point_name: ''
+experiment_id: '0'
+lifecycle_stage: active
+run_id: 8b5dfb3d460d4dcfa19ce95bbb525c70
+run_name: unleashed-vole-569
+run_uuid: 8b5dfb3d460d4dcfa19ce95bbb525c70
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1672096401946
+status: 4
+tags: []
+user_id: ge75tis

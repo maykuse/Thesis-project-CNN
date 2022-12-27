@@ -1,0 +1,15 @@
+artifact_uri: file:///home/ge75tis/Desktop/Thesis-project-CNN/ThesisProject/mlruns/0/3ed5f437abcb4a42b52a2d4af5e1bb03/artifacts
+end_time: 1672095616921
+entry_point_name: ''
+experiment_id: '0'
+lifecycle_stage: active
+run_id: 3ed5f437abcb4a42b52a2d4af5e1bb03
+run_name: smiling-kit-89
+run_uuid: 3ed5f437abcb4a42b52a2d4af5e1bb03
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1672095615119
+status: 4
+tags: []
+user_id: ge75tis

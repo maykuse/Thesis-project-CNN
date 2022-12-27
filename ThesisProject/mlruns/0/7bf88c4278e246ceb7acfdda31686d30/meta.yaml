@@ -1,0 +1,15 @@
+artifact_uri: file:///home/ge75tis/Desktop/Thesis-project-CNN/ThesisProject/mlruns/0/7bf88c4278e246ceb7acfdda31686d30/artifacts
+end_time: 1672137952667
+entry_point_name: ''
+experiment_id: '0'
+lifecycle_stage: active
+run_id: 7bf88c4278e246ceb7acfdda31686d30
+run_name: colorful-elk-892
+run_uuid: 7bf88c4278e246ceb7acfdda31686d30
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1672137947905
+status: 4
+tags: []
+user_id: ge75tis

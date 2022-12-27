@@ -1,0 +1,15 @@
+artifact_uri: file:///home/ge75tis/Desktop/Thesis-project-CNN/ThesisProject/mlruns/0/d81d320b564e47f686807e275fb44c02/artifacts
+end_time: 1672097652363
+entry_point_name: ''
+experiment_id: '0'
+lifecycle_stage: active
+run_id: d81d320b564e47f686807e275fb44c02
+run_name: rumbling-cub-520
+run_uuid: d81d320b564e47f686807e275fb44c02
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1672097627535
+status: 4
+tags: []
+user_id: ge75tis
