@@ -1,0 +1,15 @@
+artifact_uri: file:///home/ge75tis/Desktop/Thesis-project-CNN/ThesisProject/mlruns/0/cc1a1db50e644c4083d786cb6378cb88/artifacts
+end_time: null
+entry_point_name: ''
+experiment_id: '0'
+lifecycle_stage: active
+run_id: cc1a1db50e644c4083d786cb6378cb88
+run_name: gifted-fowl-536
+run_uuid: cc1a1db50e644c4083d786cb6378cb88
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1672155850863
+status: 1
+tags: []
+user_id: ge75tis

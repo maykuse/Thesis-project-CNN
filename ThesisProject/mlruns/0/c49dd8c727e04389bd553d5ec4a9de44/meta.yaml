@@ -1,0 +1,15 @@
+artifact_uri: file:///home/ge75tis/Desktop/Thesis-project-CNN/ThesisProject/mlruns/0/c49dd8c727e04389bd553d5ec4a9de44/artifacts
+end_time: 1672142981534
+entry_point_name: ''
+experiment_id: '0'
+lifecycle_stage: active
+run_id: c49dd8c727e04389bd553d5ec4a9de44
+run_name: magnificent-loon-647
+run_uuid: c49dd8c727e04389bd553d5ec4a9de44
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1672142923771
+status: 4
+tags: []
+user_id: ge75tis

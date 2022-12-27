@@ -1,0 +1,15 @@
+artifact_uri: file:///home/ge75tis/Desktop/Thesis-project-CNN/ThesisProject/mlruns/0/448ad11cf1e0429f8d5c1b1c61ab791d/artifacts
+end_time: null
+entry_point_name: ''
+experiment_id: '0'
+lifecycle_stage: active
+run_id: 448ad11cf1e0429f8d5c1b1c61ab791d
+run_name: stately-tern-392
+run_uuid: 448ad11cf1e0429f8d5c1b1c61ab791d
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1672143014976
+status: 1
+tags: []
+user_id: ge75tis

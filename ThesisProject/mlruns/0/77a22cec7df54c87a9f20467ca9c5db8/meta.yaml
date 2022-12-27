@@ -1,0 +1,15 @@
+artifact_uri: file:///home/ge75tis/Desktop/Thesis-project-CNN/ThesisProject/mlruns/0/77a22cec7df54c87a9f20467ca9c5db8/artifacts
+end_time: 1672141864158
+entry_point_name: ''
+experiment_id: '0'
+lifecycle_stage: active
+run_id: 77a22cec7df54c87a9f20467ca9c5db8
+run_name: treasured-pug-808
+run_uuid: 77a22cec7df54c87a9f20467ca9c5db8
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1672141862332
+status: 4
+tags: []
+user_id: ge75tis

@@ -1,0 +1,15 @@
+artifact_uri: file:///home/ge75tis/Desktop/Thesis-project-CNN/ThesisProject/mlruns/0/ff4dfb8107734ec9a39d7d6189a2938c/artifacts
+end_time: 1672141936254
+entry_point_name: ''
+experiment_id: '0'
+lifecycle_stage: active
+run_id: ff4dfb8107734ec9a39d7d6189a2938c
+run_name: delightful-crane-143
+run_uuid: ff4dfb8107734ec9a39d7d6189a2938c
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1672141934442
+status: 4
+tags: []
+user_id: ge75tis
