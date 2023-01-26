@@ -29,7 +29,8 @@ total_epochs = 0
 train_set = zarr.open('/home/ge75tis/Desktop/oezyurt/zarr dataset/resampled/resampled_24_train')
 validation_set = zarr.open('/home/ge75tis/Desktop/oezyurt/zarr dataset/resampled/resampled_24_val')
 test_set = zarr.open('/home/ge75tis/Desktop/oezyurt/zarr dataset/resampled/resampled_24_test')
-# order of the parameters are: t2m, u10, v10, z, t, tcc, tp, lsm, orog, slt
+# order of the parameters are:
+# t2m, u10, v10, z, t, tcc, tp, lsm, orog, slt
 
 params = ["t2m", "u10", "v10", 'z', 't', "tcc", "tp"]
 params_C = ["T2M", "U10", "V10", 'Z', 'T', "TCC", "TP"]
@@ -40,8 +41,8 @@ indices_no_tcc_tp = torch.tensor([0, 1, 2, 3, 4])
 input_indices = [torch.tensor([1, 2, 3, 4, 5, 6]), torch.tensor([0, 2, 3, 4, 5, 6]), torch.tensor([0, 1, 3, 4, 5, 6]),
                  torch.tensor([0, 1, 2, 4, 5, 6]),
                  torch.tensor([0, 1, 2, 3, 5, 6]), torch.tensor([0, 1, 2, 3, 4, 6]), torch.tensor([0, 1, 2, 3, 4, 5])]
-out_index = [torch.tensor([0]), torch.tensor([1]), torch.tensor([2]), torch.tensor([3]), torch.tensor([4]),
-             torch.tensor([5]), torch.tensor([6])]
+out_index = [torch.tensor([0]), torch.tensor([1]), torch.tensor([2]), torch.tensor([3]),
+             torch.tensor([4]), torch.tensor([5]), torch.tensor([6])]
 
 norm = transforms.Normalize((2.78415200e+02, -1.00402647e-01, 2.20140679e-01, 5.40906312e+04,
                              2.74440506e+02, 6.76697789e-01, 9.80986749e-05, 3.37078289e-01,
@@ -102,7 +103,6 @@ class TestDataset(Dataset):
 def init_weights(m):
     if isinstance(m, nn.Conv2d) or isinstance(m, nn.ConvTranspose2d):
         torch.nn.init.xavier_uniform_(m.weight)
-        # m.bias.data.fill_(0.01)
 
 
 def gaussian_dropout(data: torch.Tensor, p: torch.Tensor):
@@ -117,23 +117,21 @@ def gaussian_dropout(data: torch.Tensor, p: torch.Tensor):
     p = p.view(*p.shape, 1, 1)
     alpha = p / (1. - p)
     noise = torch.randn_like(data)
-    weights = 1. + torch.sqrt(alpha) * noise  # this is weights = theta + theta * sqrt(alpha), with fixed theta = 1
+    weights = 1. + torch.sqrt(alpha) * noise
+    # this is weights = theta + theta * sqrt(alpha), with fixed theta = 1
     out = weights * data
     return out
 
 def gaussian_dropout_image(data: torch.Tensor, p: torch.Tensor):
     """
-    Function for applying parametric Gaussian dropout
-    Parameters:
-        data: input data, expected shape (batch_size, num_channels, h, w)
+        The only difference: p is given as 3D to keep track of the gradient of pixels
         p: dropout rates in [0, 1], expected shape (batch_size, num_channels, h, w)
-    Returns:
-        out: Gaussian dropout output, shape (batch_size, num_channels, h, w)
     """
     # p = p.view(*p.shape, 1, 1)
     alpha = p / (1. - p)
     noise = torch.randn_like(data)
-    weights = 1. + torch.sqrt(alpha) * noise  # this is weights = theta + theta * sqrt(alpha), with fixed theta = 1
+    weights = 1. + torch.sqrt(alpha) * noise
+    # this is weights = theta + theta * sqrt(alpha), with fixed theta = 1
     out = weights * data
     return out
 
@@ -192,7 +190,7 @@ def train(epoch):
         input = inputs.index_select(dim=1, index=input_indices[0]).to(device, dtype=torch.float32)
         target = inputs.index_select(dim=1, index=out_index[0]).to(device, dtype=torch.float32)
 
-        # Gaussian Noise is added to the training inputs
+        # Random amounts of(chosen from uniform d.) Gaussian Noise is added to the training inputs
         p = np.empty([len(input), 6])
         for j in range(len(input)):
             p[j] = np.random.uniform(low=np.nextafter(0, 1), high=np.nextafter(1, 0), size=6)
@@ -234,13 +232,20 @@ inc_point = [31, 59, 90, 120, 151, 181, 212, 243, 273, 304, 334]
 index_month = 0
 
 all_labels = [["u10", "v10", 'z', 't', "tcc", "tp"], ["t2m", "v10", 'z', 't', "tcc", "tp"],
-              ["t2m", "u10", 'z', 't', "tcc", "tp"]
-    , ["t2m", "u10", "v10", 't', "tcc", "tp"], ["t2m", "u10", "v10", 'z', "tcc", "tp"],
-              ["t2m", "u10", "v10", 'z', 't', "tp"], ["t2m", "u10", "v10", 'z', 't', "tcc"]]
+              ["t2m", "u10", 'z', 't', "tcc", "tp"], ["t2m", "u10", "v10", 't', "tcc", "tp"],
+              ["t2m", "u10", "v10", 'z', "tcc", "tp"], ["t2m", "u10", "v10", 'z', 't', "tp"],
+              ["t2m", "u10", "v10", 'z', 't', "tcc"]]
 
 rec_losses = torch.zeros([7, 2, 7])
 std_tensor = torch.zeros([730])
+
+save_figs = False
+gradient_bars = False
+draw_world_map = False
 bar_chart_std = False
+oneD_p = False
+threeD_p = False
+multi_parameter = False
 
 def val():
     counter = 0
@@ -256,159 +261,182 @@ def val():
     # grid = [0.00001, 0.999999]
 
     np.set_printoptions(suppress=True)
-    for k in range(7):
-        train_model = UNet(6, 1).to(device)
-        labels = ["t2m", "u10", "v10", 'z', 't', "tcc", "tp"]
-        train_state = torch.load(
-            '/home/ge75tis/Desktop/oezyurt/model/6_1_UNET/{par}_gaussiandropout_35_epochs'.format(par=labels[k]))
-        train_model.load_state_dict(train_state['state_dict'])
-        optimizer.load_state_dict(train_state['optimizer'])
-        total_epochs = train_state['epoch']
+    if(multi_parameter == False):
+        for k in range(7):
+            # load all trained models one by one
+            train_model = UNet(6, 1).to(device)
+            labels = ["t2m", "u10", "v10", 'z', 't', "tcc", "tp"]
+            train_state = torch.load(
+                '/home/ge75tis/Desktop/oezyurt/model/6_1_UNET/{par}_gaussiandropout_35_epochs'.format(par=labels[k]))
+            train_model.load_state_dict(train_state['state_dict'])
+            optimizer.load_state_dict(train_state['optimizer'])
+            total_epochs = train_state['epoch']
 
-        print(f'{labels[k]}')
-        # for l in range(6):
-        p_gradients = torch.zeros([6,32,64]).to(device, dtype=torch.float32)
-        p = torch.tensor([0.99, 0.99, 0.99, 0.99, 0.99, 0.99], requires_grad=True).to(
-            device, dtype=torch.float32)
-        p1 = torch.zeros([6,32,64], requires_grad=True).to(
-            device, dtype=torch.float32)
-        p1.fill_(0.975)
+            print(f'{labels[k]}')
 
-        # p[l] = 0.01
+            # either create a 1D p vector (only tracks loss), or a 3D p vector (tracks pixel gradients)
+            if(threeD_p):
+                p_gradients = torch.zeros([6,32,64]).to(device, dtype=torch.float32)
+                p = torch.zeros([6, 32, 64], requires_grad=True).to(
+                    device, dtype=torch.float32)
+                'Fill any value you want. Closer values to 1 means higher gradients.'
+                p.fill_(0.975)
 
-        for i, (vals) in enumerate(val_loader):
-            if(i == 280):
+            if(oneD_p):
+                p_gradients = torch.zeros(6).to(device, dtype=torch.float32)
+                p = torch.tensor([0.99, 0.99, 0.99, 0.99, 0.99, 0.99], requires_grad=True).to(
+                device, dtype=torch.float32)
+
+
+            'You can change one channels noise to see if the gradients of others behaves differently.'
+
+
+            for i, (vals) in enumerate(val_loader):
+                'Choose one or more time points to look at gradient sensitivity maps'
+                # if(i == 280):
                 valid = vals.index_select(dim=1, index=input_indices[k]).to(device, dtype=torch.float32)
                 target = vals.index_select(dim=1, index=out_index[k]).to(device, dtype=torch.float32)
-                # tens_p = torch.tensor(p).to(device, dtype=torch.float32)
-                noisy_input = gaussian_dropout_image(valid, p1)
-                output = train_model(noisy_input)
-                loss = loss_type_nored(output, target)
-                loss = torch.squeeze(loss)
-                # how to get the gradient of a multidimensional loss space wrt multidimensional noise space
+
                 # we want gradient of 1,32,64 output wrt 6,32,64 noise p space
-                # loss_std = loss_type_std(output, target)
-                # loss = torch.squeeze(loss)
+                if(threeD_p):
+                    noisy_input = gaussian_dropout_image(valid, p)
+                    output = train_model(noisy_input)
+                    loss = loss_type_nored(output, target)
+                    loss = torch.squeeze(loss)
+                if(oneD_p):
+                    noisy_input = gaussian_dropout(valid, p)
+                    output = train_model(noisy_input)
+                    loss = loss_type(output, target)
+
 
                 optimizer.zero_grad()
-                loss[9][17].backward(inputs=p1, retain_graph=True)
+                'Choose the individual pixel from which the gradients will be computed'
+                if(threeD_p):
+                    loss[9][17].backward(inputs=p, retain_graph=True)
+                if(oneD_p):
+                    loss.backward(inputs=p, retain_graph=True)
 
-                p_gradients.add_(p1.grad)
+                'Add gradients of input data. You can either take their average later or look at the sum'
+                p_gradients.add_(p.grad)
+                p.grad = None
 
-                p1.grad = None
-            # val_loss1 += loss.item()
-            # std_tensor[i] = loss.item()
-
-
-        if(bar_chart_std):
-            rec_losses[k][0][l] = val_loss1/len(val_dataset)
-            val_loss1 = 0
-            rec_losses[k][1][l] = torch.std(std_tensor)
-
-# for i in range(7):
-#     print(labels[i])
-#     for j in range(6):
-#         print((rec_losses[i][0][6]-rec_losses[i][0][j]) / rec_losses[i][0][6])
 
         # p_gradients.divide_(len(val_dataset))
         results = np.array(p_gradients.cpu())
 
-        for i in range(6):
-            fig = plt.figure(figsize=(10,10))
-            sns.heatmap(results[i], cmap="YlOrRd", xticklabels=False, yticklabels=False, cbar_kws = dict(use_gridspec=False, orientation="horizontal"))
-            plt.title('{param} Prediction model World heatmap of Gradients wrt. {par} noise when p_all ~ 1'.format(param=params_C[k], par=all_labels[k][i]))
-            plt.show()
-            # fig.savefig('/home/ge75tis/Desktop/Thesis-project-CNN/Graphs/GRADIENT/WorldMapsOnePixel280-0.975/{param}_world_heatmap_{par}'.format(param=params_C[k], par=all_labels[k][i]))
+        if(draw_world_map):
+            for i in range(6):
+                fig = plt.figure(figsize=(10,10))
+                sns.heatmap(results[i], cmap="YlOrRd", xticklabels=False, yticklabels=False, cbar_kws = dict(use_gridspec=False, orientation="horizontal"))
+                plt.title('{param} Prediction model World heatmap of Gradients wrt. {par} noise when p_all ~ 1'.format(param=params_C[k], par=all_labels[k][i]))
+                plt.show()
+                if(save_figs):
+                    fig.savefig('/home/ge75tis/Desktop/Thesis-project-CNN/Graphs/GRADIENT/WorldMapsOnePixel280-0.975/{param}_world_heatmap_{par}'.format(param=params_C[k], par=all_labels[k][i]))
 
 
-            # print(f' {labels[k]}: p_grads, {all_labels[k]} p ~ 0, others ~ 1: {results}')
-            # x = np.arange(len(all_labels[k]))
-            # width = 0.3
-            # fig3, ax = plt.subplots()
-            # rects1 = ax.bar(x, results, width, label='p_{param} ~ 0, ')
-            # ax.set_ylabel('Avg. Gradient of loss wrt. input parameters noise')
-            # ax.set_title('{param} Analysis of Gradient wrt. parameter noise when p_{par} ~ 0'.format(param=params_C[k], par=all_labels[k][l]))
-            # ax.set_xticks(x, all_labels[k])
-            # ax.legend()
-            # ax.bar_label(rects1, padding=3)
-            # fig3.tight_layout()
-            # fig3.savefig('/home/ge75tis/Desktop/Thesis-project-CNN/Graphs/GRADIENT/Grad_{param}/{par}_gradient_bar_chart'.format(param=params_C[k], par=all_labels[k][l]))
 
-    # for k in range(7):
-    #     train_model = UNet(6, 1).to(device)
-    #     labels = ["t2m", "u10", "v10", 'z', 't', "tcc", "tp"]
-    #     train_state = torch.load(
-    #         '/home/ge75tis/Desktop/oezyurt/model/6_1_UNET/{par}_gaussiandropout_35_epochs'.format(par=labels[k]))
-    #     train_model.load_state_dict(train_state['state_dict'])
-    #     optimizer.load_state_dict(train_state['optimizer'])
-    #     total_epochs = train_state['epoch']
-    #
-    #     print(f'{labels[k]}')
-    #     for l in range(6):
-    #         p_gradients = torch.tensor([0, 0, 0, 0, 0, 0]).to(device, dtype=torch.float32)
-    #         p = torch.tensor([0.999999, 0.999999, 0.999999, 0.999999, 0.999999, 0.999999], requires_grad=True).to(
-    #             device, dtype=torch.float32)
-    #         p[l] = 0.00001
-    #
-    #         for i, (vals) in enumerate(val_loader):
-    #             valid = vals.index_select(dim=1, index=input_indices[k]).to(device, dtype=torch.float32)
-    #             target = vals.index_select(dim=1, index=out_index[k]).to(device, dtype=torch.float32)
-    #
-    #             # tens_p = torch.tensor(p).to(device, dtype=torch.float32)
-    #             noisy_input = gaussian_dropout(valid, p)
-    #             output = train_model(noisy_input)
-    #             loss = loss_type(output, target)
-    #
-    #             val_loss1 += loss.item()
-    #             std_tensor[i] = loss.item()
-    #
-    #             if (month):
-    #                 if (counter in inc_point):
-    #                     index_month += 1
-    #                 if (counter == 365):
-    #                     counter = 0
-    #                     index_month = 0
-    #                 avg_val_loss_gridded_m[k][l][index_month] += loss.item()
-    #
-    #
-    #             counter += 1
-    #
-    #         print(f'Average Validation Losses: {val_loss1/len(val_dataset):.6f}')
-    #         avg_val_loss_gridded[k][l] = val_loss1/len(val_dataset)
-    #         val_loss1 = 0
-    #
-    #
-    #         if(month):
-    #             for i in range(12):
-    #                 if (i == 0 or i == 2 or i == 4 or i == 6 or i == 7 or i == 9 or i == 11):
-    #                     avg_val_loss_gridded_m[k][l][i] = avg_val_loss_gridded_m[k][l][i] / 62
-    #                 elif (i == 3 or i == 5 or i == 8 or i == 10):
-    #                     avg_val_loss_gridded_m[k][l][i] = avg_val_loss_gridded_m[k][l][i] / 60
-    #                 elif (i == 1):
-    #                     avg_val_loss_gridded_m[k][l][i] = avg_val_loss_gridded_m[k][l][i] / 56
-    #
-    #         print(avg_val_loss_gridded_m[k][l])
-    #
-    #         if(graph):
-    #             if(month):
-    #                 x_axis = ["jan", "feb", "mar", "apr", "may", "jun", "jul", "aug", "sep", "oct", "nov", "dec"]
-    #                 labels = all_labels[k]
-    #                 fig = plt.figure()
-    #                 for i in range(6):
-    #                     plt.errorbar(avg_val_loss_gridded_m[k][i], yerr=0, label=labels[i])
-    #                 fig.suptitle('{param} analysis, p_x ~ 0, p_other ~ 1 per month'.format(param=params_C[k]))
-    #                 fig.errorbar
-    #                 plt.legend()
-    #                 plt.xlabel('months')
-    #                 plt.ylabel('Average loss')
-    #                 fig.savefig("/home/ge75tis/Desktop/Thesis-project-CNN/Graphs/per_month_test/{param}_Dropout_per_month_p_x_0".format(param=params_C[k]))
-    #             # fig = plt.figure(g, figsize=(10,10))
-    #             # sns.heatmap(avg_val_loss_gridded[g], linewidths=.5, cmap="Greens", annot=True, xticklabels=grid, yticklabels=grid, norm=LogNorm(), fmt=".3f")
-    #             # labels = ["t2m", "u10", "v10", 'z', 't', "tcc"]
-    #             # plt.title('Avg Validation loss of TP for different dropout rates of {par} and other parameters'.format(par=labels[g]))
-    #             # plt.xlabel('other parameters dropout rate p')
-    #             # plt.ylabel('{par} dropout rate p'.format(par=labels[g]))
-    #             # fig.savefig('/home/ge75tis/Desktop/Thesis-project-CNN/Graphs/DROPOUT_ANALYSIS/tp_analysis_{label}_heatmap'.format(label=labels[g]))
+
+    if(multi_parameter):
+        for k in range(7):
+            train_model = UNet(6, 1).to(device)
+            labels = ["t2m", "u10", "v10", 'z', 't', "tcc", "tp"]
+            train_state = torch.load(
+                '/home/ge75tis/Desktop/oezyurt/model/6_1_UNET/{par}_gaussiandropout_35_epochs'.format(par=labels[k]))
+            train_model.load_state_dict(train_state['state_dict'])
+            optimizer.load_state_dict(train_state['optimizer'])
+            total_epochs = train_state['epoch']
+
+            print(f'{labels[k]}')
+            for l in range(6): # Set each parameter noise to 0 one by one and look at the gradient of others at the same time
+                p_gradients = torch.zeros(6).to(device, dtype=torch.float32)
+                p = torch.tensor([0.999999, 0.999999, 0.999999, 0.999999, 0.999999, 0.999999], requires_grad=True).to(
+                    device, dtype=torch.float32)
+                p[l] = 0.00001
+
+                for i, (vals) in enumerate(val_loader):
+                    valid = vals.index_select(dim=1, index=input_indices[k]).to(device, dtype=torch.float32)
+                    target = vals.index_select(dim=1, index=out_index[k]).to(device, dtype=torch.float32)
+
+                    # tens_p = torch.tensor(p).to(device, dtype=torch.float32)
+                    noisy_input = gaussian_dropout(valid, p)
+                    output = train_model(noisy_input)
+                    loss = loss_type(output, target)
+
+                    val_loss1 += loss.item()
+                    std_tensor[i] = loss.item()
+
+                    if (month):
+                        if (counter in inc_point):
+                            index_month += 1
+                        if (counter == 365):
+                            counter = 0
+                            index_month = 0
+                        avg_val_loss_gridded_m[k][l][index_month] += loss.item()
+
+
+                    counter += 1
+
+                if (bar_chart_std):
+                    rec_losses[k][0][l] = val_loss1 / len(val_dataset)
+                    val_loss1 = 0
+                    rec_losses[k][1][l] = torch.std(std_tensor)
+
+                print(f'Average Validation Losses: {val_loss1/len(val_dataset):.6f}')
+                avg_val_loss_gridded[k][l] = val_loss1/len(val_dataset)
+                val_loss1 = 0
+
+
+                if(month):
+                    for i in range(12):
+                        if (i == 0 or i == 2 or i == 4 or i == 6 or i == 7 or i == 9 or i == 11):
+                            avg_val_loss_gridded_m[k][l][i] = avg_val_loss_gridded_m[k][l][i] / 62
+                        elif (i == 3 or i == 5 or i == 8 or i == 10):
+                            avg_val_loss_gridded_m[k][l][i] = avg_val_loss_gridded_m[k][l][i] / 60
+                        elif (i == 1):
+                            avg_val_loss_gridded_m[k][l][i] = avg_val_loss_gridded_m[k][l][i] / 56
+
+                print(avg_val_loss_gridded_m[k][l])
+
+                if(graph):
+                    if(month):
+                        x_axis = ["jan", "feb", "mar", "apr", "may", "jun", "jul", "aug", "sep", "oct", "nov", "dec"]
+                        labels = all_labels[k]
+                        fig = plt.figure()
+                        for i in range(6):
+                            plt.errorbar(avg_val_loss_gridded_m[k][i], yerr=0, label=labels[i])
+                        fig.suptitle('{param} analysis, p_x ~ 0, p_other ~ 1 per month'.format(param=params_C[k]))
+                        fig.errorbar
+                        plt.legend()
+                        plt.xlabel('months')
+                        plt.ylabel('Average loss')
+                        fig.savefig("/home/ge75tis/Desktop/Thesis-project-CNN/Graphs/per_month_test/{param}_Dropout_per_month_p_x_0".format(param=params_C[k]))
+                    # fig = plt.figure(g, figsize=(10,10))
+                    # sns.heatmap(avg_val_loss_gridded[g], linewidths=.5, cmap="Greens", annot=True, xticklabels=grid, yticklabels=grid, norm=LogNorm(), fmt=".3f")
+                    # labels = ["t2m", "u10", "v10", 'z', 't', "tcc"]
+                    # plt.title('Avg Validation loss of TP for different dropout rates of {par} and other parameters'.format(par=labels[g]))
+                    # plt.xlabel('other parameters dropout rate p')
+                    # plt.ylabel('{par} dropout rate p'.format(par=labels[g]))
+                    # fig.savefig('/home/ge75tis/Desktop/Thesis-project-CNN/Graphs/DROPOUT_ANALYSIS/tp_analysis_{label}_heatmap'.format(label=labels[g]))
+
+                results = np.array(p_gradients.cpu())
+
+                if (gradient_bars):
+                    print(f' {labels[k]}: p_grads, {all_labels[k]} p ~ 0, others ~ 1: {results}')
+                    x = np.arange(len(all_labels[k]))
+                    width = 0.3
+                    fig3, ax = plt.subplots()
+                    rects1 = ax.bar(x, results, width, label='p_{param} ~ 0, ')
+                    ax.set_ylabel('Avg. Gradient of loss wrt. input parameters noise')
+                    ax.set_title(
+                        '{param} Analysis of Gradient wrt. parameter noise when p_{par} ~ 0'.format(param=params_C[k],
+                                                                                                    par=all_labels[k][l]))
+                    ax.set_xticks(x, all_labels[k])
+                    ax.legend()
+                    ax.bar_label(rects1, padding=3)
+                    fig3.tight_layout()
+                    fig3.savefig(
+                        '/home/ge75tis/Desktop/Thesis-project-CNN/Graphs/GRADIENT/Grad_{param}/{par}_gradient_bar_chart'.format(
+                            param=params_C[k], par=all_labels[k][l]))
 
     if (all_individual_models):
         for i, (vals) in enumerate(val_loader):
@@ -481,18 +509,16 @@ with mlflow.start_run() as run:
     #     train(epoch)
     #     total_epochs += 1
 
-# train_state = {
-#     'epoch': num_epochs,
-#     'state_dict': train_model.state_dict(),
-#     'optimizer': optimizer.state_dict()
-# }
-#
-# torch.save(train_state, '/home/ge75tis/Desktop/oezyurt/model/6_1_UNET/tp_gaussiandropout_35_epochs')
 
-# clm_losses = [0.1061, 0.5411, 0.6394, 0.2035, 0.1897, 0.6936, 0.3540]
-# labels = []
-# u10_losses = [0.2416, 0.2759]
-# v10_losses = [0.2722, 0.3014]
+save_model = False
+if(save_model):
+    train_state = {
+        'epoch': num_epochs,
+        'state_dict': train_model.state_dict(),
+        'optimizer': optimizer.state_dict()
+    }
+
+    torch.save(train_state, '/home/ge75tis/Desktop/oezyurt/model/6_1_UNET/tp_gaussiandropout_35_epochs')
 
 
 bar_chart_std = False
@@ -527,7 +553,7 @@ if(distance_cluster):
                     [243.56503, 70.133736, 118.08318, 162.23822, 0, 48.33932, 16.240177],
                     [20.356546, 117.38441, 187.36948, 116.907524, 100.78966, 0, 154.77966],
                     [1, 10.919211, 24.24271, 3.0331063, 1, 16.8139, 0]]
-    # how to deal with the really low gradients of tcc and tp? the distances become are out of scale compared to others
+    # how to deal with the really low gradients of tcc and tp? the distances become out of scale compared to others
 
     dist_matr = np.empty([7,7])
     for i in range(7):
@@ -560,17 +586,16 @@ if(heatmap):
                                [0.0774, 0.7039, 1, 0.4368, 0.1069, 0.1861, 0.1784], [0.1943, 0.3980, 0.2435, 1, 0.5723, 0.0394, 0.0959],
                                [0.7112, 0.0709, 0.1207, 0.5341, 1, 0.0857, 0.0063], [0.0351, 0.1879, 0.3602, 0.1391, 0.2310, 1, 0.1881],
                                [0.0210, 0.4211, 0.4670, 0.0889, 0.0503, 0.2109, 1]]
-    comb_heatmap_percentage_ord = [[1, 0.533, 0.507, 0.237, 0.344, 0.074, 0.172], [0.711, 1, 0.534, 0.071, 0.121, 0.006, 0.086],
-                                [0.194, 0.572, 1, 0.398, 0.243, 0.096, 0.039], [0.013, 0.159, 0.429, 1, 0.649, 0.239, 0.143],
-                                [0.077, 0.107, 0.437, 0.704, 1, 0.178, 0.186], [0.021, 0.050, 0.089, 0.421, 0.467, 1, 0.211],
-                                [0.035, 0.231, 0.139, 0.188, 0.360, 0.188, 1]]
+    comb_heatmap = [[0, 4.30, 3.65, 2.77, 2.60, 4.65, 5.20], [11.23, 0, 3.94, 6.46, 9.55, 9.75, 8.53],
+                    [16.08, 5.06, 0, 9.83, 15.68, 14.13, 14.36],
+                    [10.56, 7.81, 9.87, 0, 5.57, 12.53, 11.78], [2.75, 8.91, 8.42, 4.52, 0, 8.77, 9.50],
+                    [4.77, 4.06, 3.15, 4.23, 3.77, 0, 3.98], [1.09, 0.65, 0.59, 1.00, 1.05, 0.87, 0]]
 
     grad_heatmap = [[0, 37.1591, 53.27599, 23.071262, 369.16653, -18.684557, -9.69056 ], [18.599178, 0, 506.08084, 239.3966, 252.6608, 99.09486, 122.54916 ],
                     [89.44, 419.50064, 0, 200.04277, 229.186, 160.98209, 173.02988], [69.64928, 222.90337, 303.3208, 0, 192.48601, 38.59495, 34.078014],
                     [243.56503, 70.133736, 118.08318, 162.23822, 0, 48.33932, 16.240177], [20.356546, 117.38441, 187.36948, 116.907524, 100.78966, 0, 154.77966],
                     [0.11764815, 10.919211, 24.24271, 3.0331063, 0.18807021, 16.8139, 0]]
-    comb_heatmap = [[0, 4.30, 3.65, 2.77, 2.60, 4.65, 5.20], [11.23, 0, 3.94, 6.46, 9.55, 9.75, 8.53], [16.08, 5.06, 0, 9.83, 15.68, 14.13, 14.36],
-                    [10.56, 7.81, 9.87, 0, 5.57, 12.53, 11.78], [2.75, 8.91, 8.42, 4.52, 0, 8.77, 9.50], [4.77, 4.06, 3.15, 4.23, 3.77, 0, 3.98], [1.09, 0.65, 0.59, 1.00, 1.05, 0.87, 0]]
+
     heat_norm = plt.Normalize(0,1)
     dist_matr = np.empty([7, 7])
     for i in range(7):
@@ -594,48 +619,3 @@ if(heatmap):
     plt.tight_layout()
     plt.show()
     fig1.savefig('/home/ge75tis/Desktop/clustermap_avgmethod_trueorder')
-
-
-# dist_matr = np.empty([7, 7])
-# for i in range(7):
-#     for j in range(7):
-#         if (i == j):
-#             dist_matr[i][j] = 0
-#         else:
-#             dist_matr[i][j] = (0.1 / (comp_heatmap_percentage_ord[i][j] + comp_heatmap_percentage_ord[j][i]))
-#
-# fig = plt.figure(figsize=(10,10))
-# dists = scipy.spatial.distance.squareform(dist_matr)
-# linkage_matrix = scipy.cluster.hierarchy.linkage(dists, "single")
-# scipy.cluster.hierarchy.dendrogram(linkage_matrix, labels=['t2m', 't', 'z', 'u10', 'v10', 'tp', 'tcc'])
-# plt.title("test")
-# plt.show()
-# fig.savefig('/home/ge75tis/Desktop/dendrogram_test_new')
-
-
-
-
-# labels_0 = ['V10', 't', 'z', 'tp', 'tcc']
-# p_x_0 = [472, 243, 238, 118, 112]
-# # labels_1 = ['T', 'Z', 'V10', 'U10', 'TCC', 'TP']
-# p_x_1 = [0.284, 0.288, 0.277, 0.270, 0.269, 0.267]
-#
-# x = np.arange(len(labels_0))
-# width = 0.3
-#
-# fig3, ax = plt.subplots()
-# rects1 = ax.bar(x, p_x_0, width, label='p_T2M ~ 0, p_other ~ 1')
-# # rects2 = ax.bar(x + width/2, p_x_1, width, label='p_x ~ 1, p_other ~ 0')
-#
-# ax.set_ylabel('Gradient of reconstruction loss wrt to p')
-# ax.set_title('U10 Dropout Analysis p_T2M ~ 0 gradient comparison')
-# ax.set_xticks(x, labels_0)
-#
-# ax.legend()
-#
-# ax.bar_label(rects1, padding=3)
-# # ax.bar_label(rects2, padding=3)
-#
-# fig3.tight_layout()
-#
-# fig3.savefig('/home/ge75tis/Desktop/T2M_gradient_Analysis_t2m')
