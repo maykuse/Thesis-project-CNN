@@ -1,11 +1,13 @@
-from UNET import *
-import csv
-import numpy as np
-from torch.utils.data import Dataset, DataLoader
-import zarr
-import xarray as xr
-import torch
+# from UNET import *
+# import csv
+# import numpy as np
+# from torch.utils.data import Dataset, DataLoader
+# import zarr
+# import xarray as xr
+# import torch
 
+
+## CLIMATOLOGY OLD PLOTS
 
 # for i in range(52):
 #      if(i == 51):
@@ -68,7 +70,9 @@ import torch
 # fig.savefig("/home/ge75tis/Desktop/per_param_unet_loss_by_month_L1")
 
 
-# COPIED FROM TRAINING TESTING START
+
+## CONCATENATE ZARR DATASET YEARS AS ONE ZARR FILE
+
 ### new = wxee.xarray.DataArrayAccessor(xrdataset).normalize()
 ### test_array = new.to_numpy()
 ### norm_dataset = torch.from_numpy(test_array)
@@ -133,6 +137,7 @@ import torch
 
 
 
+## CONCAT CONSTANT VARIABLES LSM, OROG, SLT TO THE END OF EVERY DATASET
 
 # lsm = zarr.open('/home/ge75tis/Desktop/oezyurt/zarr dataset/one_folder/validation_data_one_folder/const_lsm')
 # orography = zarr.open('/home/ge75tis/Desktop/oezyurt/zarr dataset/one_folder/validation_data_one_folder/const_orog')
@@ -156,7 +161,8 @@ import torch
 # zarr.save('/home/ge75tis/Desktop/oezyurt/zarr dataset/one_folder/validation_data_one_folder/const_slt/', nparray)
 
 
-
+# # RESAMPLE TEST AND VALIDATION
+#
 # t2m = zarr.open('/home/ge75tis/Desktop/oezyurt/zarr dataset/TEST_DATA/t2m/2011/t2m/')
 # u10 = zarr.open('/home/ge75tis/Desktop/oezyurt/zarr dataset/TEST_DATA/u10/2011/u10/')
 # v10 = zarr.open('/home/ge75tis/Desktop/oezyurt/zarr dataset/TEST_DATA/v10/2011/v10/')
@@ -164,13 +170,13 @@ import torch
 # t = zarr.open('/home/ge75tis/Desktop/oezyurt/zarr dataset/TEST_DATA/t/2011/t/')
 # tcc = zarr.open('/home/ge75tis/Desktop/oezyurt/zarr dataset/TEST_DATA/tcc/2011/tcc/')
 # tp = zarr.open('/home/ge75tis/Desktop/oezyurt/zarr dataset/TEST_DATA/tp/2011/tp/')
-
+#
 # dataset = zarr.create((70128, 7, 32, 64))
-
+#
 # dataset = zarr.open('/home/ge75tis/Desktop/oezyurt/zarr dataset/concat/const_concat_val/')
 # print(dataset.shape)
 #
 # resampled_test = dataset[::24]
 # print(resampled_test.shape)
 # zarr.save('/home/ge75tis/Desktop/oezyurt/zarr dataset/resampled/resampled_24_val', resampled_test)
-#
+

@@ -10,62 +10,72 @@ import matplotlib.pyplot as plt
 import pandas
 
 
-# t2m = xr.open_mfdataset('/home/ge75tis/Desktop/oezyurt/nc dataset/train_nc/t2m_train/*.nc', combine='by_coords')
-# u10 = xr.open_mfdataset('/home/ge75tis/Desktop/oezyurt/nc dataset/train_nc/u10_train/*.nc', combine='by_coords')
-# v10 = xr.open_mfdataset('/home/ge75tis/Desktop/oezyurt/nc dataset/train_nc/v10_train/*.nc', combine='by_coords')
-# z = xr.open_mfdataset('/home/ge75tis/Desktop/oezyurt/nc dataset/train_nc/z_train/*.nc', combine='by_coords')
-# t = xr.open_mfdataset('/home/ge75tis/Desktop/oezyurt/nc dataset/train_nc/t_train/*.nc', combine='by_coords').drop('level')
-# tcc = xr.open_mfdataset('/home/ge75tis/Desktop/oezyurt/nc dataset/train_nc/tcc_train/*.nc', combine='by_coords')
-# tp = xr.open_mfdataset('/home/ge75tis/Desktop/oezyurt/nc dataset/train_nc/tp_train/*.nc', combine='by_coords')
-#
-#
-# t2m_val = xr.open_mfdataset('/home/ge75tis/Desktop/oezyurt/nc dataset/val_nc/t2m/*.nc', combine='by_coords')
-# u10_val = xr.open_mfdataset('/home/ge75tis/Desktop/oezyurt/nc dataset/val_nc/u10/*.nc', combine='by_coords')
-# v10_val = xr.open_mfdataset('/home/ge75tis/Desktop/oezyurt/nc dataset/val_nc/v10/*.nc', combine='by_coords')
-# z_val = xr.open_mfdataset('/home/ge75tis/Desktop/oezyurt/nc dataset/val_nc/z/*.nc', combine='by_coords')
-# t_val = xr.open_mfdataset('/home/ge75tis/Desktop/oezyurt/nc dataset/val_nc/t/*.nc', combine='by_coords').drop('level')
-# tcc_val = xr.open_mfdataset('/home/ge75tis/Desktop/oezyurt/nc dataset/val_nc/tcc/*.nc', combine='by_coords')
-# tp_val = xr.open_mfdataset('/home/ge75tis/Desktop/oezyurt/nc dataset/val_nc/tp/*.nc', combine='by_coords')
-#
-#
-# train_data = xr.merge([t2m, u10, v10, z, t, tcc, tp])
-# valid_data = xr.merge([t2m_val, u10_val, v10_val, z_val, t_val, tcc_val, tp_val])
-#
-#
-# train_data = train_data.isel(time=slice(None, None, 24))
-# valid_data = valid_data.isel(time=slice(None, None, 24))
-#
-#
-# def create_weekly_climatology_forecast(ds_train, valid_time):
-#     ds_train['week'] = ds_train['time.week']
-#     weekly_averages = ds_train.groupby('week').mean('time')
-#     valid_time['week'] = valid_time['time.week']
-#     fc_list = []
-#     for tt in valid_time:
-#         fc_list.append(weekly_averages.sel(week=tt.week))
-#     return xr.concat(fc_list, dim=valid_time)
-#
-# def create_monthly_climatology_forecast(ds_train, valid_time):
-#     ds_train['month'] = ds_train['time.month']
-#     monthly_averages = ds_train.groupby('month').mean('time')
-#     valid_time['month'] = valid_time['time.month']
-#     fc_list = []
-#     for tt in valid_time:
-#         fc_list.append(monthly_averages.sel(month=tt.month))
-#     return xr.concat(fc_list, dim=valid_time)
-#
-# def create_yearly_climatology_forecast(ds_train, valid_time):
-#     whole_average = ds_train.mean('time')
-#     fc_list = []
-#     for t in valid_time:
-#         fc_list.append(whole_average)
-#     return xr.concat(fc_list, dim=valid_time)
-#
+create_climatology_data = False
+if(create_climatology_data):
+    t2m = xr.open_mfdataset('/home/ge75tis/Desktop/oezyurt/nc dataset/train_nc/t2m_train/*.nc', combine='by_coords')
+    u10 = xr.open_mfdataset('/home/ge75tis/Desktop/oezyurt/nc dataset/train_nc/u10_train/*.nc', combine='by_coords')
+    v10 = xr.open_mfdataset('/home/ge75tis/Desktop/oezyurt/nc dataset/train_nc/v10_train/*.nc', combine='by_coords')
+    z = xr.open_mfdataset('/home/ge75tis/Desktop/oezyurt/nc dataset/train_nc/z_train/*.nc', combine='by_coords')
+    t = xr.open_mfdataset('/home/ge75tis/Desktop/oezyurt/nc dataset/train_nc/t_train/*.nc', combine='by_coords').drop('level')
+    tcc = xr.open_mfdataset('/home/ge75tis/Desktop/oezyurt/nc dataset/train_nc/tcc_train/*.nc', combine='by_coords')
+    tp = xr.open_mfdataset('/home/ge75tis/Desktop/oezyurt/nc dataset/train_nc/tp_train/*.nc', combine='by_coords')
 
-# climatology = create_monthly_climatology_forecast(train_data, valid_data.time)
-# print(climatology)
-# climatology.to_netcdf('/home/ge75tis/Desktop/oezyurt/climatology/true_monthly_pred.nc')
-# print('finished')
+
+    t2m_val = xr.open_mfdataset('/home/ge75tis/Desktop/oezyurt/nc dataset/val_nc/t2m/*.nc', combine='by_coords')
+    u10_val = xr.open_mfdataset('/home/ge75tis/Desktop/oezyurt/nc dataset/val_nc/u10/*.nc', combine='by_coords')
+    v10_val = xr.open_mfdataset('/home/ge75tis/Desktop/oezyurt/nc dataset/val_nc/v10/*.nc', combine='by_coords')
+    z_val = xr.open_mfdataset('/home/ge75tis/Desktop/oezyurt/nc dataset/val_nc/z/*.nc', combine='by_coords')
+    t_val = xr.open_mfdataset('/home/ge75tis/Desktop/oezyurt/nc dataset/val_nc/t/*.nc', combine='by_coords').drop('level')
+    tcc_val = xr.open_mfdataset('/home/ge75tis/Desktop/oezyurt/nc dataset/val_nc/tcc/*.nc', combine='by_coords')
+    tp_val = xr.open_mfdataset('/home/ge75tis/Desktop/oezyurt/nc dataset/val_nc/tp/*.nc', combine='by_coords')
+
+
+    train_data = xr.merge([t2m, u10, v10, z, t, tcc, tp])
+    valid_data = xr.merge([t2m_val, u10_val, v10_val, z_val, t_val, tcc_val, tp_val])
+
+
+    train_data = train_data.isel(time=slice(None, None, 24))
+    valid_data = valid_data.isel(time=slice(None, None, 24))
+
+
+    def create_weekly_climatology_forecast(ds_train, valid_time):
+        ds_train['week'] = ds_train['time.week']
+        weekly_averages = ds_train.groupby('week').mean('time')
+        valid_time['week'] = valid_time['time.week']
+        fc_list = []
+        for tt in valid_time:
+            fc_list.append(weekly_averages.sel(week=tt.week))
+        return xr.concat(fc_list, dim=valid_time)
+
+    def create_monthly_climatology_forecast(ds_train, valid_time):
+        ds_train['month'] = ds_train['time.month']
+        monthly_averages = ds_train.groupby('month').mean('time')
+        valid_time['month'] = valid_time['time.month']
+        fc_list = []
+        for tt in valid_time:
+            fc_list.append(monthly_averages.sel(month=tt.month))
+        return xr.concat(fc_list, dim=valid_time)
+
+    def create_seasonal_climatology_forecast(ds_train, valid_time):
+        # not yet implemented
+        # ds_train[?] = ?
+        fc_list = []
+        for t in valid_time:
+            fc_list.append(whole_average)
+        return xr.concat(fc_list, dim=valid_time)
+
+
+    if(weekly):
+        climatology = create_weekly_climatology_forecast(train_data, valid_data.time)
+        print(climatology)
+        climatology.to_netcdf('/home/ge75tis/Desktop/oezyurt/climatology/true_weekly_pred.nc')
+
+    if(monthly):
+        climatology = create_monthly_climatology_forecast(train_data, valid_data.time)
+        print(climatology)
+        climatology.to_netcdf('/home/ge75tis/Desktop/oezyurt/climatology/true_monthly_pred.nc')
+
+    print('finished')
 
 
 
@@ -79,6 +89,7 @@ norm = transforms.Normalize((2.78415200e+02, -1.00402647e-01,  2.20140679e-01,  
                             (2.11294838e+01, 5.57168569e+00, 4.77363485e+00, 3.35202722e+03,
                             1.55503555e+01, 3.62274453e-01, 3.57928990e-04, 4.59003773e-01,
                             8.59872249e+02, 1.16888408e+00))
+
 # This is the mean and std of the resampled training data (not the climatology prediction)
 norm_clm = transforms.Normalize((2.78415200e+02, -1.00402647e-01,  2.20140679e-01,  5.40906312e+04,
                                 2.74440506e+02,  6.76697789e-01,  9.80986749e-05),
@@ -150,7 +161,7 @@ clm_week_loader = torch.utils.data.DataLoader(clm_week_dataset)
 clm_month_dataset = CLMMONTHDataset()
 clm_month_loader = torch.utils.data.DataLoader(clm_month_dataset)
 
-
+# Loss type can be changed to analyze different behaviors
 loss_type = nn.L1Loss()
 
 
@@ -236,15 +247,18 @@ for i in range(52):
 
 
 for i in range(12):
+    # 31 day months, 2 years validation data = 62 days in total
     if(i == 0 or i == 2 or i == 4 or i == 6 or i == 7 or i == 9 or i == 11):
         for j in range(7):
             clm_month_param[j][i] = clm_month_param[j][i] / 62
         clm_month_loss[i] = clm_month_loss[i] / 62
 
+    # 30 day months
     elif(i == 3 or i == 5 or i == 8 or i == 10):
         for j in range(7):
             clm_month_param[j][i] = clm_month_param[j][i] / 60
         clm_month_loss[i] = clm_month_loss[i] / 60
+    # February
     elif(i == 1):
         for j in range(7):
             clm_month_param[j][i] = clm_month_param[j][i] / 56
@@ -279,8 +293,10 @@ elif(month_param):
     plt.legend(loc='center right')
 
 
-# fig.suptitle('climatology prediction L1 loss by week per parameter')
-# plt.xlabel('weeks (every 7 days)')
-# plt.ylabel('Average loss')
-# plt.show()
-# fig.savefig("/home/ge75tis/Desktop/per_param_clm_loss_by_week_L1")
+save_figure = False
+if(save_figure):
+    fig.suptitle('climatology prediction L1 loss by week per parameter')
+    plt.xlabel('weeks (every 7 days)')
+    plt.ylabel('Average loss')
+    plt.show()
+    fig.savefig("/home/ge75tis/Desktop/per_param_clm_loss_by_week_L1")

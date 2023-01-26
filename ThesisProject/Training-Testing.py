@@ -1,6 +1,5 @@
 import argparse
 import os.path
-
 import torch.nn.init
 import torchvision.transforms
 from UNET import *
@@ -64,6 +63,21 @@ parser.add_argument(
     help="Set to True to create many to one models"
 )
 
+parser.add_argument(
+    "--use-saved",
+    type=bool,
+    default=False,
+    metavar="Bool",
+    help="Set to true to use saved model"
+)
+parser.add_argument(
+    "--save-trained-model",
+    type=bool,
+    default=False,
+    metavar="Bool",
+    help="Set to true to save model"
+)
+
 
 args = parser.parse_args()
 
@@ -74,7 +88,8 @@ total_epochs = 0
 train_set = zarr.open('/home/ge75tis/Desktop/oezyurt/zarr dataset/resampled/resampled_24_train/')
 validation_set = zarr.open('/home/ge75tis/Desktop/oezyurt/zarr dataset/resampled/resampled_24_val/')
 test_set = zarr.open('/home/ge75tis/Desktop/oezyurt/zarr dataset/resampled/resampled_24_test/')
-# order of the parameters are: t2m, u10, v10, z, t, tcc, tp, lsm, orog, slt
+# Order of the parameters are:
+# t2m, u10, v10, z, t, tcc, tp, lsm, orog, slt
 
 
 norm = transforms.Normalize((2.78415200e+02, -1.00402647e-01,  2.20140679e-01,  5.40906312e+04,
@@ -83,7 +98,6 @@ norm = transforms.Normalize((2.78415200e+02, -1.00402647e-01,  2.20140679e-01,  
                             (2.11294838e+01, 5.57168569e+00, 4.77363485e+00, 3.35202722e+03,
                             1.55503555e+01, 3.62274453e-01, 3.57928990e-04, 4.59003773e-01,
                             8.59872249e+02, 1.16888408e+00))
-
 
 
 xr_train = xr.DataArray(train_set)
@@ -100,8 +114,7 @@ xr_test = xr.DataArray(test_set)
 np_test = xr_test.to_numpy()
 torch_test = torch.from_numpy(np_test)
 norm_test = norm(torch_test)
-
-# # You should also think about saving the normalized data as zarr file for more efficient data loading
+# Is saving the normalized data as zarr file for more efficient data loading?
 
 
 class TrainDataset(Dataset):
@@ -132,7 +145,7 @@ class TestDataset(Dataset):
 def init_weights(m):
     if isinstance(m, nn.Conv2d) or isinstance(m, nn.ConvTranspose2d):
         torch.nn.init.xavier_uniform_(m.weight)
-       # m.bias.data.fill_(0.01)
+        # m.bias.data.fill_(0.01) # not really useful
 
 train_dataset = TrainDataset()
 train_loader = torch.utils.data.DataLoader(train_dataset, batch_size=args.batch_size, shuffle=True)
@@ -156,11 +169,12 @@ loss_type = nn.L1Loss()
 optimizer = torch.optim.Adam(model.parameters(), lr=args.lr)
 scheduler = torch.optim.lr_scheduler.ExponentialLR(optimizer, gamma=0.5)
 
-# # use saved model states to resume training:
-# state = torch.load('/home/ge75tis/Desktop/oezyurt/model/10_7_UNET/no_dropout_model_lr5_60_epochs')
-# model.load_state_dict(state['state_dict'])
-# optimizer.load_state_dict(state['optimizer'])
-# total_epochs = state['epoch']
+# use saved model states:
+if(args.test or args.use_saved):
+    state = torch.load('/home/ge75tis/Desktop/oezyurt/model/10_7_UNET/no_dropout_model_lr5_60_epochs')
+    model.load_state_dict(state['state_dict'])
+    optimizer.load_state_dict(state['optimizer'])
+    total_epochs = state['epoch']
 
 y_loss = {}
 y_loss['train'] = []
@@ -170,8 +184,8 @@ x_epoch = []
 fig = plt.figure(figsize=(36, 12))
 ax0 = fig.add_subplot(121, title="loss")
 
-
-def draw_curve(current_epoch):
+draw_set = False
+def draw_loss_curve(current_epoch):
     x_epoch.append(current_epoch)
     ax0.plot(x_epoch, y_loss['train'], 'ro-', label='train', markevery=5)
     ax0.plot(x_epoch, y_loss['val'], 'bo-', label='val', markevery=5)
@@ -217,7 +231,8 @@ def val():
     print(f'Average Validation Loss: {avg_val_loss:.6f}')
     y_loss['val'].append(avg_val_loss)
 
-    # draw_curve(total_epochs)
+    if(draw_set):
+        draw_loss_curve(total_epochs)
     log_scalar("val_loss", avg_val_loss)
 
 
@@ -235,9 +250,11 @@ def test():
 
     log_scalar("test_loss", avg_test_loss)
 
+
 param_loss = [0 for i in range(7)]
 avg_param_loss = [0 for i in range(7)]
 labels = ["T2M", "U10", "V10", 'Z', 'T', "TCC", "TP"]
+
 
 def test_per_parameter():
     model.eval()
@@ -257,7 +274,7 @@ def log_scalar(name, value):
     mlflow.log_metric(name, value)
 
 
-# Training, Testing, Validation:
+"Training, Testing and Validation"
 with mlflow.start_run() as run:
     for key, value in vars(args).items():
         mlflow.log_param(key, value)
@@ -272,11 +289,11 @@ with mlflow.start_run() as run:
     test_per_parameter()
 
 
-# state = {
-#     'epoch': total_epochs + args.epochs,
-#     'state_dict': model.state_dict(),
-#     'optimizer': optimizer.state_dict()
-# }
-#
-# torch.save(state, '/home/ge75tis/Desktop/oezyurt/model/10_7_UNET/nodrop_scheduler_60_epochs')
-# print(total_epochs)
+if(args.save_trained_model):
+    state = {
+        'epoch': total_epochs + args.epochs,
+        'state_dict': model.state_dict(),
+        'optimizer': optimizer.state_dict()
+    }
+
+    torch.save(state, '/home/ge75tis/Desktop/oezyurt/model/10_7_UNET/nodrop_scheduler_60_epochs')

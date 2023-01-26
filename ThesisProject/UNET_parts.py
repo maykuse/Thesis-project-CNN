@@ -10,8 +10,6 @@ class First(nn.Module):
         self.conv = nn.Conv2d(in_channels, out_channels, kernel_size=2, stride=2)
         self.Relu = nn.ReLU()
         self.dropout = nn.Dropout2d(0.5)
-        # How do we exclude the constants from the dropout procedure?
-        # Do we only apply dropout to the first 7 parameters?
 
     def forward(self, x):
         x = self.dropout(x)
@@ -19,29 +17,6 @@ class First(nn.Module):
         x = self.Relu(x)
         # x = self.pool(x)
         return x
-
-
-class GaussianDropout(nn.Module):
-    def __init__(self, alpha=1.0):
-        super(GaussianDropout, self).__init__()
-        self.alpha = torch.Tensor([alpha])
-
-    def forward(self, x):
-        """
-        Sample noise   e ~ N(1, alpha)
-        Multiply noise h = h_ * e
-        """
-        if self.train():
-            # N(1, alpha)
-            epsilon = torch.randn(x.size()) * self.alpha # + 1 # to make the mean 1? but we want 0 mean
-            #
-            # epsilon = Variable(epsilon)
-            if x.is_cuda:
-                epsilon = epsilon.cuda()
-
-            return x * epsilon
-        else:
-            return x
 
 
 # Average Pooling or downscale by stride
@@ -111,3 +86,26 @@ class Last(nn.Module):
         x = self.Relu(x)
         x = self.conv(x)
         return x
+
+
+class GaussianDropout(nn.Module):
+    def __init__(self, alpha=1.0):
+        super(GaussianDropout, self).__init__()
+        self.alpha = torch.Tensor([alpha])
+
+    def forward(self, x):
+        """
+        Sample noise   e ~ N(1, alpha)
+        Multiply noise h = h_ * e
+        """
+        if self.train():
+            # N(1, alpha)
+            epsilon = torch.randn(x.size()) * self.alpha  # + 1 # to make the mean 1? but we want 0 mean
+            #
+            # epsilon = Variable(epsilon)
+            if x.is_cuda:
+                epsilon = epsilon.cuda()
+
+            return x * epsilon
+        else:
+            return x
