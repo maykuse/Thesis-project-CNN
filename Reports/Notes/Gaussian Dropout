@@ -1,0 +1,25 @@
+Dropout involves multiplying hidden activations by Bernoulli distributed random variables which take the value 1 with probability p and 0 otherwise. This idea can be generalized by multiplying the activations with random variables drawn from other distributions. 
+Multiplying by a random variable drawn from N(1, 1) works just as well, or perhaps better than using Bernoulli noise.
+This new form of dropout amounts to adding a Gaussian distributed random variable with zero mean and standard deviation equal to the activation of the unit.
+That is, each hidden activation h_i is perturbed
+We can generalize this to r0 ∼ N (1, σ^2) where σ becomes an additional hyperparameter to tune.
+The expected value of the activations remains unchanged, therefore no weight scaling is required at test time.
+
+Another way to achieve the same effect is to scale up the retained activations by multiplying by 1/p at training time and not modifying the weights at test time.
+Therefore, dropout can be seen as multiplying h_i by a Bernoulli random variable r_b that takes the value 1/p with probability p and 0 otherwise.
+
+
+2015 Var. Dropout Paper:
+It was shown that using a continuous distribution with the same relative mean and variance, such as a Gaussian N (1, α) with α = p/(1 − p), works as well or better
+
+Sparsify paper:
+An equally effective alternative is Gaussian Dropout (Srivastava et al., 2014) that multiplies the outputs of the neurons by Gaussian random noise.
+
+It is beneficial to use continuous noise instead of discrete one because multiplying the inputs by a Gaussian noise is equivalent to putting Gaussian noise on the weights.
+
+That is, putting multiplicative Gaussian noise ξ_ij ∼ N (1, α) on a weight w_ij is equivalent to sampling 2 of w_ij from q(w_ij | θ_ij , α) = N (w_ij | θ_ij , αθ_ij). Now w_ij becomes a random variable parametrized by θ_ij .
+
+For our application, however, I think we do not need the variational approach. What I wanted to say was that we are looking into Gaussian dropout (which is also introduced in these papers, i.e. dropout with multiplicative gaussian noise). For Training the noisy models, we would use a gaussian dropout layer with a two-stage sampling procedure. For each feature channel and each sample, we would first sample a dropout rate p \ in (0, 1) then from this compute alpha, as introduced in the "sparsify" paper, from this the noise amplitude and subsequently sample the multiplicative noise according to this amplitude. Maybe first read into the papers and ask me questions afterwards, if things are unclear still. Yet, I would suggest to first get the non-dropout models running. 
+Best,
+
+It means that Gaussian Dropout training is exactly equivalent to Variational Dropout with fixed α.
