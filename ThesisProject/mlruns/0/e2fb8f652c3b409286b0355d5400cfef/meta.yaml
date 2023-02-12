@@ -1,0 +1,15 @@
+artifact_uri: file:///home/ge75tis/Desktop/Thesis-project-CNN/ThesisProject/mlruns/0/e2fb8f652c3b409286b0355d5400cfef/artifacts
+end_time: 1675876709710
+entry_point_name: ''
+experiment_id: '0'
+lifecycle_stage: active
+run_id: e2fb8f652c3b409286b0355d5400cfef
+run_name: efficient-robin-384
+run_uuid: e2fb8f652c3b409286b0355d5400cfef
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1675876696803
+status: 3
+tags: []
+user_id: ge75tis

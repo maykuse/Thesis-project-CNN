@@ -1,0 +1,15 @@
+artifact_uri: file:///home/ge75tis/Desktop/Thesis-project-CNN/ThesisProject/mlruns/0/ea26f4276f234bd5908b8d4a1d31b8d5/artifacts
+end_time: 1675968794026
+entry_point_name: ''
+experiment_id: '0'
+lifecycle_stage: active
+run_id: ea26f4276f234bd5908b8d4a1d31b8d5
+run_name: traveling-elk-229
+run_uuid: ea26f4276f234bd5908b8d4a1d31b8d5
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1675968780538
+status: 4
+tags: []
+user_id: ge75tis

@@ -1,0 +1,15 @@
+artifact_uri: file:///home/ge75tis/Desktop/Thesis-project-CNN/ThesisProject/mlruns/0/c4eb49ea4ba14bd6bffd0bc69aa2cdfe/artifacts
+end_time: 1675873875938
+entry_point_name: ''
+experiment_id: '0'
+lifecycle_stage: active
+run_id: c4eb49ea4ba14bd6bffd0bc69aa2cdfe
+run_name: mysterious-fox-805
+run_uuid: c4eb49ea4ba14bd6bffd0bc69aa2cdfe
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1675873874067
+status: 4
+tags: []
+user_id: ge75tis

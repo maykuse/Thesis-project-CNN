@@ -1,0 +1,15 @@
+artifact_uri: file:///home/ge75tis/Desktop/Thesis-project-CNN/ThesisProject/mlruns/0/bab99ef5ea254a92891aabfd42f8f17d/artifacts
+end_time: 1674481952785
+entry_point_name: ''
+experiment_id: '0'
+lifecycle_stage: active
+run_id: bab99ef5ea254a92891aabfd42f8f17d
+run_name: mercurial-wasp-139
+run_uuid: bab99ef5ea254a92891aabfd42f8f17d
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1674481952760
+status: 3
+tags: []
+user_id: ge75tis

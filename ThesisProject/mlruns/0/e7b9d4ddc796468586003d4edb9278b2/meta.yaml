@@ -1,0 +1,15 @@
+artifact_uri: file:///home/ge75tis/Desktop/Thesis-project-CNN/ThesisProject/mlruns/0/e7b9d4ddc796468586003d4edb9278b2/artifacts
+end_time: 1675868677148
+entry_point_name: ''
+experiment_id: '0'
+lifecycle_stage: active
+run_id: e7b9d4ddc796468586003d4edb9278b2
+run_name: salty-snake-962
+run_uuid: e7b9d4ddc796468586003d4edb9278b2
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1675868677124
+status: 3
+tags: []
+user_id: ge75tis

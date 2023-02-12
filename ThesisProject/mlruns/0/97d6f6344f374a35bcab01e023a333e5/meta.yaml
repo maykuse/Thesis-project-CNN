@@ -1,0 +1,15 @@
+artifact_uri: file:///home/ge75tis/Desktop/Thesis-project-CNN/ThesisProject/mlruns/0/97d6f6344f374a35bcab01e023a333e5/artifacts
+end_time: 1675875722015
+entry_point_name: ''
+experiment_id: '0'
+lifecycle_stage: active
+run_id: 97d6f6344f374a35bcab01e023a333e5
+run_name: mysterious-fowl-352
+run_uuid: 97d6f6344f374a35bcab01e023a333e5
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1675875709164
+status: 3
+tags: []
+user_id: ge75tis

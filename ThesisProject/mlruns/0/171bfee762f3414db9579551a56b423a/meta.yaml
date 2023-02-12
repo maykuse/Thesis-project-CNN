@@ -1,0 +1,15 @@
+artifact_uri: file:///home/ge75tis/Desktop/Thesis-project-CNN/ThesisProject/mlruns/0/171bfee762f3414db9579551a56b423a/artifacts
+end_time: 1675765862312
+entry_point_name: ''
+experiment_id: '0'
+lifecycle_stage: active
+run_id: 171bfee762f3414db9579551a56b423a
+run_name: welcoming-loon-11
+run_uuid: 171bfee762f3414db9579551a56b423a
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1675765862281
+status: 3
+tags: []
+user_id: ge75tis

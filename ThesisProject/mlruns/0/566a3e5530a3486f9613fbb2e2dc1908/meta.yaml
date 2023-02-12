@@ -1,0 +1,15 @@
+artifact_uri: file:///home/ge75tis/Desktop/Thesis-project-CNN/ThesisProject/mlruns/0/566a3e5530a3486f9613fbb2e2dc1908/artifacts
+end_time: 1675951850259
+entry_point_name: ''
+experiment_id: '0'
+lifecycle_stage: active
+run_id: 566a3e5530a3486f9613fbb2e2dc1908
+run_name: nebulous-hawk-414
+run_uuid: 566a3e5530a3486f9613fbb2e2dc1908
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1675951501428
+status: 3
+tags: []
+user_id: ge75tis

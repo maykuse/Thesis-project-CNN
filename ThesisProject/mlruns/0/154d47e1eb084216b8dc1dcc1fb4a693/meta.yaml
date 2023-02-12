@@ -1,0 +1,15 @@
+artifact_uri: file:///home/ge75tis/Desktop/Thesis-project-CNN/ThesisProject/mlruns/0/154d47e1eb084216b8dc1dcc1fb4a693/artifacts
+end_time: 1675778023554
+entry_point_name: ''
+experiment_id: '0'
+lifecycle_stage: active
+run_id: 154d47e1eb084216b8dc1dcc1fb4a693
+run_name: grandiose-hare-438
+run_uuid: 154d47e1eb084216b8dc1dcc1fb4a693
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1675778023524
+status: 3
+tags: []
+user_id: ge75tis

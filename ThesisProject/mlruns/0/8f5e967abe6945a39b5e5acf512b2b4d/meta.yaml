@@ -1,0 +1,15 @@
+artifact_uri: file:///home/ge75tis/Desktop/Thesis-project-CNN/ThesisProject/mlruns/0/8f5e967abe6945a39b5e5acf512b2b4d/artifacts
+end_time: 1675874999753
+entry_point_name: ''
+experiment_id: '0'
+lifecycle_stage: active
+run_id: 8f5e967abe6945a39b5e5acf512b2b4d
+run_name: sincere-bass-590
+run_uuid: 8f5e967abe6945a39b5e5acf512b2b4d
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1675874986669
+status: 3
+tags: []
+user_id: ge75tis

@@ -1,0 +1,15 @@
+artifact_uri: file:///home/ge75tis/Desktop/Thesis-project-CNN/ThesisProject/mlruns/0/5f6c3ba8e2834b67bca0f79c291ee836/artifacts
+end_time: 1674487761261
+entry_point_name: ''
+experiment_id: '0'
+lifecycle_stage: active
+run_id: 5f6c3ba8e2834b67bca0f79c291ee836
+run_name: welcoming-wolf-544
+run_uuid: 5f6c3ba8e2834b67bca0f79c291ee836
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1674487761227
+status: 3
+tags: []
+user_id: ge75tis

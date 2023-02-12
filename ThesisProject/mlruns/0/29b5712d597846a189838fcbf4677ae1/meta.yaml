@@ -1,0 +1,15 @@
+artifact_uri: file:///home/ge75tis/Desktop/Thesis-project-CNN/ThesisProject/mlruns/0/29b5712d597846a189838fcbf4677ae1/artifacts
+end_time: 1675857632900
+entry_point_name: ''
+experiment_id: '0'
+lifecycle_stage: active
+run_id: 29b5712d597846a189838fcbf4677ae1
+run_name: mysterious-fish-422
+run_uuid: 29b5712d597846a189838fcbf4677ae1
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1675857603127
+status: 4
+tags: []
+user_id: ge75tis

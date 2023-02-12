@@ -1,0 +1,15 @@
+artifact_uri: file:///home/ge75tis/Desktop/Thesis-project-CNN/ThesisProject/mlruns/0/44bf7b54b09846cd94558e81f6eaeda1/artifacts
+end_time: 1675878731972
+entry_point_name: ''
+experiment_id: '0'
+lifecycle_stage: active
+run_id: 44bf7b54b09846cd94558e81f6eaeda1
+run_name: bemused-duck-780
+run_uuid: 44bf7b54b09846cd94558e81f6eaeda1
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1675878385441
+status: 3
+tags: []
+user_id: ge75tis

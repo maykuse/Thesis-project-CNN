@@ -1,0 +1,15 @@
+artifact_uri: file:///home/ge75tis/Desktop/Thesis-project-CNN/ThesisProject/mlruns/0/782231a6b7ff4207a871258ca2255b99/artifacts
+end_time: 1674484655226
+entry_point_name: ''
+experiment_id: '0'
+lifecycle_stage: active
+run_id: 782231a6b7ff4207a871258ca2255b99
+run_name: peaceful-lamb-86
+run_uuid: 782231a6b7ff4207a871258ca2255b99
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1674484655205
+status: 3
+tags: []
+user_id: ge75tis

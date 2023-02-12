@@ -1,0 +1,15 @@
+artifact_uri: file:///home/ge75tis/Desktop/Thesis-project-CNN/ThesisProject/mlruns/0/61a7c7a3771043feb1c89623c649ad00/artifacts
+end_time: 1674485154469
+entry_point_name: ''
+experiment_id: '0'
+lifecycle_stage: active
+run_id: 61a7c7a3771043feb1c89623c649ad00
+run_name: bustling-fish-330
+run_uuid: 61a7c7a3771043feb1c89623c649ad00
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1674485154455
+status: 3
+tags: []
+user_id: ge75tis

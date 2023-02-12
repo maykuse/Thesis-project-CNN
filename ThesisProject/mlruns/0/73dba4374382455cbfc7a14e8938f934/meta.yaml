@@ -1,0 +1,15 @@
+artifact_uri: file:///home/ge75tis/Desktop/Thesis-project-CNN/ThesisProject/mlruns/0/73dba4374382455cbfc7a14e8938f934/artifacts
+end_time: 1674487603907
+entry_point_name: ''
+experiment_id: '0'
+lifecycle_stage: active
+run_id: 73dba4374382455cbfc7a14e8938f934
+run_name: redolent-skink-844
+run_uuid: 73dba4374382455cbfc7a14e8938f934
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1674487603879
+status: 3
+tags: []
+user_id: ge75tis

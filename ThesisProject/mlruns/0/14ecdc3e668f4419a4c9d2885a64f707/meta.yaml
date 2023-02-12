@@ -1,0 +1,15 @@
+artifact_uri: file:///home/ge75tis/Desktop/Thesis-project-CNN/ThesisProject/mlruns/0/14ecdc3e668f4419a4c9d2885a64f707/artifacts
+end_time: 1675787059901
+entry_point_name: ''
+experiment_id: '0'
+lifecycle_stage: active
+run_id: 14ecdc3e668f4419a4c9d2885a64f707
+run_name: peaceful-stoat-107
+run_uuid: 14ecdc3e668f4419a4c9d2885a64f707
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1675787017901
+status: 4
+tags: []
+user_id: ge75tis

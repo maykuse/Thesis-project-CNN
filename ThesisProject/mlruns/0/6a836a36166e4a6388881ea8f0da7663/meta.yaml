@@ -1,0 +1,15 @@
+artifact_uri: file:///home/ge75tis/Desktop/Thesis-project-CNN/ThesisProject/mlruns/0/6a836a36166e4a6388881ea8f0da7663/artifacts
+end_time: 1674486453246
+entry_point_name: ''
+experiment_id: '0'
+lifecycle_stage: active
+run_id: 6a836a36166e4a6388881ea8f0da7663
+run_name: unequaled-newt-886
+run_uuid: 6a836a36166e4a6388881ea8f0da7663
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1674486453220
+status: 3
+tags: []
+user_id: ge75tis

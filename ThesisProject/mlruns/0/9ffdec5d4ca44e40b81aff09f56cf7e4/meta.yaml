@@ -1,0 +1,15 @@
+artifact_uri: file:///home/ge75tis/Desktop/Thesis-project-CNN/ThesisProject/mlruns/0/9ffdec5d4ca44e40b81aff09f56cf7e4/artifacts
+end_time: 1675961011231
+entry_point_name: ''
+experiment_id: '0'
+lifecycle_stage: active
+run_id: 9ffdec5d4ca44e40b81aff09f56cf7e4
+run_name: ambitious-jay-308
+run_uuid: 9ffdec5d4ca44e40b81aff09f56cf7e4
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1675961011213
+status: 3
+tags: []
+user_id: ge75tis

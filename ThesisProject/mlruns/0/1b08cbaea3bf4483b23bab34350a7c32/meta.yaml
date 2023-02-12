@@ -1,0 +1,15 @@
+artifact_uri: file:///home/ge75tis/Desktop/Thesis-project-CNN/ThesisProject/mlruns/0/1b08cbaea3bf4483b23bab34350a7c32/artifacts
+end_time: 1675787231521
+entry_point_name: ''
+experiment_id: '0'
+lifecycle_stage: active
+run_id: 1b08cbaea3bf4483b23bab34350a7c32
+run_name: polite-ram-182
+run_uuid: 1b08cbaea3bf4483b23bab34350a7c32
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1675787215968
+status: 4
+tags: []
+user_id: ge75tis

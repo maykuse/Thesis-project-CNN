@@ -1,0 +1,15 @@
+artifact_uri: file:///home/ge75tis/Desktop/Thesis-project-CNN/ThesisProject/mlruns/0/10e0cd64aa454c8a84320fb305f4d799/artifacts
+end_time: 1675682892400
+entry_point_name: ''
+experiment_id: '0'
+lifecycle_stage: active
+run_id: 10e0cd64aa454c8a84320fb305f4d799
+run_name: melodic-moth-351
+run_uuid: 10e0cd64aa454c8a84320fb305f4d799
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1675682882005
+status: 4
+tags: []
+user_id: ge75tis

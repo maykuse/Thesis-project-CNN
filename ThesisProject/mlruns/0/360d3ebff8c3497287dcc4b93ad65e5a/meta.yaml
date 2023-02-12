@@ -1,0 +1,15 @@
+artifact_uri: file:///home/ge75tis/Desktop/Thesis-project-CNN/ThesisProject/mlruns/0/360d3ebff8c3497287dcc4b93ad65e5a/artifacts
+end_time: 1675766656484
+entry_point_name: ''
+experiment_id: '0'
+lifecycle_stage: active
+run_id: 360d3ebff8c3497287dcc4b93ad65e5a
+run_name: rogue-bee-144
+run_uuid: 360d3ebff8c3497287dcc4b93ad65e5a
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1675766656454
+status: 3
+tags: []
+user_id: ge75tis

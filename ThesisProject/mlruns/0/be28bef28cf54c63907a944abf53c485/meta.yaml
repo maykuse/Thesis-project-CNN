@@ -1,0 +1,15 @@
+artifact_uri: file:///home/ge75tis/Desktop/Thesis-project-CNN/ThesisProject/mlruns/0/be28bef28cf54c63907a944abf53c485/artifacts
+end_time: 1675866231740
+entry_point_name: ''
+experiment_id: '0'
+lifecycle_stage: active
+run_id: be28bef28cf54c63907a944abf53c485
+run_name: thundering-tern-649
+run_uuid: be28bef28cf54c63907a944abf53c485
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1675866231709
+status: 3
+tags: []
+user_id: ge75tis

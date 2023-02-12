@@ -1,0 +1,15 @@
+artifact_uri: file:///home/ge75tis/Desktop/Thesis-project-CNN/ThesisProject/mlruns/0/f278e4b3811a4739bb9fe022b8b0cc1f/artifacts
+end_time: 1674490015537
+entry_point_name: ''
+experiment_id: '0'
+lifecycle_stage: active
+run_id: f278e4b3811a4739bb9fe022b8b0cc1f
+run_name: crawling-moose-200
+run_uuid: f278e4b3811a4739bb9fe022b8b0cc1f
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1674490005413
+status: 3
+tags: []
+user_id: ge75tis

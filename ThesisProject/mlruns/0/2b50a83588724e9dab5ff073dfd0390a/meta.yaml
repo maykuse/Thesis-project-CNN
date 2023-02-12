@@ -1,0 +1,15 @@
+artifact_uri: file:///home/ge75tis/Desktop/Thesis-project-CNN/ThesisProject/mlruns/0/2b50a83588724e9dab5ff073dfd0390a/artifacts
+end_time: 1675857177625
+entry_point_name: ''
+experiment_id: '0'
+lifecycle_stage: active
+run_id: 2b50a83588724e9dab5ff073dfd0390a
+run_name: delightful-jay-567
+run_uuid: 2b50a83588724e9dab5ff073dfd0390a
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1675857075224
+status: 4
+tags: []
+user_id: ge75tis

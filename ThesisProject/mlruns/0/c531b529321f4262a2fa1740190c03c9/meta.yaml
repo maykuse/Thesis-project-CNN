@@ -1,0 +1,15 @@
+artifact_uri: file:///home/ge75tis/Desktop/Thesis-project-CNN/ThesisProject/mlruns/0/c531b529321f4262a2fa1740190c03c9/artifacts
+end_time: 1674474240419
+entry_point_name: ''
+experiment_id: '0'
+lifecycle_stage: active
+run_id: c531b529321f4262a2fa1740190c03c9
+run_name: selective-wolf-247
+run_uuid: c531b529321f4262a2fa1740190c03c9
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1674474240396
+status: 3
+tags: []
+user_id: ge75tis

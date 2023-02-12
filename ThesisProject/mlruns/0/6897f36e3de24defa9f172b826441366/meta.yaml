@@ -1,0 +1,15 @@
+artifact_uri: file:///home/ge75tis/Desktop/Thesis-project-CNN/ThesisProject/mlruns/0/6897f36e3de24defa9f172b826441366/artifacts
+end_time: 1675969494974
+entry_point_name: ''
+experiment_id: '0'
+lifecycle_stage: active
+run_id: 6897f36e3de24defa9f172b826441366
+run_name: wise-vole-939
+run_uuid: 6897f36e3de24defa9f172b826441366
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1675969494950
+status: 3
+tags: []
+user_id: ge75tis

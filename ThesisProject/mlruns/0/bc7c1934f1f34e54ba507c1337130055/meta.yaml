@@ -1,0 +1,15 @@
+artifact_uri: file:///home/ge75tis/Desktop/Thesis-project-CNN/ThesisProject/mlruns/0/bc7c1934f1f34e54ba507c1337130055/artifacts
+end_time: 1676029923056
+entry_point_name: ''
+experiment_id: '0'
+lifecycle_stage: active
+run_id: bc7c1934f1f34e54ba507c1337130055
+run_name: secretive-kit-620
+run_uuid: bc7c1934f1f34e54ba507c1337130055
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1676029913145
+status: 4
+tags: []
+user_id: ge75tis

@@ -1,0 +1,15 @@
+artifact_uri: file:///home/ge75tis/Desktop/Thesis-project-CNN/ThesisProject/mlruns/0/7768b610f2894ca58b2e1b5d81b39f7e/artifacts
+end_time: 1675765625484
+entry_point_name: ''
+experiment_id: '0'
+lifecycle_stage: active
+run_id: 7768b610f2894ca58b2e1b5d81b39f7e
+run_name: likeable-hawk-263
+run_uuid: 7768b610f2894ca58b2e1b5d81b39f7e
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1675765625467
+status: 3
+tags: []
+user_id: ge75tis

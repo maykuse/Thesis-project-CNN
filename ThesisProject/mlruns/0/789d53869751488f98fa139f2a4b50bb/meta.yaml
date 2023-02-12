@@ -1,0 +1,15 @@
+artifact_uri: file:///home/ge75tis/Desktop/Thesis-project-CNN/ThesisProject/mlruns/0/789d53869751488f98fa139f2a4b50bb/artifacts
+end_time: 1675865692235
+entry_point_name: ''
+experiment_id: '0'
+lifecycle_stage: active
+run_id: 789d53869751488f98fa139f2a4b50bb
+run_name: intrigued-wasp-61
+run_uuid: 789d53869751488f98fa139f2a4b50bb
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1675865692211
+status: 3
+tags: []
+user_id: ge75tis

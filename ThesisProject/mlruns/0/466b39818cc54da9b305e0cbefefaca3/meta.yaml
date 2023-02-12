@@ -1,0 +1,15 @@
+artifact_uri: file:///home/ge75tis/Desktop/Thesis-project-CNN/ThesisProject/mlruns/0/466b39818cc54da9b305e0cbefefaca3/artifacts
+end_time: 1675766709457
+entry_point_name: ''
+experiment_id: '0'
+lifecycle_stage: active
+run_id: 466b39818cc54da9b305e0cbefefaca3
+run_name: carefree-pig-19
+run_uuid: 466b39818cc54da9b305e0cbefefaca3
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1675766709433
+status: 3
+tags: []
+user_id: ge75tis

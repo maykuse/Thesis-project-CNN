@@ -1,0 +1,15 @@
+artifact_uri: file:///home/ge75tis/Desktop/Thesis-project-CNN/ThesisProject/mlruns/0/3eb0182ce2f44c51b879c8ff7211a9d9/artifacts
+end_time: 1675858499992
+entry_point_name: ''
+experiment_id: '0'
+lifecycle_stage: active
+run_id: 3eb0182ce2f44c51b879c8ff7211a9d9
+run_name: enthused-owl-497
+run_uuid: 3eb0182ce2f44c51b879c8ff7211a9d9
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1675858474663
+status: 4
+tags: []
+user_id: ge75tis

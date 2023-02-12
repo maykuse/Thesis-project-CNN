@@ -1,0 +1,15 @@
+artifact_uri: file:///home/ge75tis/Desktop/Thesis-project-CNN/ThesisProject/mlruns/0/2e9c1497347747a9a430f4da87cd734d/artifacts
+end_time: 1675968192482
+entry_point_name: ''
+experiment_id: '0'
+lifecycle_stage: active
+run_id: 2e9c1497347747a9a430f4da87cd734d
+run_name: big-ox-96
+run_uuid: 2e9c1497347747a9a430f4da87cd734d
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1675968192451
+status: 3
+tags: []
+user_id: ge75tis

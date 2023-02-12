@@ -1,0 +1,15 @@
+artifact_uri: file:///home/ge75tis/Desktop/Thesis-project-CNN/ThesisProject/mlruns/0/e4d06eef26074f8481b77843d2032fc8/artifacts
+end_time: 1675766146829
+entry_point_name: ''
+experiment_id: '0'
+lifecycle_stage: active
+run_id: e4d06eef26074f8481b77843d2032fc8
+run_name: dapper-toad-234
+run_uuid: e4d06eef26074f8481b77843d2032fc8
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1675766146805
+status: 3
+tags: []
+user_id: ge75tis

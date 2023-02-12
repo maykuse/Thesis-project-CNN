@@ -1,0 +1,15 @@
+artifact_uri: file:///home/ge75tis/Desktop/Thesis-project-CNN/ThesisProject/mlruns/0/2515ea3b5f37449b8bba7c7b207f57de/artifacts
+end_time: 1675964128452
+entry_point_name: ''
+experiment_id: '0'
+lifecycle_stage: active
+run_id: 2515ea3b5f37449b8bba7c7b207f57de
+run_name: exultant-smelt-378
+run_uuid: 2515ea3b5f37449b8bba7c7b207f57de
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1675964068816
+status: 3
+tags: []
+user_id: ge75tis

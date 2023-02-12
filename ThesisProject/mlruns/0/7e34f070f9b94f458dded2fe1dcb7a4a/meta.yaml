@@ -1,0 +1,15 @@
+artifact_uri: file:///home/ge75tis/Desktop/Thesis-project-CNN/ThesisProject/mlruns/0/7e34f070f9b94f458dded2fe1dcb7a4a/artifacts
+end_time: 1674474529427
+entry_point_name: ''
+experiment_id: '0'
+lifecycle_stage: active
+run_id: 7e34f070f9b94f458dded2fe1dcb7a4a
+run_name: funny-squid-67
+run_uuid: 7e34f070f9b94f458dded2fe1dcb7a4a
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1674474529408
+status: 3
+tags: []
+user_id: ge75tis

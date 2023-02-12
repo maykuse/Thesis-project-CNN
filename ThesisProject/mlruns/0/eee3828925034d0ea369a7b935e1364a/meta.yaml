@@ -1,0 +1,15 @@
+artifact_uri: file:///home/ge75tis/Desktop/Thesis-project-CNN/ThesisProject/mlruns/0/eee3828925034d0ea369a7b935e1364a/artifacts
+end_time: 1675952664156
+entry_point_name: ''
+experiment_id: '0'
+lifecycle_stage: active
+run_id: eee3828925034d0ea369a7b935e1364a
+run_name: abundant-flea-923
+run_uuid: eee3828925034d0ea369a7b935e1364a
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1675952318740
+status: 3
+tags: []
+user_id: ge75tis

@@ -1,0 +1,15 @@
+artifact_uri: file:///home/ge75tis/Desktop/Thesis-project-CNN/ThesisProject/mlruns/0/4158f9a06d454324bcd03f6b6e6c61ae/artifacts
+end_time: 1675851074086
+entry_point_name: ''
+experiment_id: '0'
+lifecycle_stage: active
+run_id: 4158f9a06d454324bcd03f6b6e6c61ae
+run_name: bright-conch-882
+run_uuid: 4158f9a06d454324bcd03f6b6e6c61ae
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1675851074070
+status: 3
+tags: []
+user_id: ge75tis

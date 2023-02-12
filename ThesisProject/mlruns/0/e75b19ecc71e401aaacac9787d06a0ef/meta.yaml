@@ -1,0 +1,15 @@
+artifact_uri: file:///home/ge75tis/Desktop/Thesis-project-CNN/ThesisProject/mlruns/0/e75b19ecc71e401aaacac9787d06a0ef/artifacts
+end_time: 1676030245619
+entry_point_name: ''
+experiment_id: '0'
+lifecycle_stage: active
+run_id: e75b19ecc71e401aaacac9787d06a0ef
+run_name: thoughtful-cub-860
+run_uuid: e75b19ecc71e401aaacac9787d06a0ef
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1676030235796
+status: 4
+tags: []
+user_id: ge75tis

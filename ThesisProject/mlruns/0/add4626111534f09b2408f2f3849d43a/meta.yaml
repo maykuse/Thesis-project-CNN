@@ -1,0 +1,15 @@
+artifact_uri: file:///home/ge75tis/Desktop/Thesis-project-CNN/ThesisProject/mlruns/0/add4626111534f09b2408f2f3849d43a/artifacts
+end_time: 1674490158167
+entry_point_name: ''
+experiment_id: '0'
+lifecycle_stage: active
+run_id: add4626111534f09b2408f2f3849d43a
+run_name: casual-deer-871
+run_uuid: add4626111534f09b2408f2f3849d43a
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1674490147995
+status: 3
+tags: []
+user_id: ge75tis

@@ -1,0 +1,15 @@
+artifact_uri: file:///home/ge75tis/Desktop/Thesis-project-CNN/ThesisProject/mlruns/0/a2aca5a40a534c42bed4e00df11f4883/artifacts
+end_time: 1674491806034
+entry_point_name: ''
+experiment_id: '0'
+lifecycle_stage: active
+run_id: a2aca5a40a534c42bed4e00df11f4883
+run_name: flawless-wasp-70
+run_uuid: a2aca5a40a534c42bed4e00df11f4883
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1674491800593
+status: 3
+tags: []
+user_id: ge75tis

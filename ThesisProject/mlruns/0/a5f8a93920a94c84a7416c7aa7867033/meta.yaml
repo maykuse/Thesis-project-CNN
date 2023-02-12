@@ -1,0 +1,15 @@
+artifact_uri: file:///home/ge75tis/Desktop/Thesis-project-CNN/ThesisProject/mlruns/0/a5f8a93920a94c84a7416c7aa7867033/artifacts
+end_time: 1675948785181
+entry_point_name: ''
+experiment_id: '0'
+lifecycle_stage: active
+run_id: a5f8a93920a94c84a7416c7aa7867033
+run_name: calm-fox-825
+run_uuid: a5f8a93920a94c84a7416c7aa7867033
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1675948772685
+status: 4
+tags: []
+user_id: ge75tis

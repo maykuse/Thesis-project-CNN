@@ -1,0 +1,15 @@
+artifact_uri: file:///home/ge75tis/Desktop/Thesis-project-CNN/ThesisProject/mlruns/0/30f932ff84ed43fb8e618e91991e340b/artifacts
+end_time: 1674485576240
+entry_point_name: ''
+experiment_id: '0'
+lifecycle_stage: active
+run_id: 30f932ff84ed43fb8e618e91991e340b
+run_name: righteous-goose-934
+run_uuid: 30f932ff84ed43fb8e618e91991e340b
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1674485576219
+status: 3
+tags: []
+user_id: ge75tis

@@ -1,0 +1,15 @@
+artifact_uri: file:///home/ge75tis/Desktop/Thesis-project-CNN/ThesisProject/mlruns/0/7438b8956667498fbecb7a16c5ee970a/artifacts
+end_time: 1675874294142
+entry_point_name: ''
+experiment_id: '0'
+lifecycle_stage: active
+run_id: 7438b8956667498fbecb7a16c5ee970a
+run_name: traveling-calf-990
+run_uuid: 7438b8956667498fbecb7a16c5ee970a
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1675874292151
+status: 4
+tags: []
+user_id: ge75tis

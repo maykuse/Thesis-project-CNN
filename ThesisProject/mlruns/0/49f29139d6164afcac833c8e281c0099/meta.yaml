@@ -1,0 +1,15 @@
+artifact_uri: file:///home/ge75tis/Desktop/Thesis-project-CNN/ThesisProject/mlruns/0/49f29139d6164afcac833c8e281c0099/artifacts
+end_time: 1676031920500
+entry_point_name: ''
+experiment_id: '0'
+lifecycle_stage: active
+run_id: 49f29139d6164afcac833c8e281c0099
+run_name: ambitious-swan-19
+run_uuid: 49f29139d6164afcac833c8e281c0099
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1676031862875
+status: 3
+tags: []
+user_id: ge75tis

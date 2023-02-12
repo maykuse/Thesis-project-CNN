@@ -1,0 +1,15 @@
+artifact_uri: file:///home/ge75tis/Desktop/Thesis-project-CNN/ThesisProject/mlruns/0/dfd137bc6483410aa89203914f4ac393/artifacts
+end_time: 1674748892059
+entry_point_name: ''
+experiment_id: '0'
+lifecycle_stage: active
+run_id: dfd137bc6483410aa89203914f4ac393
+run_name: languid-zebra-740
+run_uuid: dfd137bc6483410aa89203914f4ac393
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1674748688626
+status: 4
+tags: []
+user_id: ge75tis

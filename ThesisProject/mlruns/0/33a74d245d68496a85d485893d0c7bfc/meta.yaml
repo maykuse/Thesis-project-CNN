@@ -1,0 +1,15 @@
+artifact_uri: file:///home/ge75tis/Desktop/Thesis-project-CNN/ThesisProject/mlruns/0/33a74d245d68496a85d485893d0c7bfc/artifacts
+end_time: 1675948031367
+entry_point_name: ''
+experiment_id: '0'
+lifecycle_stage: active
+run_id: 33a74d245d68496a85d485893d0c7bfc
+run_name: caring-sheep-231
+run_uuid: 33a74d245d68496a85d485893d0c7bfc
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1675948010615
+status: 4
+tags: []
+user_id: ge75tis

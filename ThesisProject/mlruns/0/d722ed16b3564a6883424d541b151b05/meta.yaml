@@ -1,0 +1,15 @@
+artifact_uri: file:///home/ge75tis/Desktop/Thesis-project-CNN/ThesisProject/mlruns/0/d722ed16b3564a6883424d541b151b05/artifacts
+end_time: 1675676840397
+entry_point_name: ''
+experiment_id: '0'
+lifecycle_stage: active
+run_id: d722ed16b3564a6883424d541b151b05
+run_name: amazing-sow-400
+run_uuid: d722ed16b3564a6883424d541b151b05
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1675676553839
+status: 4
+tags: []
+user_id: ge75tis

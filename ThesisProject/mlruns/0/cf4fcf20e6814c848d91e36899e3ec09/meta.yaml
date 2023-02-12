@@ -1,0 +1,15 @@
+artifact_uri: file:///home/ge75tis/Desktop/Thesis-project-CNN/ThesisProject/mlruns/0/cf4fcf20e6814c848d91e36899e3ec09/artifacts
+end_time: 1675947626852
+entry_point_name: ''
+experiment_id: '0'
+lifecycle_stage: active
+run_id: cf4fcf20e6814c848d91e36899e3ec09
+run_name: welcoming-foal-591
+run_uuid: cf4fcf20e6814c848d91e36899e3ec09
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1675947579678
+status: 4
+tags: []
+user_id: ge75tis

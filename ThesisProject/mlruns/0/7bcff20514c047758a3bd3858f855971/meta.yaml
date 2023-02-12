@@ -1,0 +1,15 @@
+artifact_uri: file:///home/ge75tis/Desktop/Thesis-project-CNN/ThesisProject/mlruns/0/7bcff20514c047758a3bd3858f855971/artifacts
+end_time: 1675765077174
+entry_point_name: ''
+experiment_id: '0'
+lifecycle_stage: active
+run_id: 7bcff20514c047758a3bd3858f855971
+run_name: worried-steed-530
+run_uuid: 7bcff20514c047758a3bd3858f855971
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1675765077152
+status: 3
+tags: []
+user_id: ge75tis

@@ -1,0 +1,15 @@
+artifact_uri: file:///home/ge75tis/Desktop/Thesis-project-CNN/ThesisProject/mlruns/0/11f95f263a934136bcfa141c6d93809a/artifacts
+end_time: 1676032208332
+entry_point_name: ''
+experiment_id: '0'
+lifecycle_stage: active
+run_id: 11f95f263a934136bcfa141c6d93809a
+run_name: handsome-seal-995
+run_uuid: 11f95f263a934136bcfa141c6d93809a
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1676032208300
+status: 3
+tags: []
+user_id: ge75tis

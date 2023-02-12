@@ -1,0 +1,15 @@
+artifact_uri: file:///home/ge75tis/Desktop/Thesis-project-CNN/ThesisProject/mlruns/0/51825bcfc57c4662ba210c8984b0c03f/artifacts
+end_time: 1675849909364
+entry_point_name: ''
+experiment_id: '0'
+lifecycle_stage: active
+run_id: 51825bcfc57c4662ba210c8984b0c03f
+run_name: carefree-hawk-66
+run_uuid: 51825bcfc57c4662ba210c8984b0c03f
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1675849740951
+status: 3
+tags: []
+user_id: ge75tis

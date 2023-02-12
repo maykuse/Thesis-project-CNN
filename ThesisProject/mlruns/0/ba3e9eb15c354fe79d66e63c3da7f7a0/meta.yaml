@@ -1,0 +1,15 @@
+artifact_uri: file:///home/ge75tis/Desktop/Thesis-project-CNN/ThesisProject/mlruns/0/ba3e9eb15c354fe79d66e63c3da7f7a0/artifacts
+end_time: 1675963248505
+entry_point_name: ''
+experiment_id: '0'
+lifecycle_stage: active
+run_id: ba3e9eb15c354fe79d66e63c3da7f7a0
+run_name: adaptable-gull-556
+run_uuid: ba3e9eb15c354fe79d66e63c3da7f7a0
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1675963248485
+status: 3
+tags: []
+user_id: ge75tis

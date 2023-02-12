@@ -1,0 +1,15 @@
+artifact_uri: file:///home/ge75tis/Desktop/Thesis-project-CNN/ThesisProject/mlruns/0/044cbbcf980d462da73cf4bee7c0fb43/artifacts
+end_time: 1676030362092
+entry_point_name: ''
+experiment_id: '0'
+lifecycle_stage: active
+run_id: 044cbbcf980d462da73cf4bee7c0fb43
+run_name: gaudy-mare-972
+run_uuid: 044cbbcf980d462da73cf4bee7c0fb43
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1676030302405
+status: 3
+tags: []
+user_id: ge75tis

@@ -1,0 +1,15 @@
+artifact_uri: file:///home/ge75tis/Desktop/Thesis-project-CNN/ThesisProject/mlruns/0/038aa45efabd416b90c538d2dd0b98b0/artifacts
+end_time: 1675691686477
+entry_point_name: ''
+experiment_id: '0'
+lifecycle_stage: active
+run_id: 038aa45efabd416b90c538d2dd0b98b0
+run_name: traveling-bass-588
+run_uuid: 038aa45efabd416b90c538d2dd0b98b0
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1675691686448
+status: 3
+tags: []
+user_id: ge75tis

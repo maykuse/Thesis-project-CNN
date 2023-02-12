@@ -1,0 +1,15 @@
+artifact_uri: file:///home/ge75tis/Desktop/Thesis-project-CNN/ThesisProject/mlruns/0/a43db86023be448c80b9db2b35d8199d/artifacts
+end_time: 1674487669572
+entry_point_name: ''
+experiment_id: '0'
+lifecycle_stage: active
+run_id: a43db86023be448c80b9db2b35d8199d
+run_name: marvelous-bat-342
+run_uuid: a43db86023be448c80b9db2b35d8199d
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1674487669552
+status: 3
+tags: []
+user_id: ge75tis

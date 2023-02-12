@@ -1,0 +1,15 @@
+artifact_uri: file:///home/ge75tis/Desktop/Thesis-project-CNN/ThesisProject/mlruns/0/083dd8d02610432fa364408b062b5596/artifacts
+end_time: 1675683715736
+entry_point_name: ''
+experiment_id: '0'
+lifecycle_stage: active
+run_id: 083dd8d02610432fa364408b062b5596
+run_name: persistent-whale-468
+run_uuid: 083dd8d02610432fa364408b062b5596
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1675683503285
+status: 3
+tags: []
+user_id: ge75tis

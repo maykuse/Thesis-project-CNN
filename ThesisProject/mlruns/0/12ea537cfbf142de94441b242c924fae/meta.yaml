@@ -1,0 +1,15 @@
+artifact_uri: file:///home/ge75tis/Desktop/Thesis-project-CNN/ThesisProject/mlruns/0/12ea537cfbf142de94441b242c924fae/artifacts
+end_time: 1675765200241
+entry_point_name: ''
+experiment_id: '0'
+lifecycle_stage: active
+run_id: 12ea537cfbf142de94441b242c924fae
+run_name: delightful-colt-397
+run_uuid: 12ea537cfbf142de94441b242c924fae
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1675765200225
+status: 3
+tags: []
+user_id: ge75tis

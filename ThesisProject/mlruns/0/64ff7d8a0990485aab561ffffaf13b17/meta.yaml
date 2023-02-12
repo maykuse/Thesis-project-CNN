@@ -1,0 +1,15 @@
+artifact_uri: file:///home/ge75tis/Desktop/Thesis-project-CNN/ThesisProject/mlruns/0/64ff7d8a0990485aab561ffffaf13b17/artifacts
+end_time: 1675674201210
+entry_point_name: ''
+experiment_id: '0'
+lifecycle_stage: active
+run_id: 64ff7d8a0990485aab561ffffaf13b17
+run_name: welcoming-mole-380
+run_uuid: 64ff7d8a0990485aab561ffffaf13b17
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1675674190658
+status: 4
+tags: []
+user_id: ge75tis

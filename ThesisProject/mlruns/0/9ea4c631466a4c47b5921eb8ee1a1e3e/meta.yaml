@@ -1,0 +1,15 @@
+artifact_uri: file:///home/ge75tis/Desktop/Thesis-project-CNN/ThesisProject/mlruns/0/9ea4c631466a4c47b5921eb8ee1a1e3e/artifacts
+end_time: 1675447283761
+entry_point_name: ''
+experiment_id: '0'
+lifecycle_stage: active
+run_id: 9ea4c631466a4c47b5921eb8ee1a1e3e
+run_name: bemused-fly-537
+run_uuid: 9ea4c631466a4c47b5921eb8ee1a1e3e
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1675447278546
+status: 4
+tags: []
+user_id: ge75tis

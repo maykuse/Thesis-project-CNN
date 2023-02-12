@@ -1,0 +1,15 @@
+artifact_uri: file:///home/ge75tis/Desktop/Thesis-project-CNN/ThesisProject/mlruns/0/8b84fa061b6b44fbba5569874de07731/artifacts
+end_time: 1675964257179
+entry_point_name: ''
+experiment_id: '0'
+lifecycle_stage: active
+run_id: 8b84fa061b6b44fbba5569874de07731
+run_name: languid-swan-465
+run_uuid: 8b84fa061b6b44fbba5569874de07731
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1675964196849
+status: 3
+tags: []
+user_id: ge75tis

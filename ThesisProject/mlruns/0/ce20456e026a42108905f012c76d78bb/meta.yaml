@@ -1,0 +1,15 @@
+artifact_uri: file:///home/ge75tis/Desktop/Thesis-project-CNN/ThesisProject/mlruns/0/ce20456e026a42108905f012c76d78bb/artifacts
+end_time: 1675954237697
+entry_point_name: ''
+experiment_id: '0'
+lifecycle_stage: active
+run_id: ce20456e026a42108905f012c76d78bb
+run_name: able-asp-500
+run_uuid: ce20456e026a42108905f012c76d78bb
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1675954224508
+status: 3
+tags: []
+user_id: ge75tis

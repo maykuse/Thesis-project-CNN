@@ -1,0 +1,15 @@
+artifact_uri: file:///home/ge75tis/Desktop/Thesis-project-CNN/ThesisProject/mlruns/0/2a619b7179bf49b682e02d7f8e2f890b/artifacts
+end_time: 1675851474549
+entry_point_name: ''
+experiment_id: '0'
+lifecycle_stage: active
+run_id: 2a619b7179bf49b682e02d7f8e2f890b
+run_name: thoughtful-snipe-859
+run_uuid: 2a619b7179bf49b682e02d7f8e2f890b
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1675851474519
+status: 3
+tags: []
+user_id: ge75tis

@@ -1,0 +1,15 @@
+artifact_uri: file:///home/ge75tis/Desktop/Thesis-project-CNN/ThesisProject/mlruns/0/6a311a02e0cd4c8bbf8a446f5cb27aad/artifacts
+end_time: 1674489541583
+entry_point_name: ''
+experiment_id: '0'
+lifecycle_stage: active
+run_id: 6a311a02e0cd4c8bbf8a446f5cb27aad
+run_name: fun-fish-402
+run_uuid: 6a311a02e0cd4c8bbf8a446f5cb27aad
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1674489480572
+status: 3
+tags: []
+user_id: ge75tis

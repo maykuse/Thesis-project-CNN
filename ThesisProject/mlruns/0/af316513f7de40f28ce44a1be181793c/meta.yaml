@@ -1,0 +1,15 @@
+artifact_uri: file:///home/ge75tis/Desktop/Thesis-project-CNN/ThesisProject/mlruns/0/af316513f7de40f28ce44a1be181793c/artifacts
+end_time: 1675778173278
+entry_point_name: ''
+experiment_id: '0'
+lifecycle_stage: active
+run_id: af316513f7de40f28ce44a1be181793c
+run_name: sincere-robin-95
+run_uuid: af316513f7de40f28ce44a1be181793c
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1675778173256
+status: 3
+tags: []
+user_id: ge75tis

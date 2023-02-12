@@ -1,0 +1,15 @@
+artifact_uri: file:///home/ge75tis/Desktop/Thesis-project-CNN/ThesisProject/mlruns/0/9a688590b2be4e6c9027227a8e3b87f9/artifacts
+end_time: 1675766686293
+entry_point_name: ''
+experiment_id: '0'
+lifecycle_stage: active
+run_id: 9a688590b2be4e6c9027227a8e3b87f9
+run_name: rare-crow-573
+run_uuid: 9a688590b2be4e6c9027227a8e3b87f9
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1675766686268
+status: 3
+tags: []
+user_id: ge75tis

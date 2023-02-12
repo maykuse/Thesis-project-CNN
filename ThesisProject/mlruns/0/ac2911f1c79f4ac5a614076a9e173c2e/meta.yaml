@@ -1,0 +1,15 @@
+artifact_uri: file:///home/ge75tis/Desktop/Thesis-project-CNN/ThesisProject/mlruns/0/ac2911f1c79f4ac5a614076a9e173c2e/artifacts
+end_time: 1675763393014
+entry_point_name: ''
+experiment_id: '0'
+lifecycle_stage: active
+run_id: ac2911f1c79f4ac5a614076a9e173c2e
+run_name: merciful-smelt-627
+run_uuid: ac2911f1c79f4ac5a614076a9e173c2e
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1675763392991
+status: 3
+tags: []
+user_id: ge75tis

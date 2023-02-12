@@ -1,0 +1,15 @@
+artifact_uri: file:///home/ge75tis/Desktop/Thesis-project-CNN/ThesisProject/mlruns/0/959fd4230a124e16a151c2d66f10b04d/artifacts
+end_time: 1675675056011
+entry_point_name: ''
+experiment_id: '0'
+lifecycle_stage: active
+run_id: 959fd4230a124e16a151c2d66f10b04d
+run_name: agreeable-ape-921
+run_uuid: 959fd4230a124e16a151c2d66f10b04d
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1675674767515
+status: 3
+tags: []
+user_id: ge75tis

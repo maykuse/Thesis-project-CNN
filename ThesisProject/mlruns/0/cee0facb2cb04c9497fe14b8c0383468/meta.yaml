@@ -1,0 +1,15 @@
+artifact_uri: file:///home/ge75tis/Desktop/Thesis-project-CNN/ThesisProject/mlruns/0/cee0facb2cb04c9497fe14b8c0383468/artifacts
+end_time: 1675785922573
+entry_point_name: ''
+experiment_id: '0'
+lifecycle_stage: active
+run_id: cee0facb2cb04c9497fe14b8c0383468
+run_name: wistful-snake-391
+run_uuid: cee0facb2cb04c9497fe14b8c0383468
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1675785909680
+status: 4
+tags: []
+user_id: ge75tis

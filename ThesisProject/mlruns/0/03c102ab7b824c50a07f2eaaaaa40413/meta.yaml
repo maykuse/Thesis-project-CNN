@@ -1,0 +1,15 @@
+artifact_uri: file:///home/ge75tis/Desktop/Thesis-project-CNN/ThesisProject/mlruns/0/03c102ab7b824c50a07f2eaaaaa40413/artifacts
+end_time: 1675967938268
+entry_point_name: ''
+experiment_id: '0'
+lifecycle_stage: active
+run_id: 03c102ab7b824c50a07f2eaaaaa40413
+run_name: painted-sheep-190
+run_uuid: 03c102ab7b824c50a07f2eaaaaa40413
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1675967912323
+status: 4
+tags: []
+user_id: ge75tis

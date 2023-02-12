@@ -1,0 +1,15 @@
+artifact_uri: file:///home/ge75tis/Desktop/Thesis-project-CNN/ThesisProject/mlruns/0/453f9c0c84ac40499fb57b805d5b31b0/artifacts
+end_time: 1674491721825
+entry_point_name: ''
+experiment_id: '0'
+lifecycle_stage: active
+run_id: 453f9c0c84ac40499fb57b805d5b31b0
+run_name: spiffy-kit-2
+run_uuid: 453f9c0c84ac40499fb57b805d5b31b0
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1674491717287
+status: 3
+tags: []
+user_id: ge75tis

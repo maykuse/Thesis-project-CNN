@@ -1,0 +1,15 @@
+artifact_uri: file:///home/ge75tis/Desktop/Thesis-project-CNN/ThesisProject/mlruns/0/04ecc7628c824bbdac86f161846d1d70/artifacts
+end_time: 1675764570424
+entry_point_name: ''
+experiment_id: '0'
+lifecycle_stage: active
+run_id: 04ecc7628c824bbdac86f161846d1d70
+run_name: selective-duck-237
+run_uuid: 04ecc7628c824bbdac86f161846d1d70
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1675764570387
+status: 3
+tags: []
+user_id: ge75tis

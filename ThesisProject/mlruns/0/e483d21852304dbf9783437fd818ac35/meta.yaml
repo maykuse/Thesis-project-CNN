@@ -1,0 +1,15 @@
+artifact_uri: file:///home/ge75tis/Desktop/Thesis-project-CNN/ThesisProject/mlruns/0/e483d21852304dbf9783437fd818ac35/artifacts
+end_time: 1675948064103
+entry_point_name: ''
+experiment_id: '0'
+lifecycle_stage: active
+run_id: e483d21852304dbf9783437fd818ac35
+run_name: rogue-rook-14
+run_uuid: e483d21852304dbf9783437fd818ac35
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1675948051563
+status: 4
+tags: []
+user_id: ge75tis

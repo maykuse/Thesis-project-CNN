@@ -1,0 +1,15 @@
+artifact_uri: file:///home/ge75tis/Desktop/Thesis-project-CNN/ThesisProject/mlruns/0/7b3afa526de64959932a6767511d6b73/artifacts
+end_time: 1674487085613
+entry_point_name: ''
+experiment_id: '0'
+lifecycle_stage: active
+run_id: 7b3afa526de64959932a6767511d6b73
+run_name: serious-midge-450
+run_uuid: 7b3afa526de64959932a6767511d6b73
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1674487085600
+status: 3
+tags: []
+user_id: ge75tis

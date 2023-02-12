@@ -1,0 +1,15 @@
+artifact_uri: file:///home/ge75tis/Desktop/Thesis-project-CNN/ThesisProject/mlruns/0/3efd148a4bcf444399dbeb8cd407b2fc/artifacts
+end_time: 1674491754686
+entry_point_name: ''
+experiment_id: '0'
+lifecycle_stage: active
+run_id: 3efd148a4bcf444399dbeb8cd407b2fc
+run_name: bemused-kite-133
+run_uuid: 3efd148a4bcf444399dbeb8cd407b2fc
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1674491744572
+status: 3
+tags: []
+user_id: ge75tis

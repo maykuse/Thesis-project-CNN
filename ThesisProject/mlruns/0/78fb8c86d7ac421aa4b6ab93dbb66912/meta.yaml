@@ -1,0 +1,15 @@
+artifact_uri: file:///home/ge75tis/Desktop/Thesis-project-CNN/ThesisProject/mlruns/0/78fb8c86d7ac421aa4b6ab93dbb66912/artifacts
+end_time: 1675967826581
+entry_point_name: ''
+experiment_id: '0'
+lifecycle_stage: active
+run_id: 78fb8c86d7ac421aa4b6ab93dbb66912
+run_name: caring-lark-568
+run_uuid: 78fb8c86d7ac421aa4b6ab93dbb66912
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1675967767645
+status: 3
+tags: []
+user_id: ge75tis

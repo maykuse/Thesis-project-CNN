@@ -1,0 +1,15 @@
+artifact_uri: file:///home/ge75tis/Desktop/Thesis-project-CNN/ThesisProject/mlruns/0/65d4d0ff21194c608ebe9538eacd002a/artifacts
+end_time: 1675868469767
+entry_point_name: ''
+experiment_id: '0'
+lifecycle_stage: active
+run_id: 65d4d0ff21194c608ebe9538eacd002a
+run_name: gaudy-koi-221
+run_uuid: 65d4d0ff21194c608ebe9538eacd002a
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1675868469749
+status: 3
+tags: []
+user_id: ge75tis

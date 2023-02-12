@@ -1,0 +1,15 @@
+artifact_uri: file:///home/ge75tis/Desktop/Thesis-project-CNN/ThesisProject/mlruns/0/7d3d051333724a8b93a919228853b462/artifacts
+end_time: 1675778340231
+entry_point_name: ''
+experiment_id: '0'
+lifecycle_stage: active
+run_id: 7d3d051333724a8b93a919228853b462
+run_name: rumbling-snipe-752
+run_uuid: 7d3d051333724a8b93a919228853b462
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1675778340208
+status: 3
+tags: []
+user_id: ge75tis

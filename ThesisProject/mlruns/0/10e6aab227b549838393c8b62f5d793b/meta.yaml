@@ -1,0 +1,15 @@
+artifact_uri: file:///home/ge75tis/Desktop/Thesis-project-CNN/ThesisProject/mlruns/0/10e6aab227b549838393c8b62f5d793b/artifacts
+end_time: 1675851218726
+entry_point_name: ''
+experiment_id: '0'
+lifecycle_stage: active
+run_id: 10e6aab227b549838393c8b62f5d793b
+run_name: ambitious-croc-150
+run_uuid: 10e6aab227b549838393c8b62f5d793b
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1675851218686
+status: 3
+tags: []
+user_id: ge75tis

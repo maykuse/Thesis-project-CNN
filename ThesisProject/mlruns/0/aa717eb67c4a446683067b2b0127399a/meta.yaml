@@ -1,0 +1,15 @@
+artifact_uri: file:///home/ge75tis/Desktop/Thesis-project-CNN/ThesisProject/mlruns/0/aa717eb67c4a446683067b2b0127399a/artifacts
+end_time: 1675963153665
+entry_point_name: ''
+experiment_id: '0'
+lifecycle_stage: active
+run_id: aa717eb67c4a446683067b2b0127399a
+run_name: polite-lamb-366
+run_uuid: aa717eb67c4a446683067b2b0127399a
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1675963153647
+status: 3
+tags: []
+user_id: ge75tis

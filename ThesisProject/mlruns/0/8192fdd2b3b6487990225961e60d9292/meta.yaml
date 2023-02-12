@@ -1,0 +1,15 @@
+artifact_uri: file:///home/ge75tis/Desktop/Thesis-project-CNN/ThesisProject/mlruns/0/8192fdd2b3b6487990225961e60d9292/artifacts
+end_time: 1675778000301
+entry_point_name: ''
+experiment_id: '0'
+lifecycle_stage: active
+run_id: 8192fdd2b3b6487990225961e60d9292
+run_name: rumbling-foal-925
+run_uuid: 8192fdd2b3b6487990225961e60d9292
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1675778000277
+status: 3
+tags: []
+user_id: ge75tis

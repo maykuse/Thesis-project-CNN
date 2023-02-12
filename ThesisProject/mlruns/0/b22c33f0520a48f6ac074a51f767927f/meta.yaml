@@ -1,0 +1,15 @@
+artifact_uri: file:///home/ge75tis/Desktop/Thesis-project-CNN/ThesisProject/mlruns/0/b22c33f0520a48f6ac074a51f767927f/artifacts
+end_time: 1675876961554
+entry_point_name: ''
+experiment_id: '0'
+lifecycle_stage: active
+run_id: b22c33f0520a48f6ac074a51f767927f
+run_name: whimsical-duck-648
+run_uuid: b22c33f0520a48f6ac074a51f767927f
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1675876951390
+status: 3
+tags: []
+user_id: ge75tis

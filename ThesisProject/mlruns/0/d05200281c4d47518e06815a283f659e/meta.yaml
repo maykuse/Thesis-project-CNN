@@ -1,0 +1,15 @@
+artifact_uri: file:///home/ge75tis/Desktop/Thesis-project-CNN/ThesisProject/mlruns/0/d05200281c4d47518e06815a283f659e/artifacts
+end_time: 1675787151386
+entry_point_name: ''
+experiment_id: '0'
+lifecycle_stage: active
+run_id: d05200281c4d47518e06815a283f659e
+run_name: welcoming-goose-649
+run_uuid: d05200281c4d47518e06815a283f659e
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1675787091424
+status: 3
+tags: []
+user_id: ge75tis

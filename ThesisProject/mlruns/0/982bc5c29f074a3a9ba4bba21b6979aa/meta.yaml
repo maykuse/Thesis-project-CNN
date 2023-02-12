@@ -1,0 +1,15 @@
+artifact_uri: file:///home/ge75tis/Desktop/Thesis-project-CNN/ThesisProject/mlruns/0/982bc5c29f074a3a9ba4bba21b6979aa/artifacts
+end_time: 1675877877731
+entry_point_name: ''
+experiment_id: '0'
+lifecycle_stage: active
+run_id: 982bc5c29f074a3a9ba4bba21b6979aa
+run_name: charming-tern-473
+run_uuid: 982bc5c29f074a3a9ba4bba21b6979aa
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1675877529612
+status: 3
+tags: []
+user_id: ge75tis

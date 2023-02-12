@@ -1,0 +1,15 @@
+artifact_uri: file:///home/ge75tis/Desktop/Thesis-project-CNN/ThesisProject/mlruns/0/f84af6c67bbf4f139e4f97da8cd82cf0/artifacts
+end_time: 1675765528843
+entry_point_name: ''
+experiment_id: '0'
+lifecycle_stage: active
+run_id: f84af6c67bbf4f139e4f97da8cd82cf0
+run_name: upset-calf-750
+run_uuid: f84af6c67bbf4f139e4f97da8cd82cf0
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1675765528814
+status: 3
+tags: []
+user_id: ge75tis

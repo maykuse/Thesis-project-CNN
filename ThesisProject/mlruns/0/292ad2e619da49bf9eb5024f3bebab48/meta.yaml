@@ -1,0 +1,15 @@
+artifact_uri: file:///home/ge75tis/Desktop/Thesis-project-CNN/ThesisProject/mlruns/0/292ad2e619da49bf9eb5024f3bebab48/artifacts
+end_time: 1675947772525
+entry_point_name: ''
+experiment_id: '0'
+lifecycle_stage: active
+run_id: 292ad2e619da49bf9eb5024f3bebab48
+run_name: peaceful-shad-187
+run_uuid: 292ad2e619da49bf9eb5024f3bebab48
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1675947739761
+status: 4
+tags: []
+user_id: ge75tis

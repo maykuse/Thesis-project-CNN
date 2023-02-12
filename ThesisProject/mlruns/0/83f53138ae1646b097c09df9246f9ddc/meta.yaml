@@ -1,0 +1,15 @@
+artifact_uri: file:///home/ge75tis/Desktop/Thesis-project-CNN/ThesisProject/mlruns/0/83f53138ae1646b097c09df9246f9ddc/artifacts
+end_time: 1675789688493
+entry_point_name: ''
+experiment_id: '0'
+lifecycle_stage: active
+run_id: 83f53138ae1646b097c09df9246f9ddc
+run_name: skillful-dove-889
+run_uuid: 83f53138ae1646b097c09df9246f9ddc
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1675789518546
+status: 3
+tags: []
+user_id: ge75tis

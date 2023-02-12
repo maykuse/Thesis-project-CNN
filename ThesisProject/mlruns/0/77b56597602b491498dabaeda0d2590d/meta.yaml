@@ -1,0 +1,15 @@
+artifact_uri: file:///home/ge75tis/Desktop/Thesis-project-CNN/ThesisProject/mlruns/0/77b56597602b491498dabaeda0d2590d/artifacts
+end_time: 1675778267989
+entry_point_name: ''
+experiment_id: '0'
+lifecycle_stage: active
+run_id: 77b56597602b491498dabaeda0d2590d
+run_name: charming-seal-6
+run_uuid: 77b56597602b491498dabaeda0d2590d
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1675778267965
+status: 3
+tags: []
+user_id: ge75tis

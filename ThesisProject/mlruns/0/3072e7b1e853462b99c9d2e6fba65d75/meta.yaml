@@ -1,0 +1,15 @@
+artifact_uri: file:///home/ge75tis/Desktop/Thesis-project-CNN/ThesisProject/mlruns/0/3072e7b1e853462b99c9d2e6fba65d75/artifacts
+end_time: 1675673868821
+entry_point_name: ''
+experiment_id: '0'
+lifecycle_stage: active
+run_id: 3072e7b1e853462b99c9d2e6fba65d75
+run_name: enthused-trout-902
+run_uuid: 3072e7b1e853462b99c9d2e6fba65d75
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1675673868804
+status: 4
+tags: []
+user_id: ge75tis

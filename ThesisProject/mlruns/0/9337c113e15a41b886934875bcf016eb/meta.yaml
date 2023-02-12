@@ -1,0 +1,15 @@
+artifact_uri: file:///home/ge75tis/Desktop/Thesis-project-CNN/ThesisProject/mlruns/0/9337c113e15a41b886934875bcf016eb/artifacts
+end_time: 1675785454352
+entry_point_name: ''
+experiment_id: '0'
+lifecycle_stage: active
+run_id: 9337c113e15a41b886934875bcf016eb
+run_name: bedecked-ram-140
+run_uuid: 9337c113e15a41b886934875bcf016eb
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1675785394290
+status: 3
+tags: []
+user_id: ge75tis

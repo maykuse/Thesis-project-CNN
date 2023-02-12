@@ -1,0 +1,15 @@
+artifact_uri: file:///home/ge75tis/Desktop/Thesis-project-CNN/ThesisProject/mlruns/0/f290db9dd1dd48099264ec9a28188ccc/artifacts
+end_time: 1675850909903
+entry_point_name: ''
+experiment_id: '0'
+lifecycle_stage: active
+run_id: f290db9dd1dd48099264ec9a28188ccc
+run_name: defiant-dolphin-196
+run_uuid: f290db9dd1dd48099264ec9a28188ccc
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1675850909880
+status: 3
+tags: []
+user_id: ge75tis

@@ -1,0 +1,15 @@
+artifact_uri: file:///home/ge75tis/Desktop/Thesis-project-CNN/ThesisProject/mlruns/0/f97e8e7e390e4e9c8a3570fdf795e19d/artifacts
+end_time: 1675763826584
+entry_point_name: ''
+experiment_id: '0'
+lifecycle_stage: active
+run_id: f97e8e7e390e4e9c8a3570fdf795e19d
+run_name: resilient-ray-307
+run_uuid: f97e8e7e390e4e9c8a3570fdf795e19d
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1675763826570
+status: 3
+tags: []
+user_id: ge75tis

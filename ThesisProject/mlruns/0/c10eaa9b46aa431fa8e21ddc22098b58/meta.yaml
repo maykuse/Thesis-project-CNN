@@ -1,0 +1,15 @@
+artifact_uri: file:///home/ge75tis/Desktop/Thesis-project-CNN/ThesisProject/mlruns/0/c10eaa9b46aa431fa8e21ddc22098b58/artifacts
+end_time: 1675674552541
+entry_point_name: ''
+experiment_id: '0'
+lifecycle_stage: active
+run_id: c10eaa9b46aa431fa8e21ddc22098b58
+run_name: intelligent-wasp-399
+run_uuid: c10eaa9b46aa431fa8e21ddc22098b58
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1675674528505
+status: 4
+tags: []
+user_id: ge75tis

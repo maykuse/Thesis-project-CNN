@@ -1,0 +1,15 @@
+artifact_uri: file:///home/ge75tis/Desktop/Thesis-project-CNN/ThesisProject/mlruns/0/e844035c02e5409d8ec8f4bfd74d1678/artifacts
+end_time: 1675948587564
+entry_point_name: ''
+experiment_id: '0'
+lifecycle_stage: active
+run_id: e844035c02e5409d8ec8f4bfd74d1678
+run_name: silent-ant-725
+run_uuid: e844035c02e5409d8ec8f4bfd74d1678
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1675948242170
+status: 3
+tags: []
+user_id: ge75tis

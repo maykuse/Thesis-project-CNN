@@ -1,0 +1,15 @@
+artifact_uri: file:///home/ge75tis/Desktop/Thesis-project-CNN/ThesisProject/mlruns/0/af182f1ef26e4fbf8085154f4fcada51/artifacts
+end_time: 1675968242632
+entry_point_name: ''
+experiment_id: '0'
+lifecycle_stage: active
+run_id: af182f1ef26e4fbf8085154f4fcada51
+run_name: fearless-smelt-238
+run_uuid: af182f1ef26e4fbf8085154f4fcada51
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1675968242599
+status: 3
+tags: []
+user_id: ge75tis

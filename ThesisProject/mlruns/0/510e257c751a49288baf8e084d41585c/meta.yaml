@@ -1,0 +1,15 @@
+artifact_uri: file:///home/ge75tis/Desktop/Thesis-project-CNN/ThesisProject/mlruns/0/510e257c751a49288baf8e084d41585c/artifacts
+end_time: 1675787663129
+entry_point_name: ''
+experiment_id: '0'
+lifecycle_stage: active
+run_id: 510e257c751a49288baf8e084d41585c
+run_name: rebellious-dove-163
+run_uuid: 510e257c751a49288baf8e084d41585c
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1675787652956
+status: 4
+tags: []
+user_id: ge75tis

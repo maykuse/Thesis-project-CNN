@@ -1,0 +1,15 @@
+artifact_uri: file:///home/ge75tis/Desktop/Thesis-project-CNN/ThesisProject/mlruns/0/d7ad33f274d04b1fb9b8818e8d1619a2/artifacts
+end_time: 1675875395535
+entry_point_name: ''
+experiment_id: '0'
+lifecycle_stage: active
+run_id: d7ad33f274d04b1fb9b8818e8d1619a2
+run_name: glamorous-skunk-488
+run_uuid: d7ad33f274d04b1fb9b8818e8d1619a2
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1675875382673
+status: 3
+tags: []
+user_id: ge75tis

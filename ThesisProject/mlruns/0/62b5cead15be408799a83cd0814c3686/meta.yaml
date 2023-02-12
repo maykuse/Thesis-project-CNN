@@ -1,0 +1,15 @@
+artifact_uri: file:///home/ge75tis/Desktop/Thesis-project-CNN/ThesisProject/mlruns/0/62b5cead15be408799a83cd0814c3686/artifacts
+end_time: 1675950263189
+entry_point_name: ''
+experiment_id: '0'
+lifecycle_stage: active
+run_id: 62b5cead15be408799a83cd0814c3686
+run_name: rogue-deer-147
+run_uuid: 62b5cead15be408799a83cd0814c3686
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1675949920196
+status: 3
+tags: []
+user_id: ge75tis

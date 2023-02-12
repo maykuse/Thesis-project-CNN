@@ -1,0 +1,15 @@
+artifact_uri: file:///home/ge75tis/Desktop/Thesis-project-CNN/ThesisProject/mlruns/0/fde517ce488d42658987e39df47a3ff0/artifacts
+end_time: 1675963859919
+entry_point_name: ''
+experiment_id: '0'
+lifecycle_stage: active
+run_id: fde517ce488d42658987e39df47a3ff0
+run_name: whimsical-shark-817
+run_uuid: fde517ce488d42658987e39df47a3ff0
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1675963847306
+status: 4
+tags: []
+user_id: ge75tis

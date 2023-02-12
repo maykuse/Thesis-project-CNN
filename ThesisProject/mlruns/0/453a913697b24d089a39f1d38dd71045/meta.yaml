@@ -1,0 +1,15 @@
+artifact_uri: file:///home/ge75tis/Desktop/Thesis-project-CNN/ThesisProject/mlruns/0/453a913697b24d089a39f1d38dd71045/artifacts
+end_time: 1675947408450
+entry_point_name: ''
+experiment_id: '0'
+lifecycle_stage: active
+run_id: 453a913697b24d089a39f1d38dd71045
+run_name: clumsy-newt-263
+run_uuid: 453a913697b24d089a39f1d38dd71045
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1675947394783
+status: 4
+tags: []
+user_id: ge75tis

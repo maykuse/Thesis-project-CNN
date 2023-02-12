@@ -1,0 +1,15 @@
+artifact_uri: file:///home/ge75tis/Desktop/Thesis-project-CNN/ThesisProject/mlruns/0/102dcda7dd9f4a5583db639cd1d05d76/artifacts
+end_time: 1675673929342
+entry_point_name: ''
+experiment_id: '0'
+lifecycle_stage: active
+run_id: 102dcda7dd9f4a5583db639cd1d05d76
+run_name: defiant-mole-827
+run_uuid: 102dcda7dd9f4a5583db639cd1d05d76
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1675673929314
+status: 4
+tags: []
+user_id: ge75tis

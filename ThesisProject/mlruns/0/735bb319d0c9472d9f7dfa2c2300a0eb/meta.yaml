@@ -1,0 +1,15 @@
+artifact_uri: file:///home/ge75tis/Desktop/Thesis-project-CNN/ThesisProject/mlruns/0/735bb319d0c9472d9f7dfa2c2300a0eb/artifacts
+end_time: 1675964023823
+entry_point_name: ''
+experiment_id: '0'
+lifecycle_stage: active
+run_id: 735bb319d0c9472d9f7dfa2c2300a0eb
+run_name: likeable-horse-894
+run_uuid: 735bb319d0c9472d9f7dfa2c2300a0eb
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1675963992205
+status: 4
+tags: []
+user_id: ge75tis

@@ -1,0 +1,15 @@
+artifact_uri: file:///home/ge75tis/Desktop/Thesis-project-CNN/ThesisProject/mlruns/0/4859833c9d334c4a828a607792e21251/artifacts
+end_time: 1675850445686
+entry_point_name: ''
+experiment_id: '0'
+lifecycle_stage: active
+run_id: 4859833c9d334c4a828a607792e21251
+run_name: skittish-toad-158
+run_uuid: 4859833c9d334c4a828a607792e21251
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1675850445649
+status: 3
+tags: []
+user_id: ge75tis

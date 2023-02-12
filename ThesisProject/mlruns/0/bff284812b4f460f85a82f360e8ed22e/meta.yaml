@@ -1,0 +1,15 @@
+artifact_uri: file:///home/ge75tis/Desktop/Thesis-project-CNN/ThesisProject/mlruns/0/bff284812b4f460f85a82f360e8ed22e/artifacts
+end_time: 1675949763087
+entry_point_name: ''
+experiment_id: '0'
+lifecycle_stage: active
+run_id: bff284812b4f460f85a82f360e8ed22e
+run_name: indecisive-flea-711
+run_uuid: bff284812b4f460f85a82f360e8ed22e
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1675949419698
+status: 3
+tags: []
+user_id: ge75tis

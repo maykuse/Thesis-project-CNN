@@ -1,0 +1,15 @@
+artifact_uri: file:///home/ge75tis/Desktop/Thesis-project-CNN/ThesisProject/mlruns/0/bf98062b84be4b769f0bdcad608b8eaf/artifacts
+end_time: 1675857864737
+entry_point_name: ''
+experiment_id: '0'
+lifecycle_stage: active
+run_id: bf98062b84be4b769f0bdcad608b8eaf
+run_name: fearless-hound-917
+run_uuid: bf98062b84be4b769f0bdcad608b8eaf
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1675857696257
+status: 3
+tags: []
+user_id: ge75tis

@@ -1,0 +1,15 @@
+artifact_uri: file:///home/ge75tis/Desktop/Thesis-project-CNN/ThesisProject/mlruns/0/1ae0884752c440819800b6ffb7531efe/artifacts
+end_time: 1675786063770
+entry_point_name: ''
+experiment_id: '0'
+lifecycle_stage: active
+run_id: 1ae0884752c440819800b6ffb7531efe
+run_name: mysterious-cow-994
+run_uuid: 1ae0884752c440819800b6ffb7531efe
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1675786031151
+status: 4
+tags: []
+user_id: ge75tis

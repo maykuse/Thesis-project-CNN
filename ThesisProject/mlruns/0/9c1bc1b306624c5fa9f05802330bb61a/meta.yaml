@@ -1,0 +1,15 @@
+artifact_uri: file:///home/ge75tis/Desktop/Thesis-project-CNN/ThesisProject/mlruns/0/9c1bc1b306624c5fa9f05802330bb61a/artifacts
+end_time: 1675786296010
+entry_point_name: ''
+experiment_id: '0'
+lifecycle_stage: active
+run_id: 9c1bc1b306624c5fa9f05802330bb61a
+run_name: amazing-stork-585
+run_uuid: 9c1bc1b306624c5fa9f05802330bb61a
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1675786236739
+status: 3
+tags: []
+user_id: ge75tis

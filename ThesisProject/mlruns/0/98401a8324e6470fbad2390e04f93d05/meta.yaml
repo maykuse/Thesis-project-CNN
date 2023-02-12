@@ -1,0 +1,15 @@
+artifact_uri: file:///home/ge75tis/Desktop/Thesis-project-CNN/ThesisProject/mlruns/0/98401a8324e6470fbad2390e04f93d05/artifacts
+end_time: 1676230998845
+entry_point_name: ''
+experiment_id: '0'
+lifecycle_stage: active
+run_id: 98401a8324e6470fbad2390e04f93d05
+run_name: capable-bird-666
+run_uuid: 98401a8324e6470fbad2390e04f93d05
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1676230998812
+status: 3
+tags: []
+user_id: ge75tis

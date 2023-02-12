@@ -1,0 +1,15 @@
+artifact_uri: file:///home/ge75tis/Desktop/Thesis-project-CNN/ThesisProject/mlruns/0/3eab6310f3be4136bd555c8ff0861d03/artifacts
+end_time: 1675784437251
+entry_point_name: ''
+experiment_id: '0'
+lifecycle_stage: active
+run_id: 3eab6310f3be4136bd555c8ff0861d03
+run_name: wistful-roo-209
+run_uuid: 3eab6310f3be4136bd555c8ff0861d03
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1675784413673
+status: 4
+tags: []
+user_id: ge75tis

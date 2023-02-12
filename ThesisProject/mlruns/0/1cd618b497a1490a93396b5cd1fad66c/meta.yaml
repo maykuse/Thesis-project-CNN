@@ -1,0 +1,15 @@
+artifact_uri: file:///home/ge75tis/Desktop/Thesis-project-CNN/ThesisProject/mlruns/0/1cd618b497a1490a93396b5cd1fad66c/artifacts
+end_time: 1674490711617
+entry_point_name: ''
+experiment_id: '0'
+lifecycle_stage: active
+run_id: 1cd618b497a1490a93396b5cd1fad66c
+run_name: angry-wolf-995
+run_uuid: 1cd618b497a1490a93396b5cd1fad66c
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1674490704436
+status: 3
+tags: []
+user_id: ge75tis

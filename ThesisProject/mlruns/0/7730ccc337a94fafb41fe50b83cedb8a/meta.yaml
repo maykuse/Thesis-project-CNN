@@ -1,0 +1,15 @@
+artifact_uri: file:///home/ge75tis/Desktop/Thesis-project-CNN/ThesisProject/mlruns/0/7730ccc337a94fafb41fe50b83cedb8a/artifacts
+end_time: 1675879423954
+entry_point_name: ''
+experiment_id: '0'
+lifecycle_stage: active
+run_id: 7730ccc337a94fafb41fe50b83cedb8a
+run_name: capable-snake-806
+run_uuid: 7730ccc337a94fafb41fe50b83cedb8a
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1675879329460
+status: 3
+tags: []
+user_id: ge75tis

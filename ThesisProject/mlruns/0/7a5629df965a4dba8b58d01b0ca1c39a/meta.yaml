@@ -1,0 +1,15 @@
+artifact_uri: file:///home/ge75tis/Desktop/Thesis-project-CNN/ThesisProject/mlruns/0/7a5629df965a4dba8b58d01b0ca1c39a/artifacts
+end_time: 1675967904284
+entry_point_name: ''
+experiment_id: '0'
+lifecycle_stage: active
+run_id: 7a5629df965a4dba8b58d01b0ca1c39a
+run_name: stately-bee-705
+run_uuid: 7a5629df965a4dba8b58d01b0ca1c39a
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1675967844187
+status: 3
+tags: []
+user_id: ge75tis

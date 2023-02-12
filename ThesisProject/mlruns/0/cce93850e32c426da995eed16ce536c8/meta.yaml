@@ -1,0 +1,15 @@
+artifact_uri: file:///home/ge75tis/Desktop/Thesis-project-CNN/ThesisProject/mlruns/0/cce93850e32c426da995eed16ce536c8/artifacts
+end_time: 1675876376295
+entry_point_name: ''
+experiment_id: '0'
+lifecycle_stage: active
+run_id: cce93850e32c426da995eed16ce536c8
+run_name: tasteful-frog-214
+run_uuid: cce93850e32c426da995eed16ce536c8
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1675876363272
+status: 3
+tags: []
+user_id: ge75tis

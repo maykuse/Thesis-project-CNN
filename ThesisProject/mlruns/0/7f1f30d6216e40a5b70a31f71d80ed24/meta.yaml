@@ -1,0 +1,15 @@
+artifact_uri: file:///home/ge75tis/Desktop/Thesis-project-CNN/ThesisProject/mlruns/0/7f1f30d6216e40a5b70a31f71d80ed24/artifacts
+end_time: 1675954476818
+entry_point_name: ''
+experiment_id: '0'
+lifecycle_stage: active
+run_id: 7f1f30d6216e40a5b70a31f71d80ed24
+run_name: defiant-crow-50
+run_uuid: 7f1f30d6216e40a5b70a31f71d80ed24
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1675954463831
+status: 3
+tags: []
+user_id: ge75tis

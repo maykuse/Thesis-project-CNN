@@ -1,0 +1,15 @@
+artifact_uri: file:///home/ge75tis/Desktop/Thesis-project-CNN/ThesisProject/mlruns/0/d2d622d2a0924d72ae58211852dc4af0/artifacts
+end_time: 1675675335201
+entry_point_name: ''
+experiment_id: '0'
+lifecycle_stage: active
+run_id: d2d622d2a0924d72ae58211852dc4af0
+run_name: luminous-elk-517
+run_uuid: d2d622d2a0924d72ae58211852dc4af0
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1675675335164
+status: 4
+tags: []
+user_id: ge75tis

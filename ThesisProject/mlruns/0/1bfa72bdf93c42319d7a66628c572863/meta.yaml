@@ -1,0 +1,15 @@
+artifact_uri: file:///home/ge75tis/Desktop/Thesis-project-CNN/ThesisProject/mlruns/0/1bfa72bdf93c42319d7a66628c572863/artifacts
+end_time: 1675674113608
+entry_point_name: ''
+experiment_id: '0'
+lifecycle_stage: active
+run_id: 1bfa72bdf93c42319d7a66628c572863
+run_name: upset-hawk-602
+run_uuid: 1bfa72bdf93c42319d7a66628c572863
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1675674111856
+status: 4
+tags: []
+user_id: ge75tis

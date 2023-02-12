@@ -1,0 +1,15 @@
+artifact_uri: file:///home/ge75tis/Desktop/Thesis-project-CNN/ThesisProject/mlruns/0/04a5b2a4fffd4de3a109f9e7d63c25f3/artifacts
+end_time: 1675674425660
+entry_point_name: ''
+experiment_id: '0'
+lifecycle_stage: active
+run_id: 04a5b2a4fffd4de3a109f9e7d63c25f3
+run_name: upbeat-seal-814
+run_uuid: 04a5b2a4fffd4de3a109f9e7d63c25f3
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1675674415271
+status: 4
+tags: []
+user_id: ge75tis

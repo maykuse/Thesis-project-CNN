@@ -1,0 +1,15 @@
+artifact_uri: file:///home/ge75tis/Desktop/Thesis-project-CNN/ThesisProject/mlruns/0/86aa5a674d5f40738d690a09c29311b0/artifacts
+end_time: 1675764617212
+entry_point_name: ''
+experiment_id: '0'
+lifecycle_stage: active
+run_id: 86aa5a674d5f40738d690a09c29311b0
+run_name: puzzled-robin-165
+run_uuid: 86aa5a674d5f40738d690a09c29311b0
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1675764617189
+status: 3
+tags: []
+user_id: ge75tis

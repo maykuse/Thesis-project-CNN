@@ -1,0 +1,15 @@
+artifact_uri: file:///home/ge75tis/Desktop/Thesis-project-CNN/ThesisProject/mlruns/0/6dba2f5105474f02aaca26bde5c41485/artifacts
+end_time: 1675784566778
+entry_point_name: ''
+experiment_id: '0'
+lifecycle_stage: active
+run_id: 6dba2f5105474f02aaca26bde5c41485
+run_name: useful-shoat-739
+run_uuid: 6dba2f5105474f02aaca26bde5c41485
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1675784564741
+status: 4
+tags: []
+user_id: ge75tis

@@ -1,0 +1,15 @@
+artifact_uri: file:///home/ge75tis/Desktop/Thesis-project-CNN/ThesisProject/mlruns/0/91a4f66c2ad94a148a7b527c101a0e59/artifacts
+end_time: 1675787494249
+entry_point_name: ''
+experiment_id: '0'
+lifecycle_stage: active
+run_id: 91a4f66c2ad94a148a7b527c101a0e59
+run_name: sedate-shoat-762
+run_uuid: 91a4f66c2ad94a148a7b527c101a0e59
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1675787461892
+status: 4
+tags: []
+user_id: ge75tis

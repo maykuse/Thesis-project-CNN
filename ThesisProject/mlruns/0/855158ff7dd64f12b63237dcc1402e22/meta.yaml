@@ -1,0 +1,15 @@
+artifact_uri: file:///home/ge75tis/Desktop/Thesis-project-CNN/ThesisProject/mlruns/0/855158ff7dd64f12b63237dcc1402e22/artifacts
+end_time: 1674487109445
+entry_point_name: ''
+experiment_id: '0'
+lifecycle_stage: active
+run_id: 855158ff7dd64f12b63237dcc1402e22
+run_name: shivering-vole-541
+run_uuid: 855158ff7dd64f12b63237dcc1402e22
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1674487109424
+status: 3
+tags: []
+user_id: ge75tis

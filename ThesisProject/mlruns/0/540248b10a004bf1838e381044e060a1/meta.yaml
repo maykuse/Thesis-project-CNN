@@ -1,0 +1,15 @@
+artifact_uri: file:///home/ge75tis/Desktop/Thesis-project-CNN/ThesisProject/mlruns/0/540248b10a004bf1838e381044e060a1/artifacts
+end_time: 1675970161537
+entry_point_name: ''
+experiment_id: '0'
+lifecycle_stage: active
+run_id: 540248b10a004bf1838e381044e060a1
+run_name: chill-robin-906
+run_uuid: 540248b10a004bf1838e381044e060a1
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1675970161503
+status: 3
+tags: []
+user_id: ge75tis

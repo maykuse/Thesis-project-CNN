@@ -1,0 +1,15 @@
+artifact_uri: file:///home/ge75tis/Desktop/Thesis-project-CNN/ThesisProject/mlruns/0/07f2c8c668924ce49b77323b2401bbff/artifacts
+end_time: 1675961293368
+entry_point_name: ''
+experiment_id: '0'
+lifecycle_stage: active
+run_id: 07f2c8c668924ce49b77323b2401bbff
+run_name: blushing-moth-948
+run_uuid: 07f2c8c668924ce49b77323b2401bbff
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1675961293337
+status: 3
+tags: []
+user_id: ge75tis

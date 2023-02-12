@@ -1,0 +1,15 @@
+artifact_uri: file:///home/ge75tis/Desktop/Thesis-project-CNN/ThesisProject/mlruns/0/5787c0e863e44d47b627b2d396aad55d/artifacts
+end_time: 1675691829834
+entry_point_name: ''
+experiment_id: '0'
+lifecycle_stage: active
+run_id: 5787c0e863e44d47b627b2d396aad55d
+run_name: luminous-dove-426
+run_uuid: 5787c0e863e44d47b627b2d396aad55d
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1675691829796
+status: 3
+tags: []
+user_id: ge75tis

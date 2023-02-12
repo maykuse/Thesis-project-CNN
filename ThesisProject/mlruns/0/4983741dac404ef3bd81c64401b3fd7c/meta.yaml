@@ -1,0 +1,15 @@
+artifact_uri: file:///home/ge75tis/Desktop/Thesis-project-CNN/ThesisProject/mlruns/0/4983741dac404ef3bd81c64401b3fd7c/artifacts
+end_time: 1676230816590
+entry_point_name: ''
+experiment_id: '0'
+lifecycle_stage: active
+run_id: 4983741dac404ef3bd81c64401b3fd7c
+run_name: marvelous-bird-654
+run_uuid: 4983741dac404ef3bd81c64401b3fd7c
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1676230816571
+status: 3
+tags: []
+user_id: ge75tis

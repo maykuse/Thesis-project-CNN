@@ -1,0 +1,15 @@
+artifact_uri: file:///home/ge75tis/Desktop/Thesis-project-CNN/ThesisProject/mlruns/0/41ae45ff2cb84c9899f150f05067be77/artifacts
+end_time: 1675866381440
+entry_point_name: ''
+experiment_id: '0'
+lifecycle_stage: active
+run_id: 41ae45ff2cb84c9899f150f05067be77
+run_name: omniscient-ray-183
+run_uuid: 41ae45ff2cb84c9899f150f05067be77
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1675866381409
+status: 3
+tags: []
+user_id: ge75tis

@@ -1,0 +1,15 @@
+artifact_uri: file:///home/ge75tis/Desktop/Thesis-project-CNN/ThesisProject/mlruns/0/274aa1bbb1384924806ab7ca0e1d0460/artifacts
+end_time: 1675690071496
+entry_point_name: ''
+experiment_id: '0'
+lifecycle_stage: active
+run_id: 274aa1bbb1384924806ab7ca0e1d0460
+run_name: charming-crane-461
+run_uuid: 274aa1bbb1384924806ab7ca0e1d0460
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1675689852684
+status: 3
+tags: []
+user_id: ge75tis

@@ -1,0 +1,15 @@
+artifact_uri: file:///home/ge75tis/Desktop/Thesis-project-CNN/ThesisProject/mlruns/0/d97e5f990d8a4bf7974fb092831f0fe4/artifacts
+end_time: 1675964650733
+entry_point_name: ''
+experiment_id: '0'
+lifecycle_stage: active
+run_id: d97e5f990d8a4bf7974fb092831f0fe4
+run_name: abrasive-rook-952
+run_uuid: d97e5f990d8a4bf7974fb092831f0fe4
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1675964591953
+status: 3
+tags: []
+user_id: ge75tis

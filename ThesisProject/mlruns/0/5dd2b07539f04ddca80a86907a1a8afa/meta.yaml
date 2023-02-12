@@ -1,0 +1,15 @@
+artifact_uri: file:///home/ge75tis/Desktop/Thesis-project-CNN/ThesisProject/mlruns/0/5dd2b07539f04ddca80a86907a1a8afa/artifacts
+end_time: 1675691524761
+entry_point_name: ''
+experiment_id: '0'
+lifecycle_stage: active
+run_id: 5dd2b07539f04ddca80a86907a1a8afa
+run_name: charming-mink-8
+run_uuid: 5dd2b07539f04ddca80a86907a1a8afa
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1675691524733
+status: 3
+tags: []
+user_id: ge75tis

@@ -1,0 +1,15 @@
+artifact_uri: file:///home/ge75tis/Desktop/Thesis-project-CNN/ThesisProject/mlruns/0/e5c0621856a34b3d8a17ddecd409c758/artifacts
+end_time: 1675785972528
+entry_point_name: ''
+experiment_id: '0'
+lifecycle_stage: active
+run_id: e5c0621856a34b3d8a17ddecd409c758
+run_name: mysterious-mole-770
+run_uuid: e5c0621856a34b3d8a17ddecd409c758
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1675785955353
+status: 4
+tags: []
+user_id: ge75tis

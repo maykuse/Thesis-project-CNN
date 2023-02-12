@@ -1,0 +1,15 @@
+artifact_uri: file:///home/ge75tis/Desktop/Thesis-project-CNN/ThesisProject/mlruns/0/6b51094b4aba44e08480234d31c8d749/artifacts
+end_time: 1675877260260
+entry_point_name: ''
+experiment_id: '0'
+lifecycle_stage: active
+run_id: 6b51094b4aba44e08480234d31c8d749
+run_name: bold-dolphin-711
+run_uuid: 6b51094b4aba44e08480234d31c8d749
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1675877241375
+status: 3
+tags: []
+user_id: ge75tis

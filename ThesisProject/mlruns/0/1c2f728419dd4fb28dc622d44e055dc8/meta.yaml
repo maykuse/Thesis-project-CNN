@@ -1,0 +1,15 @@
+artifact_uri: file:///home/ge75tis/Desktop/Thesis-project-CNN/ThesisProject/mlruns/0/1c2f728419dd4fb28dc622d44e055dc8/artifacts
+end_time: 1675963222947
+entry_point_name: ''
+experiment_id: '0'
+lifecycle_stage: active
+run_id: 1c2f728419dd4fb28dc622d44e055dc8
+run_name: beautiful-elk-493
+run_uuid: 1c2f728419dd4fb28dc622d44e055dc8
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1675963222924
+status: 3
+tags: []
+user_id: ge75tis

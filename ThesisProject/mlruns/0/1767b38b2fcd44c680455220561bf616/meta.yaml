@@ -1,0 +1,15 @@
+artifact_uri: file:///home/ge75tis/Desktop/Thesis-project-CNN/ThesisProject/mlruns/0/1767b38b2fcd44c680455220561bf616/artifacts
+end_time: 1675777708100
+entry_point_name: ''
+experiment_id: '0'
+lifecycle_stage: active
+run_id: 1767b38b2fcd44c680455220561bf616
+run_name: thundering-zebra-1
+run_uuid: 1767b38b2fcd44c680455220561bf616
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1675777708079
+status: 3
+tags: []
+user_id: ge75tis

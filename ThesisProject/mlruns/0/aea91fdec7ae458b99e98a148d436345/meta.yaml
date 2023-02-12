@@ -1,0 +1,15 @@
+artifact_uri: file:///home/ge75tis/Desktop/Thesis-project-CNN/ThesisProject/mlruns/0/aea91fdec7ae458b99e98a148d436345/artifacts
+end_time: 1674491868085
+entry_point_name: ''
+experiment_id: '0'
+lifecycle_stage: active
+run_id: aea91fdec7ae458b99e98a148d436345
+run_name: fortunate-goose-312
+run_uuid: aea91fdec7ae458b99e98a148d436345
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1674491860967
+status: 3
+tags: []
+user_id: ge75tis

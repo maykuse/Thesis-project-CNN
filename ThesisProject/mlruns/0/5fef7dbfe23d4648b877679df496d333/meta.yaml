@@ -1,0 +1,15 @@
+artifact_uri: file:///home/ge75tis/Desktop/Thesis-project-CNN/ThesisProject/mlruns/0/5fef7dbfe23d4648b877679df496d333/artifacts
+end_time: 1675875840754
+entry_point_name: ''
+experiment_id: '0'
+lifecycle_stage: active
+run_id: 5fef7dbfe23d4648b877679df496d333
+run_name: rogue-ant-6
+run_uuid: 5fef7dbfe23d4648b877679df496d333
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1675875830801
+status: 3
+tags: []
+user_id: ge75tis

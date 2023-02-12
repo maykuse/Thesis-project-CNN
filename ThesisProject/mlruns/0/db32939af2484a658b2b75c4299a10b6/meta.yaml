@@ -1,0 +1,15 @@
+artifact_uri: file:///home/ge75tis/Desktop/Thesis-project-CNN/ThesisProject/mlruns/0/db32939af2484a658b2b75c4299a10b6/artifacts
+end_time: 1675876583287
+entry_point_name: ''
+experiment_id: '0'
+lifecycle_stage: active
+run_id: db32939af2484a658b2b75c4299a10b6
+run_name: loud-shark-563
+run_uuid: db32939af2484a658b2b75c4299a10b6
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1675876570271
+status: 3
+tags: []
+user_id: ge75tis

@@ -1,0 +1,15 @@
+artifact_uri: file:///home/ge75tis/Desktop/Thesis-project-CNN/ThesisProject/mlruns/0/01254a3f158e45598ce1da7c466b0883/artifacts
+end_time: 1675963489121
+entry_point_name: ''
+experiment_id: '0'
+lifecycle_stage: active
+run_id: 01254a3f158e45598ce1da7c466b0883
+run_name: legendary-shrew-826
+run_uuid: 01254a3f158e45598ce1da7c466b0883
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1675963479251
+status: 4
+tags: []
+user_id: ge75tis

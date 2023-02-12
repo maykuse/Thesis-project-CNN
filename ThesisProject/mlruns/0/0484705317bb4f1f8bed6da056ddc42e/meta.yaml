@@ -1,0 +1,15 @@
+artifact_uri: file:///home/ge75tis/Desktop/Thesis-project-CNN/ThesisProject/mlruns/0/0484705317bb4f1f8bed6da056ddc42e/artifacts
+end_time: 1674485188669
+entry_point_name: ''
+experiment_id: '0'
+lifecycle_stage: active
+run_id: 0484705317bb4f1f8bed6da056ddc42e
+run_name: exultant-kite-465
+run_uuid: 0484705317bb4f1f8bed6da056ddc42e
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1674485188655
+status: 3
+tags: []
+user_id: ge75tis

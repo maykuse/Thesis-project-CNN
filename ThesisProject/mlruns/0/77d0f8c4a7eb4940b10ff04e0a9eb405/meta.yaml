@@ -1,0 +1,15 @@
+artifact_uri: file:///home/ge75tis/Desktop/Thesis-project-CNN/ThesisProject/mlruns/0/77d0f8c4a7eb4940b10ff04e0a9eb405/artifacts
+end_time: 1676032143054
+entry_point_name: ''
+experiment_id: '0'
+lifecycle_stage: active
+run_id: 77d0f8c4a7eb4940b10ff04e0a9eb405
+run_name: placid-loon-497
+run_uuid: 77d0f8c4a7eb4940b10ff04e0a9eb405
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1676032143013
+status: 3
+tags: []
+user_id: ge75tis

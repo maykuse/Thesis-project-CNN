@@ -1,0 +1,15 @@
+artifact_uri: file:///home/ge75tis/Desktop/Thesis-project-CNN/ThesisProject/mlruns/0/3fe140b8afc84e32b61e180fe85e13aa/artifacts
+end_time: 1675851681043
+entry_point_name: ''
+experiment_id: '0'
+lifecycle_stage: active
+run_id: 3fe140b8afc84e32b61e180fe85e13aa
+run_name: abrasive-yak-809
+run_uuid: 3fe140b8afc84e32b61e180fe85e13aa
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1675851681016
+status: 3
+tags: []
+user_id: ge75tis

@@ -1,0 +1,15 @@
+artifact_uri: file:///home/ge75tis/Desktop/Thesis-project-CNN/ThesisProject/mlruns/0/8bee877cae0d4c96a9009fb027a596a4/artifacts
+end_time: 1674484915726
+entry_point_name: ''
+experiment_id: '0'
+lifecycle_stage: active
+run_id: 8bee877cae0d4c96a9009fb027a596a4
+run_name: burly-pug-763
+run_uuid: 8bee877cae0d4c96a9009fb027a596a4
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1674484915689
+status: 3
+tags: []
+user_id: ge75tis

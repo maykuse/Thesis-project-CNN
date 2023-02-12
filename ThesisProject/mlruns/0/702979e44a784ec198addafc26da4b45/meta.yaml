@@ -1,0 +1,15 @@
+artifact_uri: file:///home/ge75tis/Desktop/Thesis-project-CNN/ThesisProject/mlruns/0/702979e44a784ec198addafc26da4b45/artifacts
+end_time: 1676028532892
+entry_point_name: ''
+experiment_id: '0'
+lifecycle_stage: active
+run_id: 702979e44a784ec198addafc26da4b45
+run_name: painted-finch-453
+run_uuid: 702979e44a784ec198addafc26da4b45
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1676028532859
+status: 3
+tags: []
+user_id: ge75tis

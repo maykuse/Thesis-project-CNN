@@ -1,0 +1,15 @@
+artifact_uri: file:///home/ge75tis/Desktop/Thesis-project-CNN/ThesisProject/mlruns/0/da7f9c09cde146c5a2bb07c63f892c5b/artifacts
+end_time: 1675953993874
+entry_point_name: ''
+experiment_id: '0'
+lifecycle_stage: active
+run_id: da7f9c09cde146c5a2bb07c63f892c5b
+run_name: adventurous-colt-770
+run_uuid: da7f9c09cde146c5a2bb07c63f892c5b
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1675953980517
+status: 3
+tags: []
+user_id: ge75tis

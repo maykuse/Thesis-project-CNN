@@ -1,0 +1,15 @@
+artifact_uri: file:///home/ge75tis/Desktop/Thesis-project-CNN/ThesisProject/mlruns/0/1e482db09ac74bccbfbd1d6299cd6f35/artifacts
+end_time: 1674490817422
+entry_point_name: ''
+experiment_id: '0'
+lifecycle_stage: active
+run_id: 1e482db09ac74bccbfbd1d6299cd6f35
+run_name: merciful-tern-960
+run_uuid: 1e482db09ac74bccbfbd1d6299cd6f35
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1674490807412
+status: 3
+tags: []
+user_id: ge75tis

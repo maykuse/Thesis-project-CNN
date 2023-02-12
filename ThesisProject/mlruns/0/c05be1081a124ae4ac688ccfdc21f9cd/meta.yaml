@@ -1,0 +1,15 @@
+artifact_uri: file:///home/ge75tis/Desktop/Thesis-project-CNN/ThesisProject/mlruns/0/c05be1081a124ae4ac688ccfdc21f9cd/artifacts
+end_time: 1674485023935
+entry_point_name: ''
+experiment_id: '0'
+lifecycle_stage: active
+run_id: c05be1081a124ae4ac688ccfdc21f9cd
+run_name: skillful-horse-316
+run_uuid: c05be1081a124ae4ac688ccfdc21f9cd
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1674485023910
+status: 3
+tags: []
+user_id: ge75tis

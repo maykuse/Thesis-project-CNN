@@ -1,0 +1,15 @@
+artifact_uri: file:///home/ge75tis/Desktop/Thesis-project-CNN/ThesisProject/mlruns/0/e4454b0fb3fa420db6cfa3fdeb4f142b/artifacts
+end_time: 1675960896387
+entry_point_name: ''
+experiment_id: '0'
+lifecycle_stage: active
+run_id: e4454b0fb3fa420db6cfa3fdeb4f142b
+run_name: wistful-jay-779
+run_uuid: e4454b0fb3fa420db6cfa3fdeb4f142b
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1675960896364
+status: 3
+tags: []
+user_id: ge75tis

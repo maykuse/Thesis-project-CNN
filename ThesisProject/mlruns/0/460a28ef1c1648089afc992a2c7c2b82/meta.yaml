@@ -1,0 +1,16 @@
+artifact_uri: file:///home/ge75tis/Desktop/Thesis-project-CNN/ThesisProject/mlruns/0/460a28ef1c1648089afc992a2c7c2b82/artifacts
+deleted_time: null
+end_time: null
+entry_point_name: ''
+experiment_id: '0'
+lifecycle_stage: active
+run_id: 460a28ef1c1648089afc992a2c7c2b82
+run_name: placid-squirrel-920
+run_uuid: 460a28ef1c1648089afc992a2c7c2b82
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1674490860879
+status: 1
+tags: []
+user_id: ge75tis

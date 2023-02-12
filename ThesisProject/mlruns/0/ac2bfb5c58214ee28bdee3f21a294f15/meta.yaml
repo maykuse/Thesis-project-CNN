@@ -1,0 +1,15 @@
+artifact_uri: file:///home/ge75tis/Desktop/Thesis-project-CNN/ThesisProject/mlruns/0/ac2bfb5c58214ee28bdee3f21a294f15/artifacts
+end_time: 1675968808909
+entry_point_name: ''
+experiment_id: '0'
+lifecycle_stage: active
+run_id: ac2bfb5c58214ee28bdee3f21a294f15
+run_name: funny-hen-843
+run_uuid: ac2bfb5c58214ee28bdee3f21a294f15
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1675968808881
+status: 3
+tags: []
+user_id: ge75tis

@@ -1,0 +1,15 @@
+artifact_uri: file:///home/ge75tis/Desktop/Thesis-project-CNN/ThesisProject/mlruns/0/81cfa939334648ef80626b9666407389/artifacts
+end_time: 1674483293573
+entry_point_name: ''
+experiment_id: '0'
+lifecycle_stage: active
+run_id: 81cfa939334648ef80626b9666407389
+run_name: smiling-swan-802
+run_uuid: 81cfa939334648ef80626b9666407389
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1674483293548
+status: 3
+tags: []
+user_id: ge75tis

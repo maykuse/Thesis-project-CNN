@@ -1,0 +1,15 @@
+artifact_uri: file:///home/ge75tis/Desktop/Thesis-project-CNN/ThesisProject/mlruns/0/7b328318b44f4a55a5abdf7fabfb0c38/artifacts
+end_time: 1675691245668
+entry_point_name: ''
+experiment_id: '0'
+lifecycle_stage: active
+run_id: 7b328318b44f4a55a5abdf7fabfb0c38
+run_name: nervous-sloth-899
+run_uuid: 7b328318b44f4a55a5abdf7fabfb0c38
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1675691245653
+status: 3
+tags: []
+user_id: ge75tis

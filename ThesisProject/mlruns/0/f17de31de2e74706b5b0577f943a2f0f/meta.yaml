@@ -1,0 +1,15 @@
+artifact_uri: file:///home/ge75tis/Desktop/Thesis-project-CNN/ThesisProject/mlruns/0/f17de31de2e74706b5b0577f943a2f0f/artifacts
+end_time: 1675691768360
+entry_point_name: ''
+experiment_id: '0'
+lifecycle_stage: active
+run_id: f17de31de2e74706b5b0577f943a2f0f
+run_name: judicious-yak-902
+run_uuid: f17de31de2e74706b5b0577f943a2f0f
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1675691768345
+status: 3
+tags: []
+user_id: ge75tis

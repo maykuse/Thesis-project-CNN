@@ -1,0 +1,15 @@
+artifact_uri: file:///home/ge75tis/Desktop/Thesis-project-CNN/ThesisProject/mlruns/0/d2b414f5ee024cc3882738fe7f3d20ff/artifacts
+end_time: 1674489901649
+entry_point_name: ''
+experiment_id: '0'
+lifecycle_stage: active
+run_id: d2b414f5ee024cc3882738fe7f3d20ff
+run_name: masked-mule-454
+run_uuid: d2b414f5ee024cc3882738fe7f3d20ff
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1674489891461
+status: 3
+tags: []
+user_id: ge75tis

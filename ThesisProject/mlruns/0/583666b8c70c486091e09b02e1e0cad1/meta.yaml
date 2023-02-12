@@ -1,0 +1,15 @@
+artifact_uri: file:///home/ge75tis/Desktop/Thesis-project-CNN/ThesisProject/mlruns/0/583666b8c70c486091e09b02e1e0cad1/artifacts
+end_time: 1674486536816
+entry_point_name: ''
+experiment_id: '0'
+lifecycle_stage: active
+run_id: 583666b8c70c486091e09b02e1e0cad1
+run_name: defiant-squid-990
+run_uuid: 583666b8c70c486091e09b02e1e0cad1
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1674486536787
+status: 3
+tags: []
+user_id: ge75tis

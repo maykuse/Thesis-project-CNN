@@ -1,0 +1,15 @@
+artifact_uri: file:///home/ge75tis/Desktop/Thesis-project-CNN/ThesisProject/mlruns/0/abf08aa962f5438081b31e579a5f562c/artifacts
+end_time: 1675683456345
+entry_point_name: ''
+experiment_id: '0'
+lifecycle_stage: active
+run_id: abf08aa962f5438081b31e579a5f562c
+run_name: resilient-dove-503
+run_uuid: abf08aa962f5438081b31e579a5f562c
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1675683244584
+status: 3
+tags: []
+user_id: ge75tis

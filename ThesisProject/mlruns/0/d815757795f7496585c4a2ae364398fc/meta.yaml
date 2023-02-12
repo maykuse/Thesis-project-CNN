@@ -1,0 +1,15 @@
+artifact_uri: file:///home/ge75tis/Desktop/Thesis-project-CNN/ThesisProject/mlruns/0/d815757795f7496585c4a2ae364398fc/artifacts
+end_time: 1675788020981
+entry_point_name: ''
+experiment_id: '0'
+lifecycle_stage: active
+run_id: d815757795f7496585c4a2ae364398fc
+run_name: carefree-cow-201
+run_uuid: d815757795f7496585c4a2ae364398fc
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1675787960619
+status: 3
+tags: []
+user_id: ge75tis

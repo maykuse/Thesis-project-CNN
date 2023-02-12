@@ -1,0 +1,15 @@
+artifact_uri: file:///home/ge75tis/Desktop/Thesis-project-CNN/ThesisProject/mlruns/0/dbf6164712264c0a9ca26a845b13f6fa/artifacts
+end_time: 1675682849197
+entry_point_name: ''
+experiment_id: '0'
+lifecycle_stage: active
+run_id: dbf6164712264c0a9ca26a845b13f6fa
+run_name: hilarious-bass-634
+run_uuid: dbf6164712264c0a9ca26a845b13f6fa
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1675682627655
+status: 3
+tags: []
+user_id: ge75tis

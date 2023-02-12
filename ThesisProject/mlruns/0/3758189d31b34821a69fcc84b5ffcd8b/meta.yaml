@@ -1,0 +1,15 @@
+artifact_uri: file:///home/ge75tis/Desktop/Thesis-project-CNN/ThesisProject/mlruns/0/3758189d31b34821a69fcc84b5ffcd8b/artifacts
+end_time: 1675677397841
+entry_point_name: ''
+experiment_id: '0'
+lifecycle_stage: active
+run_id: 3758189d31b34821a69fcc84b5ffcd8b
+run_name: gaudy-ox-426
+run_uuid: 3758189d31b34821a69fcc84b5ffcd8b
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1675677149519
+status: 4
+tags: []
+user_id: ge75tis

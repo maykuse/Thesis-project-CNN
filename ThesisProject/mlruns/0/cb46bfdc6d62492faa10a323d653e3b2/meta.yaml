@@ -1,0 +1,15 @@
+artifact_uri: file:///home/ge75tis/Desktop/Thesis-project-CNN/ThesisProject/mlruns/0/cb46bfdc6d62492faa10a323d653e3b2/artifacts
+end_time: 1675964171265
+entry_point_name: ''
+experiment_id: '0'
+lifecycle_stage: active
+run_id: cb46bfdc6d62492faa10a323d653e3b2
+run_name: fearless-yak-603
+run_uuid: cb46bfdc6d62492faa10a323d653e3b2
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1675964171124
+status: 4
+tags: []
+user_id: ge75tis

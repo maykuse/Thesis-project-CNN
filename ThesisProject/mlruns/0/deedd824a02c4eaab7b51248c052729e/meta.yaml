@@ -1,0 +1,15 @@
+artifact_uri: file:///home/ge75tis/Desktop/Thesis-project-CNN/ThesisProject/mlruns/0/deedd824a02c4eaab7b51248c052729e/artifacts
+end_time: 1675876408199
+entry_point_name: ''
+experiment_id: '0'
+lifecycle_stage: active
+run_id: deedd824a02c4eaab7b51248c052729e
+run_name: fortunate-kit-513
+run_uuid: deedd824a02c4eaab7b51248c052729e
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1675876397933
+status: 3
+tags: []
+user_id: ge75tis

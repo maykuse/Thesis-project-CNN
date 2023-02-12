@@ -1,0 +1,15 @@
+artifact_uri: file:///home/ge75tis/Desktop/Thesis-project-CNN/ThesisProject/mlruns/0/c76534c953114968a1e30e1679aeb3e5/artifacts
+end_time: 1675949393753
+entry_point_name: ''
+experiment_id: '0'
+lifecycle_stage: active
+run_id: c76534c953114968a1e30e1679aeb3e5
+run_name: stately-ray-1000
+run_uuid: c76534c953114968a1e30e1679aeb3e5
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1675949391914
+status: 4
+tags: []
+user_id: ge75tis

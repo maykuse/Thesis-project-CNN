@@ -1,0 +1,15 @@
+artifact_uri: file:///home/ge75tis/Desktop/Thesis-project-CNN/ThesisProject/mlruns/0/067fed4cce504854ba7b9e504e40a1ec/artifacts
+end_time: 1675764523883
+entry_point_name: ''
+experiment_id: '0'
+lifecycle_stage: active
+run_id: 067fed4cce504854ba7b9e504e40a1ec
+run_name: gentle-sheep-582
+run_uuid: 067fed4cce504854ba7b9e504e40a1ec
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1675764523849
+status: 3
+tags: []
+user_id: ge75tis

@@ -1,0 +1,15 @@
+artifact_uri: file:///home/ge75tis/Desktop/Thesis-project-CNN/ThesisProject/mlruns/0/3f026f39f9b2463a8fd97fc9ddc8975a/artifacts
+end_time: 1676032224496
+entry_point_name: ''
+experiment_id: '0'
+lifecycle_stage: active
+run_id: 3f026f39f9b2463a8fd97fc9ddc8975a
+run_name: bemused-perch-400
+run_uuid: 3f026f39f9b2463a8fd97fc9ddc8975a
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1676032224479
+status: 3
+tags: []
+user_id: ge75tis

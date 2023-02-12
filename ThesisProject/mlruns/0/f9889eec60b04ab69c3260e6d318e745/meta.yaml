@@ -1,0 +1,15 @@
+artifact_uri: file:///home/ge75tis/Desktop/Thesis-project-CNN/ThesisProject/mlruns/0/f9889eec60b04ab69c3260e6d318e745/artifacts
+end_time: 1674490757497
+entry_point_name: ''
+experiment_id: '0'
+lifecycle_stage: active
+run_id: f9889eec60b04ab69c3260e6d318e745
+run_name: whimsical-robin-734
+run_uuid: f9889eec60b04ab69c3260e6d318e745
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1674490747229
+status: 3
+tags: []
+user_id: ge75tis

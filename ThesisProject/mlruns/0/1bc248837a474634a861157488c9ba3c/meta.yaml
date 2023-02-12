@@ -1,0 +1,15 @@
+artifact_uri: file:///home/ge75tis/Desktop/Thesis-project-CNN/ThesisProject/mlruns/0/1bc248837a474634a861157488c9ba3c/artifacts
+end_time: 1675947727124
+entry_point_name: ''
+experiment_id: '0'
+lifecycle_stage: active
+run_id: 1bc248837a474634a861157488c9ba3c
+run_name: indecisive-pig-267
+run_uuid: 1bc248837a474634a861157488c9ba3c
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1675947696969
+status: 4
+tags: []
+user_id: ge75tis

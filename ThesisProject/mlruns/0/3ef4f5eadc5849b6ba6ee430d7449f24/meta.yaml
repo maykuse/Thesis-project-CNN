@@ -1,0 +1,15 @@
+artifact_uri: file:///home/ge75tis/Desktop/Thesis-project-CNN/ThesisProject/mlruns/0/3ef4f5eadc5849b6ba6ee430d7449f24/artifacts
+end_time: 1675856728165
+entry_point_name: ''
+experiment_id: '0'
+lifecycle_stage: active
+run_id: 3ef4f5eadc5849b6ba6ee430d7449f24
+run_name: luminous-croc-736
+run_uuid: 3ef4f5eadc5849b6ba6ee430d7449f24
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1675856675305
+status: 4
+tags: []
+user_id: ge75tis

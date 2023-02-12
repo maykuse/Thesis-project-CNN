@@ -1,0 +1,15 @@
+artifact_uri: file:///home/ge75tis/Desktop/Thesis-project-CNN/ThesisProject/mlruns/0/d2b5790e8b594d75b02a8011b1197dff/artifacts
+end_time: 1675787207320
+entry_point_name: ''
+experiment_id: '0'
+lifecycle_stage: active
+run_id: d2b5790e8b594d75b02a8011b1197dff
+run_name: bald-boar-705
+run_uuid: d2b5790e8b594d75b02a8011b1197dff
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1675787205508
+status: 4
+tags: []
+user_id: ge75tis

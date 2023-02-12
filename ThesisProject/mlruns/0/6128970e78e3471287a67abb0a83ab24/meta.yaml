@@ -1,0 +1,15 @@
+artifact_uri: file:///home/ge75tis/Desktop/Thesis-project-CNN/ThesisProject/mlruns/0/6128970e78e3471287a67abb0a83ab24/artifacts
+end_time: 1675874483458
+entry_point_name: ''
+experiment_id: '0'
+lifecycle_stage: active
+run_id: 6128970e78e3471287a67abb0a83ab24
+run_name: sincere-smelt-263
+run_uuid: 6128970e78e3471287a67abb0a83ab24
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1675874470502
+status: 3
+tags: []
+user_id: ge75tis

@@ -1,0 +1,15 @@
+artifact_uri: file:///home/ge75tis/Desktop/Thesis-project-CNN/ThesisProject/mlruns/0/5b664a262977498c992416d14bc53a03/artifacts
+end_time: 1674486406769
+entry_point_name: ''
+experiment_id: '0'
+lifecycle_stage: active
+run_id: 5b664a262977498c992416d14bc53a03
+run_name: delicate-grouse-685
+run_uuid: 5b664a262977498c992416d14bc53a03
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1674486406756
+status: 3
+tags: []
+user_id: ge75tis

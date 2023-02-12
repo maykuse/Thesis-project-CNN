@@ -1,0 +1,15 @@
+artifact_uri: file:///home/ge75tis/Desktop/Thesis-project-CNN/ThesisProject/mlruns/0/7f90c342e9fb4d0fb4109b2a1b4fb61d/artifacts
+end_time: 1674490657135
+entry_point_name: ''
+experiment_id: '0'
+lifecycle_stage: active
+run_id: 7f90c342e9fb4d0fb4109b2a1b4fb61d
+run_name: thoughtful-snake-286
+run_uuid: 7f90c342e9fb4d0fb4109b2a1b4fb61d
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1674490649936
+status: 3
+tags: []
+user_id: ge75tis

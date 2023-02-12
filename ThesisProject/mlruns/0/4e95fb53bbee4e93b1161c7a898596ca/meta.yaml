@@ -1,0 +1,15 @@
+artifact_uri: file:///home/ge75tis/Desktop/Thesis-project-CNN/ThesisProject/mlruns/0/4e95fb53bbee4e93b1161c7a898596ca/artifacts
+end_time: 1674486488973
+entry_point_name: ''
+experiment_id: '0'
+lifecycle_stage: active
+run_id: 4e95fb53bbee4e93b1161c7a898596ca
+run_name: adaptable-goose-771
+run_uuid: 4e95fb53bbee4e93b1161c7a898596ca
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1674486488945
+status: 3
+tags: []
+user_id: ge75tis

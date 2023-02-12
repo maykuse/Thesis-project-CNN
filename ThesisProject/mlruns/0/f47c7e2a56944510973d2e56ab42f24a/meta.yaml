@@ -1,0 +1,15 @@
+artifact_uri: file:///home/ge75tis/Desktop/Thesis-project-CNN/ThesisProject/mlruns/0/f47c7e2a56944510973d2e56ab42f24a/artifacts
+end_time: 1675764299696
+entry_point_name: ''
+experiment_id: '0'
+lifecycle_stage: active
+run_id: f47c7e2a56944510973d2e56ab42f24a
+run_name: skittish-wasp-520
+run_uuid: f47c7e2a56944510973d2e56ab42f24a
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1675764299663
+status: 3
+tags: []
+user_id: ge75tis

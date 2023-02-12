@@ -1,0 +1,15 @@
+artifact_uri: file:///home/ge75tis/Desktop/Thesis-project-CNN/ThesisProject/mlruns/0/6a0abc22c5de4c48a1bbd7a9b18a1f14/artifacts
+end_time: 1675850313246
+entry_point_name: ''
+experiment_id: '0'
+lifecycle_stage: active
+run_id: 6a0abc22c5de4c48a1bbd7a9b18a1f14
+run_name: valuable-ox-511
+run_uuid: 6a0abc22c5de4c48a1bbd7a9b18a1f14
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1675850313229
+status: 3
+tags: []
+user_id: ge75tis

@@ -1,0 +1,15 @@
+artifact_uri: file:///home/ge75tis/Desktop/Thesis-project-CNN/ThesisProject/mlruns/0/36abac34a17a4d9c9cc638aa359239e0/artifacts
+end_time: 1674482044137
+entry_point_name: ''
+experiment_id: '0'
+lifecycle_stage: active
+run_id: 36abac34a17a4d9c9cc638aa359239e0
+run_name: serious-lamb-757
+run_uuid: 36abac34a17a4d9c9cc638aa359239e0
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1674482044111
+status: 3
+tags: []
+user_id: ge75tis

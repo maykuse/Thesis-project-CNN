@@ -1,0 +1,15 @@
+artifact_uri: file:///home/ge75tis/Desktop/Thesis-project-CNN/ThesisProject/mlruns/0/0ed8c6b86bba425e87ae3e7d744a65b3/artifacts
+end_time: 1674748035729
+entry_point_name: ''
+experiment_id: '0'
+lifecycle_stage: active
+run_id: 0ed8c6b86bba425e87ae3e7d744a65b3
+run_name: legendary-hog-505
+run_uuid: 0ed8c6b86bba425e87ae3e7d744a65b3
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1674748033891
+status: 4
+tags: []
+user_id: ge75tis

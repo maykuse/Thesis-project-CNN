@@ -1,0 +1,15 @@
+artifact_uri: file:///home/ge75tis/Desktop/Thesis-project-CNN/ThesisProject/mlruns/0/7c3fe9001955484592e12f20af4ab05a/artifacts
+end_time: 1675876929172
+entry_point_name: ''
+experiment_id: '0'
+lifecycle_stage: active
+run_id: 7c3fe9001955484592e12f20af4ab05a
+run_name: secretive-calf-826
+run_uuid: 7c3fe9001955484592e12f20af4ab05a
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1675876916393
+status: 3
+tags: []
+user_id: ge75tis

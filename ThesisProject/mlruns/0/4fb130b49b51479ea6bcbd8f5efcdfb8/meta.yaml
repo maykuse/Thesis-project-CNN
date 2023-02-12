@@ -1,0 +1,15 @@
+artifact_uri: file:///home/ge75tis/Desktop/Thesis-project-CNN/ThesisProject/mlruns/0/4fb130b49b51479ea6bcbd8f5efcdfb8/artifacts
+end_time: 1674485506024
+entry_point_name: ''
+experiment_id: '0'
+lifecycle_stage: active
+run_id: 4fb130b49b51479ea6bcbd8f5efcdfb8
+run_name: mysterious-mule-479
+run_uuid: 4fb130b49b51479ea6bcbd8f5efcdfb8
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1674485505998
+status: 3
+tags: []
+user_id: ge75tis

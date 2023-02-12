@@ -1,0 +1,15 @@
+artifact_uri: file:///home/ge75tis/Desktop/Thesis-project-CNN/ThesisProject/mlruns/0/22cea68d72f2460e89608c7bb80ebdfc/artifacts
+end_time: 1675784998960
+entry_point_name: ''
+experiment_id: '0'
+lifecycle_stage: active
+run_id: 22cea68d72f2460e89608c7bb80ebdfc
+run_name: nebulous-goat-653
+run_uuid: 22cea68d72f2460e89608c7bb80ebdfc
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1675784989009
+status: 4
+tags: []
+user_id: ge75tis

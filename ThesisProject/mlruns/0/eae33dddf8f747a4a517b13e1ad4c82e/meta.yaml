@@ -1,0 +1,15 @@
+artifact_uri: file:///home/ge75tis/Desktop/Thesis-project-CNN/ThesisProject/mlruns/0/eae33dddf8f747a4a517b13e1ad4c82e/artifacts
+end_time: 1675868430481
+entry_point_name: ''
+experiment_id: '0'
+lifecycle_stage: active
+run_id: eae33dddf8f747a4a517b13e1ad4c82e
+run_name: polite-jay-84
+run_uuid: eae33dddf8f747a4a517b13e1ad4c82e
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1675868430464
+status: 3
+tags: []
+user_id: ge75tis

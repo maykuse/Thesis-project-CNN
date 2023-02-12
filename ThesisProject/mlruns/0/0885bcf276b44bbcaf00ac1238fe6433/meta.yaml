@@ -1,0 +1,15 @@
+artifact_uri: file:///home/ge75tis/Desktop/Thesis-project-CNN/ThesisProject/mlruns/0/0885bcf276b44bbcaf00ac1238fe6433/artifacts
+end_time: 1675866491977
+entry_point_name: ''
+experiment_id: '0'
+lifecycle_stage: active
+run_id: 0885bcf276b44bbcaf00ac1238fe6433
+run_name: casual-dog-972
+run_uuid: 0885bcf276b44bbcaf00ac1238fe6433
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1675866491955
+status: 3
+tags: []
+user_id: ge75tis

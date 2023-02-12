@@ -1,0 +1,15 @@
+artifact_uri: file:///home/ge75tis/Desktop/Thesis-project-CNN/ThesisProject/mlruns/0/a109ae487ebd450780c0a2c7824e98e4/artifacts
+end_time: 1675875032298
+entry_point_name: ''
+experiment_id: '0'
+lifecycle_stage: active
+run_id: a109ae487ebd450780c0a2c7824e98e4
+run_name: crawling-lynx-617
+run_uuid: a109ae487ebd450780c0a2c7824e98e4
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1675875022187
+status: 3
+tags: []
+user_id: ge75tis

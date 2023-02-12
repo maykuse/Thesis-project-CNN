@@ -1,0 +1,15 @@
+artifact_uri: file:///home/ge75tis/Desktop/Thesis-project-CNN/ThesisProject/mlruns/0/be447fa07a274d518bbf1c41a6c9a40b/artifacts
+end_time: 1675690353728
+entry_point_name: ''
+experiment_id: '0'
+lifecycle_stage: active
+run_id: be447fa07a274d518bbf1c41a6c9a40b
+run_name: sassy-shad-782
+run_uuid: be447fa07a274d518bbf1c41a6c9a40b
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1675690338868
+status: 3
+tags: []
+user_id: ge75tis

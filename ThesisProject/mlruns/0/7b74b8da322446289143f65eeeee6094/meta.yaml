@@ -1,0 +1,15 @@
+artifact_uri: file:///home/ge75tis/Desktop/Thesis-project-CNN/ThesisProject/mlruns/0/7b74b8da322446289143f65eeeee6094/artifacts
+end_time: 1675873609668
+entry_point_name: ''
+experiment_id: '0'
+lifecycle_stage: active
+run_id: 7b74b8da322446289143f65eeeee6094
+run_name: gaudy-worm-803
+run_uuid: 7b74b8da322446289143f65eeeee6094
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1675873607765
+status: 4
+tags: []
+user_id: ge75tis

@@ -1,0 +1,15 @@
+artifact_uri: file:///home/ge75tis/Desktop/Thesis-project-CNN/ThesisProject/mlruns/0/d021ee84fccc43cfb8bc7237163fff05/artifacts
+end_time: 1675866145493
+entry_point_name: ''
+experiment_id: '0'
+lifecycle_stage: active
+run_id: d021ee84fccc43cfb8bc7237163fff05
+run_name: capricious-boar-189
+run_uuid: d021ee84fccc43cfb8bc7237163fff05
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1675866145472
+status: 3
+tags: []
+user_id: ge75tis

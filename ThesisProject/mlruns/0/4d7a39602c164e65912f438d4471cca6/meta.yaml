@@ -1,0 +1,15 @@
+artifact_uri: file:///home/ge75tis/Desktop/Thesis-project-CNN/ThesisProject/mlruns/0/4d7a39602c164e65912f438d4471cca6/artifacts
+end_time: 1675765597750
+entry_point_name: ''
+experiment_id: '0'
+lifecycle_stage: active
+run_id: 4d7a39602c164e65912f438d4471cca6
+run_name: rogue-jay-325
+run_uuid: 4d7a39602c164e65912f438d4471cca6
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1675765597733
+status: 3
+tags: []
+user_id: ge75tis

@@ -1,0 +1,15 @@
+artifact_uri: file:///home/ge75tis/Desktop/Thesis-project-CNN/ThesisProject/mlruns/0/9423fceeb88a406d9e36a938e417b1a4/artifacts
+end_time: 1674490266339
+entry_point_name: ''
+experiment_id: '0'
+lifecycle_stage: active
+run_id: 9423fceeb88a406d9e36a938e417b1a4
+run_name: loud-flea-766
+run_uuid: 9423fceeb88a406d9e36a938e417b1a4
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1674490256284
+status: 3
+tags: []
+user_id: ge75tis

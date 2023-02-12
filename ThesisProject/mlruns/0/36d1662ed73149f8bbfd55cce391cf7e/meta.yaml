@@ -1,0 +1,15 @@
+artifact_uri: file:///home/ge75tis/Desktop/Thesis-project-CNN/ThesisProject/mlruns/0/36d1662ed73149f8bbfd55cce391cf7e/artifacts
+end_time: 1675786803233
+entry_point_name: ''
+experiment_id: '0'
+lifecycle_stage: active
+run_id: 36d1662ed73149f8bbfd55cce391cf7e
+run_name: shivering-fowl-553
+run_uuid: 36d1662ed73149f8bbfd55cce391cf7e
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1675786789828
+status: 4
+tags: []
+user_id: ge75tis

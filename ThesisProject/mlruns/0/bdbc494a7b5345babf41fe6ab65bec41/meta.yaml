@@ -1,0 +1,15 @@
+artifact_uri: file:///home/ge75tis/Desktop/Thesis-project-CNN/ThesisProject/mlruns/0/bdbc494a7b5345babf41fe6ab65bec41/artifacts
+end_time: 1675763380154
+entry_point_name: ''
+experiment_id: '0'
+lifecycle_stage: active
+run_id: bdbc494a7b5345babf41fe6ab65bec41
+run_name: monumental-mare-553
+run_uuid: bdbc494a7b5345babf41fe6ab65bec41
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1675763380124
+status: 3
+tags: []
+user_id: ge75tis

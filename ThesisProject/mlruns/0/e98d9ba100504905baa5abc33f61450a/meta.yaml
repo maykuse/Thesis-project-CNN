@@ -1,0 +1,15 @@
+artifact_uri: file:///home/ge75tis/Desktop/Thesis-project-CNN/ThesisProject/mlruns/0/e98d9ba100504905baa5abc33f61450a/artifacts
+end_time: 1675970241431
+entry_point_name: ''
+experiment_id: '0'
+lifecycle_stage: active
+run_id: e98d9ba100504905baa5abc33f61450a
+run_name: monumental-mouse-253
+run_uuid: e98d9ba100504905baa5abc33f61450a
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1675970241409
+status: 3
+tags: []
+user_id: ge75tis

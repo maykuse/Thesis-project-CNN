@@ -1,0 +1,15 @@
+artifact_uri: file:///home/ge75tis/Desktop/Thesis-project-CNN/ThesisProject/mlruns/0/5d4fbee189bc48f78a24dc71c430cca7/artifacts
+end_time: 1674747996726
+entry_point_name: ''
+experiment_id: '0'
+lifecycle_stage: active
+run_id: 5d4fbee189bc48f78a24dc71c430cca7
+run_name: kindly-deer-40
+run_uuid: 5d4fbee189bc48f78a24dc71c430cca7
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1674747987010
+status: 4
+tags: []
+user_id: ge75tis

@@ -1,0 +1,15 @@
+artifact_uri: file:///home/ge75tis/Desktop/Thesis-project-CNN/ThesisProject/mlruns/0/312f17d903544270975b9807ee1dcdbc/artifacts
+end_time: 1675857442868
+entry_point_name: ''
+experiment_id: '0'
+lifecycle_stage: active
+run_id: 312f17d903544270975b9807ee1dcdbc
+run_name: gaudy-snipe-174
+run_uuid: 312f17d903544270975b9807ee1dcdbc
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1675857359697
+status: 4
+tags: []
+user_id: ge75tis

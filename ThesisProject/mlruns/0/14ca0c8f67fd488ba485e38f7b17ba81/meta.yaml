@@ -1,0 +1,15 @@
+artifact_uri: file:///home/ge75tis/Desktop/Thesis-project-CNN/ThesisProject/mlruns/0/14ca0c8f67fd488ba485e38f7b17ba81/artifacts
+end_time: 1675766036754
+entry_point_name: ''
+experiment_id: '0'
+lifecycle_stage: active
+run_id: 14ca0c8f67fd488ba485e38f7b17ba81
+run_name: bright-dove-405
+run_uuid: 14ca0c8f67fd488ba485e38f7b17ba81
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1675766036740
+status: 3
+tags: []
+user_id: ge75tis

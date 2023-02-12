@@ -1,0 +1,15 @@
+artifact_uri: file:///home/ge75tis/Desktop/Thesis-project-CNN/ThesisProject/mlruns/0/ec2ad7be8a9341dc8d37a36d7e4d425c/artifacts
+end_time: 1675876863625
+entry_point_name: ''
+experiment_id: '0'
+lifecycle_stage: active
+run_id: ec2ad7be8a9341dc8d37a36d7e4d425c
+run_name: charming-midge-489
+run_uuid: ec2ad7be8a9341dc8d37a36d7e4d425c
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1675876850702
+status: 3
+tags: []
+user_id: ge75tis

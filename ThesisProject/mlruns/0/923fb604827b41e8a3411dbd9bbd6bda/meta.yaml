@@ -1,0 +1,15 @@
+artifact_uri: file:///home/ge75tis/Desktop/Thesis-project-CNN/ThesisProject/mlruns/0/923fb604827b41e8a3411dbd9bbd6bda/artifacts
+end_time: 1675876298808
+entry_point_name: ''
+experiment_id: '0'
+lifecycle_stage: active
+run_id: 923fb604827b41e8a3411dbd9bbd6bda
+run_name: luminous-crab-610
+run_uuid: 923fb604827b41e8a3411dbd9bbd6bda
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1675876286181
+status: 3
+tags: []
+user_id: ge75tis

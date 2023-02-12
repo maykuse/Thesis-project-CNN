@@ -1,0 +1,15 @@
+artifact_uri: file:///home/ge75tis/Desktop/Thesis-project-CNN/ThesisProject/mlruns/0/80f96d2368bf41b9aaf415ff8d991850/artifacts
+end_time: 1675675432690
+entry_point_name: ''
+experiment_id: '0'
+lifecycle_stage: active
+run_id: 80f96d2368bf41b9aaf415ff8d991850
+run_name: rogue-worm-601
+run_uuid: 80f96d2368bf41b9aaf415ff8d991850
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1675675428860
+status: 3
+tags: []
+user_id: ge75tis

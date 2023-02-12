@@ -1,0 +1,15 @@
+artifact_uri: file:///home/ge75tis/Desktop/Thesis-project-CNN/ThesisProject/mlruns/0/6054c1e49bf2466582ffd4ca37fd0560/artifacts
+end_time: 1674747526076
+entry_point_name: ''
+experiment_id: '0'
+lifecycle_stage: active
+run_id: 6054c1e49bf2466582ffd4ca37fd0560
+run_name: stylish-moose-259
+run_uuid: 6054c1e49bf2466582ffd4ca37fd0560
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1674747523885
+status: 4
+tags: []
+user_id: ge75tis

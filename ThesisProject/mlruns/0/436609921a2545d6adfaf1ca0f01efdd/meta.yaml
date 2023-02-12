@@ -1,0 +1,15 @@
+artifact_uri: file:///home/ge75tis/Desktop/Thesis-project-CNN/ThesisProject/mlruns/0/436609921a2545d6adfaf1ca0f01efdd/artifacts
+end_time: 1675866213047
+entry_point_name: ''
+experiment_id: '0'
+lifecycle_stage: active
+run_id: 436609921a2545d6adfaf1ca0f01efdd
+run_name: shivering-slug-833
+run_uuid: 436609921a2545d6adfaf1ca0f01efdd
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1675866213015
+status: 3
+tags: []
+user_id: ge75tis

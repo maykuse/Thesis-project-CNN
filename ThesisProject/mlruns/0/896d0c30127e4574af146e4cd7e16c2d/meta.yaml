@@ -1,0 +1,15 @@
+artifact_uri: file:///home/ge75tis/Desktop/Thesis-project-CNN/ThesisProject/mlruns/0/896d0c30127e4574af146e4cd7e16c2d/artifacts
+end_time: 1675785190117
+entry_point_name: ''
+experiment_id: '0'
+lifecycle_stage: active
+run_id: 896d0c30127e4574af146e4cd7e16c2d
+run_name: mercurial-crow-661
+run_uuid: 896d0c30127e4574af146e4cd7e16c2d
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1675785129879
+status: 3
+tags: []
+user_id: ge75tis

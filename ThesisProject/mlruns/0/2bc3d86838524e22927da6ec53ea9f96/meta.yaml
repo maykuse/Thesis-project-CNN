@@ -1,0 +1,15 @@
+artifact_uri: file:///home/ge75tis/Desktop/Thesis-project-CNN/ThesisProject/mlruns/0/2bc3d86838524e22927da6ec53ea9f96/artifacts
+end_time: 1675865742850
+entry_point_name: ''
+experiment_id: '0'
+lifecycle_stage: active
+run_id: 2bc3d86838524e22927da6ec53ea9f96
+run_name: abundant-dolphin-907
+run_uuid: 2bc3d86838524e22927da6ec53ea9f96
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1675865742820
+status: 3
+tags: []
+user_id: ge75tis

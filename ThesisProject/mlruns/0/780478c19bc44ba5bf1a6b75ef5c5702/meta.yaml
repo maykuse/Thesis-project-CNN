@@ -1,0 +1,15 @@
+artifact_uri: file:///home/ge75tis/Desktop/Thesis-project-CNN/ThesisProject/mlruns/0/780478c19bc44ba5bf1a6b75ef5c5702/artifacts
+end_time: 1675866416642
+entry_point_name: ''
+experiment_id: '0'
+lifecycle_stage: active
+run_id: 780478c19bc44ba5bf1a6b75ef5c5702
+run_name: serious-donkey-485
+run_uuid: 780478c19bc44ba5bf1a6b75ef5c5702
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1675866416617
+status: 3
+tags: []
+user_id: ge75tis

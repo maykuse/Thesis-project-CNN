@@ -1,0 +1,15 @@
+artifact_uri: file:///home/ge75tis/Desktop/Thesis-project-CNN/ThesisProject/mlruns/0/7c7f92938d264a7dab2d79b3460d182c/artifacts
+end_time: 1675098929606
+entry_point_name: ''
+experiment_id: '0'
+lifecycle_stage: active
+run_id: 7c7f92938d264a7dab2d79b3460d182c
+run_name: stately-bear-933
+run_uuid: 7c7f92938d264a7dab2d79b3460d182c
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1675098877219
+status: 4
+tags: []
+user_id: ge75tis

@@ -1,0 +1,15 @@
+artifact_uri: file:///home/ge75tis/Desktop/Thesis-project-CNN/ThesisProject/mlruns/0/d1b72d48cb1940668bfbc5c89544eded/artifacts
+end_time: 1674485413393
+entry_point_name: ''
+experiment_id: '0'
+lifecycle_stage: active
+run_id: d1b72d48cb1940668bfbc5c89544eded
+run_name: victorious-stork-181
+run_uuid: d1b72d48cb1940668bfbc5c89544eded
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1674485413375
+status: 3
+tags: []
+user_id: ge75tis

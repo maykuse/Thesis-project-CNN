@@ -1,0 +1,15 @@
+artifact_uri: file:///home/ge75tis/Desktop/Thesis-project-CNN/ThesisProject/mlruns/0/e00cb65598554670a5f3307db2231a42/artifacts
+end_time: 1675876801705
+entry_point_name: ''
+experiment_id: '0'
+lifecycle_stage: active
+run_id: e00cb65598554670a5f3307db2231a42
+run_name: carefree-gnu-289
+run_uuid: e00cb65598554670a5f3307db2231a42
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1675876788958
+status: 3
+tags: []
+user_id: ge75tis

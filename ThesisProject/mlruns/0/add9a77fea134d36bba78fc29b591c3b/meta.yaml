@@ -1,0 +1,15 @@
+artifact_uri: file:///home/ge75tis/Desktop/Thesis-project-CNN/ThesisProject/mlruns/0/add9a77fea134d36bba78fc29b591c3b/artifacts
+end_time: 1675874052619
+entry_point_name: ''
+experiment_id: '0'
+lifecycle_stage: active
+run_id: add9a77fea134d36bba78fc29b591c3b
+run_name: agreeable-quail-351
+run_uuid: add9a77fea134d36bba78fc29b591c3b
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1675874048643
+status: 3
+tags: []
+user_id: ge75tis

@@ -1,0 +1,15 @@
+artifact_uri: file:///home/ge75tis/Desktop/Thesis-project-CNN/ThesisProject/mlruns/0/546600267be541a3ac947a27f8778935/artifacts
+end_time: 1675851727657
+entry_point_name: ''
+experiment_id: '0'
+lifecycle_stage: active
+run_id: 546600267be541a3ac947a27f8778935
+run_name: powerful-duck-808
+run_uuid: 546600267be541a3ac947a27f8778935
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1675851727636
+status: 3
+tags: []
+user_id: ge75tis

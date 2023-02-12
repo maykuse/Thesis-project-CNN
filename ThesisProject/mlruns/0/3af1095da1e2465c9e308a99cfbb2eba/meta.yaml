@@ -1,0 +1,15 @@
+artifact_uri: file:///home/ge75tis/Desktop/Thesis-project-CNN/ThesisProject/mlruns/0/3af1095da1e2465c9e308a99cfbb2eba/artifacts
+end_time: 1675765835938
+entry_point_name: ''
+experiment_id: '0'
+lifecycle_stage: active
+run_id: 3af1095da1e2465c9e308a99cfbb2eba
+run_name: bemused-fowl-730
+run_uuid: 3af1095da1e2465c9e308a99cfbb2eba
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1675765835922
+status: 3
+tags: []
+user_id: ge75tis

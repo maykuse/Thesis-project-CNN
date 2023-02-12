@@ -1,0 +1,15 @@
+artifact_uri: file:///home/ge75tis/Desktop/Thesis-project-CNN/ThesisProject/mlruns/0/0c96a65c25984badadb762fd62c4ec40/artifacts
+end_time: 1676032242824
+entry_point_name: ''
+experiment_id: '0'
+lifecycle_stage: active
+run_id: 0c96a65c25984badadb762fd62c4ec40
+run_name: unique-shrimp-106
+run_uuid: 0c96a65c25984badadb762fd62c4ec40
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1676032242797
+status: 3
+tags: []
+user_id: ge75tis

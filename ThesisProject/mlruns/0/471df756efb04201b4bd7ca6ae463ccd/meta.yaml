@@ -1,0 +1,15 @@
+artifact_uri: file:///home/ge75tis/Desktop/Thesis-project-CNN/ThesisProject/mlruns/0/471df756efb04201b4bd7ca6ae463ccd/artifacts
+end_time: 1675679117498
+entry_point_name: ''
+experiment_id: '0'
+lifecycle_stage: active
+run_id: 471df756efb04201b4bd7ca6ae463ccd
+run_name: capricious-skunk-951
+run_uuid: 471df756efb04201b4bd7ca6ae463ccd
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1675678889761
+status: 4
+tags: []
+user_id: ge75tis

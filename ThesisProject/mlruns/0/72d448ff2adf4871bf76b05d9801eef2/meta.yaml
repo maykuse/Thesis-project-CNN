@@ -1,0 +1,15 @@
+artifact_uri: file:///home/ge75tis/Desktop/Thesis-project-CNN/ThesisProject/mlruns/0/72d448ff2adf4871bf76b05d9801eef2/artifacts
+end_time: 1675963931976
+entry_point_name: ''
+experiment_id: '0'
+lifecycle_stage: active
+run_id: 72d448ff2adf4871bf76b05d9801eef2
+run_name: resilient-bug-620
+run_uuid: 72d448ff2adf4871bf76b05d9801eef2
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1675963904817
+status: 4
+tags: []
+user_id: ge75tis

@@ -1,0 +1,15 @@
+artifact_uri: file:///home/ge75tis/Desktop/Thesis-project-CNN/ThesisProject/mlruns/0/6150f2db6e824937973d63fe5f1234fb/artifacts
+end_time: 1674491031622
+entry_point_name: ''
+experiment_id: '0'
+lifecycle_stage: active
+run_id: 6150f2db6e824937973d63fe5f1234fb
+run_name: upbeat-asp-528
+run_uuid: 6150f2db6e824937973d63fe5f1234fb
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1674491021593
+status: 3
+tags: []
+user_id: ge75tis
