@@ -1,0 +1,15 @@
+artifact_uri: file:///home/ge75tis/Desktop/Thesis-project-CNN/ThesisProject/mlruns/0/6251a35c11aa4c42a5fd717c18347909/artifacts
+end_time: 1676231101278
+entry_point_name: ''
+experiment_id: '0'
+lifecycle_stage: active
+run_id: 6251a35c11aa4c42a5fd717c18347909
+run_name: secretive-goat-170
+run_uuid: 6251a35c11aa4c42a5fd717c18347909
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1676231101258
+status: 3
+tags: []
+user_id: ge75tis

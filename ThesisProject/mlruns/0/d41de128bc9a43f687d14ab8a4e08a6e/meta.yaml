@@ -1,0 +1,15 @@
+artifact_uri: file:///home/ge75tis/Desktop/Thesis-project-CNN/ThesisProject/mlruns/0/d41de128bc9a43f687d14ab8a4e08a6e/artifacts
+end_time: 1676231078266
+entry_point_name: ''
+experiment_id: '0'
+lifecycle_stage: active
+run_id: d41de128bc9a43f687d14ab8a4e08a6e
+run_name: unleashed-calf-829
+run_uuid: d41de128bc9a43f687d14ab8a4e08a6e
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1676231078246
+status: 3
+tags: []
+user_id: ge75tis

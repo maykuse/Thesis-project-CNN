@@ -1,0 +1,15 @@
+artifact_uri: file:///home/ge75tis/Desktop/Thesis-project-CNN/ThesisProject/mlruns/0/cb7be3d59bf34794b639678777c85317/artifacts
+end_time: 1676231170416
+entry_point_name: ''
+experiment_id: '0'
+lifecycle_stage: active
+run_id: cb7be3d59bf34794b639678777c85317
+run_name: bittersweet-loon-407
+run_uuid: cb7be3d59bf34794b639678777c85317
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1676231170380
+status: 3
+tags: []
+user_id: ge75tis
