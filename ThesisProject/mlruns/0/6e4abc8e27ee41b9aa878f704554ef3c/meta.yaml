@@ -1,0 +1,15 @@
+artifact_uri: file:///home/ge75tis/Desktop/Thesis-project-CNN/ThesisProject/mlruns/0/6e4abc8e27ee41b9aa878f704554ef3c/artifacts
+end_time: 1676235568588
+entry_point_name: ''
+experiment_id: '0'
+lifecycle_stage: active
+run_id: 6e4abc8e27ee41b9aa878f704554ef3c
+run_name: exultant-yak-263
+run_uuid: 6e4abc8e27ee41b9aa878f704554ef3c
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1676235568558
+status: 3
+tags: []
+user_id: ge75tis

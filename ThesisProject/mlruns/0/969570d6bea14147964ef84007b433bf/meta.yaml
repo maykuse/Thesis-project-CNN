@@ -1,0 +1,15 @@
+artifact_uri: file:///home/ge75tis/Desktop/Thesis-project-CNN/ThesisProject/mlruns/0/969570d6bea14147964ef84007b433bf/artifacts
+end_time: 1676235577861
+entry_point_name: ''
+experiment_id: '0'
+lifecycle_stage: active
+run_id: 969570d6bea14147964ef84007b433bf
+run_name: bemused-trout-611
+run_uuid: 969570d6bea14147964ef84007b433bf
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1676235577827
+status: 3
+tags: []
+user_id: ge75tis
