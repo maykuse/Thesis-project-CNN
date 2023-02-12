@@ -1,0 +1,15 @@
+artifact_uri: file:///home/ge75tis/Desktop/Thesis-project-CNN/ThesisProject/mlruns/0/4b8dffc0ffdf4cfab587135099f3e92f/artifacts
+end_time: 1676231311089
+entry_point_name: ''
+experiment_id: '0'
+lifecycle_stage: active
+run_id: 4b8dffc0ffdf4cfab587135099f3e92f
+run_name: auspicious-pig-540
+run_uuid: 4b8dffc0ffdf4cfab587135099f3e92f
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1676231311070
+status: 3
+tags: []
+user_id: ge75tis
