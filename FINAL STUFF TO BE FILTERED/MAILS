@@ -1,0 +1,74 @@
+1)
+Original Variable2Variable paper
+
+Feature dropout
+
+Layerwise Relevance propagation
+
+Dataset to be investigated
+
+the Idea behind the V2V paper and its shortcomings (modelling only of 1-to-1 relations between variables, not many-to-1)
+
+LRP methods applied to neural networks in meteorology problems.
+
+your focus should really be on applications of the method to meteorological problems, such as weather prediction. when it comes to writing the related work. 
+
+
+
+2)
+
+A) The climatology 'prediction' for a particular time range (seasonally, monthly, weekly, ...) is the mean over all samples that fall into a particular time range. Therefore the standard deviation of all these samples inside these ranges is actually equal to the RMSE of these samples wrt. the climatology prediction. However, you are probably right that the std is not exactly what we want, since the standard deviation is computet wrt. samples from the training set, on which the climatology has been esimated. Formally, it might be better to consider the climatology as a model, which is computed from the training dataset (the same as used for the NN models) and the MSE and RMSE values should then be computed on the validation set (or on the respective dataset on which you evaluate your NN models). Yet, you can still use the std for a consistency check: The stds, i.e. RMSE on the training dataset, should have similar values like the RMSE values on the independent validation dataset.
+
+B) The point of the many-to-one models was to rule out bottleneck constraints between different parameters. Since each model predicts only one parameter, it can concentrate only on this one and would probably give a better loss compared to a model that has to predict multiple different parameters at once.
+
+For our application, however, I think we do not need the variational approach. What I wanted to say was that we are looking into Gaussian dropout (which is also introduced in these papers, i.e. dropout with multiplicative gaussian noise). For Training the noisy models, we would use a gaussian dropout layer with a two-stage sampling procedure. For each feature channel and each sample, we would first sample a dropout rate p \ in (0, 1) then from this compute alpha, as introduced in the "sparsify" paper, from this the noise amplitude and subsequently sample the multiplicative noise according to this amplitude. Maybe first read into the papers and ask me questions afterwards, if things are unclear still. Yet, I would suggest to first get the non-dropout models running. 
+
+
+I would also have some more questions about the comparison against climatology. For that, it would be great if you could prepare a more detailed comparison by splitting up the data points according to the intervals considered for the climatology and compute a reconstruction loss for all these categories, to find out whether there are seasonal variations in the reconstruction accuracy both for climatology and the respective models. The interesting part would also be how the reconstruction accuracy differs between different parameters. We can clarify details about this tomorrow, as well.
+
+
+3)
+
+Then, the last figure indicates that u10 and v10 as well as z are reconstructed the most easily. For z, it would be interesting to know which other fields contribute to the prediction. So it might be a good starting point for the Dropout experiments to use the z-prediction for initial experiments. For u10 and v10, the same is true. However there, in addition, one might expect that v10 is the strongest predictor of u10 and inversely, because they are likely highly correlated. To find out, whether this is the case, it would be great if you could train two other many-to-one models, one predicting u10, one predicting v10, but both having information about neither u10 nor v10 in both cases, i.e., remove both wind components from the predictors and see what changes for the prediction of u10 and v10.
+
+
+
+
+4) 
+
+Concerning the general mechanism at first: You write a training loop for the many-to-one models, as usual, but for every training sample from the meteorological dataset, you sample additionally a tensor p of random values uniformly distributed in (0, 1). If the model considers n input variables, p has n entries, which represent the dropout rates for each of the parameters. Then, according to the Molchanov paper, weights are sampled as w_i = theta_i + theta_i * sqrt(alpha_i) * xi, where alpha_i = p_i / (1 - p_i), 0 <= i < n, and xi is a Gaussian noise field sampled from N(0, 1). The last time, as you said, I talked about a_i + b_i being forced to be one, but meanwhile I came to the conclusion that this is not what we want. Rather, I think we should consider the case a_i = const. and b_i = b_i(alpha). For simplicity, I would suggest setting a_i = 1 and b_i = sqrt(alpha_i).
+
+I.e., a function for applying the dropout might look like this:
+
+
+Since the thetas are set to 1, there is no need to tune parameters in this function. For the experiments, you are right, I would be interested in
+A) Reconstruction accuracy of the models as a function of noise level of the different input channels
+B) Sensitivity maps of the model reconstruction for different noise levels of the different input channels (we can talk about this in more detail once you are there).
+
+
+
+5) 
+
+
+I would suggest to use the previous hyper-parameters as a starting point. However, it might be necessary/helpful to tune the parameters again to account for the new model configuration.
+Concerning the evaluation, you are right. For validation, one would fix p to have particular values. Say we want to investigate parameter X, then it might be good to define p via two parameters P_X and P_Other: p = P_X for parameter X, and p = P_Other for all other parameters, and then to vary P_X and P_Other in experiments independently. This would allow to investigate how the model responds to changes in the noise level of parameter X, subject to different noise levels of the other parameters. I would expect that in the extreme cases of P_X ~ 0 (low noise) and P_Other ~ 1 (high noise), the model should mostly focus on parameter X, whereas for P_X ~ 1 and P_Other ~ 0 the model needs to rely on other parameters. For the intermediate cases, one can then see how the prediction accuracy changes in the tradeoff. For example, you can then define a grid of values P_X and P_Other, compute the average validation loss on noisy inputs (and the std of the losses) for all the combinations of P_X and P_Other, and show them as a heatmap in 2D, and compare the resulting heat maps for all the parameters.
+
+
+6) 
+
+
+Thanks for sharing the figures. The behavior looks reasonable, in a first place, I would say. It seems like there is not a lot happening while both parameters are below 0.5. Which makes sense, since there is enough information overall to have agood prediction, I guess. Above 0.5, I think a bit more resolution might be helpful to see more details. Otherwise,as you said, the off-diagonal/the lower right triangle is interesting. Concerning the modelunderstanding, it might be good to think about another visualization, which allows for a more direct comparison  of the parameters with one another, such as a plot of lines for all parameters in the same chart or a suitable bar chart of relevant loss values, so that it is immediately apparent which parameters are most relevant.
+
+Now seeing these plots, there are two questions that would come tomy mind. A) is the pattern qualitatively the same for all samplesor are there differences throughout the year? and B) Can one find out things about multi-parameter relations, like if A and B both are noisy, then the prediction becomes particularly bad.
+
+I think for A) it would be intersting once more to split the dataset by months and compute the heatmaps for each month separately, and illustrate whether there are variations throughout the year.
+
+For B) it might be interesting to investigate the sensitivity of the losses wrt. the p-values for all the parameters. Since the p-values are used to compute the multiplicative scale of the noise field, one should be able to compute sensitivities of the loss wrt these parameters via automatic differentiation. For example, one could again go through all the samples, get a noisy prediction for all of them, compute the sample-wise reconstruction error and do a backprop to compute the gradient of the reconstruction error wrt. the p's. I would guess that the gradients should all be positive, if not sample-wise, then at least on average (i.e. lower p -> lower reconstruction error).  But some of them might be larger than others, which would indicate that less noise in the respective parameter would improve ther reconstruction more strongly. In principle one can then compute such gradient sensitivities for all the interesting P_X and P_Other settings and one would see whether this reveals higher-order parameter interactions. This would be afirst step into the direction of sensitivity computations, and maybe one can refine that to also account for spatial variations. If you have own ideas, feel free to also bring up those.
+
+
+7) 
+
+
+I just found a reference that might be interesting in the context of your work: https://agupubs.onlinelibrary.wiley.com/doi/pdf/10.1029/2021MS002464
+
+Maybe you can take some inspiration from it or use the shown applications as a comparison case study for the dropout-based approach.

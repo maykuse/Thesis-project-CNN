@@ -1,0 +1,26 @@
+Think of the spatio temporal meteorological data.
+So our input is a 3D volume input, in which each layer represents the spatial data at a given time.
+Spatial data at a given time, in discrete intervals we take these individual spatial data like the
+frames of a video and put these values as a 3D volume input to the neural network.
+Are we doing 2D convolutions on 3D spatio-temporal data
+(seperate spatial data at different times (as in frames of a video))
+Or are we interested in 3D convolutions to preserve the temporal behavior of the input and
+identify temporal features as well. Because I have read a paper about 3D convolutions...
+
+What kind of architecture are we focusing on?
+Are there certain developed architectures that we use or are we trying to develop
+our architecture to suit this problem?
+Is there a transfer learning potential from other learned models?
+
+Are there any hyperparameters that I should be focusing on specifically for this problem?
+I assume you already have a set of hyperparameters that are ideal for previously learned models.
+How many filters per layer are we proposing? Is it determined by the number of features that we
+are looking for?
+We train in minibatches of what size?
+
+Correlation questions?
+I am familiar with extracting features from Convolutional networks, but How do we use those features
+to find their similarities or correlations?
+Are we looking at the filter weights as feature vectors and calculate the correlation between those
+feature vectors?
+I also had a look at the mutual information neural estimation

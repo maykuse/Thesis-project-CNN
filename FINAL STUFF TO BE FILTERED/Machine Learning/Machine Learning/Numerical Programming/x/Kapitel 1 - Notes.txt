@@ -1,0 +1,163 @@
+Numerical Programming
+
+1-Introduction
+
+1.1: FIELDS OF APPLICATIONS
+Numerical mathematics: 
+Computational methods for continuous problems, Approximations, analysis of numerical algorithms
+Numarical programming:
+Efficient implementation of numerical algorithms -> memory efficient, fast, parallel
+-> Numerical Simulation as the third possibility of Knowledge Acquisition
+
+Numerical methods in Computer Science:
+Geometric modelling or Computer-Aided geometric Design, methods for generation and modification
+of nonlinear curves and surfaces (Interpolation methods)
+Computer graphics, ray tracing to compute highlight and reflection effects.
+Intersection Points of rays with objects in the environment. Diffuse illumination -> radiosity m.
+Image processing and Compression. All filters and transformations are numerical algorithms (FFT)
+High-Perfomance Scientific Computing, Numerical Simulations
+Games Engineering. Physics Engine, physical phenomena described by ordinary differential equations
+
+We deal with Continuous problems but computers only handle discrete items:
+Discretization of real numbers, regions or spatial regions, and operators
+
+1.2: FLOATING POINT NUMBERS AND ROUNDING
+The set of real numbers is unbounded and continuous, infinitely and uncountably many real numbers
+The set of numbers that can be exactly represented by a computer is finite, discrete and bounded.
+INTEGER ARITHMETIC: integers in a range -> disadvantage with all continuous concepts
+
+FIXED POINT ARITHMETIC: decimal numbers with a constant number of digits left and right of the
+decimal point: [-999.999, 999.999]. Fixed distance between neighboring numbers.
+Disadvantage -> Fixed range of numbers, frequent overflow. For example between 0 and 0.001 more
+numbers are desired whereas between 998 and 999 a rougher partition is sufficient
+
+FLOATING POINT NUMBERS:
+normalized t-digit floating point numbers to Basis B: Mantissa x Basis^(Exponent)
+normalization assures uniqueness of the representation, where 1.0*10^2 is not written as 0.1*10^3
+Range of representable numbers: The absolute distance between two neighboring floating point
+numbers is not constant. (neighboring number is the number produced after going to the next
+mantissa with the same exponent) 9998*10^0 and 9999*10^0 vs. 1000*10^-7 and 1001*10^-7.
+As the absolute values of the numbers get bigger, the mesh width of floating point numbers also
+increase (logarithmic scale).  As a result range of representable numbers is increased.
+The maximal possible relative distance between two neighboring floating points is resolution.
+
+As floating point numbers are discrete, some real numbers can slip. Those numbers has to be
+assigned to a suitable floating point number -> ROUNDING
+ROUNDING: for every real number x, there exists exactly one left and one right neighbor in F.
+rd: R -> F is surjective, idompotent and monotone
+Types of rounding: 
+Directed rounding -> rounding down(to the left), rounding up(to the right), chopping off(to zero)
+Correct rounding -> round to the closer neighbor, if right in the middle choose one
+
+RELATIVE ROUNDING ERROR: Due to rounding errors are inevitable in numerical computations.
+absolute rounding error: rd(x) - x		relative rounding error: (rd(x) - x) / x
+rd(x) = x * (1 + relative rounding error)
+The relative rounding error is directly linked to the resolution.
+
+1.3: FLOATING POINT ARITHMETIC
+From the first arithmetic operation in only approximations are operated with.
+The exact execution of basic arithmetic operations in the system F is impossible:
+How can the sum of 1234 and 0.1234 be exactly represented with 4 digits?
+How can we avoid building up accumulated errors in floating point arithmetic?
+
+Ideally, the computed result should match the rounded exact result.
+Although an ideal arithmetic is technically feasible, in some computers only an alleviated 
+version is realized.
+Strong hypothesis: There exists a machine accuracy that bounds the relative error in every case
+This applies for most computers.
+Weak hypothesis: relative rounding error applied on both arguments seperately as e1,e2 < e
+There is no direct functional dependency of the calculated result on the exact result.
+This applies for nearly every computer.
+
+Some properties: Floating point addition is not associative. Order of execution can change the
+result, because after every bracketed independent addition, result has to be rounded, and the 
+order of rounding can affect the result.
+
+1.4: ROUNDING ERROR ANALYSIS
+Most important goals in numerical algorithm regarding rounding:
+- small discretization error: little influence of discretization on the resutl
+- efficiency: minimal runtime
+- small (accumulated) rounding error
+
+A priori rounding error analysis: Which bounds can be determined for the total error
+assuming a certain quality of basic operations?
+Forward Analysis: Interpret the computed result as perturbed exact result
+Backward Analysis: Interpret the computed result as the exact result of perturbed input data.
+
+1.5: CONDITION
+How sensitive is the result of a problem concerning changes in the input?
+If the result is highly sensitive to changes in input we say bad condition(ill-conditioned),
+if the sensitivity is low we say good condition(well-conditioned)
+The condition number is a property of the examined problem, not the algorithm!
+
+Perturbations in the input data have to be studied because the input is often imprecise because
+of measuring or from former calculations.
+For well conditioned problems it is worth to invest in a good algorithm, because perturbations
+of the input are relatively uncritical, whereas in ill-conditioned problems even excellent 
+algorithms have difficulties where every little inaccuracy can distort the result hugely.
+For multiplication, division and square root we have good conditions
+At the real subtraction if the exact result is close to zero, the relative condition can
+become arbitrarily large.
+
+Usually the condition of a problem to the input is not defined by a relative error but 
+by the derivative of the result with respect to the input. When decomposing the problem p
+into two or more subproblems, even though the total condition is independent of the decomposition
+but the partial conditions depend on the decomposition. If p was well conditioned with an
+excellently conditioned first part q and ill conditioned second part r, if errors occur in the
+first part, these can lead to huge deviations in the second part even tho p was well-conditioned.
+
+1.6: STABILITY
+Characterization of numerical problems -> Condition
+Characterization of numerical algorithms -> Stability
+
+Input data can be perturbed. They are fixed within a certain tolerance.
+They lie in a neighborhood of the exact input x.
+An approximation y' for y = p(x) is called acceptable, if y' is the exact solution to one of the
+inputs within the neighborhood of x.
+The occuring error y' - y can be caused by rounding errors or method or discretization errors.
+
+A numerical algorithm is stable, if for all permitted input data perturbed in the size of
+computational accuracy, acceptable results are produced under the influence of errors.
+A stable algorithm can produce large errors, for example when the problem is ill-conditioned,
+that would mean that acceptable results are then positioned far away from the exact result.
+Basic arithmetic operations are stable under the precondition of the weak hypothesis.
+Compositions of stable methods are not necessarily stable. (otherwise everything would be stable,
+because of arithmetic operations being stable)
+
+1.7: CANCELLATION
+At the subtraction of two numbers with same signs, leading identical digits cancel each other,
+that means leading non-zeros disappear. The number of relevant digits can be reduced dramatically
+4444.4444 - 4444.5555 = -0000.1111, result only has four significant digits.
+(1.000.000 + 1) - (999.999 - 1) = 3 (with a perturbation of +/- 1)
+the relative output error is 2. Even though the relative perturbation of input was only of 
+order 10^-6 the error is of order 10^0. The condition number then is O(10^6).
+For complete cancellation, when the exact result would be zero, error becomes infinitely large.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -79,7 +79,6 @@ class Last(nn.Module):
         self.up = nn.ConvTranspose2d(in_channels, in_channels // 2, kernel_size=2, stride=2)
         self.conv = nn.Conv2d(in_channels // 2, out_channels, kernel_size=3, padding=1)
         self.Relu = nn.ReLU()
-        self.Tan = nn.Tanh()
 
     def forward(self, x):
         x = self.up(x)

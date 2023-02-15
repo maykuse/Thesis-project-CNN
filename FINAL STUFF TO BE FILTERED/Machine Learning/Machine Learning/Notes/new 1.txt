@@ -1,0 +1,114 @@
+GRADIENT DESCENT TYPES:
+One epoch typically means your algorithm sees every training instance once.
+
+Batch Gradient Descent:
+compute the gradient only after the whole dataset is used in training.
+Needs an enormous amount of memory, because we’ll need to accumulate the errors for each sample until the whole dataset is evaluated.
+With this optimization strategy, we’ll update the model only a few times. As a result, the loss function will be more stable, with less noise.
+Drawback: For non-convex problems with several local minima, we might get stuck in a saddle point too early
+
+Mini-Batch Gradient Descent:
+Use a subset of the dataset to do one update on the weights.
+Able to update its parameters more frequently. This reduces the risk of getting stuck at a local minimum, since different batches will be considered at each iteration, granting a robust convergence.
+
+Stochastic Gradient Descent:
+The parameters are updated after each sample of the dataset is evaluated in the training phase.
+Significantly noisy since the direction indicated by one sample might differ from the direction of the other samples.
+Model can easily jump around, having different variances across all epochs.
+(For non-convex problems) In this way, we’ll escape from a bad local optimum, and be more likely to find the global optimum.
+Gives an early indication of the model's performance.
+Takes a lot of time to converge, turning the SGD into a very expensive optimization strategy.
+
+
+BATCH NORMALIZATION:
+Batch Normalization makes the training of neural networks faster and more stable.
+It consists of normalizing activation vectors from hidden layers using the first and the second statistical moments (mean and variance) of the current batch.
+This normalization step is applied right before (or right after) the nonlinear function.
+
+Batch normalization is computed differently during the training and the testing phase.
+The BN layer first determines the mean u and the variance σ² of the activation values across the batch.
+It then normalizes the activation vector Z^(i).
+That way, each neuron’s output follows a standard normal distribution across the batch
+Each neuron’s output follows a standard normal distribution across the batch
+It finally calculates the layer’s output Ẑ'(i) by applying a linear transformation with 𝛾 and 𝛽, two trainable parameters.
+Such step allows the model to choose the optimum distribution for each hidden layers, by adjusting those two parameter.
+This also allows movement along the identity matrix and the normalized matrix, allowing the network to recover the identity if needed. Optimal value mostly lies inbetween those values. Such that gamma and beta is optimized.
+
+During evaluation:  Compute estimated mean and std of the studied population, these are computed once using all the data used during training and only these are used during test evaluation.
+
+Adding BN layers leads to faster and better convergence
+Adding BN layers allows us to use higher learning rate (LR) without compromising convergence. Higher learning rate helps the optimizer to avoid local minima convergence
+Regularization, a BN side effect: BN relies on batch first and second statistical moments (mean and variance) to normalize hidden layers activations. 
+The output values are then strongly tied to the current batch statistics. Such transformation adds some noise and stochasticity. Adding some noise to avoid overfitting is the same as a regularization process.
+
+
+FEATURES:
+A feature is an individual measurable property or characteristic of a phenomenon. Choosing informative, discriminating and independent features is a crucial element of effective algorithms
+Neural networks also use classification from a feature vector. The method consists of calculating the scalar product between the feature vector and a vector of weights, that is used to determine a score for making a prediction.
+Higher-level features can be obtained from already available features and added to the feature vector
+Feature construction is the application of a set of constructive operators to a set of existing features resulting in construction of new features.
+The initial set of raw features can be redundant and too large to be managed. Select a subset of features, or construct a new and reduced set of features to facilitate learning and to improve generalization and interpretability.
+
+
+Feature Selection is the process of selecting a subset of relevant features (variables, predictors) for use in model construction. 
+Reasons: simplification of models, shorter training times, avoiding curse of dimensionality, 
+Data contains some features that are either redundant or irrelevant, and can thus be removed without incurring much loss of information
+Feature extraction creates new features from functions of the original features, whereas feature selection returns a subset of the features.
+Feature extraction is usually used when the original data was very different. In particular when you could not have used the raw data.
+Feature extraction: combining existing features to produce a more useful one.
+
+Feature extraction is used for dimensionality reduction which is key to reducing model complexity and overfitting.
+Feature extraction is about extracting/deriving information from the original features set to create a new features subspace. The feature extraction algorithms transform the data onto a new feature space.
+Compress the data with the goal of maintaining most of the relevant information. 
+Feature extraction techniques can be used to improve the predictive performance of the models: It transforms the original data to features with strong pattern recognition ability
+
+
+Features can be in the form of raw data that is very straightforward and can be derived from real-life as it is. However sometimes the raw data has to be transformed to a feature.
+Machine-learning models are all about finding appropriate representations / features for their input data—transformations of the data that make it more amenable to the task at hand, such as a classification task.
+
+In the case of deep learning, the feature representations are learned automatically based on the underlying algorithm.
+For some machine learning problems, important feature representations are very hard to identify and choose.
+In such scenarios, there are representation algorithms that are used to identify important/correct feature representations. One such algorithm is Autoencoder.
+
+Characteristics of good features: 
+Features must be found in most of the data samples: Otherwise there is high bias.
+Features must be unique and may not be found prevalent with other (different) forms.
+Features should take noise/exceptions into account.
+
+
+NEURAL NETWORKS TO IDENTIFY FEATURES:
+Feature extraction in neural networks contains the representations that are learned by the previous network to extract the interesting features from new samples. 
+The features are then run through the new classifier which is already trained from scratch.
+
+Feature extraction, in case of the convnets, consists of taking convolutional base of the previously trained network then running a new data through it and finally training the new classifier on top of output of the network. 
+The first part of convnets which contain a series of pooling and the convolution layers and finally connects with a classifier is called convolution base of the model.
+
+Feature extraction is generally used on convolution base as convolution base are more generic than densely connected layers.
+The feature maps of the convnet are the presence maps of generic concepts over a picture.
+In densely connected layers, feature extraction is not viable as it no longer contains any information about the spatial locations in input image as these layers get rid of the notion of space.
+Spatial information is preserved by the convolutional feature maps.
+
+What neural networks does is learn the features directly from the data. Feed the raw input/features into a neural network which will compute through many layers some type of feature representation.
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+RECURRENT NEURAL NETWORKS:
+Recurrent neural networks are generally considered the best neural network architectures for time series forecasting (and sequence modeling in general), 
+but recent studies show that convolutional networks can perform comparably or even better
+Dilated convolutions might enable one-dimensional convolutional neural networks to effectively learn time series dependences.
+Convolutions can be implemented more efficiently than RNN-based solutions, and they do not suffer from vanishing (or exploding) gradients.
+Convolutional networks can provide an improved forecasting performance when there are multiple similar time series to learn from.
+CNNs can also be applied to further tasks in time series analysis (e.g., time series classification[135] or quantile forecasting

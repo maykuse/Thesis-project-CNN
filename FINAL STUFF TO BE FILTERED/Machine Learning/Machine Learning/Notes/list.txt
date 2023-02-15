@@ -1,0 +1,75 @@
+"Visual Analysis of Corellation Patterns in Meteorological Multi-parameter Datasets 
+using Feature Relevance Methods on Neural Variable Transfer Models"
+
+
+How would you build and implement a system as described in V2V paper in Pytorch?
+LRP methods applied to neural networks in meteorology problems.
+applications of the method to meteorological problems, such as weather prediction.
+This would be part of your project later on anyways, when it comes to writing the related work.
+there is one other method, which will probably be relevant, this is t-SNE.
+
+UNET ARCHITECTURE: ENCODER-DECODER
+The encoder is the first half in the architecture diagram (Figure 2). It usually is a pre-trained classification network 
+like VGG/ResNet where you apply convolution blocks followed by a maxpool downsampling to encode the input image 
+into feature representations at multiple different levels.
+
+The decoder is the second half of the architecture. The goal is to semantically project the discriminative features 
+(lower resolution) learnt by the encoder onto the pixel space (higher resolution) to get a dense classification. 
+The decoder consists of upsampling and concatenation followed by regular convolution operations.
+
+Upsampling: The intuition is that we would like to restore the condensed feature map to the original size of 
+the input image, therefore we expand the feature dimensions.
+
+
+
+QUESTIONS:
+Comprehension:
+In the case of V2V prediction models, should the LRP always focus on a single pixel?
+Is there a way to combine all relevance maps for all pixels of a single channel, and visualize it?
+Would that be too complex?
+
+In the relevance maps mentioned in your paper, positive relevance would indicate a negative correlation between the
+input pixel and the predicted reference pixel? 
+Because it says that the selector yields positive relevance for regions which increase
+the deviation between the model prediction and the target value.
+
+In the V2V feature learning stage, what exactly does the UNet do when extracting features and then optimizing?
+What does it optimize? Does it try to optimize the reconstruction of the variables from extracted features,
+such that the features represent the variables better? So this optimization leads to better features for comparison?
+So could we just not take the layers of the encoder in reverse order, reverse their weights and make it the decoder
+to get a perfect reconstruction?
+What good are these features? I get that we are using them to find similarities between variables??
+
+Generator/Discriminator: what does V e Vs or V e Vt mean? Doesnt G already get true variables as input and
+then synthesize variables as output? In this formula the V put inside G is described as synthesized?
+
+In your paper about the V2V transfer, in the feature selection no feature dropout is mentioned.
+You use an iterative solution where you train multiple networks still.
+To use the feature dropout method, we would need a fixed network but we cant do that because the output is not fixed?
+
+
+1) 
+Is the comparison between applying LRP on different model architectures an important part of the subject?
+If so which architectures should I focus on, the ones named in your paper, ResNet and UNet or more?
+Yes you should focus some.
+
+Or Are we also focusing on comparing different relevance maps in the same architecture,
+comparing differences in input effect based on different regions. (different relevance maps of pixels in different geographical regions)
+
+You want to look at clusters of regions that effect each other.
+High dimensional atmospheric state can be moved down to lower dimension,
+understand the state of the atmosphere, 
+Detection is more important.
+
+The interpretation of the relevance maps with regards to natural phenomena describes also by you,
+for example when the relevance map at time 12:00 shows a larger relevance for 2m-temp with respect to top-of-atmosphere
+incoming solar radiation, which is consistent with physical intuition.
+
+Should I for example put as an input an extreme weather condition, or any weather condition, and look
+at what input values are relevant on predicting that value which exists in that extreme weather condition.
+But this would only be a temporal analysis? How can this help in forecasting extreme weather events?
+Does the relevance map of previous time points, help in understanding or predicting future data?
+
+Am I just focusing on LRP or am I using other relevance methods looking at individual extracted features of the model
+such as neuron activation maximization? 
+Not really interpretable, its really hard to visualize something understandable.

@@ -1,0 +1,56 @@
+LEARNING SPATIO-TEMPORAL FEATURES WITH 3D CONVOLUTIONAL NETWORKS:
+Convolutional network models are available for feature extraction of spatial data.
+These features are the activations of the networks last few fully-connected layers which perform
+well on transfer learning tasks.
+But these are not suitable for spatio-temporal data.
+Learn spatio-temporal features using deep 3D ConvNets.
+Model physical spatial state and change of state simultaneously.
+
+Applying 2D Convolution on multiple spatial data recorded in an time interval(treating them as different ch.) 
+results in a 2D data. (which loses the temporal information of the input)
+In 2D Convolutions you convolve the [k,k] filter over the 2D [w,h] data and output a 2D activation map.
+In 2D Convolution with 3D input: Output is still 2D because filter depth is the same with the input depth.
+There is no movement in the depth of the input for the convolution of the filter.
+In 3D Convolution depth of the filter is smaller than the input depth, which means there is movement 
+in the depth direction. So the output also has a 3D volume.
+Applying 3D Convolution on spatio-temporal data volume results in another valume, 
+preserving temporal information of the input signal.
+
+In 3D ConvNets convolution and pooling operations are performed spatio-temporally.
+
+Spatio-temporal Feature Learning:
+After Training this 3D ConvNet can be used as a feature extractor for other analysis tasks.
+Pass video clips to C3D network to extract FC6 activations. Average these activations to form a
+4096-dim video descriptor and normalize these.
+
+What does our 3D ConvNet learn? We use the deconvolution method.
+We observe that it starts by focusing on appearance in the first few frames,
+and tracks the motion the subsequent frames.
+
+Doconvolution of feature maps with highest activations projected back to image space.
+
+
+ON CORRELATION OF FEATURES EXTRACTED BY DEEP NEURAL NETWORKS:
+DNNs have been shown to overparameterize or extract a lot of redundant features.
+To estimate the number of redundant features in each layer, all the features of a given layer
+are hierarchically clustered according to their relative cosine distances in feature space.
+
+Correlation between two features can be computed by evaluating the cosine similarity measure 
+between them. The similarity between two feature vectors corresponds to the correlation between them,
+that is the cosine of the angle between them in feature space.
+Feature vectors here are the weights of the 3D filters that are each applied once to the 3D input.(ConvLayer)
+
+Mutual information is a fundamental quantity for measuring the relationship between random variables. 
+Mutual information quantifies the dependence of two random variables X and Z.
+In contrast to correlation, mutual information captures non-linear
+statistical dependencies between variables, and thus can act
+as a measure of true dependence.
+
+
+Feature Visualization: The approach of making the learned features explicit.
+Feature visualization for a unit of a neural network is done by finding the 
+input that maximizes the activation of that unit. Unit is either an individual neuron,
+or a channel/activation map or the entire layer.
+Individual neurons are atomic units, so we would get the most information by creating feature
+visualizations for each neuron. But there are millions of neurons. The channels are then
+good units for feature visualization.

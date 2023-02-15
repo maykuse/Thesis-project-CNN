@@ -19,6 +19,9 @@ import pygraphviz
 import scipy
 from textwrap import wrap
 import math
+import captum
+from captum.attr._utils.lrp_rules import EpsilonRule
+
 
 device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
 
@@ -246,16 +249,18 @@ std_tensor = torch.zeros([6, 730])
 std_tensor1 = torch.zeros(730)
 
 save_figs = False
-gradient_bars = True
-draw_world_map = False
+gradient_bars = False
+draw_world_map = True
 bar_chart_std = False
 oneD_p = True
 threeD_p = False
 multi_parameter = False
-draw_grad_bar = True
+draw_grad_bar = False
 
 new_labels = [['u10', 'v10', 'z', 'tcc', 'tp'], ['t2m', 'z', 't', 'tcc', 'tp'],['t2m', 'z', 't', 'tcc', 'tp'],
               ['t2m', 'u10', 'v10', 'tcc', 'tp'], ['u10', 'v10', 'z', 'tcc', 'tp'], ['t2m', 'u10', 'z', 't', 'tp'], ['t2m', 'u10', 'z', 't', 'tcc']]
+
+
 
 def val():
     counter = 0
@@ -271,8 +276,11 @@ def val():
     # grid = [0.00001, 0.999999]
 
     np.set_printoptions(suppress=True)
+    set_to_zero = [3, 1, 1, 3, 0, 2, 2]
+    params_zero = [4, 2, 1, 4, 0, 2, 2]
     if(multi_parameter == False):
         for k in range(7):
+            lrp_map = torch.zeros([1, 6, 32, 64]).to(device, dtype=torch.float32)
             train_model = UNet(6, 1).to(device)
             labels = ["t2m", "u10", "v10", 'z', 't', "tcc", "tp"]
             train_state = torch.load(
@@ -294,61 +302,81 @@ def val():
                 p_gradients = torch.zeros(6).to(device, dtype=torch.float32)
                 p = torch.zeros(6, requires_grad=True).to(device, dtype=torch.float32)
                 p.fill_(0.999)
+                p[set_to_zero[k]] = 0.00001
 
 
             'You can change one channels noise to see if the gradients of others behaves differently.'
 
-
             for i, (vals) in enumerate(val_loader):
-
                 'Choose one or more time points to look at gradient sensitivity maps'
-                valid = vals.index_select(dim=1, index=input_indices[k]).to(device, dtype=torch.float32)
-                target = vals.index_select(dim=1, index=out_index[k]).to(device, dtype=torch.float32)
+                if(i == 180):
+                    valid = vals.index_select(dim=1, index=input_indices[k]).to(device, dtype=torch.float32)
+                    target = vals.index_select(dim=1, index=out_index[k]).to(device, dtype=torch.float32)
 
-                # we want gradient of 1,32,64 output wrt 6,32,64 noise p space
-                if(threeD_p):
-                    noisy_input = gaussian_dropout_image(valid, p)
-                    output = train_model(noisy_input)
-                    loss = loss_type(output, target)
-                    loss = torch.squeeze(loss)
-                if(oneD_p):
-                    noisy_input = gaussian_dropout(valid, p)
-                    output = train_model(noisy_input)
-                    loss = loss_type(output, target)
+                    # we want gradient of 1,32,64 output wrt 6,32,64 noise p space
+                    if(threeD_p):
+                        noisy_input = gaussian_dropout_image(valid, p)
+                        output = train_model(noisy_input)
+                        loss = loss_type(output, target)
+                        loss = torch.squeeze(loss)
+                    if(oneD_p):
+                        noisy_input = gaussian_dropout(valid, p)
+                        output = train_model(noisy_input)
+                        loss = loss_type(output, target)
+                        #train_model.rule = EpsilonRule()
+                        lrp = captum.attr.LRP(train_model)
+                        attribution = lrp.attribute(valid, target=(0, 16, 32))
+                        lrp_map.add_(attribution)
+
+                    optimizer.zero_grad()
+
+            # lrp_map.divide_(len(val_dataset)
+            lrp_map.mul_(100000)
+            print(lrp_map)
+                # 'Choose the individual pixel from which the gradients will be computed'
+                # if(threeD_p):
+                #     loss.backward(inputs=p, retain_graph=True)
+                # if(oneD_p):
+                #     loss.backward(inputs=p, retain_graph=True)
+                #     for j in range(6):
+                #         std_tensor[j][i] = p_gradients[j]
+                #
+                # 'Add gradients of input data. You can either take their average later or look at the sum'
+                # p_gradients.add_(p.grad)
+                # p.grad = None
 
 
-
-                optimizer.zero_grad()
-                'Choose the individual pixel from which the gradients will be computed'
-                if(threeD_p):
-                    loss.backward(inputs=p, retain_graph=True)
-                if(oneD_p):
-                    loss.backward(inputs=p, retain_graph=True)
-                    for j in range(6):
-                        std_tensor[j][i] = p_gradients[j]
-
-                'Add gradients of input data. You can either take their average later or look at the sum'
-                p_gradients.add_(p.grad)
-                p.grad = None
-
-
-            p_gradients.divide_(10000)
+            # # p_gradients.divide_(1000)
+            #
             # p_gradients.mul_(1000)
-            # p_gradients = torch.abs(p_gradients)
-            results = np.array(p_gradients.cpu())
-
+            # # if(k == 5 or k == 6):
+            # #     p_gradients.divide_(100)
+            #
+            # # p_gradients = torch.abs(p_gradients)
+            results = np.array(lrp_map.detach().cpu().clone().numpy())
+            #
+            # v_maxes = [7.5, 10, 10, 5, 5, 7.5, 3]
+            # v_mins = [-7.5, -10, -10, -5, -5, -7.5, -3]
+            # v_maxes_pixel = [7.5, 100, 100, 15, 7.5, 2.5, 2.5]
+            # v_mins_pixel = [-7.5, -100, -100, -15, -7.5, -2.5, -2.5]
+            # abs_max = [10, 10, 10, 5, 5, 7.5, 4]
+            # time_maxes = [40, 50, 50, 50, 25, 50, 20]
+            # time_mins = [-40, -50, -50, -50, -25, -50, -20]
+            # # vmin=v_mins[0], vmax=v_maxes[0],
+            lrp_min = [-0.25, -1.5, -1.5, -0.15, -0.15, -10, -5]
+            lrp_max = [40, 400, 250, 40, 30, 1500, 500]
 
             if (draw_world_map):
-                fig = plt.figure(figsize=(10, 10))
-                sns.set(font_scale=2.4)
-                sns.heatmap(results[l], cmap="Reds", xticklabels=False, yticklabels=False,
-                                cbar_kws=dict(use_gridspec=False, orientation="horizontal"))
-                plt.title("\n".join(wrap("{param} Prediction Heatmap of Gradients wrt. p_{par} when p_all ~ 1".format(param=params_C[k], par=all_labels[k][l]), 35)))
-                # plt.title("{param} Prediction model World heatmap of Gradients wrt. p_{par} when p_all ~ 1".format(param=params_C[k], par=all_labels[k][l]))
-                plt.show()
-                plt.tight_layout()
-                fig.savefig('/home/ge75tis/Desktop/{param}_world_heatmap_{par}'.format(
-                            param=params_C[k], par=all_labels[k][l]))
+                for l in range(6):
+                    fig = plt.figure(figsize=(10, 10))
+                    sns.set(font_scale=2.2)
+                    sns.heatmap(results[0][l], cmap="RdBu", xticklabels=False, yticklabels=False, center=0.00, vmin=-lrp_max[k], vmax=lrp_max[k],
+                                    cbar_kws=dict(use_gridspec=False, orientation="horizontal"))
+                    plt.title("\n".join(wrap("{param} Prediction Heatmap LRP with respect to input parameter {par}".format(param=params_C[k], par=all_labels[k][l]), 35)))
+                    # plt.title("{param} Prediction model World heatmap of Gradients wrt. p_{par} when p_all ~ 1".format(param=params_C[k], par=all_labels[k][l]))
+                    plt.show()
+                    plt.tight_layout()
+                    fig.savefig('/home/ge75tis/Desktop/LRP180/{param}_world_heatmap_{par}'.format(param=params_C[k], par=all_labels[k][l]))
 
             if(draw_grad_bar):
                 x = np.arange(len(all_labels[k]))
@@ -359,21 +387,23 @@ def val():
                 # std = torch.mul(std, 1000)
                 std = torch.div(std, 10000)
                 print(results)
+                print(std)
+
                 # print(std)
                 rects1 = ax.bar(x, results, width, yerr=std, capsize=4)
-                ax.set_ylabel('Avg. Gradient of loss wrt. input parameters noise')
-                ax.set_title('{param} Analysis of Gradient wrt. parameter noise when p_all ~ 1'.format(param=params_C[k]))
+                ax.set_ylabel('Avg. Gradient over Validation data')
+                ax.set_xlabel('parameter x')
+                ax.set_title('{param} Loss Gradients w.r.t. p_{par} ~ 0 and p_x ~ 0 when p_others ~ 1'.format(param=params_C[k], par=params[set_to_zero[k]]), fontsize=16)
                 ax.set_xticks(x, all_labels[k])
+                ax.tick_params(axis='x', which='major', labelsize=16)
                 # ax.bar_label(rects1, padding=3)
                 fig3.tight_layout()
                 plt.show()
-                fig3.savefig('/home/ge75tis/Desktop/{param}_gradient_bar_chart'.format(
-                        param=params_C[k]))
+                # fig3.savefig('/home/ge75tis/Desktop/{param}_gradient_bar_chart'.format(param=params_C[k]))
 
 
 
-    set_to_zero = [3, 1, 1, 3, 0, 2, 2]
-    params_zero = [4, 2, 1, 4, 0, 2, 2]
+
 
     if(multi_parameter):
         for k in range(7):
@@ -559,7 +589,7 @@ with mlflow.start_run() as run:
     mlflow.log_param('lr', learning_rate)
     mlflow.log_param('total_epochs', num_epochs)
 
-    # val()
+    val()
     # test()
     # for epoch in range(num_epochs):
     #     train(epoch)
@@ -590,6 +620,19 @@ if(bar_chart_std):
     for i in range(7):
         grads = [[70, 65, 105, 41, 25], [26, 391, 232, 83, 282], [100, 341, 248, 181, 461],  [98, 227, 216, 50, 38],
                  [118, 115, 169, 64, 20], [37, 234, 116, 117, 241], [0.25, 31, 5, 0.15, 27]]
+        new_grads = [[ 0.393937,    0.5177872,   0.8081675,  0.2173099,   0.19274348],
+                     [ 0.11073707, 1.7052437,   1.2041483,   0.6383745,   1.3377805 ],
+                     [0.4614593 , 1.6741238, 1.1966242, 1.0581605, 2.113553 ],
+                     [0.65935683, 1.9920334,  1.5186688,0.20349145 ,0.6169152 ],
+                     [0.4539668,  0.5250931,  0.93532586, 0.34094712, 0.09230455],
+                     [0.07172562, 0.43555608,0.3449535,  0.21079579, 0.67807657],
+                     [ 0.00364778 , 0.06086333, 0.02630926,  0.00666114,  0.05426996]]
+
+        stds = [[0.1091, 0.1478, 0.2207, 0.0671, 0.0525], [0.0333, 0.5026, 0.3446, 0.1797, 0.4037], [0.1337,  0.4858, 0.3542, 0.2951, 0.6118]
+                , [1.8661e-01, 5.7324e-01, 4.5843e-01, 7.0172e-02, 1.7575e-01], [0.1302, 0.1501, 0.2760, 0.0931, 0.0278], [0.0214, 0.1180,0.0981, 0.0634, 0.1965],
+                [1.2607e-03, 1.7842e-02, 6.5283e-03, 1.8910e-03, 1.5993e-02]]
+
+
         clm_losses = [0.1061, 0.5411, 0.6394, 0.2035, 0.1897, 0.6936, 0.354]
         x = np.arange(5)
         width = 0.3
@@ -598,7 +641,7 @@ if(bar_chart_std):
         # low = min(unet_losses)
         # high = max(unet_losses)
         # plt.ylim(0.24, 0.28)
-        rects1 = ax.bar(x, grads[i], width, label="Gradient of {param} loss for p_{best} ~ 0 and p_others ~ 1".format(param=params_C[i], best=params_C[params_zer[i]]))
+        rects1 = ax.bar(x, new_grads[i], width, yerr=stds[i], capsize=6, label="Gradient of {param} loss for p_{best} ~ 0 and p_others ~ 1".format(param=params_C[i], best=params_C[params_zer[i]]))
         # rects2 = ax.bar(x + width/2, clm_losses, width, label="Climatology")
         ax.set_ylabel('Average Gradient')
         ax.set_xticks(x, params_g[i])
@@ -677,12 +720,10 @@ if(distance_cluster):
     # plt.savefig('/home/ge75tis/Desktop/Thesis-project-CNN/Graphs/cluster2.png', format="PNG")
 
 
-
-
-heatmap = True
+heatmap = False
 if(heatmap):
     new_param_order = ['t', 't2m', 'z', 'v10', 'u10', 'tp', 'tcc']
-    # fig1 = plt.figure(figsize=(14,20))
+    fig1 = plt.figure(figsize=(12,12))
 
     comb_heatmap_percentage = [[1, 0.2372, 0.3441, 0.5068, 0.5326, 0.1715, 0.0742], [0.0130, 1, 0.6495, 0.4286, 0.1589, 0.1426, 0.2390],
                                [0.0774, 0.7039, 1, 0.4368, 0.1069, 0.1861, 0.1784], [0.1943, 0.3980, 0.2435, 1, 0.5723, 0.0394, 0.0959],
@@ -704,23 +745,14 @@ if(heatmap):
                     [0.11764815, 10.919211, 24.24271, 3.0331063, 0.18807021, 16.8139, 0]]
 
     grad_heatmap_new = [[0, 0.36795822, 0.43980718, 0.61094254, 0.66767836, 0.25484586, 0.15239869], [0.09645872, 0, 3.8159883,  1.0963811, 1.3558255,  0.1850218, 0.49045599],
-                        [0.97554576, 6.065276,  0, 2.6048186,  1.7355888,  1.7813991,  0.6647806, ], [1.5544034, 3.0572004, 3.1909885, 0, 4.1371703, 0.4340603, 0.7173816],
+                        [0.97554576, 6.065276,  0, 2.6048186,  1.7355888,  1.7813991,  0.6647806], [1.5544034, 3.0572004, 3.1909885, 0, 4.1371703, 0.4340603, 0.7173816],
                         [4.782727,   0.28787705, 0.8700743,  2.5207248, 0, 0.62985164, 0.08375259], [0.1033018,  0.3755193, 0.7591337,  0.58453566, 0.48831362, 0, 0.65765136],
                         [0.00877767, 0.09491006, 0.12384017, 0.04167771,  0.02347502, 0.07231351, 0]]
 
-    testa = numpy.array(grad_heatmap_new)
-    print(testa.mean(axis=1))
-    print(testa.std(axis=1))
-    testa1 = torch.from_numpy(testa)
-
-    norm_testy = transforms.Normalize((0.35623298, 1.00573306, 1.97534412, 1.87017207, 1.31071534, 0.42406506,
-    0.05214202), (0.22287954, 1.24244417, 1.84538173, 1.47752059, 1.62332719, 0.26234905,
-    0.04294045))
-
-    test3 = norm_testy(testa1)
-    print(test3)
-
-
+    a = numpy.array(grad_heatmap_new)
+    row_sums = a.sum(axis=1)
+    new_matrix = a / row_sums[:, numpy.newaxis]
+    # print(new_matrix)
 
     # grad_heatmap_new =
 
@@ -731,15 +763,17 @@ if(heatmap):
             if (i == j):
                 dist_matr[i][j] = 0
             else:
-                dist_matr[i][j] = (1 / (grad_heatmap_new[i][j] + grad_heatmap_new[j][i]))
+                dist_matr[i][j] = (1 / (new_matrix[i][j] + new_matrix[j][i]))
 
     # print(dist_matr)
+    print(test_dataset[0][4])
 
     sns.set(font_scale=1.2)
     # sns.heatmap(grad_heatmap, linewidths=.5, cmap="magma", annot=True, xticklabels=params_C, yticklabels=params_C, norm=LogNorm(), fmt='.3g')
-    fig1 = sns.clustermap(comb_heatmap_percentage, cbar_kws={"shrink": 0.5}, method='average', linewidths=1, linecolor='white', row_linkage=scipy.cluster.hierarchy.linkage(scipy.spatial.distance.squareform(dist_matr)), col_linkage=scipy.cluster.hierarchy.linkage(scipy.spatial.distance.squareform(dist_matr)), cmap="magma",  annot=True, xticklabels=params, yticklabels=params, norm=heat_norm, fmt='.3g')
-    fig1.ax_heatmap.set_xticklabels(fig1.ax_heatmap.get_xmajorticklabels(), fontsize = 22)
-    fig1.ax_heatmap.set_yticklabels(fig1.ax_heatmap.get_ymajorticklabels(), fontsize = 22)
+    # fig1 = sns.clustermap(comb_heatmap_percentage, cbar_kws={"shrink": 0.5}, method='average', linewidths=1, linecolor='white', row_linkage=scipy.cluster.hierarchy.linkage(scipy.spatial.distance.squareform(dist_matr)), col_linkage=scipy.cluster.hierarchy.linkage(scipy.spatial.distance.squareform(dist_matr)), cmap="magma",  annot=True, xticklabels=params, yticklabels=params, norm=heat_norm, fmt='.3g')
+    # fig1.ax_heatmap.set_xticklabels(fig1.ax_heatmap.get_xmajorticklabels(), fontsize = 22)
+    # fig1.ax_heatmap.set_yticklabels(fig1.ax_heatmap.get_ymajorticklabels(), fontsize = 22)
+    sns.heatmap(test_dataset[0][4], cbar=None, cmap="magma")
 
     # Why does the clustermap change tcc and tp's position, even though they should lie at the end
     # plt.title('Gradient of prediction loss wrt. input parameters when p_all ~ 1')
@@ -749,8 +783,9 @@ if(heatmap):
     # plt.xlabel('input parameters')
     # plt.ylabel('predicted parameter')
     fig = plt.figure()
-    plt.show()
-    # fig1.savefig('/home/ge75tis/Desktop/trueHeatmap')
+    # plt.tight_layout()
+    # plt.show()
+    fig1.savefig('/home/ge75tis/Desktop/Thesis-project-CNN/b')
 
 
     dist = scipy.spatial.distance.squareform(dist_matr)
@@ -759,8 +794,8 @@ if(heatmap):
 
     plt.title("Hierarchical Clustering of Parameters using Gradients (avg.)")
     plt.ylabel("distance")
-    plt.show()
+    # plt.show()
 
-    plt.savefig('/home/ge75tis/Desktop/newgrad')
+    # plt.savefig('/home/ge75tis/Desktop/newgrad')
 
 # row_linkage=scipy.cluster.hierarchy.linkage(scipy.spatial.distance.squareform(dist_matr))

@@ -42,7 +42,7 @@ parser.add_argument(
 parser.add_argument(
     "--dropout",
     type=bool,
-    default=True,
+    default=False,
     metavar="Bool",
     help="Set to true to apply feature dropout to input"
 )

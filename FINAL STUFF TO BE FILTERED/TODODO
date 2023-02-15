@@ -1,0 +1,11 @@
+TODODODODO
+
+TRY DIFFERENT P VALUES FOR THE GRADIENT SENSITIVITY MAPS TO GET BETTER PATTERNS
+NOW IT SEEMS TO BE SOMEWHAT RANDOM, EVERYTIME THE PATTERNS CHANGE, OR ONLY THE PIXELS IN THE VICINITY SEEM TO BE IMPORTANT
+
+
+the greedy selection algorithm in the dropout paper,
+when finding bigger similarity clusters, you can also iteratively rank the best
+performing individual input parameters and put them in a group maybe?
+
+
