@@ -1,0 +1,291 @@
+_libgcc_mutex	0.1	0.1
+_openmp_mutex	4.5	5.1
+affine	2.3.1	2.3.0
+aiohttp	3.8.3	3.8.3
+aiosignal	1.2.0	1.2.0
+alembic	1.8.1	1.8.1
+asciitree	0.3.3	0.3.3
+async-timeout	4.0.2	4.0.2
+atk-1.0	2.36.0	2.36.0
+attrs	22.1.0	22.1.0
+aws-c-common	0.4.57	0.6.8
+aws-c-event-stream	0.1.6	0.1.6
+aws-checksums	0.1.9	0.1.11
+aws-sdk-cpp	1.8.185	1.8.185
+bcrypt	3.2.2	3.2.0
+blas	1.0	1.0
+blinker	1.5	1.4
+bokeh	2.4.3	3.0.3
+bottleneck	1.3.5	1.3.5
+brotli	1.0.9	1.0.9
+brotli-bin	1.0.9	1.0.9
+brotlipy	0.7.0	0.7.0
+bzip2	1.0.8	1.0.8
+c-ares	1.18.1	1.18.1
+ca-certificates	2023.01.10	2023.01.10
+cachetools	4.2.4	4.2.2
+cairo	1.16.0	1.16.0
+captum	0.6.0	
+certifi	2022.12.7	2022.12.7
+cffi	1.15.1	1.15.1
+cfitsio	3.470	3.470
+cftime	1.5.1.1	1.5.1.1
+charset-normalizer	2.1.1	2.0.4
+click	8.1.3	8.0.4
+click-plugins	1.1.1	1.1.1
+cligj	0.7.2	0.7.2
+cloudpickle	2.2.0	2.0.0
+colorama	0.4.5	0.4.6
+configparser	5.3.0	5.0.2
+cryptography	37.0.2	38.0.4
+cudatoolkit	11.6.0	11.3.1
+curl	7.84.0	7.87.0
+cycler	0.11.0	0.11.0
+cytoolz	0.12.0	0.12.0
+dask	2022.7.0	2022.7.0
+dask-core	2022.7.0	2022.7.0
+databricks-cli	0.17.3	
+distributed	2022.7.0	2022.7.0
+docker-py	6.0.0	4.4.1
+earthengine-api	0.1.328	
+entrypoints	0.4	0.4
+expat	2.4.9	2.4.9
+fasteners	0.16.3	0.16.3
+ffmpeg	4.3	4.2.2
+fftw	3.3.10	3.3.9
+flask	2.2.2	2.2.2
+font-ttf-dejavu-sans-mono	2.37	2.37
+font-ttf-inconsolata	3.000	2.001
+font-ttf-source-code-pro	2.038	2.030
+font-ttf-ubuntu	0.83	0.83
+fontconfig	2.14.1	2.14.1
+fonts-conda-ecosystem	1	1
+fonts-conda-forge	1	
+fonttools	4.25.0	4.25.0
+freetype	2.12.1	2.12.1
+freexl	1.0.6	1.0.6
+fribidi	1.0.10	1.0.10
+frozenlist	1.3.1	1.3.3
+fsspec	2022.10.0	2022.11.0
+future	0.18.2	0.18.2
+gdk-pixbuf	2.42.8	2.42.8
+geos	3.8.0	3.9.1
+geotiff	1.7.0	1.7.0
+gettext	0.21.1	0.21.0
+giflib	5.2.1	5.2.1
+gitdb	4.0.9	4.0.7
+gitpython	3.1.29	3.1.30
+glib	2.69.1	2.69.1
+gmp	6.2.1	6.2.1
+gnutls	3.6.13	3.6.15
+gobject-introspection	1.72.0	1.72.0
+google-api-core	1.25.1	2.10.1
+google-api-python-client	1.12.8	
+google-auth	1.35.0	2.6.0
+google-auth-httplib2	0.1.0	
+google-cloud-core	1.7.1	2.3.2
+google-cloud-storage	1.19.0	2.6.0
+google-crc32c	1.1.2	1.5.0
+google-resumable-media	2.4.0	2.4.0
+googleapis-common-protos	1.56.4	1.56.4
+graphite2	1.3.14	1.3.14
+graphviz	2.50.0	2.50.0
+greenlet	2.0.0.post0	2.0.1
+grpc-cpp	1.48.1	1.46.1
+grpcio	1.48.1	1.42.0
+gtk2	2.24.33	2.24.33
+gts	0.7.6	0.7.6
+gunicorn	20.1.0	20.1.0
+harfbuzz	4.3.0	4.3.0
+hdf4	4.2.13	4.2.13
+hdf5	1.10.6	1.12.1
+heapdict	1.0.1	1.0.1
+httplib2	0.20.4	
+httplib2shim	0.0.3	
+icu	58.2	68.1
+idna	3.4	3.4
+importlib-metadata	5.0.0	4.11.3
+importlib_resources	5.10.0	5.2.0
+intel-openmp	2021.4.0	2022.1.0
+itsdangerous	2.1.2	2.0.1
+jbig	2.1	2.1
+jinja2	3.1.2	3.1.2
+joblib	1.2.0	1.1.1
+jpeg	9e	9e
+json-c	0.13.1	0.16
+kealib	1.4.14	1.5.0
+keyutils	1.6.1	
+kiwisolver	1.4.2	1.4.4
+krb5	1.19.3	1.19.4
+lame	3.100	3.100
+lcms2	2.12	2.12
+ld_impl_linux-64	2.38	2.38
+lerc	4.0.0	3.0
+libabseil	20220623.0	
+libboost	1.73.0	1.73.0
+libbrotlicommon	1.0.9	1.0.9
+libbrotlidec	1.0.9	1.0.9
+libbrotlienc	1.0.9	1.0.9
+libcrc32c	1.1.2	1.1.2
+libcurl	7.84.0	7.87.0
+libdap4	3.19.1	3.19.1
+libdeflate	1.14	1.8
+libedit	3.1.20210910	3.1.20221030
+libev	4.33	4.33
+libffi	3.4.2	3.4.2
+libgcc-ng	12.2.0	11.2.0
+libgd	2.3.3	2.3.3
+libgdal	3.0.2	3.4.1
+libgfortran-ng	11.2.0	11.2.0
+libgfortran5	11.2.0	11.2.0
+libiconv	1.17	1.16
+libkml	1.3.0	1.3.0
+libnetcdf	4.6.1	4.8.1
+libnghttp2	1.46.0	1.46.0
+libnsl	2.0.0	2.0.0
+libpng	1.6.37	1.6.37
+libpq	12.9	12.9
+libprotobuf	3.21.8	3.20.3
+librsvg	2.54.4	2.54.4
+libsodium	1.0.18	1.0.18
+libspatialite	4.3.0a	4.3.0a
+libsqlite	3.39.4	
+libssh2	1.10.0	1.10.0
+libstdcxx-ng	12.2.0	11.2.0
+libtiff	4.2.0	4.5.0
+libtool	2.4.6	2.4.6
+libuuid	1.41.5	1.41.5
+libwebp	1.2.4	1.2.4
+libwebp-base	1.2.4	1.2.4
+libxcb	1.15	1.15
+libxml2	2.9.14	2.9.14
+libzip	1.9.2	1.8.0
+libzlib	1.2.13	
+llvm-openmp	14.0.4	14.0.6
+locket	1.0.0	1.0.0
+lz4	3.1.3	3.1.3
+lz4-c	1.9.3	1.9.4
+mako	1.2.3	1.2.3
+markupsafe	2.1.1	2.1.1
+matplotlib-base	3.5.3	3.6.2
+mkl	2021.4.0	2022.1.0
+mkl-service	2.4.0	2.4.0
+mkl_fft	1.3.1	1.3.1
+mkl_random	1.2.2	1.2.2
+mlflow	1.30.0	
+msgpack-python	1.0.3	1.0.3
+multidict	6.0.2	6.0.2
+munkres	1.1.4	1.1.4
+ncurses	6.3	6.4
+netcdf4	1.5.7	1.6.2
+nettle	3.6	3.7.3
+networkx	2.8.4	2.8.4
+ninja	1.10.2	1.10.2
+ninja-base	1.10.2	1.10.2
+nspr	4.32	4.33
+nss	3.78	3.74
+numcodecs	0.7.3	0.11.0
+numexpr	2.8.3	2.8.4
+numpy	1.23.3	1.23.5
+numpy-base	1.23.3	1.23.5
+oauthlib	3.2.2	3.2.1
+openh264	2.1.1	2.1.1
+openjpeg	2.4.0	2.4.0
+openssl	1.1.1s	1.1.1t
+packaging	21.3	22.0
+pandas	1.4.4	1.5.2
+pango	1.50.7	1.50.7
+paramiko	2.12.0	2.8.1
+partd	1.2.0	1.2.0
+pcre	8.45	8.45
+pcre2	10.37	10.37
+pillow	9.2.0	9.3.0
+pip	22.2.2	22.3.1
+pixman	0.40.0	0.40.0
+plotly	5.10.0	5.9.0
+poppler	0.81.0	22.12.0
+poppler-data	0.4.11	0.4.11
+postgresql	12.9	12.9
+proj	6.2.1	8.2.1
+prometheus_client	0.15.0	0.14.1
+prometheus_flask_exporter	0.20.3	
+protobuf	4.21.8	3.20.3
+psutil	5.9.0	5.9.0
+pthread-stubs	0.4	0.3
+pyasn1	0.4.8	0.4.8
+pyasn1-modules	0.2.7	0.2.8
+pycparser	2.21	2.21
+pygraphviz	1.9	1.9
+pyjwt	2.6.0	2.4.0
+pynacl	1.5.0	1.5.0
+pyopenssl	22.0.0	22.0.0
+pyparsing	3.0.9	3.0.9
+pysocks	1.7.1	1.7.1
+python	3.10.8	3.11.0
+python-dateutil	2.8.2	2.8.2
+python_abi	3.10	
+pytorch	1.12.1	1.12.1
+pytorch-mutex	1.0	
+pytz	2022.1	2022.7
+pyu2f	0.1.5	
+pywin32-on-windows	0.1.0	
+pyyaml	6.0	6.0
+querystring_parser	1.2.4	
+rasterio	1.2.10	1.2.10
+re2	2022.06.01	2022.04.01
+readline	8.1.2	8.2
+requests	2.28.1	2.28.1
+rsa	4.9	4.7.2
+scipy	1.9.3	1.10.0
+seaborn	0.12.0	0.12.2
+setuptools	63.4.1	65.6.3
+simplejson	3.17.6	3.17.6
+six	1.16.0	1.16.0
+smmap	3.0.5	4.0.0
+snappy	1.1.9	1.1.9
+snuggs	1.4.7	1.4.7
+sortedcontainers	2.4.0	2.4.0
+sqlalchemy	1.4.43	1.4.39
+sqlite	3.40.0	3.40.1
+sqlparse	0.4.3	0.4.3
+tabulate	0.9.0	0.8.10
+tblib	1.7.0	1.7.0
+tenacity	8.1.0	8.0.1
+tensorboardx	2.2	2.2
+tiledb	2.2.9	2.3.3
+tk	8.6.12	8.6.12
+toolz	0.12.0	0.12.0
+torchaudio	0.12.1	
+torchvision	0.13.1	0.13.1
+tornado	6.1	6.2
+tqdm	4.64.1	4.64.1
+typing-extensions	4.3.0	4.4.0
+typing_extensions	4.3.0	4.4.0
+tzcode	2022e	
+tzdata	2022e	2022g
+uritemplate	3.0.1	
+urllib3	1.26.11	1.26.14
+websocket-client	1.4.2	0.58.0
+werkzeug	2.2.2	2.2.2
+wheel	0.37.1	0.37.1
+wxee	0.3.3	
+xarray	0.20.1	2022.11.0
+xerces-c	3.2.4	3.2.4
+xorg-kbproto	1.0.7	
+xorg-libice	1.0.10	
+xorg-libx11	1.7.2	
+xorg-libxau	1.0.9	
+xorg-libxdmcp	1.1.3	
+xorg-libxext	1.3.4	
+xorg-libxrender	0.9.10	
+xorg-renderproto	0.11.1	
+xorg-xextproto	7.3.0	
+xorg-xproto	7.0.31	7.0.31
+xz	5.2.6	5.2.10
+yaml	0.2.5	0.2.5
+yarl	1.7.2	1.8.1
+zarr	2.8.1	2.13.3
+zict	2.1.0	2.1.0
+zipp	3.10.0	3.11.0
+zlib	1.2.13	1.2.13
+zstd	1.4.9	1.5.2
