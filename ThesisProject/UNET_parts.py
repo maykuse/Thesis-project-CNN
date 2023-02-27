@@ -22,8 +22,8 @@ def gaussian_dropout(data: torch.Tensor, p: torch.Tensor):
 
 def gaussian_dropout_image(data: torch.Tensor, p: torch.Tensor):
     """
-        The only difference: p is given as 3D to keep track of the gradient of pixels
-        p: dropout rates in [0, 1], expected shape (batch_size, num_channels, h, w)
+        p given as 3D to keep track of the gradient of pixels
+        expected shape (batch_size, num_channels, h, w)
     """
     alpha = p / (1. - p)
     noise = torch.randn_like(data)

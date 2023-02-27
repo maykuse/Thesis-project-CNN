@@ -11,6 +11,113 @@ params = ["t2m", "u10", "v10", 'z', 't', "tcc", "tp"]
 # params_x = ["t2m", "v10", 'z', 't', "tcc", "tp"]
 params_C = ["T2M", "U10", "V10", 'Z', 'T', "TCC", "TP"]
 
+if (draw_world_map):
+    for l in range(6):
+        fig = plt.figure(figsize=(10, 10))
+        sns.set(font_scale=2.2)
+        sns.heatmap(results[0][l], cmap="RdBu", xticklabels=False, yticklabels=False, center=0.00, vmin=-lrp_max[k],
+                    vmax=lrp_max[k],
+                    cbar_kws=dict(use_gridspec=False, orientation="horizontal"))
+        plt.title("\n".join(wrap(
+            "{param} Prediction Heatmap LRP with respect to input parameter {par}".format(param=params_C[k],
+                                                                                          par=all_labels[k][l]), 35)))
+        # plt.title("{param} Prediction model World heatmap of Gradients wrt. p_{par} when p_all ~ 1".format(param=params_C[k], par=all_labels[k][l]))
+        plt.show()
+        plt.tight_layout()
+        fig.savefig(
+            '/home/ge75tis/Desktop/LRP180/{param}_world_heatmap_{par}'.format(param=params_C[k], par=all_labels[k][l]))
+
+if (draw_grad_bar):
+    x = np.arange(len(all_labels[k]))
+
+    width = 0.3
+    fig3, ax = plt.subplots()
+    std = torch.std(std_tensor, dim=1)
+    # std = torch.mul(std, 1000)
+    std = torch.div(std, 10000)
+    print(results)
+    print(std)
+
+    # print(std)
+    rects1 = ax.bar(x, results, width, yerr=std, capsize=4)
+    ax.set_ylabel('Avg. Gradient over Validation data')
+    ax.set_xlabel('parameter x')
+    ax.set_title('{param} Loss Gradients w.r.t. p_{par} ~ 0 and p_x ~ 0 when p_others ~ 1'.format(param=params_C[k],
+                                                                                                  par=params[
+                                                                                                      set_to_zero[k]]),
+                 fontsize=16)
+    ax.set_xticks(x, all_labels[k])
+    ax.tick_params(axis='x', which='major', labelsize=16)
+    # ax.bar_label(rects1, padding=3)
+    fig3.tight_layout()
+    plt.show()
+    # fig3.savefig('/home/ge75tis/Desktop/{param}_gradient_bar_chart'.format(param=params_C[k]))
+
+    if (graph):
+        if (month):
+            x_axis = ["jan", "feb", "mar", "apr", "may", "jun", "jul", "aug", "sep", "oct", "nov", "dec"]
+            labels = all_labels[k]
+            fig = plt.figure()
+            for i in range(6):
+                plt.errorbar(avg_val_loss_gridded_m[k][i], yerr=0, label=labels[i])
+            fig.suptitle('{param} analysis, p_x ~ 0, p_other ~ 1 per month'.format(param=params_C[k]))
+            fig.errorbar
+            plt.legend()
+            plt.xlabel('months')
+            plt.ylabel('Average loss')
+            fig.savefig(
+                "/home/ge75tis/Desktop/Thesis-project-CNN/Graphs/per_month_test/{param}_Dropout_per_month_p_x_0".format(
+                    param=params_C[k]))
+        # fig = plt.figure(g, figsize=(10,10))
+        # sns.heatmap(avg_val_loss_gridded[g], linewidths=.5, cmap="Greens", annot=True, xticklabels=grid, yticklabels=grid, norm=LogNorm(), fmt=".3f")
+        # labels = ["t2m", "u10", "v10", 'z', 't', "tcc"]
+        # plt.title('Avg Validation loss of TP for different dropout rates of {par} and other parameters'.format(par=labels[g]))
+        # plt.xlabel('other parameters dropout rate p')
+        # plt.ylabel('{par} dropout rate p'.format(par=labels[g]))
+        # fig.savefig('/home/ge75tis/Desktop/Thesis-project-CNN/Graphs/DROPOUT_ANALYSIS/tp_analysis_{label}_heatmap'.format(label=labels[g]))
+
+    # results = np.array(p_gradients.cpu())
+results = rec_losses[k][0]
+
+if (gradient_bars):
+    # print(f' {labels[k]}: p_grads, {all_labels[k]} p ~ 0, others ~ 1: {results}')
+    x = np.arange(len(all_labels[k]))
+    width = 0.3
+    fig3, ax = plt.subplots()
+    rects1 = ax.bar(x, results, width, label='p_{param} ~ 0 and p_x ~ 0, p_others ~ 1')
+    ax.set_ylabel('Avg. Validation Loss')
+    ax.set_xlabel
+    ax.set_title(
+        '{param} Dropout Analysis when p_{par} ~ 0 and p_x ~ 0, p_others ~ 1'.format(param=params_C[k],
+                                                                                     par=params[params_zero[k]]))
+    ax.set_xticks(x, all_labels[K])
+    ax.legend()
+    # ax.bar_label(rects1, padding=3)
+    fig3.tight_layout()
+    fig3.savefig(
+        '/home/ge75tis/Desktop/{param}_dropout_bar_chart'.format(
+            param=params_C[k]))
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 params_g = [['u10', 'v10', 'z', 'tcc', 'tp'], ['t2m', 'z', 't', 'tcc', 'tp'],['t2m', 'z', 't', 'tcc', 'tp'],
               ['t2m', 'u10', 't', 'tcc', 'tp'], ['u10', 'v10', 'z', 'tcc', 'tp'], ['t2m', 'u10', 'z', 't', 'tp'], ['t2m', 'u10', 'z', 't', 'tcc']]
 
@@ -191,3 +298,7 @@ if(heatmap):
     # plt.savefig('/home/ge75tis/Desktop/newgrad')
 
 # row_linkage=scipy.cluster.hierarchy.linkage(scipy.spatial.distance.squareform(dist_matr))
+
+
+
+

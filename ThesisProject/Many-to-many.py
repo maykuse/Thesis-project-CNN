@@ -44,7 +44,7 @@ parser.add_argument(
     type=bool,
     default=False,
     metavar="Bool",
-    help="Set to true just to see test results on already trained model"
+    help="Set True just to see test results on already trained model"
 )
 parser.add_argument(
     "--load-model",
@@ -156,13 +156,14 @@ def val():
     val_loss = 0
     clm_loss = 0
     model.eval()
+
     for i, (vals) in enumerate(val_loader):
         vals = vals.to(device, dtype=torch.float32)
 
         # Reduced total loss
         pred = model(vals)
         loss_v = loss_type(pred, vals[:, :7])
-        val_loss += loss_v.item()
+        val_loss += loss_v.item() * len(vals)
 
         # per parameter loss
         for j in range(7):
