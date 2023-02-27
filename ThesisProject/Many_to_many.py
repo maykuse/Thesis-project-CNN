@@ -25,7 +25,7 @@ parser.add_argument(
     type=int,
     default=10,
     metavar="N",
-    help="input batch size for training (default:10)")
+    help="input batch size for testing (default:10)")
 parser.add_argument(
     "--epochs", type=int, default=60, metavar="N", help="number of epochs to train (default:50)"
 )
