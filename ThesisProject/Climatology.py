@@ -83,13 +83,6 @@ if(create_climatology_data):
 
 device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
 
-norm = transforms.Normalize((2.78415200e+02, -1.00402647e-01,  2.20140679e-01,  5.40906312e+04,
-                                2.74440506e+02,  6.76697789e-01,  9.80986749e-05,  3.37078289e-01,
-                                3.79497583e+02,  6.79204298e-01),
-                            (2.11294838e+01, 5.57168569e+00, 4.77363485e+00, 3.35202722e+03,
-                            1.55503555e+01, 3.62274453e-01, 3.57928990e-04, 4.59003773e-01,
-                            8.59872249e+02, 1.16888408e+00))
-
 # This is the mean and std of the resampled training data (not the climatology prediction)
 norm_clm = transforms.Normalize((2.78415200e+02, -1.00402647e-01,  2.20140679e-01,  5.40906312e+04,
                                 2.74440506e+02,  6.76697789e-01,  9.80986749e-05),
@@ -181,7 +174,7 @@ param_loss = [0 for i in range(7)]
 
 week_whole = False
 week_param = False
-month_whole = True
+month_whole = False
 month_param = False
 counter = 0
 

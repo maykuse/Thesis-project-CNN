@@ -1,54 +1,31 @@
-import numpy
 import numpy as np
 import matplotlib.pyplot as plt
 import seaborn as sns
 import networkx as nx
 import string
 import scipy
-import argparse
-from argparse import RawTextHelpFormatter
-import Many_to_one
-
-parser = argparse.ArgumentParser(description="Draw figures using available models", formatter_class=RawTextHelpFormatter)
-parser.add_argument(
-    "--figure-opts",
-    type=int,
-    default=0,
-    choices=range(0,8),
-    metavar="[0,7]",
-    help="Choose what type of figure you want to draw:\n"
-         "0) Many-to-one vs. Dropout vs. Climatology Reconstruction Losses \n"
-         "1) Percentage Loss Decrease Heatmap\n"
-         "2) Gradient Bar Chart for p_all setting"
-         "3) Gradient Bar Chart for p_x, p_other setting\n"
-         "4) Gradient World Maps \n"
-         "5) LRP World Maps \n"
-         "6) Dendrograms \n"
-         "7) Distance Cluster\n"
-)
-
-args = parser.parse_args()
+from textwrap import wrap
 
 
 params_C = ["T2M", "U10", "V10", 'Z', 'T', "TCC", "TP"]
+params = ["t2m", "u10", "v10", 'z', 't', "tcc", "tp"]
+
+all_labels = [["u10", "v10", 'z', 't', "tcc", "tp"], ["t2m", "v10", 'z', 't', "tcc", "tp"],
+              ["t2m", "u10", 'z', 't', "tcc", "tp"], ["t2m", "u10", "v10", 't', "tcc", "tp"],
+              ["t2m", "u10", "v10", 'z', "tcc", "tp"], ["t2m", "u10", "v10", 'z', 't', "tp"],
+              ["t2m", "u10", "v10", 'z', 't', "tcc"]]
 
 
-if args.figure_opts == 0:
-    Many_to_one.args.result_type = 0
-    no_drop = Many_to_one.val_or_test()
-
-    Many_to_one.args.result_type = 0
-    with_drop = Many_to_one.val_or_test()
-
+def Loss_Comparison(results):
     clm = [0.1061, 0.5411, 0.6394, 0.2035, 0.1897, 0.6936, 0.3540]
 
     x = np.arange(7)
-    width = 0.3
+    width = 0.2
     fig, ax = plt.subplots()
 
-    rects0 = ax.bar(x - width/3, no_drop, width, label="M-2-O Loss with no dropout")
-    rects1 = ax.bar(x, with_drop, width, label="M-2-O Loss with dropout")
-    rects2 = ax.bar(x + width/3, no_drop, width, label="Climatology Loss")
+    rects0 = ax.bar(x - width, results[0], width, label="Many-to-one Loss with no dropout")
+    rects1 = ax.bar(x, results[1], width, label="Many-to-one Loss with dropout")
+    rects2 = ax.bar(x + width, clm, width, label="Climatology Loss")
 
     ax.set_ylabel('Average Loss')
     ax.set_xticks(x, params_C)
@@ -59,84 +36,159 @@ if args.figure_opts == 0:
     plt.show()
     fig.savefig('/home/ge75tis/Desktop/a')
 
-if args.figure_opts == 1:
+
+#     a = numpy.array(grad_heatmap_new)
+#     row_sums = a.sum(axis=1)
+#     new_matrix = a / row_sums[:, numpy.newaxis]
+#     # print(new_matrix)
+
+#     # plt.title('Gradient of prediction loss wrt. input parameters when p_all ~ 1')
+#     # plt.xlabel('input parameters (gradient)')
+#     # plt.ylabel('predicted parameter')
+#     # plt.title('Gradient of prediction loss with respect to p of each parameter when p_all ~ 1', loc='center', wrap=True)
+#     # plt.xlabel('input parameters')
+#     # plt.ylabel('predicted parameter')
 
 
-if args.figure_opts == 2:
-    Many_to_one.args.result_type = 2
-    result = Many_to_one.val_or_test()
+def Similarity_Graphs(results, fig_type):
+    fig1 = plt.figure(figsize=(12, 12))
 
+    heatmap = np.empty([7,7])
+    heat_norm = plt.Normalize(0, 1)
+
+    for i in range(7):
+        count = 0
+        for j in range(7):
+            if(i == j):
+                heatmap[i][j] = 1
+            else:
+                if(fig_type == 0):
+                    heatmap[i][j] = (results[0][i][6] - results[0][i][count]) / results[0][i][6]
+                else:
+                    heatmap[i][j] = results[i][count]
+                count += 1
+
+    # a = numpy.array(heatmap)
+    # row_sums = a.sum(axis=1)
+    # new_matrix = a / row_sums[:, numpy.newaxis]
+
+    dist_matr = np.empty([7, 7])
+
+    for i in range(7):
+        for j in range(7):
+            if (i == j):
+                dist_matr[i][j] = 0
+            else:
+                dist_matr[i][j] = (1 / (heatmap[i][j] + heatmap[j][i])) * 10000
+
+
+
+
+    if(fig_type == 0):
+        sns.set(font_scale=1.2)
+        fig1 = sns.clustermap(heatmap, cbar_kws={"shrink": 0.5}, linewidths=1, linecolor='white', row_linkage=scipy.cluster.hierarchy.linkage(scipy.spatial.distance.squareform(dist_matr), "average"),
+            col_linkage=scipy.cluster.hierarchy.linkage(scipy.spatial.distance.squareform(dist_matr), "average"), cmap="magma",  annot=True, xticklabels=params, yticklabels=params, norm=heat_norm, fmt='.3g')
+        fig1.ax_heatmap.set_xticklabels(fig1.ax_heatmap.get_xmajorticklabels(), fontsize=22)
+        fig1.ax_heatmap.set_yticklabels(fig1.ax_heatmap.get_ymajorticklabels(), fontsize=22)
+
+        # # plt.title('Percentage Decrease (compared to p_all ~ 1) in prediction loss when p_x ~ 0, p_others ~ 1')
+        # plt.xlabel('input parameter x')
+        # plt.ylabel('predicted parameter')
+        plt.tight_layout()
+        fig1.savefig('/home/ge75tis/Desktop/Heatmap')
+
+
+    dist = scipy.spatial.distance.squareform(dist_matr)
+    links = scipy.cluster.hierarchy.linkage(dist, "average")
+    scipy.cluster.hierarchy.dendrogram(links, labels=params_C)
+
+    if(fig_type == 0):
+        plt.title("Hierarchical Clustering (Loss based avg. distance)")
+    else:
+        plt.title("Hierarchical Clustering (Gradient based avg. distance)")
+    plt.ylabel("distance")
+    plt.savefig('/home/ge75tis/Desktop/dendrogram')
+
+
+    G = nx.from_numpy_matrix(dist_matr)
+    G = nx.relabel_nodes(G, dict(zip(range(len(G.nodes())), string.ascii_uppercase)))
+    G = nx.drawing.nx_agraph.to_agraph(G)
+    G.node_attr.update(color="red", style="filled")
+    G.edge_attr.update(color="white", width="0.0")
+    G.draw('/home/ge75tis/Desktop/distance', format='png', prog='neato')
+
+
+
+def Grad_Bar_Chart(results):
     for k in range(7):
-        x = np.arange(len(Many_to_one.all_labels[k]))
+        x = np.arange(len(all_labels[k]))
         width = 0.3
         fig2, ax = plt.subplots()
+
+        rects0 = ax.bar(x, results[k], width)
 
         ax.set_ylabel('Avg. Gradient')
         ax.set_xlabel('Input parameters')
         ax.set_title('Gradient of {par} Loss w.r.t. p of each input parameter when p_all ~ 1'.format(par=params_C[k]))
-        ax.set_xticks(x, Many_to_one.all_labels[k])
+        ax.set_xticks(x, all_labels[k])
         ax.legend()
         fig2.tight_layout()
-        plt.show()
-        fig2.savefig('/home/ge75tis/Desktop/{param}_dropout_bar_chart'.format(param=params_C[k]))
+        fig2.savefig('/home/ge75tis/Desktop/{param}_grad_bar_chart'.format(param=params_C[k]))
 
 
-if args.figure_opts == 3:
+def Grad_Bar_Chart_Multi(results):
+    for k in range(7):
+        for l in range(6):
+            x = np.arange(len(all_labels[k]))
+            width = 0.3
+            fig2, ax = plt.subplots()
 
-if args.figure_opts == 4:
+            rects0 = ax.bar(x, results[k], width)
 
-if args.figure_opts == 5:
-
-if args.figure_opts == 6:
-
-if args.figure_opts == 7:
-
-
-
-
-
-
-
-
-
-
+            ax.set_ylabel('Avg. Gradient')
+            ax.set_xlabel('Input parameters')
+            ax.set_title(
+                'Gradient of {par} Loss w.r.t. p of each input parameter when p_{x} ~ 0 and p_others ~ 1'.format(par=params_C[k], x=all_labels[k][l]))
+            ax.set_xticks(x, all_labels[k])
+            ax.legend()
+            fig2.tight_layout()
+            fig2.savefig('/home/ge75tis/Desktop/{param}_grad_bar_chart_p_{par}0'.format(param=params_C[k], par=all_labels[k][l]))
 
 
+def Grad_World_Maps(results):
+    maxes = [0]
+    for k in range(7):
+        for l in range(6):
+            fig = plt.figure(figsize=(10, 10))
+            sns.set(font_scale=2.2)
+            sns.heatmap(results[k][l], cmap="RdBu", xticklabels=False, yticklabels=False, center=0.00, vmin=-maxes[k],
+                        vmax=maxes[k], cbar_kws=dict(use_gridspec=False, orientation="horizontal"))
+            plt.title("{param} Prediction model World heatmap of Gradients wrt. p_{par} when p_all ~ 1".format(param=params_C[k], par=all_labels[k][l]))
+            plt.tight_layout()
+            fig.savefig('/home/ge75tis/Desktop/LRP180/{param}_world_heatmap_{par}'.format(param=params_C[k], par=all_labels[k][l]))
+
+
+def LRP_World_Maps(results):
+    maxes = [0]
+    for k in range(7):
+        for l in range(6):
+            fig = plt.figure(figsize=(10, 10))
+            sns.set(font_scale=2.2)
+            sns.heatmap(results[k][l], cmap="RdBu", xticklabels=False, yticklabels=False, center=0.00, vmin=-maxes[k],
+                        vmax=maxes[k], cbar_kws=dict(use_gridspec=False, orientation="horizontal"))
+            plt.title("\n".join(wrap("{param} Prediction Heatmap LRP with respect to input parameter {par}".
+                                     format(param=params_C[k],par=all_labels[k][l]), 35)))
+            plt.tight_layout()
+            fig.savefig('/home/ge75tis/Desktop/LRP180/{param}_world_heatmap_{par}'.format(param=params_C[k], par=all_labels[k][l]))
 
 
 
-
-
-
-#
-#
-#
-#
-#
-#
-#
-#
-#
-#
 # params = ["t2m", "u10", "v10", 'z', 't', "tcc", "tp"]
 # # params_x = ["t2m", "v10", 'z', 't', "tcc", "tp"]
 # params_C = ["T2M", "U10", "V10", 'Z', 'T', "TCC", "TP"]
 #
 # if (draw_world_map):
 #     for l in range(6):
-#         fig = plt.figure(figsize=(10, 10))
-#         sns.set(font_scale=2.2)
-#         sns.heatmap(results[0][l], cmap="RdBu", xticklabels=False, yticklabels=False, center=0.00, vmin=-lrp_max[k],
-#                     vmax=lrp_max[k],
-#                     cbar_kws=dict(use_gridspec=False, orientation="horizontal"))
-#         plt.title("\n".join(wrap(
-#             "{param} Prediction Heatmap LRP with respect to input parameter {par}".format(param=params_C[k],
-#                                                                                           par=all_labels[k][l]), 35)))
-#         # plt.title("{param} Prediction model World heatmap of Gradients wrt. p_{par} when p_all ~ 1".format(param=params_C[k], par=all_labels[k][l]))
-#         plt.show()
-#         plt.tight_layout()
-#         fig.savefig(
-#             '/home/ge75tis/Desktop/LRP180/{param}_world_heatmap_{par}'.format(param=params_C[k], par=all_labels[k][l]))
 #
 # if (draw_grad_bar):
 #     x = np.arange(len(all_labels[k]))
@@ -275,122 +327,11 @@ if args.figure_opts == 7:
 #
 # distance_cluster = False
 # if(distance_cluster):
-#     comb_heatmap_percentage = [[0, 0.2372, 0.3441, 0.5068, 0.5326, 0.1715, 0.0742], [0.0130, 0, 0.6495, 0.4286, 0.1589, 0.1426, 0.2390],
-#                                    [0.0774, 0.7039, 0, 0.4368, 0.1069, 0.1861, 0.1784], [0.1943, 0.3980, 0.2435, 0, 0.5723, 0.0394, 0.0959],
-#                                    [0.7112, 0.0709, 0.1207, 0.5341, 0, 0.0857, 0.0063], [0.0351, 0.1879, 0.3602, 0.1391, 0.2310, 0, 0.1881],
-#                                    [0.0210, 0.4211, 0.4670, 0.0889, 0.0503, 0.2109, 0]]
-#
-#     grad_heatmap = [[0, 37.1591, 53.27599, 23.071262, 369.16653, 10, 10],
-#                     [18.599178, 0, 506.08084, 239.3966, 252.6608, 99.09486, 122.54916],
-#                     [89.44, 419.50064, 0, 200.04277, 229.186, 160.98209, 173.02988],
-#                     [69.64928, 222.90337, 303.3208, 0, 192.48601, 38.59495, 34.078014],
-#                     [243.56503, 70.133736, 118.08318, 162.23822, 0, 48.33932, 16.240177],
-#                     [20.356546, 117.38441, 187.36948, 116.907524, 100.78966, 0, 154.77966],
-#                     [1, 10.919211, 24.24271, 3.0331063, 1, 16.8139, 0]]
-#     # how to deal with the really low gradients of tcc and tp? the distances become out of scale compared to others
-#
-#     dist_matr = np.empty([7,7])
-#     dist_matr = scipy.spatial.distance.squareform(scipy.spatial.distance.pdist(comb_heatmap_percentage))
-#     # for i in range(7):
-#     #     for j in range(7):
-#     #         if(i == j):
-#     #             dist_matr[i][j] = 0
-#     #         else:
-#     #             dist_matr[i][j] *= (1 / (grad_heatmap[i][j] + grad_heatmap[j][i]) ) * 1000
-#
-#     print(dist_matr)
-#
-#     dt = [('len', float)]
-#     dist_matr = dist_matr.view(dt)
-#
-#     G = nx.from_numpy_matrix(dist_matr)
-#     G = nx.relabel_nodes(G, dict(zip(range(len(G.nodes())),string.ascii_uppercase)))
-#     G = nx.drawing.nx_agraph.to_agraph(G)
-#     G.node_attr.update(color="red", style="filled")
-#     G.edge_attr.update(color="white", width="0.0")
-#     fig = plt.figure()
-#     G.draw('/home/ge75tis/Desktop/Thesis-project-CNN/Graphs/a_cluster2.png', format='png', prog='neato')
-#     # plt.savefig('/home/ge75tis/Desktop/Thesis-project-CNN/Graphs/cluster2.png', format="PNG")
 #
 #
-# heatmap = False
-# if(heatmap):
-#     new_param_order = ['t', 't2m', 'z', 'v10', 'u10', 'tp', 'tcc']
-#     fig1 = plt.figure(figsize=(12,12))
-#
-#     comb_heatmap_percentage = [[1, 0.2372, 0.3441, 0.5068, 0.5326, 0.1715, 0.0742], [0.0130, 1, 0.6495, 0.4286, 0.1589, 0.1426, 0.2390],
-#                                [0.0774, 0.7039, 1, 0.4368, 0.1069, 0.1861, 0.1784], [0.1943, 0.3980, 0.2435, 1, 0.5723, 0.0394, 0.0959],
-#                                [0.7112, 0.0709, 0.1207, 0.5341, 1, 0.0857, 0.0063], [0.0351, 0.1879, 0.3602, 0.1391, 0.2310, 1, 0.1881],
-#                                [0.0210, 0.4211, 0.4670, 0.0889, 0.0503, 0.2109, 1]]
-#     comb_heatmap = [[0, 4.30, 3.65, 2.77, 2.60, 4.65, 5.20], [11.23, 0, 3.94, 6.46, 9.55, 9.75, 8.53],
-#                     [16.08, 5.06, 0, 9.83, 15.68, 14.13, 14.36],
-#                     [10.56, 7.81, 9.87, 0, 5.57, 12.53, 11.78], [2.75, 8.91, 8.42, 4.52, 0, 8.77, 9.50],
-#                     [4.77, 4.06, 3.15, 4.23, 3.77, 0, 3.98], [1.09, 0.65, 0.59, 1.00, 1.05, 0.87, 0]]
-#     #, -18.684557, -9.69056 ]
-#     grad_heatmap = [[0, 37.1591, 53.27599, 23.071262, 369.16653, -18.684557, -9.69056], [18.599178, 0, 506.08084, 239.3966, 252.6608, 99.09486, 122.54916 ],
-#                     [89.44, 419.50064, 0, 200.04277, 229.186, 160.98209, 173.02988], [69.64928, 222.90337, 303.3208, 0, 192.48601, 38.59495, 34.078014],
-#                     [243.56503, 70.133736, 118.08318, 162.23822, 0, 48.33932, 16.240177], [20.356546, 117.38441, 187.36948, 116.907524, 100.78966, 0, 154.77966],
-#                     [0.11764815, 10.919211, 24.24271, 3.0331063, 0.18807021, 16.8139, 0]]
-#
-#     grad_heatmap2 = [[0, 37.1591, 53.27599, 23.071262, 369.16653, 1, 1], [18.599178, 0, 506.08084, 239.3966, 252.6608, 99.09486, 122.54916 ],
-#                     [89.44, 419.50064, 0, 200.04277, 229.186, 160.98209, 173.02988], [69.64928, 222.90337, 303.3208, 0, 192.48601, 38.59495, 34.078014],
-#                     [243.56503, 70.133736, 118.08318, 162.23822, 0, 48.33932, 16.240177], [20.356546, 117.38441, 187.36948, 116.907524, 100.78966, 0, 154.77966],
-#                     [0.11764815, 10.919211, 24.24271, 3.0331063, 0.18807021, 16.8139, 0]]
-#
-#     grad_heatmap_new = [[0, 0.36795822, 0.43980718, 0.61094254, 0.66767836, 0.25484586, 0.15239869], [0.09645872, 0, 3.8159883,  1.0963811, 1.3558255,  0.1850218, 0.49045599],
-#                         [0.97554576, 6.065276,  0, 2.6048186,  1.7355888,  1.7813991,  0.6647806], [1.5544034, 3.0572004, 3.1909885, 0, 4.1371703, 0.4340603, 0.7173816],
-#                         [4.782727,   0.28787705, 0.8700743,  2.5207248, 0, 0.62985164, 0.08375259], [0.1033018,  0.3755193, 0.7591337,  0.58453566, 0.48831362, 0, 0.65765136],
-#                         [0.00877767, 0.09491006, 0.12384017, 0.04167771,  0.02347502, 0.07231351, 0]]
-#
-#     a = numpy.array(grad_heatmap_new)
-#     row_sums = a.sum(axis=1)
-#     new_matrix = a / row_sums[:, numpy.newaxis]
-#     # print(new_matrix)
-#
-#     # grad_heatmap_new =
-#
-#     heat_norm = plt.Normalize(0,1)
-#     dist_matr = np.empty([7, 7])
-#     for i in range(7):
-#         for j in range(7):
-#             if (i == j):
-#                 dist_matr[i][j] = 0
-#             else:
-#                 dist_matr[i][j] = (1 / (new_matrix[i][j] + new_matrix[j][i]))
-#
-#     # print(dist_matr)
-#
-#     sns.set(font_scale=1.2)
-#     # sns.heatmap(grad_heatmap, linewidths=.5, cmap="magma", annot=True, xticklabels=params_C, yticklabels=params_C, norm=LogNorm(), fmt='.3g')
-#     # fig1 = sns.clustermap(comb_heatmap_percentage, cbar_kws={"shrink": 0.5}, method='average', linewidths=1, linecolor='white', row_linkage=scipy.cluster.hierarchy.linkage(scipy.spatial.distance.squareform(dist_matr)), col_linkage=scipy.cluster.hierarchy.linkage(scipy.spatial.distance.squareform(dist_matr)), cmap="magma",  annot=True, xticklabels=params, yticklabels=params, norm=heat_norm, fmt='.3g')
-#     # fig1.ax_heatmap.set_xticklabels(fig1.ax_heatmap.get_xmajorticklabels(), fontsize = 22)
-#     # fig1.ax_heatmap.set_yticklabels(fig1.ax_heatmap.get_ymajorticklabels(), fontsize = 22)
-#
-#     # Why does the clustermap change tcc and tp's position, even though they should lie at the end
-#     # plt.title('Gradient of prediction loss wrt. input parameters when p_all ~ 1')
-#     # plt.xlabel('input parameters (gradient)')
-#     # plt.ylabel('predicted parameter')
-#     # plt.title('Gradient of prediction loss with respect to p of each parameter when p_all ~ 1', loc='center', wrap=True)
-#     # plt.xlabel('input parameters')
-#     # plt.ylabel('predicted parameter')
-#     fig = plt.figure()
-#     # plt.tight_layout()
-#     # plt.show()
-#     fig1.savefig('/home/ge75tis/Desktop/Thesis-project-CNN/b')
 #
 #
-#     dist = scipy.spatial.distance.squareform(dist_matr)
-#     links = scipy.cluster.hierarchy.linkage(dist, "average")
-#     scipy.cluster.hierarchy.dendrogram(links, labels=params_C)
-#
-#     plt.title("Hierarchical Clustering of Parameters using Gradients (avg.)")
-#     plt.ylabel("distance")
-#     # plt.show()
-#
-#     # plt.savefig('/home/ge75tis/Desktop/newgrad')
-#
-# # row_linkage=scipy.cluster.hierarchy.linkage(scipy.spatial.distance.squareform(dist_matr))
-#
+
 #
 #
 #
