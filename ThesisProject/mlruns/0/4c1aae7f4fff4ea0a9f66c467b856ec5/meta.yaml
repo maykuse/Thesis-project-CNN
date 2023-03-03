@@ -1,0 +1,15 @@
+artifact_uri: file:///home/ge75tis/Desktop/Thesis-project-CNN/ThesisProject/mlruns/0/4c1aae7f4fff4ea0a9f66c467b856ec5/artifacts
+end_time: 1677679416425
+entry_point_name: ''
+experiment_id: '0'
+lifecycle_stage: active
+run_id: 4c1aae7f4fff4ea0a9f66c467b856ec5
+run_name: persistent-stag-869
+run_uuid: 4c1aae7f4fff4ea0a9f66c467b856ec5
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1677679161534
+status: 3
+tags: []
+user_id: ge75tis

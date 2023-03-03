@@ -1,0 +1,15 @@
+artifact_uri: file:///home/ge75tis/Desktop/Thesis-project-CNN/ThesisProject/mlruns/0/bef25217544840988382fd3d61c0f30a/artifacts
+end_time: 1676294181283
+entry_point_name: ''
+experiment_id: '0'
+lifecycle_stage: active
+run_id: bef25217544840988382fd3d61c0f30a
+run_name: amazing-moose-71
+run_uuid: bef25217544840988382fd3d61c0f30a
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1676294181138
+status: 4
+tags: []
+user_id: ge75tis

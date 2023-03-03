@@ -1,0 +1,15 @@
+artifact_uri: file:///home/ge75tis/Desktop/Thesis-project-CNN/ThesisProject/mlruns/0/bb48bca95171439592011e1a3ee35c3c/artifacts
+end_time: 1676289555260
+entry_point_name: ''
+experiment_id: '0'
+lifecycle_stage: active
+run_id: bb48bca95171439592011e1a3ee35c3c
+run_name: adventurous-hare-868
+run_uuid: bb48bca95171439592011e1a3ee35c3c
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1676289490269
+status: 3
+tags: []
+user_id: ge75tis

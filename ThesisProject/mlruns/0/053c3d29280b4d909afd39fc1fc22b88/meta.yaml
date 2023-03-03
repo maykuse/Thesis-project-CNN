@@ -1,0 +1,15 @@
+artifact_uri: file:///home/ge75tis/Desktop/Thesis-project-CNN/ThesisProject/mlruns/0/053c3d29280b4d909afd39fc1fc22b88/artifacts
+end_time: 1676294467072
+entry_point_name: ''
+experiment_id: '0'
+lifecycle_stage: active
+run_id: 053c3d29280b4d909afd39fc1fc22b88
+run_name: able-frog-347
+run_uuid: 053c3d29280b4d909afd39fc1fc22b88
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1676294466940
+status: 4
+tags: []
+user_id: ge75tis

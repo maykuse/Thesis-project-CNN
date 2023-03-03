@@ -1,0 +1,15 @@
+artifact_uri: file:///home/ge75tis/Desktop/Thesis-project-CNN/ThesisProject/mlruns/0/8862bff17e9e442c878714c232711665/artifacts
+end_time: 1676290918547
+entry_point_name: ''
+experiment_id: '0'
+lifecycle_stage: active
+run_id: 8862bff17e9e442c878714c232711665
+run_name: rogue-chimp-739
+run_uuid: 8862bff17e9e442c878714c232711665
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1676290852812
+status: 3
+tags: []
+user_id: ge75tis

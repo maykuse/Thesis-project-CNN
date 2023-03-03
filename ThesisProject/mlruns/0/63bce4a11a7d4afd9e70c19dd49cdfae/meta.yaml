@@ -1,0 +1,15 @@
+artifact_uri: file:///home/ge75tis/Desktop/Thesis-project-CNN/ThesisProject/mlruns/0/63bce4a11a7d4afd9e70c19dd49cdfae/artifacts
+end_time: 1676312320358
+entry_point_name: ''
+experiment_id: '0'
+lifecycle_stage: active
+run_id: 63bce4a11a7d4afd9e70c19dd49cdfae
+run_name: gentle-hawk-546
+run_uuid: 63bce4a11a7d4afd9e70c19dd49cdfae
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1676312307752
+status: 3
+tags: []
+user_id: ge75tis

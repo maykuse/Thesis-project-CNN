@@ -1,0 +1,15 @@
+artifact_uri: file:///home/ge75tis/Desktop/Thesis-project-CNN/ThesisProject/mlruns/0/e563898e74054305a36923391cac4c72/artifacts
+end_time: 1676309243087
+entry_point_name: ''
+experiment_id: '0'
+lifecycle_stage: active
+run_id: e563898e74054305a36923391cac4c72
+run_name: crawling-chimp-52
+run_uuid: e563898e74054305a36923391cac4c72
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1676309241267
+status: 4
+tags: []
+user_id: ge75tis

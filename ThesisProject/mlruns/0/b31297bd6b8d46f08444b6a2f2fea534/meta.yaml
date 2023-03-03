@@ -1,0 +1,15 @@
+artifact_uri: file:///home/ge75tis/Desktop/Thesis-project-CNN/ThesisProject/mlruns/0/b31297bd6b8d46f08444b6a2f2fea534/artifacts
+end_time: 1676294268399
+entry_point_name: ''
+experiment_id: '0'
+lifecycle_stage: active
+run_id: b31297bd6b8d46f08444b6a2f2fea534
+run_name: brawny-ant-215
+run_uuid: b31297bd6b8d46f08444b6a2f2fea534
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1676294266577
+status: 4
+tags: []
+user_id: ge75tis

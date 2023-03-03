@@ -1,0 +1,15 @@
+artifact_uri: file:///home/ge75tis/Desktop/Thesis-project-CNN/ThesisProject/mlruns/0/7002620a49034f93bb8484fbfed0b8d8/artifacts
+end_time: 1677676640080
+entry_point_name: ''
+experiment_id: '0'
+lifecycle_stage: active
+run_id: 7002620a49034f93bb8484fbfed0b8d8
+run_name: flawless-panda-272
+run_uuid: 7002620a49034f93bb8484fbfed0b8d8
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1677676523622
+status: 4
+tags: []
+user_id: ge75tis

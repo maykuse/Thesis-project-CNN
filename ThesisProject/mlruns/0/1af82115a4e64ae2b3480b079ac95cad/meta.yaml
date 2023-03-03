@@ -1,0 +1,15 @@
+artifact_uri: file:///home/ge75tis/Desktop/Thesis-project-CNN/ThesisProject/mlruns/0/1af82115a4e64ae2b3480b079ac95cad/artifacts
+end_time: 1676311731006
+entry_point_name: ''
+experiment_id: '0'
+lifecycle_stage: active
+run_id: 1af82115a4e64ae2b3480b079ac95cad
+run_name: upset-rook-769
+run_uuid: 1af82115a4e64ae2b3480b079ac95cad
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1676311721206
+status: 3
+tags: []
+user_id: ge75tis

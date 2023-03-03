@@ -1,0 +1,15 @@
+artifact_uri: file:///home/ge75tis/Desktop/Thesis-project-CNN/ThesisProject/mlruns/0/aab1a3b42e1e49819d04b76bf307fbfc/artifacts
+end_time: 1676311503567
+entry_point_name: ''
+experiment_id: '0'
+lifecycle_stage: active
+run_id: aab1a3b42e1e49819d04b76bf307fbfc
+run_name: sassy-hare-779
+run_uuid: aab1a3b42e1e49819d04b76bf307fbfc
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1676311384198
+status: 3
+tags: []
+user_id: ge75tis

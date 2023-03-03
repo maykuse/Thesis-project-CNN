@@ -1,0 +1,15 @@
+artifact_uri: file:///home/ge75tis/Desktop/Thesis-project-CNN/ThesisProject/mlruns/0/a775f494d60e43a3820f82b71f2f527c/artifacts
+end_time: 1676309896619
+entry_point_name: ''
+experiment_id: '0'
+lifecycle_stage: active
+run_id: a775f494d60e43a3820f82b71f2f527c
+run_name: righteous-auk-198
+run_uuid: a775f494d60e43a3820f82b71f2f527c
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1676309894675
+status: 4
+tags: []
+user_id: ge75tis

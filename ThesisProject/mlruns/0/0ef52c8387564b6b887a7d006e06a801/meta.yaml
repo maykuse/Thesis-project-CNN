@@ -1,0 +1,15 @@
+artifact_uri: file:///home/ge75tis/Desktop/Thesis-project-CNN/ThesisProject/mlruns/0/0ef52c8387564b6b887a7d006e06a801/artifacts
+end_time: 1676310343263
+entry_point_name: ''
+experiment_id: '0'
+lifecycle_stage: active
+run_id: 0ef52c8387564b6b887a7d006e06a801
+run_name: capricious-shrew-37
+run_uuid: 0ef52c8387564b6b887a7d006e06a801
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1676310325571
+status: 4
+tags: []
+user_id: ge75tis

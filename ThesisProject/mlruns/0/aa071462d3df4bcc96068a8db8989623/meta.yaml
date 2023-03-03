@@ -1,0 +1,15 @@
+artifact_uri: file:///home/ge75tis/Desktop/Thesis-project-CNN/ThesisProject/mlruns/0/aa071462d3df4bcc96068a8db8989623/artifacts
+end_time: 1676289274373
+entry_point_name: ''
+experiment_id: '0'
+lifecycle_stage: active
+run_id: aa071462d3df4bcc96068a8db8989623
+run_name: mercurial-hog-243
+run_uuid: aa071462d3df4bcc96068a8db8989623
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1676289253365
+status: 4
+tags: []
+user_id: ge75tis

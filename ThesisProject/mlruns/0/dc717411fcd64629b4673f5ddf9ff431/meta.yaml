@@ -1,0 +1,15 @@
+artifact_uri: file:///home/ge75tis/Desktop/Thesis-project-CNN/ThesisProject/mlruns/0/dc717411fcd64629b4673f5ddf9ff431/artifacts
+end_time: 1677667431146
+entry_point_name: ''
+experiment_id: '0'
+lifecycle_stage: active
+run_id: dc717411fcd64629b4673f5ddf9ff431
+run_name: aged-grouse-903
+run_uuid: dc717411fcd64629b4673f5ddf9ff431
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1677667337477
+status: 3
+tags: []
+user_id: ge75tis

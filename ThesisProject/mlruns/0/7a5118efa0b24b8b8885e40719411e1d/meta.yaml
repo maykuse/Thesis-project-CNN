@@ -1,0 +1,15 @@
+artifact_uri: file:///home/ge75tis/Desktop/Thesis-project-CNN/ThesisProject/mlruns/0/7a5118efa0b24b8b8885e40719411e1d/artifacts
+end_time: 1677514449380
+entry_point_name: ''
+experiment_id: '0'
+lifecycle_stage: active
+run_id: 7a5118efa0b24b8b8885e40719411e1d
+run_name: nebulous-gnat-817
+run_uuid: 7a5118efa0b24b8b8885e40719411e1d
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1677514171658
+status: 3
+tags: []
+user_id: ge75tis

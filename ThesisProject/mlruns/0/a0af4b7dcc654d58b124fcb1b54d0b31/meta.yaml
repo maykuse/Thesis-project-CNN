@@ -1,0 +1,15 @@
+artifact_uri: file:///home/ge75tis/Desktop/Thesis-project-CNN/ThesisProject/mlruns/0/a0af4b7dcc654d58b124fcb1b54d0b31/artifacts
+end_time: 1676289121379
+entry_point_name: ''
+experiment_id: '0'
+lifecycle_stage: active
+run_id: a0af4b7dcc654d58b124fcb1b54d0b31
+run_name: charming-worm-813
+run_uuid: a0af4b7dcc654d58b124fcb1b54d0b31
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1676289111571
+status: 4
+tags: []
+user_id: ge75tis

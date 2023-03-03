@@ -1,0 +1,15 @@
+artifact_uri: file:///home/ge75tis/Desktop/Thesis-project-CNN/ThesisProject/mlruns/0/34f077e2e3f2419f8b7019cf3bf625e8/artifacts
+end_time: 1677678617297
+entry_point_name: ''
+experiment_id: '0'
+lifecycle_stage: active
+run_id: 34f077e2e3f2419f8b7019cf3bf625e8
+run_name: calm-koi-570
+run_uuid: 34f077e2e3f2419f8b7019cf3bf625e8
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1677678484915
+status: 4
+tags: []
+user_id: ge75tis

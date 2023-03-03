@@ -1,0 +1,15 @@
+artifact_uri: file:///home/ge75tis/Desktop/Thesis-project-CNN/ThesisProject/mlruns/0/36f526e066864767a049ba8c1164eecb/artifacts
+end_time: 1677666762747
+entry_point_name: ''
+experiment_id: '0'
+lifecycle_stage: active
+run_id: 36f526e066864767a049ba8c1164eecb
+run_name: agreeable-flea-436
+run_uuid: 36f526e066864767a049ba8c1164eecb
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1677666667147
+status: 3
+tags: []
+user_id: ge75tis

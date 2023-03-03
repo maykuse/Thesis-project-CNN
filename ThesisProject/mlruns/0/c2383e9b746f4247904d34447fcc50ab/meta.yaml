@@ -1,0 +1,15 @@
+artifact_uri: file:///home/ge75tis/Desktop/Thesis-project-CNN/ThesisProject/mlruns/0/c2383e9b746f4247904d34447fcc50ab/artifacts
+end_time: 1676310820048
+entry_point_name: ''
+experiment_id: '0'
+lifecycle_stage: active
+run_id: c2383e9b746f4247904d34447fcc50ab
+run_name: treasured-rat-514
+run_uuid: c2383e9b746f4247904d34447fcc50ab
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1676310698513
+status: 3
+tags: []
+user_id: ge75tis

@@ -1,0 +1,15 @@
+artifact_uri: file:///home/ge75tis/Desktop/Thesis-project-CNN/ThesisProject/mlruns/0/e7914cd022664b5b80e8a9eaf283a902/artifacts
+end_time: 1676309957375
+entry_point_name: ''
+experiment_id: '0'
+lifecycle_stage: active
+run_id: e7914cd022664b5b80e8a9eaf283a902
+run_name: delicate-dog-793
+run_uuid: e7914cd022664b5b80e8a9eaf283a902
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1676309932812
+status: 4
+tags: []
+user_id: ge75tis

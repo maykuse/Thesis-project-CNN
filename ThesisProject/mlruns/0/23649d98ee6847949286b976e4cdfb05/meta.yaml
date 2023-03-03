@@ -1,0 +1,15 @@
+artifact_uri: file:///home/ge75tis/Desktop/Thesis-project-CNN/ThesisProject/mlruns/0/23649d98ee6847949286b976e4cdfb05/artifacts
+end_time: 1676309598339
+entry_point_name: ''
+experiment_id: '0'
+lifecycle_stage: active
+run_id: 23649d98ee6847949286b976e4cdfb05
+run_name: abrasive-frog-455
+run_uuid: 23649d98ee6847949286b976e4cdfb05
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1676309596372
+status: 4
+tags: []
+user_id: ge75tis

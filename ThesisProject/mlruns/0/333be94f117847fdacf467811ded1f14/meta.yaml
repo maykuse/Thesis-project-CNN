@@ -1,0 +1,15 @@
+artifact_uri: file:///home/ge75tis/Desktop/Thesis-project-CNN/ThesisProject/mlruns/0/333be94f117847fdacf467811ded1f14/artifacts
+end_time: 1676309443109
+entry_point_name: ''
+experiment_id: '0'
+lifecycle_stage: active
+run_id: 333be94f117847fdacf467811ded1f14
+run_name: victorious-foal-464
+run_uuid: 333be94f117847fdacf467811ded1f14
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1676309441271
+status: 4
+tags: []
+user_id: ge75tis

@@ -1,0 +1,15 @@
+artifact_uri: file:///home/ge75tis/Desktop/Thesis-project-CNN/ThesisProject/mlruns/0/c220cbf0f3574b7db5db3833db9b2d47/artifacts
+end_time: 1676289746574
+entry_point_name: ''
+experiment_id: '0'
+lifecycle_stage: active
+run_id: c220cbf0f3574b7db5db3833db9b2d47
+run_name: resilient-lamb-82
+run_uuid: c220cbf0f3574b7db5db3833db9b2d47
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1676289733561
+status: 4
+tags: []
+user_id: ge75tis

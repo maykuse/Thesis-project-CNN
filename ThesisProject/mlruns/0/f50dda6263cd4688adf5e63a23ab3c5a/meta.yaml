@@ -1,0 +1,15 @@
+artifact_uri: file:///home/ge75tis/Desktop/Thesis-project-CNN/ThesisProject/mlruns/0/f50dda6263cd4688adf5e63a23ab3c5a/artifacts
+end_time: 1677491694341
+entry_point_name: ''
+experiment_id: '0'
+lifecycle_stage: active
+run_id: f50dda6263cd4688adf5e63a23ab3c5a
+run_name: rebellious-ox-629
+run_uuid: f50dda6263cd4688adf5e63a23ab3c5a
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1677491692072
+status: 4
+tags: []
+user_id: ge75tis

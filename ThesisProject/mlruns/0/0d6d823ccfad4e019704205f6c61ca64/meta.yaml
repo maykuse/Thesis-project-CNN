@@ -1,0 +1,15 @@
+artifact_uri: file:///home/ge75tis/Desktop/Thesis-project-CNN/ThesisProject/mlruns/0/0d6d823ccfad4e019704205f6c61ca64/artifacts
+end_time: 1676292126638
+entry_point_name: ''
+experiment_id: '0'
+lifecycle_stage: active
+run_id: 0d6d823ccfad4e019704205f6c61ca64
+run_name: valuable-ray-829
+run_uuid: 0d6d823ccfad4e019704205f6c61ca64
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1676292113364
+status: 4
+tags: []
+user_id: ge75tis

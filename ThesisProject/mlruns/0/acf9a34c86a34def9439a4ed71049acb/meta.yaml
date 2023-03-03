@@ -1,0 +1,15 @@
+artifact_uri: file:///home/ge75tis/Desktop/Thesis-project-CNN/ThesisProject/mlruns/0/acf9a34c86a34def9439a4ed71049acb/artifacts
+end_time: 1676310573926
+entry_point_name: ''
+experiment_id: '0'
+lifecycle_stage: active
+run_id: acf9a34c86a34def9439a4ed71049acb
+run_name: dashing-carp-511
+run_uuid: acf9a34c86a34def9439a4ed71049acb
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1676310542627
+status: 4
+tags: []
+user_id: ge75tis

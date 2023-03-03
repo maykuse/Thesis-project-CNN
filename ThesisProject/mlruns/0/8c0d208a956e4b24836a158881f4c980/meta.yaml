@@ -1,0 +1,15 @@
+artifact_uri: file:///home/ge75tis/Desktop/Thesis-project-CNN/ThesisProject/mlruns/0/8c0d208a956e4b24836a158881f4c980/artifacts
+end_time: 1676294246569
+entry_point_name: ''
+experiment_id: '0'
+lifecycle_stage: active
+run_id: 8c0d208a956e4b24836a158881f4c980
+run_name: popular-boar-592
+run_uuid: 8c0d208a956e4b24836a158881f4c980
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1676294246408
+status: 4
+tags: []
+user_id: ge75tis

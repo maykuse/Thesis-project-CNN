@@ -1,0 +1,15 @@
+artifact_uri: file:///home/ge75tis/Desktop/Thesis-project-CNN/ThesisProject/mlruns/0/aec68104566243eaa50e6e21ae4ab77d/artifacts
+end_time: 1677509058249
+entry_point_name: ''
+experiment_id: '0'
+lifecycle_stage: active
+run_id: aec68104566243eaa50e6e21ae4ab77d
+run_name: placid-shark-329
+run_uuid: aec68104566243eaa50e6e21ae4ab77d
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1677508830849
+status: 3
+tags: []
+user_id: ge75tis

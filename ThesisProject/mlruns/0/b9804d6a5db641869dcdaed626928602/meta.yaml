@@ -1,0 +1,15 @@
+artifact_uri: file:///home/ge75tis/Desktop/Thesis-project-CNN/ThesisProject/mlruns/0/b9804d6a5db641869dcdaed626928602/artifacts
+end_time: 1676294741141
+entry_point_name: ''
+experiment_id: '0'
+lifecycle_stage: active
+run_id: b9804d6a5db641869dcdaed626928602
+run_name: brawny-crab-731
+run_uuid: b9804d6a5db641869dcdaed626928602
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1676294726430
+status: 4
+tags: []
+user_id: ge75tis

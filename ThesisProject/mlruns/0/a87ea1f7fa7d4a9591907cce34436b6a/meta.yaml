@@ -1,0 +1,15 @@
+artifact_uri: file:///home/ge75tis/Desktop/Thesis-project-CNN/ThesisProject/mlruns/0/a87ea1f7fa7d4a9591907cce34436b6a/artifacts
+end_time: 1677675776223
+entry_point_name: ''
+experiment_id: '0'
+lifecycle_stage: active
+run_id: a87ea1f7fa7d4a9591907cce34436b6a
+run_name: polite-bat-501
+run_uuid: a87ea1f7fa7d4a9591907cce34436b6a
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1677675667141
+status: 4
+tags: []
+user_id: ge75tis

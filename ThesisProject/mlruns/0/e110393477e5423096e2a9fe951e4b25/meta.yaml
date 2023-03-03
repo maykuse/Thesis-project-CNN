@@ -1,0 +1,15 @@
+artifact_uri: file:///home/ge75tis/Desktop/Thesis-project-CNN/ThesisProject/mlruns/0/e110393477e5423096e2a9fe951e4b25/artifacts
+end_time: 1677670377268
+entry_point_name: ''
+experiment_id: '0'
+lifecycle_stage: active
+run_id: e110393477e5423096e2a9fe951e4b25
+run_name: skillful-ape-537
+run_uuid: e110393477e5423096e2a9fe951e4b25
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1677669957533
+status: 3
+tags: []
+user_id: ge75tis

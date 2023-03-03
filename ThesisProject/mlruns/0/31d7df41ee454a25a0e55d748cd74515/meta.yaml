@@ -1,0 +1,15 @@
+artifact_uri: file:///home/ge75tis/Desktop/Thesis-project-CNN/ThesisProject/mlruns/0/31d7df41ee454a25a0e55d748cd74515/artifacts
+end_time: 1677509960531
+entry_point_name: ''
+experiment_id: '0'
+lifecycle_stage: active
+run_id: 31d7df41ee454a25a0e55d748cd74515
+run_name: industrious-ram-870
+run_uuid: 31d7df41ee454a25a0e55d748cd74515
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1677509729905
+status: 3
+tags: []
+user_id: ge75tis

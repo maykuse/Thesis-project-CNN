@@ -1,0 +1,15 @@
+artifact_uri: file:///home/ge75tis/Desktop/Thesis-project-CNN/ThesisProject/mlruns/0/08938ad1a5ef452395f6b431203ab947/artifacts
+end_time: 1677491512721
+entry_point_name: ''
+experiment_id: '0'
+lifecycle_stage: active
+run_id: 08938ad1a5ef452395f6b431203ab947
+run_name: chill-tern-332
+run_uuid: 08938ad1a5ef452395f6b431203ab947
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1677491499133
+status: 4
+tags: []
+user_id: ge75tis

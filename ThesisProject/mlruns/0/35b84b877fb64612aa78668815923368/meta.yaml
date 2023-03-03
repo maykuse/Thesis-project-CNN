@@ -1,0 +1,15 @@
+artifact_uri: file:///home/ge75tis/Desktop/Thesis-project-CNN/ThesisProject/mlruns/0/35b84b877fb64612aa78668815923368/artifacts
+end_time: 1677498094472
+entry_point_name: ''
+experiment_id: '0'
+lifecycle_stage: active
+run_id: 35b84b877fb64612aa78668815923368
+run_name: burly-fish-760
+run_uuid: 35b84b877fb64612aa78668815923368
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1677498092939
+status: 4
+tags: []
+user_id: ge75tis

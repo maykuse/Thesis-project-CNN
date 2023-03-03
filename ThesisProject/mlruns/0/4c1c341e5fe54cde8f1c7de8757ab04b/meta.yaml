@@ -1,0 +1,15 @@
+artifact_uri: file:///home/ge75tis/Desktop/Thesis-project-CNN/ThesisProject/mlruns/0/4c1c341e5fe54cde8f1c7de8757ab04b/artifacts
+end_time: 1677682407516
+entry_point_name: ''
+experiment_id: '0'
+lifecycle_stage: active
+run_id: 4c1c341e5fe54cde8f1c7de8757ab04b
+run_name: gregarious-ant-888
+run_uuid: 4c1c341e5fe54cde8f1c7de8757ab04b
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1677682239426
+status: 4
+tags: []
+user_id: ge75tis

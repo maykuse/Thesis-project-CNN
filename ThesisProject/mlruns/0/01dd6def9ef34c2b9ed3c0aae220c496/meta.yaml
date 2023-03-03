@@ -1,0 +1,15 @@
+artifact_uri: file:///home/ge75tis/Desktop/Thesis-project-CNN/ThesisProject/mlruns/0/01dd6def9ef34c2b9ed3c0aae220c496/artifacts
+end_time: 1677515570686
+entry_point_name: ''
+experiment_id: '0'
+lifecycle_stage: active
+run_id: 01dd6def9ef34c2b9ed3c0aae220c496
+run_name: bustling-pig-631
+run_uuid: 01dd6def9ef34c2b9ed3c0aae220c496
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1677515300592
+status: 3
+tags: []
+user_id: ge75tis

@@ -1,0 +1,15 @@
+artifact_uri: file:///home/ge75tis/Desktop/Thesis-project-CNN/ThesisProject/mlruns/0/0faac4739b1e4a9185b2a4e551b5d3f1/artifacts
+end_time: 1677491601338
+entry_point_name: ''
+experiment_id: '0'
+lifecycle_stage: active
+run_id: 0faac4739b1e4a9185b2a4e551b5d3f1
+run_name: charming-wolf-351
+run_uuid: 0faac4739b1e4a9185b2a4e551b5d3f1
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1677491601304
+status: 4
+tags: []
+user_id: ge75tis

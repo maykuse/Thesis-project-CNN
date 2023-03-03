@@ -1,0 +1,15 @@
+artifact_uri: file:///home/ge75tis/Desktop/Thesis-project-CNN/ThesisProject/mlruns/0/f883230ed70e4c5d8f4bb8315706702e/artifacts
+end_time: 1677510449902
+entry_point_name: ''
+experiment_id: '0'
+lifecycle_stage: active
+run_id: f883230ed70e4c5d8f4bb8315706702e
+run_name: burly-seal-994
+run_uuid: f883230ed70e4c5d8f4bb8315706702e
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1677510424784
+status: 4
+tags: []
+user_id: ge75tis

@@ -1,0 +1,15 @@
+artifact_uri: file:///home/ge75tis/Desktop/Thesis-project-CNN/ThesisProject/mlruns/0/cdfc9399f31040559acc0ef76db341cf/artifacts
+end_time: 1677670695287
+entry_point_name: ''
+experiment_id: '0'
+lifecycle_stage: active
+run_id: cdfc9399f31040559acc0ef76db341cf
+run_name: luxuriant-stork-620
+run_uuid: cdfc9399f31040559acc0ef76db341cf
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1677670668336
+status: 4
+tags: []
+user_id: ge75tis

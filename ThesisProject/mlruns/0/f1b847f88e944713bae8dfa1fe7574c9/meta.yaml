@@ -1,0 +1,15 @@
+artifact_uri: file:///home/ge75tis/Desktop/Thesis-project-CNN/ThesisProject/mlruns/0/f1b847f88e944713bae8dfa1fe7574c9/artifacts
+end_time: 1677677319883
+entry_point_name: ''
+experiment_id: '0'
+lifecycle_stage: active
+run_id: f1b847f88e944713bae8dfa1fe7574c9
+run_name: dashing-worm-649
+run_uuid: f1b847f88e944713bae8dfa1fe7574c9
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1677677204963
+status: 4
+tags: []
+user_id: ge75tis

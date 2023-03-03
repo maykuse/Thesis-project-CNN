@@ -1,0 +1,15 @@
+artifact_uri: file:///home/ge75tis/Desktop/Thesis-project-CNN/ThesisProject/mlruns/0/54e5d69ca3b649a6b4aed1a2b03366e9/artifacts
+end_time: 1677514728788
+entry_point_name: ''
+experiment_id: '0'
+lifecycle_stage: active
+run_id: 54e5d69ca3b649a6b4aed1a2b03366e9
+run_name: loud-sheep-888
+run_uuid: 54e5d69ca3b649a6b4aed1a2b03366e9
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1677514459176
+status: 3
+tags: []
+user_id: ge75tis

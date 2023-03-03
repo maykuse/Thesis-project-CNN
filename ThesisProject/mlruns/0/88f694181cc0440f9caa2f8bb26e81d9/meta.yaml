@@ -1,0 +1,15 @@
+artifact_uri: file:///home/ge75tis/Desktop/Thesis-project-CNN/ThesisProject/mlruns/0/88f694181cc0440f9caa2f8bb26e81d9/artifacts
+end_time: 1676293398720
+entry_point_name: ''
+experiment_id: '0'
+lifecycle_stage: active
+run_id: 88f694181cc0440f9caa2f8bb26e81d9
+run_name: orderly-sloth-595
+run_uuid: 88f694181cc0440f9caa2f8bb26e81d9
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1676293331574
+status: 3
+tags: []
+user_id: ge75tis

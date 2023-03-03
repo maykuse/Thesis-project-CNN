@@ -1,0 +1,15 @@
+artifact_uri: file:///home/ge75tis/Desktop/Thesis-project-CNN/ThesisProject/mlruns/0/d7691cd514e841e4be36f79643e07f26/artifacts
+end_time: 1677669354968
+entry_point_name: ''
+experiment_id: '0'
+lifecycle_stage: active
+run_id: d7691cd514e841e4be36f79643e07f26
+run_name: funny-carp-386
+run_uuid: d7691cd514e841e4be36f79643e07f26
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1677669296111
+status: 3
+tags: []
+user_id: ge75tis

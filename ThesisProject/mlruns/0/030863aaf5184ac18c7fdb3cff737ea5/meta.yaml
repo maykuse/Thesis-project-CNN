@@ -1,0 +1,15 @@
+artifact_uri: file:///home/ge75tis/Desktop/Thesis-project-CNN/ThesisProject/mlruns/0/030863aaf5184ac18c7fdb3cff737ea5/artifacts
+end_time: 1677676422224
+entry_point_name: ''
+experiment_id: '0'
+lifecycle_stage: active
+run_id: 030863aaf5184ac18c7fdb3cff737ea5
+run_name: gregarious-carp-553
+run_uuid: 030863aaf5184ac18c7fdb3cff737ea5
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1677676312780
+status: 4
+tags: []
+user_id: ge75tis

@@ -1,0 +1,15 @@
+artifact_uri: file:///home/ge75tis/Desktop/Thesis-project-CNN/ThesisProject/mlruns/0/dc7fbf59dcab4db19f68f8b0ccf07e45/artifacts
+end_time: 1676294862689
+entry_point_name: ''
+experiment_id: '0'
+lifecycle_stage: active
+run_id: dc7fbf59dcab4db19f68f8b0ccf07e45
+run_name: angry-perch-219
+run_uuid: dc7fbf59dcab4db19f68f8b0ccf07e45
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1676294778468
+status: 3
+tags: []
+user_id: ge75tis

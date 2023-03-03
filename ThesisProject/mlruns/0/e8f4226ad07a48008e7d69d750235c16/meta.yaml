@@ -1,0 +1,15 @@
+artifact_uri: file:///home/ge75tis/Desktop/Thesis-project-CNN/ThesisProject/mlruns/0/e8f4226ad07a48008e7d69d750235c16/artifacts
+end_time: 1676310265425
+entry_point_name: ''
+experiment_id: '0'
+lifecycle_stage: active
+run_id: e8f4226ad07a48008e7d69d750235c16
+run_name: colorful-gull-50
+run_uuid: e8f4226ad07a48008e7d69d750235c16
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1676310246588
+status: 4
+tags: []
+user_id: ge75tis

@@ -1,0 +1,15 @@
+artifact_uri: file:///home/ge75tis/Desktop/Thesis-project-CNN/ThesisProject/mlruns/0/a6e55bf48717445baaa73d40240b4d5f/artifacts
+end_time: 1677489426409
+entry_point_name: ''
+experiment_id: '0'
+lifecycle_stage: active
+run_id: a6e55bf48717445baaa73d40240b4d5f
+run_name: ambitious-shrew-610
+run_uuid: a6e55bf48717445baaa73d40240b4d5f
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1677489426364
+status: 4
+tags: []
+user_id: ge75tis

@@ -1,0 +1,15 @@
+artifact_uri: file:///home/ge75tis/Desktop/Thesis-project-CNN/ThesisProject/mlruns/0/3abc33c7f45340e084cbba7b80f8f970/artifacts
+end_time: 1677684043933
+entry_point_name: ''
+experiment_id: '0'
+lifecycle_stage: active
+run_id: 3abc33c7f45340e084cbba7b80f8f970
+run_name: debonair-sheep-642
+run_uuid: 3abc33c7f45340e084cbba7b80f8f970
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1677683973322
+status: 3
+tags: []
+user_id: ge75tis

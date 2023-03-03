@@ -1,0 +1,15 @@
+artifact_uri: file:///home/ge75tis/Desktop/Thesis-project-CNN/ThesisProject/mlruns/0/13e0e6be0f00490e8be024d645dfae56/artifacts
+end_time: 1676289826421
+entry_point_name: ''
+experiment_id: '0'
+lifecycle_stage: active
+run_id: 13e0e6be0f00490e8be024d645dfae56
+run_name: monumental-ray-639
+run_uuid: 13e0e6be0f00490e8be024d645dfae56
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1676289813052
+status: 4
+tags: []
+user_id: ge75tis

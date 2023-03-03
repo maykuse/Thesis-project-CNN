@@ -1,0 +1,15 @@
+artifact_uri: file:///home/ge75tis/Desktop/Thesis-project-CNN/ThesisProject/mlruns/0/807b9281ed0e44eeabc116444d78492a/artifacts
+end_time: 1677679711847
+entry_point_name: ''
+experiment_id: '0'
+lifecycle_stage: active
+run_id: 807b9281ed0e44eeabc116444d78492a
+run_name: languid-gnu-199
+run_uuid: 807b9281ed0e44eeabc116444d78492a
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1677679485396
+status: 3
+tags: []
+user_id: ge75tis

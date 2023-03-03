@@ -1,0 +1,15 @@
+artifact_uri: file:///home/ge75tis/Desktop/Thesis-project-CNN/ThesisProject/mlruns/0/a235353ea3eb4e46843e44205c09cdc4/artifacts
+end_time: 1677679110736
+entry_point_name: ''
+experiment_id: '0'
+lifecycle_stage: active
+run_id: a235353ea3eb4e46843e44205c09cdc4
+run_name: sneaky-calf-991
+run_uuid: a235353ea3eb4e46843e44205c09cdc4
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1677678838267
+status: 3
+tags: []
+user_id: ge75tis

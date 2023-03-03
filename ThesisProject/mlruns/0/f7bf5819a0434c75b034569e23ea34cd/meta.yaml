@@ -1,0 +1,15 @@
+artifact_uri: file:///home/ge75tis/Desktop/Thesis-project-CNN/ThesisProject/mlruns/0/f7bf5819a0434c75b034569e23ea34cd/artifacts
+end_time: 1677680458565
+entry_point_name: ''
+experiment_id: '0'
+lifecycle_stage: active
+run_id: f7bf5819a0434c75b034569e23ea34cd
+run_name: entertaining-jay-841
+run_uuid: f7bf5819a0434c75b034569e23ea34cd
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1677680434491
+status: 4
+tags: []
+user_id: ge75tis

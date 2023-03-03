@@ -1,0 +1,15 @@
+artifact_uri: file:///home/ge75tis/Desktop/Thesis-project-CNN/ThesisProject/mlruns/0/8b0f9ca580344b878651f02e343a3d64/artifacts
+end_time: 1676293499014
+entry_point_name: ''
+experiment_id: '0'
+lifecycle_stage: active
+run_id: 8b0f9ca580344b878651f02e343a3d64
+run_name: adventurous-moth-956
+run_uuid: 8b0f9ca580344b878651f02e343a3d64
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1676293473892
+status: 4
+tags: []
+user_id: ge75tis

@@ -1,0 +1,15 @@
+artifact_uri: file:///home/ge75tis/Desktop/Thesis-project-CNN/ThesisProject/mlruns/0/f4e582eebdc348b58f1b59a33a108395/artifacts
+end_time: 1677498445210
+entry_point_name: ''
+experiment_id: '0'
+lifecycle_stage: active
+run_id: f4e582eebdc348b58f1b59a33a108395
+run_name: tasteful-dolphin-630
+run_uuid: f4e582eebdc348b58f1b59a33a108395
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1677498429823
+status: 3
+tags: []
+user_id: ge75tis

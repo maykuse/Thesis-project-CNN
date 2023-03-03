@@ -1,0 +1,15 @@
+artifact_uri: file:///home/ge75tis/Desktop/Thesis-project-CNN/ThesisProject/mlruns/0/c143e2c3a57b4e838c46edbecadbba44/artifacts
+end_time: 1676309684429
+entry_point_name: ''
+experiment_id: '0'
+lifecycle_stage: active
+run_id: c143e2c3a57b4e838c46edbecadbba44
+run_name: hilarious-crab-306
+run_uuid: c143e2c3a57b4e838c46edbecadbba44
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1676309682615
+status: 4
+tags: []
+user_id: ge75tis

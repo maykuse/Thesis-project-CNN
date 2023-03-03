@@ -1,0 +1,15 @@
+artifact_uri: file:///home/ge75tis/Desktop/Thesis-project-CNN/ThesisProject/mlruns/0/e249845e00dd4f94a6f2755ba9610ed9/artifacts
+end_time: 1677513802547
+entry_point_name: ''
+experiment_id: '0'
+lifecycle_stage: active
+run_id: e249845e00dd4f94a6f2755ba9610ed9
+run_name: sneaky-auk-385
+run_uuid: e249845e00dd4f94a6f2755ba9610ed9
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1677513527057
+status: 3
+tags: []
+user_id: ge75tis

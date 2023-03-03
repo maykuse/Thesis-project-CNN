@@ -1,0 +1,15 @@
+artifact_uri: file:///home/ge75tis/Desktop/Thesis-project-CNN/ThesisProject/mlruns/0/dd998ec8b4b34817b5eb5eafdf924475/artifacts
+end_time: 1677511078463
+entry_point_name: ''
+experiment_id: '0'
+lifecycle_stage: active
+run_id: dd998ec8b4b34817b5eb5eafdf924475
+run_name: rambunctious-ant-732
+run_uuid: dd998ec8b4b34817b5eb5eafdf924475
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1677510721920
+status: 4
+tags: []
+user_id: ge75tis

@@ -1,0 +1,15 @@
+artifact_uri: file:///home/ge75tis/Desktop/Thesis-project-CNN/ThesisProject/mlruns/0/6e8ca32c62aa4e0ba56ba5ff7a1d83be/artifacts
+end_time: 1677666658370
+entry_point_name: ''
+experiment_id: '0'
+lifecycle_stage: active
+run_id: 6e8ca32c62aa4e0ba56ba5ff7a1d83be
+run_name: industrious-kit-990
+run_uuid: 6e8ca32c62aa4e0ba56ba5ff7a1d83be
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1677666430646
+status: 4
+tags: []
+user_id: ge75tis

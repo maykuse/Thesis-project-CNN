@@ -1,0 +1,15 @@
+artifact_uri: file:///home/ge75tis/Desktop/Thesis-project-CNN/ThesisProject/mlruns/0/dc3119ec406547ce91016b9ba9caf550/artifacts
+end_time: 1677675499082
+entry_point_name: ''
+experiment_id: '0'
+lifecycle_stage: active
+run_id: dc3119ec406547ce91016b9ba9caf550
+run_name: persistent-frog-771
+run_uuid: dc3119ec406547ce91016b9ba9caf550
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1677675464660
+status: 3
+tags: []
+user_id: ge75tis

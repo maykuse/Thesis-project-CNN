@@ -1,0 +1,15 @@
+artifact_uri: file:///home/ge75tis/Desktop/Thesis-project-CNN/ThesisProject/mlruns/0/c85527539b0c44ad8e11c42500673333/artifacts
+end_time: 1676289242322
+entry_point_name: ''
+experiment_id: '0'
+lifecycle_stage: active
+run_id: c85527539b0c44ad8e11c42500673333
+run_name: caring-zebra-683
+run_uuid: c85527539b0c44ad8e11c42500673333
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1676289227767
+status: 4
+tags: []
+user_id: ge75tis

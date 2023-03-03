@@ -1,0 +1,15 @@
+artifact_uri: file:///home/ge75tis/Desktop/Thesis-project-CNN/ThesisProject/mlruns/0/81975ae9dc404370a40042036a47222f/artifacts
+end_time: 1677515909589
+entry_point_name: ''
+experiment_id: '0'
+lifecycle_stage: active
+run_id: 81975ae9dc404370a40042036a47222f
+run_name: incongruous-gnat-87
+run_uuid: 81975ae9dc404370a40042036a47222f
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1677515638161
+status: 3
+tags: []
+user_id: ge75tis

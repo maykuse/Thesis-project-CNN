@@ -1,0 +1,15 @@
+artifact_uri: file:///home/ge75tis/Desktop/Thesis-project-CNN/ThesisProject/mlruns/0/4482f0bdc16f464abe61cdfd27a2fcff/artifacts
+end_time: 1676289943398
+entry_point_name: ''
+experiment_id: '0'
+lifecycle_stage: active
+run_id: 4482f0bdc16f464abe61cdfd27a2fcff
+run_name: marvelous-wasp-640
+run_uuid: 4482f0bdc16f464abe61cdfd27a2fcff
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1676289916117
+status: 4
+tags: []
+user_id: ge75tis

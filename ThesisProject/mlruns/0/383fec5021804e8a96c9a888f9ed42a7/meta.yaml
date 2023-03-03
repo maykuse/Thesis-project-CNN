@@ -1,0 +1,15 @@
+artifact_uri: file:///home/ge75tis/Desktop/Thesis-project-CNN/ThesisProject/mlruns/0/383fec5021804e8a96c9a888f9ed42a7/artifacts
+end_time: 1676294399745
+entry_point_name: ''
+experiment_id: '0'
+lifecycle_stage: active
+run_id: 383fec5021804e8a96c9a888f9ed42a7
+run_name: angry-squirrel-750
+run_uuid: 383fec5021804e8a96c9a888f9ed42a7
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1676294397925
+status: 4
+tags: []
+user_id: ge75tis

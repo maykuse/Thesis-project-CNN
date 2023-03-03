@@ -1,0 +1,15 @@
+artifact_uri: file:///home/ge75tis/Desktop/Thesis-project-CNN/ThesisProject/mlruns/0/b4ed72d8f41144b18e34e4d842a1149b/artifacts
+end_time: 1677681934801
+entry_point_name: ''
+experiment_id: '0'
+lifecycle_stage: active
+run_id: b4ed72d8f41144b18e34e4d842a1149b
+run_name: wistful-boar-96
+run_uuid: b4ed72d8f41144b18e34e4d842a1149b
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1677681681202
+status: 4
+tags: []
+user_id: ge75tis

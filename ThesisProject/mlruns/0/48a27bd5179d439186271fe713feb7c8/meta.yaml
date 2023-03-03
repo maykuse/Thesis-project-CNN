@@ -1,0 +1,15 @@
+artifact_uri: file:///home/ge75tis/Desktop/Thesis-project-CNN/ThesisProject/mlruns/0/48a27bd5179d439186271fe713feb7c8/artifacts
+end_time: 1676309534099
+entry_point_name: ''
+experiment_id: '0'
+lifecycle_stage: active
+run_id: 48a27bd5179d439186271fe713feb7c8
+run_name: carefree-vole-106
+run_uuid: 48a27bd5179d439186271fe713feb7c8
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1676309532075
+status: 4
+tags: []
+user_id: ge75tis

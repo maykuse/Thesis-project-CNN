@@ -1,0 +1,15 @@
+artifact_uri: file:///home/ge75tis/Desktop/Thesis-project-CNN/ThesisProject/mlruns/0/e4ee0d6b8ef94f81999d85d656338f0a/artifacts
+end_time: 1677684312148
+entry_point_name: ''
+experiment_id: '0'
+lifecycle_stage: active
+run_id: e4ee0d6b8ef94f81999d85d656338f0a
+run_name: amazing-fish-803
+run_uuid: e4ee0d6b8ef94f81999d85d656338f0a
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1677684252751
+status: 4
+tags: []
+user_id: ge75tis

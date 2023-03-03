@@ -1,0 +1,15 @@
+artifact_uri: file:///home/ge75tis/Desktop/Thesis-project-CNN/ThesisProject/mlruns/0/522d678fe26c46aa85b2af7685a6ca63/artifacts
+end_time: 1677511395184
+entry_point_name: ''
+experiment_id: '0'
+lifecycle_stage: active
+run_id: 522d678fe26c46aa85b2af7685a6ca63
+run_name: chill-cub-310
+run_uuid: 522d678fe26c46aa85b2af7685a6ca63
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1677511135216
+status: 4
+tags: []
+user_id: ge75tis
